@@ -12,7 +12,7 @@ System requirements
 ----------
 
 Mathematica. Tested with versions 7 and 8 on Linux and Windows.
-More details in [the manual](http://github.com/naa/Affine/doc/manual.pdf)
+More details in [the manual](doc/manual.pdf)
 
 Installation
 ----------
@@ -28,4 +28,4 @@ Usage
 `<<affine.m;`
 
 Use the functions of the package. 
-See [demo](http://github.com/naa/Affine/demo/demo.nb) and [manual](http://github.com/naa/Affine/doc/manual.pdf)
+See [demo](demo/demo.nb) and [manual](http://github.com/naa/Affine/doc/manual.pdf)
