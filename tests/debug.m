@@ -1,4 +1,4147 @@
-AppendTo[$Path,"/home/anton/study/2011/Articles/AffineLieAlgebras/Mathematica/"];
+AppendTo[$Path,"../src/"]
+
+<<affine.m;
+
+makeSimpleRootSystem[B,2]
+
+Out[56]= finiteRootSystem[2, 2, 
+ 
+>    {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}]
+
+b4=makeSimpleRootSystem[B,4];
+
+fe=ourBranching[b4,makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,11}]}]][weight[b4][0,1,0,2]]
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Out[59]= makeFormalElement[{finiteWeight[4, {0, 0, 0, 1}], 
+ 
+>     finiteWeight[4, {0, 0, 0, 0}]}, 
+ 
+>    {weights + makeFormalElement[{finiteWeight[4, {0, 0, -2, 6}], 
+ 
+                                   5   15
+>         finiteWeight[4, {0, 0, -(-), --}], finiteWeight[4, {0, 0, -1, 3}], 
+                                   2   2
+ 
+>         finiteWeight[4, {0, 0, 0, 1}]}, 
+ 
+>        {finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] + 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>         -(finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>              (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>                rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 1, 0, 0}]}]) / 
+ 
+>             rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ] . finiteWeight[4, {0, 0, 1, 0}]) - 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] - 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>         -(finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>              (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>                rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 1, 0, 0}]}]) / 
+ 
+>             rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ] . finiteWeight[4, {0, 0, 1, 0}]) - 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] - 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>         finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] + 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}]}][finiteWeight[4, {0, 0, 0, 1}]]
+ 
+>      , weights + makeFormalElement[{finiteWeight[4, {0, 0, -2, 6}], 
+ 
+                                   5   15
+>         finiteWeight[4, {0, 0, -(-), --}], finiteWeight[4, {0, 0, -1, 3}], 
+                                   2   2
+ 
+>         finiteWeight[4, {0, 0, 0, 1}]}, 
+ 
+>        {finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] + 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 0, 0, 4}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>         -(finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>              (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>                rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 1, 0, 0}]}]) / 
+ 
+>             rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ] . finiteWeight[4, {0, 0, 1, 0}]) - 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] - 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {1, 0, 0, 5}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>         -(finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>              (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>                rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                  finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                  finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 0, 1, 0}], 
+ 
+>                  finiteWeight[4, {1, 1, 0, 0}]}]) / 
+ 
+>             rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ] . finiteWeight[4, {0, 0, 1, 0}]) - 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] - 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] - 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] - 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] - 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 0, 2}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>         finiteWeight[4, {0, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {0, 0, 1, 1}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 0, 1, 1}] + 
+ 
+>          finiteWeight[4, {0, 1, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, -1, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 0, 0}] + 
+ 
+>          finiteWeight[4, {0, 1, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {0, 1, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, -1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, -1, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, -1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, -1, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 0, 0}] + 
+ 
+>          finiteWeight[4, {1, 0, 1, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 0, 1, 0}] + 
+ 
+>          finiteWeight[4, {1, 1, 0, 0}] . 
+ 
+>            (finiteWeight[4, {2, 2, 1, 1}] + 
+ 
+>              rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, -1, 0}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>                finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>                finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>                finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}
+ 
+>                ]) / 
+ 
+>           rho[{finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>              finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, -1, 0}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>              finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 1, 1, 0}], 
+ 
+>              finiteWeight[4, {1, 0, 1, 0}], finiteWeight[4, {1, 1, 0, 0}]}]\
+ 
+>             . finiteWeight[4, {1, 1, 0, 0}]}][finiteWeight[4, {0, 0, 0, 0}]]
+ 
+>      }]
+
+fe[multiplicities]
+
+Out[55]= {2, 1}
+
+                           1  1
+Out[54]= {finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}]}
+                           2  2
+
+
+                  1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}], finiteWeight[2, {-2, -2}], 
+                  2  2
+ 
+                        5     5
+>    finiteWeight[2, {-(-), -(-)}]}{2, -3, 3, -2}
+                        2     2
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}]}
+                  2  2
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+ 
+>   {1, -2, 1}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1255[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {1, 1}], table$1255[finiteWeight[2, {1, 1}]], -2, 2}, 
+ 
+                      3  3                                3  3
+>   {finiteWeight[2, {-, -}], table$1255[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1255[finiteWeight[2, {0, 0}]], 1, -3}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 2, -2, -3}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], table$1255[finiteWeight[2, {1, 1}]], 1, -3}}
+1
+
+Out[52]= formalElement[table$1256]
+
+projection[makeFiniteRootSystem[{makeFiniteWeight[{1,1}]}]][anomalousWeights[makeSimpleRootSystem[B,2]][makeFiniteWeight[{2,1}]][weights]]
+
+                           3  3                     3  3
+Out[49]= {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], 
+                           2  2                     2  2
+ 
+>    finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}], 
+ 
+>    finiteWeight[2, {-2, -2}], finiteWeight[2, {-2, -2}], 
+ 
+                        7     7                        7     7
+>    finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-(-), -(-)}]}
+                        2     2                        2     2
+
+rho[makeSimpleRootSystem[B,2]]
+
+                          3  1
+Out[48]= finiteWeight[2, {-, -}]
+                          2  2
+
+Out[47]= {finiteWeight[2, {2, 1}], finiteWeight[2, {0, 3}], 
+ 
+>    finiteWeight[2, {2, -2}], finiteWeight[2, {-3, 3}], 
+ 
+>    finiteWeight[2, {0, -4}], finiteWeight[2, {-5, 1}], 
+ 
+>    finiteWeight[2, {-3, -4}], finiteWeight[2, {-5, -2}]}
+
+Out[46]= formalElement[table$1163]
+
+
+                  3  3
+{finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}], finiteWeight[2, {-2, -2}], 
+                  2  2
+ 
+                        7     7
+>    finiteWeight[2, {-(-), -(-)}]}{2, -5, 5, -2}
+                        2     2
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+ 
+>   {1, -2, 1}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                                3  3
+{{finiteWeight[2, {-, -}], table$1161[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1161[finiteWeight[2, {2, 2}]], -2, 2}, 
+ 
+                      5  5                                5  5
+>   {finiteWeight[2, {-, -}], table$1161[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$1161[finiteWeight[2, {1, 1}]], 1, 0}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2, 0}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1161[finiteWeight[2, {2, 2}]], 1, 0}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1161[finiteWeight[2, {-, -}]], 1, 0}, 
+                   2  2                                2  2
+ 
+                                                            3  3
+>   {finiteWeight[2, {1, 1}], -4, -2, 0}, {finiteWeight[2, {-, -}], 2, 1, 0}}
+                                                            2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1161[finiteWeight[2, {0, 0}]], 1, -5}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2, -5}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], -4, 1, -5}}
+-29
+
+Out[45]= formalElement[table$1162]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+ 
+>   {1, -2, 1}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                                3  3
+{{finiteWeight[2, {-, -}], table$1100[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1100[finiteWeight[2, {2, 2}]], -2, 2}, 
+ 
+                      5  5                                5  5
+>   {finiteWeight[2, {-, -}], table$1100[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$1100[finiteWeight[2, {1, 1}]], 1, 0}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2, 0}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1100[finiteWeight[2, {2, 2}]], 1, 0}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1100[finiteWeight[2, {-, -}]], 1, 0}, 
+                   2  2                                2  2
+ 
+                                                            3  3
+>   {finiteWeight[2, {1, 1}], -4, -2, 0}, {finiteWeight[2, {-, -}], 2, 1, 0}}
+                                                            2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1100[finiteWeight[2, {0, 0}]], 1, -5}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2, -5}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], -4, 1, -5}}
+-29
+
+Out[43]= formalElement[table$1101]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                                3  3
+{{finiteWeight[2, {-, -}], table$1039[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1039[finiteWeight[2, {2, 2}]], -2, 2}, 
+ 
+                      5  5                                5  5
+>   {finiteWeight[2, {-, -}], table$1039[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$1039[finiteWeight[2, {1, 1}]], 1, 0}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2, 0}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1039[finiteWeight[2, {2, 2}]], 1, 0}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1039[finiteWeight[2, {-, -}]], 1, 0}, 
+                   2  2                                2  2
+ 
+                                                            3  3
+>   {finiteWeight[2, {1, 1}], -4, -2, 0}, {finiteWeight[2, {-, -}], 2, 1, 0}}
+                                                            2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1039[finiteWeight[2, {0, 0}]], 1, -5}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2, -5}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], -4, 1, -5}}
+-29
+
+Out[41]= formalElement[table$1040]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                               3  3
+{{finiteWeight[2, {-, -}], table$978[finiteWeight[2, {-, -}]], 1}, 
+                   2  2                               2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$978[finiteWeight[2, {2, 2}]], -2}, 
+ 
+                      5  5                               5  5
+>   {finiteWeight[2, {-, -}], table$978[finiteWeight[2, {-, -}]], 1}}
+                      2  2                               2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$978[finiteWeight[2, {1, 1}]], 1}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$978[finiteWeight[2, {2, 2}]], 1}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                               1  1
+{{finiteWeight[2, {-, -}], table$978[finiteWeight[2, {-, -}]], 1}, 
+                   2  2                               2  2
+ 
+                                                         3  3
+>   {finiteWeight[2, {1, 1}], -4, -2}, {finiteWeight[2, {-, -}], 2, 1}}
+                                                         2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$978[finiteWeight[2, {0, 0}]], 1}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2}, {finiteWeight[2, {1, 1}], -4, 1}}
+                      2  2
+-29
+
+Out[39]= formalElement[table$979]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                     3  3
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}, 
+ 
+                      5  5                     5  5
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                     1  1
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}]}, 
+ 
+                      1  1                     1  1
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}}
+-29
+
+Out[37]= formalElement[table$918]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                     3  3
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}, 
+ 
+                      5  5                     5  5
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}}
+4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                     1  1
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+6
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}]}, 
+ 
+                      1  1                     1  1
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}}
+3
+
+Out[35]= formalElement[table$857]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                     3  3
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}, 
+ 
+                      5  5                     5  5
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}}
+                         3  3
+2 mults[finiteWeight[2, {-, -}]]
+                         2  2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                     1  1
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+                        3  3
+-mults[finiteWeight[2, {-, -}]]
+                        2  2
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}]}, 
+ 
+                      1  1                     1  1
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}}
+-5
+
+                                             3  3
+Out[33]= makeFormalElement[{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                             2  2
+ 
+                       1  1
+>     finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}]}, 
+                       2  2
+ 
+                                  3  3                             3  3
+>    {2, 2 mults[finiteWeight[2, {-, -}]], -mults[finiteWeight[2, {-, -}]], 
+                                  2  2                             2  2
+ 
+>     -5}]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                        1     1
+{{finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                   2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       3  3
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {2, 2}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {2, 2}]]}, 
+ 
+                      5  5                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       5  5
+>     finiteWeight[2, {-, -}]]}}
+                       2  2
+2
+finiteWeight[2, {1, 1}]
+                                               1     1
+{{finiteWeight[2, {1, 1}], (finiteWeight[2, {-(-), -(-)}] + 
+                                               2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {1, 1}]]}, 
+ 
+                      3  3                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       3  3
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {2, 2}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {2, 2}]]}}
+0
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                        1     1
+{{finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                   2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       1  1
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {1, 1}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {1, 1}]]}, 
+ 
+                      3  3                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       3  3
+>     finiteWeight[2, {-, -}]]}}
+                       2  2
+0
+finiteWeight[2, {0, 0}]
+                                               1     1
+{{finiteWeight[2, {0, 0}], (finiteWeight[2, {-(-), -(-)}] + 
+                                               2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {0, 0}]]}, 
+ 
+                      1  1                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       1  1
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {1, 1}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {1, 1}]]}}
+-5
+
+Out[31]= formalElement[table$736]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3
+{{finiteWeight[2, {-, -}], False}, {finiteWeight[2, {2, 2}], False}, 
+                   2  2
+ 
+                      5  5
+>   {finiteWeight[2, {-, -}], False}}
+                      2  2
+2
+finiteWeight[2, {1, 1}]
+                                                     3  3
+{{finiteWeight[2, {1, 1}], False}, {finiteWeight[2, {-, -}], False}, 
+                                                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], False}}
+0
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1
+{{finiteWeight[2, {-, -}], False}, {finiteWeight[2, {1, 1}], False}, 
+                   2  2
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], False}}
+                      2  2
+0
+finiteWeight[2, {0, 0}]
+                                                     1  1
+{{finiteWeight[2, {0, 0}], False}, {finiteWeight[2, {-, -}], False}, 
+                                                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], False}}
+-5
+
+Out[29]= formalElement[table$675]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                  3  3                                              5  5
+{finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+2
+finiteWeight[2, {1, 1}]
+                                           3  3
+{finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}]}
+                                           2  2
+0
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                  1  1                                              3  3
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+0
+finiteWeight[2, {0, 0}]
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+-5
+
+Out[27]= formalElement[table$614]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                  3  3                                              5  5
+{finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                  1  1                                              3  3
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+0
+finiteWeight[2, {1, 1}]
+                                           3  3
+{finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}]}
+                                           2  2
+0
+finiteWeight[2, {0, 0}]
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+-5
+
+Out[25]= formalElement[table$553]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+{0, 0, 0}
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+{0, 0, 0}
+0
+finiteWeight[2, {1, 1}]
+{0, 0, 0}
+0
+finiteWeight[2, {0, 0}]
+{0, 0, 0}
+-5
+
+Out[23]= formalElement[table$492]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+0
+finiteWeight[2, {1, 1}]
+0
+finiteWeight[2, {0, 0}]
+-5
+
+Out[21]= formalElement[table$431]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                 3  1
+finiteWeight[2, {-, -}] - projection[finiteRootSystem[1, 2, 
+                 2  2
+ 
+                                                    3  1
+>      {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}]]
+                                                    2  2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+0
+finiteWeight[2, {1, 1}]
+0
+finiteWeight[2, {0, 0}]
+-5
+
+Out[17]= formalElement[table$309]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+0
+finiteWeight[2, {1, 1}]
+0
+finiteWeight[2, {0, 0}]
+-5
+
+Out[13]= formalElement[table$187]
+
+Out[12]= ourBranching[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>    finiteWeight[2, {2, 1}]]
+
+?$*Path
+
+?$DefaultPath
+
+?$ContextPath
+
+$ContextPath is a global variable that gives a list of contexts, after
+   $Context, to search in trying to find a symbol that has been entered. 
+
+$DefaultPath is the default setting for $Path for this copy of Mathematica
+    session.
+
+Global`$InitPath
+
+Out[4]= $InitPath
+
+$ContextPath $DefaultPath $InitialPath $InitPath    $LibraryPath $Path
+
+Out[1]= $InitialPath
 
 <<datastructures.m;
 
