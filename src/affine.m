@@ -362,7 +362,7 @@ rho::"usage"=
     "rho[rs_?rootSystemQ] - Weyl vector of root system rs (sum of fundamental weights)";
 rho[rs_?rootSystemQ]:=Plus@@fundamentalWeights[rs];
 
-rho[{posroots_?weightQ}]:=1/2*(Plus@@{posroots});
+rho[{posroots__?weightQ}]:=1/2*(Plus@@{posroots});
 
 Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[makeSimpleRootSystem[B,2]]]
 
@@ -370,9 +370,9 @@ toFundamentalChamber::"usage"=
     "toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ] acts on a weight vec by simple reflections of rs till it gets to main Weyl chamber";
 toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ]:=
     First[NestWhile[Function[v,
-		       reflection[Scan[If[#.v<0,Return[#]]&,rs[simpleRoots]]][v]],
-	      vec,
-	      Head[#]=!=reflection[Null]&]]
+			     reflection[Scan[If[#.v<0,Return[#]]&,rs[simpleRoots]]][v]],
+		    vec,
+		    Head[#]=!=reflection[Null]&]]
 
 Expect["To fundamental chamber",True,makeFiniteWeight[{1,1/2}]==toFundamentalChamber[makeSimpleRootSystem[B,2]][makeFiniteWeight[{-1,1/2}]]]
 
@@ -640,7 +640,13 @@ orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs],
 
 projection::"usage"=
     "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system";
-projection[rs_?rootSystemQ][{weights__?weightQ}]:= Map[Apply[Plus,#]&,Outer[(#1.#2)/(#2.#2)*#2&,{weights},rs[simpleRoots]]]
+projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
+    Map[Function[w,(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])).rs[simpleRoots]],{weights}]
+
+projection[rs_affineRootSystem][{weights__?weightQ}]:= 
+    Map[makeAffineWeight[projection[rs[finiteRootSystem]][#[finitePart]],#[level],#[grade]]&,{weights}]
+
+(*    Map[Apply[Plus,#]&,Outer[(#1.#2)/(#2.#2)*#2&,{weights},rs[simpleRoots]]] *)
 
 formalElement::"usage"=
     "Datastructure to represent formal elements of the ring of characters (linear combinations of formal exponents of weights).\n
@@ -713,6 +719,7 @@ fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
 		  roots=Complement[positiveRoots[rs],orthogonalSubsystem[rs,subs]];
 		  pr=makeFormalElement[projection[subs][roots]] - makeFormalElement[positiveRoots[subs]];
 		  Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]]];
+(* !!!!!!!!!!!!!!!!!!!!!                      ^^^^^^^^ This can be negative *)
 
 getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,hweight_?weightQ]:=
     Module[{rh=rho[subs]},
@@ -729,9 +736,9 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 (*	   Print[selWM[weights],selWM[multiplicities]]; 
 	   Print[projection[subs][positiveRoots[rs]]];*)
 	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,highestWeight];
-(*	   Print[reprw];*)
+(*	   Print[projection[subs][{highestWeight}],reprw];*)
 	   fn=fan[rs,subs];
-(*	   Print[fn[weights],fn[multiplicities]];*)
+	   Print[fn[weights],fn[multiplicities]];
 	   rh=rho[rs];
 	   subrh=rho[subs];
 	   def=subrh-projection[subs][{rh}][[1]];
