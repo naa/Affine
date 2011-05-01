@@ -2,15 +2,649 @@ AppendTo[$Path,"../src/"]
 
 <<affine.m;
 
-makeSimpleRootSystem[B,2]
-
-Out[56]= finiteRootSystem[2, 2, 
- 
->    {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}]
+b2=makeSimpleRootSystem[B,2]
 
 b4=makeSimpleRootSystem[B,4];
 
-fe=ourBranching[b4,makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,11}]}]][weight[b4][0,1,0,2]]
+fe=ourBranching[b4,makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0,0}],makeFiniteWeight[{0,1,0,0}]}]][weight[b4][0,1,0,2]]
+
+fe[weights]
+
+fe[multiplicities]
+
+Out[200]= {0, 0, 0, 0, 0, 0}
+
+           23  92  194  368  1637
+Out[194]= {--, --, ---, ---, ----, 640}
+           3   3    3    3    6
+
+             23     92     194     368     1637
+Out[190]= {-(--), -(--), -(---), -(---), -(----), -640}
+             3      3       3       3       6
+
+           23  92  194
+Out[186]= {--, --, ---, 0, 0, 0}
+           3   3    3
+
+??Minimize
+
+Minimize[Sin,x]
+
+?MinDetect
+
+?*Min*
+
+?NMinimize
+
+?Position
+
+?Sort
+
+?Head
+
+?Drop
+
+Drop[list, n] gives list with its first n
+      elements dropped. Drop[list, -n]
+
+       gives list with its last n
+         elements dropped. Drop[list, {n}]
+
+                               th
+          gives list with its n
+             element dropped. Drop[list, {m, n}]
+
+              gives list with elements m
+                through n dropped. Drop[list, {m, n, s}]
+
+                  gives list with elements m
+                    through n in steps of s
+                      dropped. Drop[list, seq , seq , ...]
+                                             1     2
+                       gives a nested list in which elements specified by seq
+                                                                             i
+                        have been dropped at level i in list. 
+
+Information::notfound: Symbol ?Most not found.
+
+Most[expr] gives expr with the last element removed. 
+
+Attributes[Most] = {Protected}
+
+Most[expr] gives expr with the last element removed. 
+
+Head[expr] gives the head of expr. 
+
+Sort[list] sorts the elements of list
+     into canonical order. Sort[list, p] sorts using the ordering function p. 
+
+
+Position[expr, pattern] gives a list of the positions at which objects
+     matching pattern appear in expr
+     . Position[expr, pattern, levelspec]
+
+       finds only objects that appear on levels specified by levelspec
+       . Position[expr, pattern, levelspec, n]
+
+         gives the positions of the first n objects found. 
+
+ArgMin                 MinimalPolynomial      PermutationMin
+BooleanMinimize        MinimalStateSpaceModel PlusMinus
+BooleanMinterms        Minimize               RankedMin
+ButtonMinHeight        Minors                 RowMinHeight
+CircleMinus            MinRecursion           ScriptMinSize
+ConstrainedMin         MinSize                SpanMinSize
+DigitBlockMinimum      MinStableDistribution  SubMinus
+FindArgMin             Minus                  SuperMinus
+FindMinimum            MinusPlus              $MinMachineNumber
+FindMinValue           MinValue               $MinNumber
+Min                    NArgMin                $MinorReleaseNumber
+MinDetect              NMinimize              $MinPrecision
+MinFilter              NMinValue
+
+FindMinValue[f, x] gives the value at a local minimum of f
+    .FindMinValue[f, {x, x }] gives the value at a local minimum of f
+                          0
+      , found by a search starting from the point x = x
+                                                       0
+       . FindMinValue[f, {{x, x }, {y, y }, ...}]
+                               0        0
+         gives the value at a local minimum of a function of severalFindMinVal
+           variables. 
+
+           ue[{f, cons}, {{x, x }, {y, y }, ...}] gives the value at a local
+                               0        0
+           minimum subject to the constraints cons
+          .FindMinValue[{f, cons}, {x, y, ...}]
+
+            starts from a point within the region defined by the constraints.
+
+FindMinimum[f, x] searches for a local minimum in f
+    , starting from an automatically selected point.FindMinimum[f, {x, x }]
+                                                                        0
+      searches for a local minimum in f
+      , starting from the point x = x
+                                     0
+       . FindMinimum[f, {{x, x }, {y, y }, ...}]
+                              0        0
+         searches for a local minimum in a function of several variables. 
+
+         FindMinimum[{f, cons}, {{x, x }, {y, y }, ...}]
+                                      0        0
+          searches for a local minimum subject to the constraints cons
+          .FindMinimum[{f, cons}, {x, y, ...}]
+
+            starts from a point within the region defined by the constraints.
+
+FindMinimum  FindMinValue
+
+
+Min[x , x , ...] yields the numerically smallest of the x
+     1   2                                               i
+    . Min[{x , x , ...}, {y , ...}, ...]
+            1   2          1
+      yields the smallest element of any of the lists. 
+
+Attributes[Min] = {Flat, NumericFunction, OneIdentity, Orderless, Protected}
+
+Minimize::ivar: 1 is not a valid variable.
+
+                     2
+Out[159]= Minimize[#1  & , {1, 2, 3, 4}]
+
+Minimize::ivar: 1 is not a valid variable.
+
+                     2
+Out[158]= Minimize[#1  & , {1, 2, 3, 4}]
+
+Out[157]= {Sin, {x -> 0}}
+
+Minimize::ivar: 1 is not a valid variable.
+
+Out[156]= Minimize[Sin, {1, 2, 3}]
+
+Minimize[f, x] minimizes f with respect to x
+     .Minimize[f, {x, y, ...}] minimizes f
+
+        with respect to x, y, .... Minimize[{f, cons}, {x, y, ...}]
+
+           minimizes f subject to the constraints cons
+            . Minimize[{f, cons}, {x, y, ...}, dom]
+
+              minimizes with variables over the domain dom, typically Reals or
+               Integers.
+
+Min                    Minimize               MinStableDistribution
+MinDetect              Minors                 Minus
+MinFilter              MinRecursion           MinusPlus
+MinimalPolynomial      MinSize                MinValue
+MinimalStateSpaceModel
+
+Min[x , x , ...] yields the numerically smallest of the x
+     1   2                                               i
+    . Min[{x , x , ...}, {y , ...}, ...]
+            1   2          1
+      yields the smallest element of any of the lists. 
+
+           23  92  194
+Out[151]= {--, --, ---, 0, 0, 0}
+           3   3    3
+
+Out[150]= {finiteWeight[4, {2, 2, 0, 0}], finiteWeight[4, {2, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 0, 0, 0}], finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {1, 0, 0, 0}], finiteWeight[4, {0, 0, 0, 0}]}
+
+{finiteWeight[4, {2, 0, 0, 0}], finiteWeight[4, {0, 4, 0, 0}], 
+ 
+>    finiteWeight[4, {4, 2, 0, 0}], finiteWeight[4, {4, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {1, 2, 0, 0}], finiteWeight[4, {2, 3, 0, 0}], 
+ 
+>    finiteWeight[4, {3, 1, 0, 0}], finiteWeight[4, {1, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {4, 4, 0, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {3, 2, 0, 0}], finiteWeight[4, {3, 4, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 1, 0, 0}], finiteWeight[4, {3, 0, 0, 0}], 
+ 
+>    finiteWeight[4, {0, 3, 0, 0}], finiteWeight[4, {2, 2, 0, 0}], 
+ 
+>    finiteWeight[4, {4, 0, 0, 0}], finiteWeight[4, {0, 0, 0, 0}], 
+ 
+>    finiteWeight[4, {1, 3, 0, 0}], finiteWeight[4, {2, 4, 0, 0}], 
+ 
+>    finiteWeight[4, {4, 3, 0, 0}], finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>    finiteWeight[4, {3, 3, 0, 0}], finiteWeight[4, {1, 4, 0, 0}], 
+ 
+>    finiteWeight[4, {0, 2, 0, 0}]}{6, 1, 6, -4, -24, -24, 16, 16, 1, -4, 
+ 
+>    -24, -4, -24, -4, -4, 36, 1, 1, 16, 6, -4, -4, 16, -4, 6}
+
+Out[149]= formalElement[table$2306]
+
+fn=fan[b4,makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0,0}],makeFiniteWeight[{0,1,0,0}]}]]
+
+rh=rho[makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0,0}],makeFiniteWeight[{0,1,0,0}]}]]
+
+                           3  1
+Out[181]= finiteWeight[4, {-, -, 0, 0}]
+                           2  2
+
+gamma0=Sort[fn[weights],#1.rh>#2.rh&][[1]]
+
+Out[183]= finiteWeight[4, {4, 4, 0, 0}]
+
+Out[182]= finiteWeight[4, {0, 0, 0, 0}]
+
+fn[weights]
+
+Out[180]= {finiteWeight[4, {1, 3, 0, 0}], finiteWeight[4, {3, 3, 0, 0}], 
+ 
+>    finiteWeight[4, {4, 3, 0, 0}], finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>    finiteWeight[4, {0, 4, 0, 0}], finiteWeight[4, {4, 2, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 2, 0, 0}], finiteWeight[4, {4, 0, 0, 0}], 
+ 
+>    finiteWeight[4, {4, 4, 0, 0}], finiteWeight[4, {3, 2, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 3, 0, 0}], finiteWeight[4, {4, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 0, 0, 0}], finiteWeight[4, {0, 3, 0, 0}], 
+ 
+>    finiteWeight[4, {3, 1, 0, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 4, 0, 0}], finiteWeight[4, {3, 0, 0, 0}], 
+ 
+>    finiteWeight[4, {1, 1, 0, 0}], finiteWeight[4, {3, 4, 0, 0}], 
+ 
+>    finiteWeight[4, {2, 1, 0, 0}], finiteWeight[4, {1, 4, 0, 0}], 
+ 
+>    finiteWeight[4, {1, 2, 0, 0}], finiteWeight[4, {0, 2, 0, 0}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 0}]}
+
+Out[179]= finiteWeight[4, {1, 3, 0, 0}]
+
+Out[178]= finiteWeight[4, {1, 3, 0, 0}]
+
+Out[177]= formalElement[table$2396]
+
+fn[[3]][weights]
+
+fn[[3]][multiplicities]
+
+Out[129]= {1, -4, 6, -4, 1}
+
+Out[128]= {finiteWeight[4, {0, 0, 0, 0}], finiteWeight[4, {0, 1, 0, 0}], 
+ 
+>    finiteWeight[4, {0, 2, 0, 0}], finiteWeight[4, {0, 3, 0, 0}], 
+ 
+>    finiteWeight[4, {0, 4, 0, 0}]}
+
+fn2=fan[makeSimpleRootSystem[B,3],makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0}],makeFiniteWeight[{0,1,0}]}]]
+
+fn2[weights]
+
+fn2[multiplicities]
+
+Out[148]= {1, -2, 1, -2, 4, -2, 1, -2, 1}
+
+Out[147]= {finiteWeight[3, {0, 0, 0}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {0, 2, 0}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}], finiteWeight[3, {1, 2, 0}], 
+ 
+>    finiteWeight[3, {2, 0, 0}], finiteWeight[3, {2, 1, 0}], 
+ 
+>    finiteWeight[3, {2, 2, 0}]}
+
+Out[146]= formalElement[table$2203]
+
+
+sb2=makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0}],makeFiniteWeight[{0,1,0}]}]
+
+b3=makeSimpleRootSystem[B,3]
+
+positiveRoots[b3]
+
+projection[sb2][positiveRoots[b3]]
+
+orthogonalSubsystem[b3,sb2]
+
+Out[145]= {finiteWeight[3, {0, 0, 1}]}
+
+Out[143]= {finiteWeight[3, {0, 0, 1}], finiteWeight[3, {1, 0, -1}], 
+ 
+>    finiteWeight[3, {1, 0, 1}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}]}
+
+positiveRoots[sb2]
+
+Out[142]= {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}], finiteWeight[3, {1, 0, 0}]}
+
+Out[141]= {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {0, 0, 0}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {0, 1, 0}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {1, 0, 0}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}]}
+
+                           5  3  1
+Out[136]= finiteWeight[3, {-, -, -}]
+                           2  2  2
+
+Out[135]= {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, -1}], 
+ 
+>    finiteWeight[3, {0, 0, 1}], finiteWeight[3, {1, 0, -1}], 
+ 
+>    finiteWeight[3, {0, 1, 1}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {1, 0, 1}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}]}
+
+fn2[[3]][weights]
+
+Out[133]= {finiteWeight[3, {0, 0, 0}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {0, 2, 0}]}
+
+Out[132]= formalElement[table$2141]
+
+                               formalElement[table$2141]
+Out[131]= -------------------------------------------------------------------
+                finiteWeight[3, {1, 0, 0}]        finiteWeight[3, {1, 1, 0}]
+          (1 - E                          ) (1 - E                          )
+
+Out[130]= fan[b3, finiteRootSystem[2, 3, 
+ 
+>     {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, 0}]}]]
+
+Out[127]= formalElement[table$2122]
+
+                          1
+Out[126]= ----------------------------------
+               finiteWeight[4, {1, 1, 0, 0}]
+          1 - E
+
+                          1
+Out[125]= ----------------------------------
+               finiteWeight[4, {1, 0, 0, 0}]
+          1 - E
+
+Out[124]= 
+ 
+                             formalElement[table$2122]
+>    -------------------------------------------------------------------------
+           finiteWeight[4, {1, 0, 0, 0}]        finiteWeight[4, {1, 1, 0, 0}]
+     (1 - E                             ) (1 - E                             )
+
+Out[123]= 
+ 
+                             formalElement[table$2122]
+>    -------------------------------------------------------------------------
+           finiteWeight[4, {1, 0, 0, 0}]        finiteWeight[4, {1, 1, 0, 0}]
+     (1 - E                             ) (1 - E                             )
+
+(formalElement[table$2092] / 
+ 
+              finiteWeight[4, {1, 0, 0, 0}]
+>      ((1 - E                             ) 
+ 
+               finiteWeight[4, {1, 1, 0, 0}]
+>        (1 - E                             )))[weights](formalElement[
+ 
+>       table$2092] / 
+ 
+              finiteWeight[4, {1, 0, 0, 0}]
+>      ((1 - E                             ) 
+ 
+               finiteWeight[4, {1, 1, 0, 0}]
+>        (1 - E                             )))[multiplicities]
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+Out[122]= makeFormalElement[{finiteWeight[4, {2, 2, 0, 0}], 
+ 
+>     finiteWeight[4, {2, 1, 0, 0}], finiteWeight[4, {2, 0, 0, 0}], 
+ 
+>     finiteWeight[4, {1, 1, 0, 0}], finiteWeight[4, {1, 0, 0, 0}], 
+ 
+>     finiteWeight[4, {0, 0, 0, 0}]}, 
+ 
+      271
+>    {--- + weights, weights, weights, weights, weights, weights}]
+      15
+
+weight[b4][0,1,0,2]
+
+Out[119]= finiteWeight[4, {2, 2, 1, 1}]
+
+{finiteWeight[4, {0, 0, 1, 1}]}{finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 0}]}
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+Out[118]= makeFormalElement[{finiteWeight[4, {0, 0, 1, 1}], 
+ 
+                                       424
+>     finiteWeight[4, {0, 0, 0, 0}]}, {--- + weights, weights}]
+                                       21
+
+projection[makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,1}]}]][{weight[b4][0,1,0,2]}]
+
+projection[b2][{makeFiniteWeight[{1,1}],makeFiniteWeight[{2,1}]}]
+
+Out[117]= {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 1}]}
+
+Out[114]= {makeFiniteWeight[finiteWeight[2, {1, 1}]], 
+ 
+>    makeFiniteWeight[finiteWeight[2, {2, 1}]]}
+
+Out[112]= {makeFiniteWeight[finiteWeight[2, {1, 1}]], 
+ 
+>    makeFiniteWeight[finiteWeight[2, {2, 1}]]}
+
+Clear[projection]
+
+                                                     1  1
+Out[109]= {finiteWeight[2, {0, 1}], finiteWeight[2, {-, -}]}
+                                                     2  2
+
+Out[97]= {finiteWeight[2, {0, 1}]}
+
+Out[88]= {finiteWeight[2, {0, 1}]}
+
+Out[83]= {finiteWeight[2, {0, 1}]}
+
+Out[80]= {finiteWeight[2, {0, 1}]}
+
+projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
+    Map[Function[w,makeFiniteWeight[(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])) . rs[simpleRoots]]],{weights}]
+
+w=makeFiniteWeight[{1,1}]
+
+Out[91]= finiteWeight[2, {1, 1}]
+
+(Inverse[cartanMatrix[b2]].( 2*(w.#/(#.#))& /@ b2[simpleRoots])).b2[simpleRoots]
+
+Out[108]= finiteWeight[2, {1, 1}]
+
+Out[94]= finiteWeight[2, {1, 1}]
+
+Out[93]= {1, 2}
+
+          1
+Out[92]= {-, 1}
+          2
+
+              1
+Out[90]= {{1, -}, {1, 1}}
+              2
+
+Out[89]= {{2, -1}, {-2, 2}}
+
+Out[78]= {finiteWeight[2, {0, 1}]}
+
+?Inverse
+
+Inverse[m] gives the inverse of a square matrix m. 
+
+Out[75]= {finiteWeight[2, {0, 1}]}
+
+Out[73]= projection[b2][{finiteWeight[2, {1, 1}]}]
+
+Out[72]= {finiteWeight[4, {0, 0, 0, 1}]}
+
+Out[71]= projection[finiteRootSystem[2, 4, 
+ 
+>      {finiteWeight[4, {0, 0, 1, -1}], finiteWeight[4, {0, 0, 0, 1}]}]][
+ 
+>    finiteWeight[4, {2, 2, 1, 1}]]
+
+{finiteWeight[4, {0, 0, 0, 1}]}{finiteWeight[4, {0, 0, 0, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 0}]}
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Out[70]= makeFormalElement[{finiteWeight[4, {0, 0, 0, 1}], 
+ 
+                                       424
+>     finiteWeight[4, {0, 0, 0, 0}]}, {--- + weights, weights}]
+                                       21
+
+weight[b4][0,1,0,2]
+
+Out[66]= finiteWeight[4, {2, 2, 1, 1}]
+
+{finiteWeight[4, {0, 0, 0, 1}], finiteWeight[4, {0, 0, 0, 0}]}
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Out[65]= makeFormalElement[{finiteWeight[4, {0, 0, 0, 1}], 
+ 
+                                       424
+>     finiteWeight[4, {0, 0, 0, 0}]}, {--- + weights, weights}]
+                                       21
+
+{finiteWeight[4, {0, 0, 0, 1}], finiteWeight[4, {0, 0, 0, 0}]}
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Infinity::indet: 
+   Indeterminate expression ComplexInfinity + ComplexInfinity + 
+     ComplexInfinity + ComplexInfinity + ComplexInfinity + ComplexInfinity
+     encountered.
+
+Out[64]= makeFormalElement[{finiteWeight[4, {0, 0, 0, 1}], 
+ 
+                                       424
+>     finiteWeight[4, {0, 0, 0, 0}]}, {--- + weights, weights}]
+                                       21
 
                                  1
 Power::infy: Infinite expression - encountered.

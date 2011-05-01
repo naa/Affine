@@ -636,7 +636,7 @@ weight[rs_?rootSystemQ][labels__Integer]:=fundamentalWeights[rs].{labels}
 orthogonalSubsystem::"usage"=
     "orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ] returns subset of positive roots of root system rs, which 
     are orthogonal to simple roots of subsystem subs";
-orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs], z_ /; Or @@ (z.#==0& /@ subs[simpleRoots])]
+orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs], z_ /; And @@ (z.#==0& /@ subs[simpleRoots])]
 
 projection::"usage"=
     "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system";
@@ -728,7 +728,7 @@ getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,h
 	       #1.rh>#2.rh&]];
 
 ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
-    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh},
+    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
 	   orth=orthogonalSubsystem[rs,subs];
 	   anomW=anomalousWeights[rs][highestWeight];
 	   selW=Select[anomW[weights],mainChamberQ[orth]];
@@ -738,9 +738,16 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,highestWeight];
 (*	   Print[projection[subs][{highestWeight}],reprw];*)
 	   fn=fan[rs,subs];
+
 	   Print[fn[weights],fn[multiplicities]];
 	   rh=rho[rs];
 	   subrh=rho[subs];
+
+	   gamma0=Sort[fn[weights],#1.rh<#2.rh&][[1]];
+	   sgamma0=fn[gamma0];
+	   Print[gamma0,sgamma0];
+	   fn=fn- makeFormalElement[{gamma0},{sgamma0}];
+
 	   def=subrh-projection[subs][{rh}][[1]];
 (*	   Print[def];*)
 	   toFC=(toFundamentalChamber[subs][#-def]+def)&;
@@ -749,9 +756,9 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   Scan[Function[v,
 (*			 Print[v];
 			 Print[(fn[weights] /. x_?weightQ :> {v+x,res[toFC[v+x]],fn[x],selWM[v]})];*)
-			 res[v]=
-			 selWM[v]+
-			 Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],-fn[x]*res[toFC[v+x]],0]);
+			 res[v]=-1/sgamma0*(
+			 -selWM[v-gamma0]+
+			 Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x]],0]));
 (*			 Print[res[v]];*)
 			],
 		reprw];
