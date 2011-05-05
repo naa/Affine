@@ -1,6 +1,127 @@
-AppendTo[$Path,"/home/anton/study/2011/Articles/AffineLieAlgebras/Mathematica/"];
+AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
-<<datastructures.m;
+<<affine.m;
+
+$Path
+
+Out[16]= {/opt/mathematica8/SystemFiles/Links, 
+ 
+>    /home/anton/.Mathematica/Kernel, /home/anton/.Mathematica/Autoload, 
+ 
+>    /home/anton/.Mathematica/Applications, /usr/share/Mathematica/Kernel, 
+ 
+>    /usr/share/Mathematica/Autoload, /usr/share/Mathematica/Applications, ., 
+ 
+>    /home/anton, /opt/mathematica8/AddOns/Packages, 
+ 
+>    /opt/mathematica8/AddOns/LegacyPackages, 
+ 
+>    /opt/mathematica8/SystemFiles/Autoload, 
+ 
+>    /opt/mathematica8/AddOns/Autoload, 
+ 
+>    /opt/mathematica8/AddOns/Applications, 
+ 
+>    /opt/mathematica8/AddOns/ExtraPackages, 
+ 
+>    /opt/mathematica8/SystemFiles/Kernel/Packages, 
+ 
+>    /opt/mathematica8/Documentation/English/System, 
+ 
+>    /home/anton/programing/Affine/tests../src/, 
+ 
+>    /home/anton/programing/Affine/tests/../src/}
+
+Out[13]= {/opt/mathematica8/SystemFiles/Links, 
+ 
+>    /home/anton/.Mathematica/Kernel, /home/anton/.Mathematica/Autoload, 
+ 
+>    /home/anton/.Mathematica/Applications, /usr/share/Mathematica/Kernel, 
+ 
+>    /usr/share/Mathematica/Autoload, /usr/share/Mathematica/Applications, ., 
+ 
+>    /home/anton, /opt/mathematica8/AddOns/Packages, 
+ 
+>    /opt/mathematica8/AddOns/LegacyPackages, 
+ 
+>    /opt/mathematica8/SystemFiles/Autoload, 
+ 
+>    /opt/mathematica8/AddOns/Autoload, 
+ 
+>    /opt/mathematica8/AddOns/Applications, 
+ 
+>    /opt/mathematica8/AddOns/ExtraPackages, 
+ 
+>    /opt/mathematica8/SystemFiles/Kernel/Packages, 
+ 
+>    /opt/mathematica8/Documentation/English/System, 
+ 
+>    /home/anton/programing/Affine/tests../src/}
+
+?StringJoin
+
+"s " <> "s " <> ..., StringJoin["s ", "s ", ...]
+  1       2                       1     2
+     or StringJoin[{"s ", "s ", ...}]
+                      1     2
+      yields a string consisting of a concatenation of the s . 
+                                                            i
+
+?*Path*
+
+?*Dir*
+
+?$BaseDirectory
+
+?$InitialDirectory
+
+$InitialDirectory
+
+Out[8]= /home/anton/programing/Affine/tests
+
+$InitialDirectory gives the initial directory when the current Mathematica
+    session was started. 
+
+$BaseDirectory gives the base directory in which systemwide files to be loaded
+    by Mathematica are conventionally placed. 
+
+AnimationDirection            HomeDirectory
+CopyDirectory                 NotebookDirectory
+CreateDirectory               PacletDirectoryAdd
+CreateIntermediateDirectories PacletDirectoryRemove
+DeleteDirectory               ParentDirectory
+DiracComb                     RenameDirectory
+DiracDelta                    ResetDirectory
+DirectedEdge                  SetDirectory
+DirectedEdges                 TableDirections
+DirectedGraph                 $AddOnsDirectory
+DirectedGraphQ                $BaseDirectory
+DirectedInfinity              $HomeDirectory
+Direction                     $InitialDirectory
+Directive                     $InstallationDirectory
+Directory                     $LaunchDirectory
+DirectoryName                 $PreferencesDirectory
+DirectoryQ                    $RootDirectory
+DirectoryStack                $TemporaryDirectory
+DirichletCharacter            $TopDirectory
+DirichletConvolve             $UserAddOnsDirectory
+DirichletDistribution         $UserBaseDirectory
+DirichletL                    $UserBasePacletsDirectory
+DirichletTransform            $UserDocumentsDirectory
+GeoDirection
+
+AddOnHelpPath            NotebookPath             SpellingDictionariesPath
+AutoloadPath             PalettePath              StyleSheetPath
+CharacterEncodingsPath   Path                     SystemHelpPath
+ConfigurationPath        PathGraph                $ContextPath
+ControllerPath           PathGraphQ               $DefaultPath
+FindCurvePath            PreferencesPath          $LibraryPath
+FindShortestPath         PrivatePaths             $Path
+ListCurvePathPlot        ShortestPathFunction     $PathnameSeparator
+
+<<affine.m;
+
+Get::noopen: Cannot open affine.m.
 
 orbitWithEps[rs_?rootSystemQ][weight_?weightQ]:=Flatten[MapIndexed[Function[{x,i},Map[{#,(-1)^(i[[1]]+1)}&,x]],orbit[rs][weight]],1];
 
