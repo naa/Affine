@@ -2,126 +2,1184 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 <<affine.m;
 
-$Path
+b2=makeSimpleRootSystem[B,2]
 
-Out[16]= {/opt/mathematica8/SystemFiles/Links, 
- 
->    /home/anton/.Mathematica/Kernel, /home/anton/.Mathematica/Autoload, 
- 
->    /home/anton/.Mathematica/Applications, /usr/share/Mathematica/Kernel, 
- 
->    /usr/share/Mathematica/Autoload, /usr/share/Mathematica/Applications, ., 
- 
->    /home/anton, /opt/mathematica8/AddOns/Packages, 
- 
->    /opt/mathematica8/AddOns/LegacyPackages, 
- 
->    /opt/mathematica8/SystemFiles/Autoload, 
- 
->    /opt/mathematica8/AddOns/Autoload, 
- 
->    /opt/mathematica8/AddOns/Applications, 
- 
->    /opt/mathematica8/AddOns/ExtraPackages, 
- 
->    /opt/mathematica8/SystemFiles/Kernel/Packages, 
- 
->    /opt/mathematica8/Documentation/English/System, 
- 
->    /home/anton/programing/Affine/tests../src/, 
- 
->    /home/anton/programing/Affine/tests/../src/}
+b4=makeSimpleRootSystem[B,4];
 
-Out[13]= {/opt/mathematica8/SystemFiles/Links, 
+fe=ourBranching[b4,makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0,0}],makeFiniteWeight[{0,1,0,0}]}]][weight[b4][0,1,0,2]]
+
+fe[weights]
+
+fe[multiplicities]
+
+fn=fan[b4,makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0,0}],makeFiniteWeight[{0,1,0,0}]}]]
+
+rh=rho[makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0,0}],makeFiniteWeight[{0,1,0,0}]}]]
+
+
+gamma0=Sort[fn[weights],#1.rh>#2.rh&][[1]]
+
+fn[weights]
+
+fn[[3]][weights]
+
+fn[[3]][multiplicities]
+
+Out[129]= {1, -4, 6, -4, 1}
+
+Out[128]= {finiteWeight[4, {0, 0, 0, 0}], finiteWeight[4, {0, 1, 0, 0}], 
  
->    /home/anton/.Mathematica/Kernel, /home/anton/.Mathematica/Autoload, 
+>    finiteWeight[4, {0, 2, 0, 0}], finiteWeight[4, {0, 3, 0, 0}], 
  
->    /home/anton/.Mathematica/Applications, /usr/share/Mathematica/Kernel, 
+>    finiteWeight[4, {0, 4, 0, 0}]}
+
+fn2=fan[makeSimpleRootSystem[B,3],makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0}],makeFiniteWeight[{0,1,0}]}]]
+
+fn2[weights]
+
+fn2[multiplicities]
+
+Out[148]= {1, -2, 1, -2, 4, -2, 1, -2, 1}
+
+Out[147]= {finiteWeight[3, {0, 0, 0}], finiteWeight[3, {0, 1, 0}], 
  
->    /usr/share/Mathematica/Autoload, /usr/share/Mathematica/Applications, ., 
+>    finiteWeight[3, {0, 2, 0}], finiteWeight[3, {1, 0, 0}], 
  
->    /home/anton, /opt/mathematica8/AddOns/Packages, 
+>    finiteWeight[3, {1, 1, 0}], finiteWeight[3, {1, 2, 0}], 
  
->    /opt/mathematica8/AddOns/LegacyPackages, 
+>    finiteWeight[3, {2, 0, 0}], finiteWeight[3, {2, 1, 0}], 
  
->    /opt/mathematica8/SystemFiles/Autoload, 
+>    finiteWeight[3, {2, 2, 0}]}
+
+Out[146]= formalElement[table$2203]
+
+
+sb2=makeFiniteRootSystem[{makeFiniteWeight[{1,-1,0}],makeFiniteWeight[{0,1,0}]}]
+
+b3=makeSimpleRootSystem[B,3]
+
+positiveRoots[b3]
+
+projection[sb2][positiveRoots[b3]]
+
+orthogonalSubsystem[b3,sb2]
+
+Out[145]= {finiteWeight[3, {0, 0, 1}]}
+
+Out[143]= {finiteWeight[3, {0, 0, 1}], finiteWeight[3, {1, 0, -1}], 
  
->    /opt/mathematica8/AddOns/Autoload, 
+>    finiteWeight[3, {1, 0, 1}], finiteWeight[3, {1, 0, 0}], 
  
->    /opt/mathematica8/AddOns/Applications, 
+>    finiteWeight[3, {1, 1, 0}]}
+
+positiveRoots[sb2]
+
+Out[142]= {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, 0}], 
  
->    /opt/mathematica8/AddOns/ExtraPackages, 
+>    finiteWeight[3, {1, 1, 0}], finiteWeight[3, {1, 0, 0}]}
+
+Out[141]= {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, 0}], 
  
->    /opt/mathematica8/SystemFiles/Kernel/Packages, 
+>    finiteWeight[3, {0, 0, 0}], finiteWeight[3, {1, 0, 0}], 
  
->    /opt/mathematica8/Documentation/English/System, 
+>    finiteWeight[3, {0, 1, 0}], finiteWeight[3, {0, 1, 0}], 
  
->    /home/anton/programing/Affine/tests../src/}
+>    finiteWeight[3, {1, 0, 0}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}]}
 
-?StringJoin
+                           5  3  1
+Out[136]= finiteWeight[3, {-, -, -}]
+                           2  2  2
 
-"s " <> "s " <> ..., StringJoin["s ", "s ", ...]
-  1       2                       1     2
-     or StringJoin[{"s ", "s ", ...}]
-                      1     2
-      yields a string consisting of a concatenation of the s . 
-                                                            i
+Out[135]= {finiteWeight[3, {1, -1, 0}], finiteWeight[3, {0, 1, -1}], 
+ 
+>    finiteWeight[3, {0, 0, 1}], finiteWeight[3, {1, 0, -1}], 
+ 
+>    finiteWeight[3, {0, 1, 1}], finiteWeight[3, {0, 1, 0}], 
+ 
+>    finiteWeight[3, {1, 0, 1}], finiteWeight[3, {1, 0, 0}], 
+ 
+>    finiteWeight[3, {1, 1, 0}]}
 
-?*Path*
+fn2[[3]][weights]
 
-?*Dir*
+weight[b4][0,1,0,2]
 
-?$BaseDirectory
+projection[makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,1}]}]][{weight[b4][0,1,0,2]}]
 
-?$InitialDirectory
+projection[b2][{makeFiniteWeight[{1,1}],makeFiniteWeight[{2,1}]}]
 
-$InitialDirectory
+Out[117]= {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 1}]}
 
-Out[8]= /home/anton/programing/Affine/tests
+Out[114]= {makeFiniteWeight[finiteWeight[2, {1, 1}]], 
+ 
+>    makeFiniteWeight[finiteWeight[2, {2, 1}]]}
 
-$InitialDirectory gives the initial directory when the current Mathematica
-    session was started. 
+Out[112]= {makeFiniteWeight[finiteWeight[2, {1, 1}]], 
+ 
+>    makeFiniteWeight[finiteWeight[2, {2, 1}]]}
 
-$BaseDirectory gives the base directory in which systemwide files to be loaded
-    by Mathematica are conventionally placed. 
+Clear[projection]
 
-AnimationDirection            HomeDirectory
-CopyDirectory                 NotebookDirectory
-CreateDirectory               PacletDirectoryAdd
-CreateIntermediateDirectories PacletDirectoryRemove
-DeleteDirectory               ParentDirectory
-DiracComb                     RenameDirectory
-DiracDelta                    ResetDirectory
-DirectedEdge                  SetDirectory
-DirectedEdges                 TableDirections
-DirectedGraph                 $AddOnsDirectory
-DirectedGraphQ                $BaseDirectory
-DirectedInfinity              $HomeDirectory
-Direction                     $InitialDirectory
-Directive                     $InstallationDirectory
-Directory                     $LaunchDirectory
-DirectoryName                 $PreferencesDirectory
-DirectoryQ                    $RootDirectory
-DirectoryStack                $TemporaryDirectory
-DirichletCharacter            $TopDirectory
-DirichletConvolve             $UserAddOnsDirectory
-DirichletDistribution         $UserBaseDirectory
-DirichletL                    $UserBasePacletsDirectory
-DirichletTransform            $UserDocumentsDirectory
-GeoDirection
+                                                     1  1
+Out[109]= {finiteWeight[2, {0, 1}], finiteWeight[2, {-, -}]}
+                                                     2  2
 
-AddOnHelpPath            NotebookPath             SpellingDictionariesPath
-AutoloadPath             PalettePath              StyleSheetPath
-CharacterEncodingsPath   Path                     SystemHelpPath
-ConfigurationPath        PathGraph                $ContextPath
-ControllerPath           PathGraphQ               $DefaultPath
-FindCurvePath            PreferencesPath          $LibraryPath
-FindShortestPath         PrivatePaths             $Path
-ListCurvePathPlot        ShortestPathFunction     $PathnameSeparator
+Out[97]= {finiteWeight[2, {0, 1}]}
 
-<<affine.m;
+Out[88]= {finiteWeight[2, {0, 1}]}
 
-Get::noopen: Cannot open affine.m.
+Out[83]= {finiteWeight[2, {0, 1}]}
+
+Out[80]= {finiteWeight[2, {0, 1}]}
+
+projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
+    Map[Function[w,makeFiniteWeight[(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])) . rs[simpleRoots]]],{weights}]
+
+w=makeFiniteWeight[{1,1}]
+
+Out[91]= finiteWeight[2, {1, 1}]
+
+(Inverse[cartanMatrix[b2]].( 2*(w.#/(#.#))& /@ b2[simpleRoots])).b2[simpleRoots]
+
+Out[108]= finiteWeight[2, {1, 1}]
+
+Out[94]= finiteWeight[2, {1, 1}]
+
+Out[93]= {1, 2}
+
+          1
+Out[92]= {-, 1}
+          2
+
+              1
+Out[90]= {{1, -}, {1, 1}}
+              2
+
+Out[89]= {{2, -1}, {-2, 2}}
+
+Out[78]= {finiteWeight[2, {0, 1}]}
+
+fe[multiplicities]
+
+Out[55]= {2, 1}
+
+                           1  1
+Out[54]= {finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}]}
+                           2  2
+
+
+                  1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}], finiteWeight[2, {-2, -2}], 
+                  2  2
+ 
+                        5     5
+>    finiteWeight[2, {-(-), -(-)}]}{2, -3, 3, -2}
+                        2     2
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}]}
+                  2  2
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+ 
+>   {1, -2, 1}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1255[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {1, 1}], table$1255[finiteWeight[2, {1, 1}]], -2, 2}, 
+ 
+                      3  3                                3  3
+>   {finiteWeight[2, {-, -}], table$1255[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1255[finiteWeight[2, {0, 0}]], 1, -3}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 2, -2, -3}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], table$1255[finiteWeight[2, {1, 1}]], 1, -3}}
+1
+
+Out[52]= formalElement[table$1256]
+
+projection[makeFiniteRootSystem[{makeFiniteWeight[{1,1}]}]][anomalousWeights[makeSimpleRootSystem[B,2]][makeFiniteWeight[{2,1}]][weights]]
+
+                           3  3                     3  3
+Out[49]= {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], 
+                           2  2                     2  2
+ 
+>    finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}], 
+ 
+>    finiteWeight[2, {-2, -2}], finiteWeight[2, {-2, -2}], 
+ 
+                        7     7                        7     7
+>    finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-(-), -(-)}]}
+                        2     2                        2     2
+
+rho[makeSimpleRootSystem[B,2]]
+
+                          3  1
+Out[48]= finiteWeight[2, {-, -}]
+                          2  2
+
+Out[47]= {finiteWeight[2, {2, 1}], finiteWeight[2, {0, 3}], 
+ 
+>    finiteWeight[2, {2, -2}], finiteWeight[2, {-3, 3}], 
+ 
+>    finiteWeight[2, {0, -4}], finiteWeight[2, {-5, 1}], 
+ 
+>    finiteWeight[2, {-3, -4}], finiteWeight[2, {-5, -2}]}
+
+Out[46]= formalElement[table$1163]
+
+
+                  3  3
+{finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}], finiteWeight[2, {-2, -2}], 
+                  2  2
+ 
+                        7     7
+>    finiteWeight[2, {-(-), -(-)}]}{2, -5, 5, -2}
+                        2     2
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+ 
+>   {1, -2, 1}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                                3  3
+{{finiteWeight[2, {-, -}], table$1161[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1161[finiteWeight[2, {2, 2}]], -2, 2}, 
+ 
+                      5  5                                5  5
+>   {finiteWeight[2, {-, -}], table$1161[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$1161[finiteWeight[2, {1, 1}]], 1, 0}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2, 0}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1161[finiteWeight[2, {2, 2}]], 1, 0}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1161[finiteWeight[2, {-, -}]], 1, 0}, 
+                   2  2                                2  2
+ 
+                                                            3  3
+>   {finiteWeight[2, {1, 1}], -4, -2, 0}, {finiteWeight[2, {-, -}], 2, 1, 0}}
+                                                            2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1161[finiteWeight[2, {0, 0}]], 1, -5}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2, -5}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], -4, 1, -5}}
+-29
+
+Out[45]= formalElement[table$1162]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+ 
+>   {1, -2, 1}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                                3  3
+{{finiteWeight[2, {-, -}], table$1100[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1100[finiteWeight[2, {2, 2}]], -2, 2}, 
+ 
+                      5  5                                5  5
+>   {finiteWeight[2, {-, -}], table$1100[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$1100[finiteWeight[2, {1, 1}]], 1, 0}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2, 0}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1100[finiteWeight[2, {2, 2}]], 1, 0}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1100[finiteWeight[2, {-, -}]], 1, 0}, 
+                   2  2                                2  2
+ 
+                                                            3  3
+>   {finiteWeight[2, {1, 1}], -4, -2, 0}, {finiteWeight[2, {-, -}], 2, 1, 0}}
+                                                            2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1100[finiteWeight[2, {0, 0}]], 1, -5}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2, -5}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], -4, 1, -5}}
+-29
+
+Out[43]= formalElement[table$1101]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                                3  3
+{{finiteWeight[2, {-, -}], table$1039[finiteWeight[2, {-, -}]], 1, 2}, 
+                   2  2                                2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1039[finiteWeight[2, {2, 2}]], -2, 2}, 
+ 
+                      5  5                                5  5
+>   {finiteWeight[2, {-, -}], table$1039[finiteWeight[2, {-, -}]], 1, 2}}
+                      2  2                                2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$1039[finiteWeight[2, {1, 1}]], 1, 0}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2, 0}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$1039[finiteWeight[2, {2, 2}]], 1, 0}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                                1  1
+{{finiteWeight[2, {-, -}], table$1039[finiteWeight[2, {-, -}]], 1, 0}, 
+                   2  2                                2  2
+ 
+                                                            3  3
+>   {finiteWeight[2, {1, 1}], -4, -2, 0}, {finiteWeight[2, {-, -}], 2, 1, 0}}
+                                                            2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$1039[finiteWeight[2, {0, 0}]], 1, -5}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2, -5}, 
+                      2  2
+ 
+>   {finiteWeight[2, {1, 1}], -4, 1, -5}}
+-29
+
+Out[41]= formalElement[table$1040]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                               3  3
+{{finiteWeight[2, {-, -}], table$978[finiteWeight[2, {-, -}]], 1}, 
+                   2  2                               2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$978[finiteWeight[2, {2, 2}]], -2}, 
+ 
+                      5  5                               5  5
+>   {finiteWeight[2, {-, -}], table$978[finiteWeight[2, {-, -}]], 1}}
+                      2  2                               2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], table$978[finiteWeight[2, {1, 1}]], 1}, 
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], 2, -2}, 
+                      2  2
+ 
+>   {finiteWeight[2, {2, 2}], table$978[finiteWeight[2, {2, 2}]], 1}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                               1  1
+{{finiteWeight[2, {-, -}], table$978[finiteWeight[2, {-, -}]], 1}, 
+                   2  2                               2  2
+ 
+                                                         3  3
+>   {finiteWeight[2, {1, 1}], -4, -2}, {finiteWeight[2, {-, -}], 2, 1}}
+                                                         2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], table$978[finiteWeight[2, {0, 0}]], 1}, 
+ 
+                      1  1
+>   {finiteWeight[2, {-, -}], 10, -2}, {finiteWeight[2, {1, 1}], -4, 1}}
+                      2  2
+-29
+
+Out[39]= formalElement[table$979]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                     3  3
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}, 
+ 
+                      5  5                     5  5
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}}
+-4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                     1  1
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+10
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}]}, 
+ 
+                      1  1                     1  1
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}}
+-29
+
+Out[37]= formalElement[table$918]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                     3  3
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}, 
+ 
+                      5  5                     5  5
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}}
+4
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                     1  1
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+6
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}]}, 
+ 
+                      1  1                     1  1
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}}
+3
+
+Out[35]= formalElement[table$857]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                     3  3
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}, 
+ 
+                      5  5                     5  5
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+2
+finiteWeight[2, {1, 1}]
+{{finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], finiteWeight[2, {2, 2}]}}
+                         3  3
+2 mults[finiteWeight[2, {-, -}]]
+                         2  2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                     1  1
+{{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                   2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}, 
+ 
+                      3  3                     3  3
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}}
+                      2  2                     2  2
+                        3  3
+-mults[finiteWeight[2, {-, -}]]
+                        2  2
+finiteWeight[2, {0, 0}]
+{{finiteWeight[2, {0, 0}], finiteWeight[2, {0, 0}]}, 
+ 
+                      1  1                     1  1
+>   {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                      2  2                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], finiteWeight[2, {1, 1}]}}
+-5
+
+                                             3  3
+Out[33]= makeFormalElement[{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                             2  2
+ 
+                       1  1
+>     finiteWeight[2, {-, -}], finiteWeight[2, {0, 0}]}, 
+                       2  2
+ 
+                                  3  3                             3  3
+>    {2, 2 mults[finiteWeight[2, {-, -}]], -mults[finiteWeight[2, {-, -}]], 
+                                  2  2                             2  2
+ 
+>     -5}]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3                        1     1
+{{finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                   2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       3  3
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {2, 2}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {2, 2}]]}, 
+ 
+                      5  5                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       5  5
+>     finiteWeight[2, {-, -}]]}}
+                       2  2
+2
+finiteWeight[2, {1, 1}]
+                                               1     1
+{{finiteWeight[2, {1, 1}], (finiteWeight[2, {-(-), -(-)}] + 
+                                               2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {1, 1}]]}, 
+ 
+                      3  3                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       3  3
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {2, 2}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {2, 2}]]}}
+0
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1                        1     1
+{{finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                   2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       1  1
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {1, 1}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {1, 1}]]}, 
+ 
+                      3  3                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       3  3
+>     finiteWeight[2, {-, -}]]}}
+                       2  2
+0
+finiteWeight[2, {0, 0}]
+                                               1     1
+{{finiteWeight[2, {0, 0}], (finiteWeight[2, {-(-), -(-)}] + 
+                                               2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {0, 0}]]}, 
+ 
+                      1  1                        1     1
+>   {finiteWeight[2, {-, -}], (finiteWeight[2, {-(-), -(-)}] + 
+                      2  2                        2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+                       1  1
+>     finiteWeight[2, {-, -}]]}, 
+                       2  2
+ 
+                                                  1     1
+>   {finiteWeight[2, {1, 1}], (finiteWeight[2, {-(-), -(-)}] + 
+                                                  2     2
+ 
+>       toFundamentalChamber[finiteRootSystem[1, 2, 
+ 
+                                                        1  1
+>          {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}] + #1])[
+                                                        2  2
+ 
+>     finiteWeight[2, {1, 1}]]}}
+-5
+
+Out[31]= formalElement[table$736]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                   3  3
+{{finiteWeight[2, {-, -}], False}, {finiteWeight[2, {2, 2}], False}, 
+                   2  2
+ 
+                      5  5
+>   {finiteWeight[2, {-, -}], False}}
+                      2  2
+2
+finiteWeight[2, {1, 1}]
+                                                     3  3
+{{finiteWeight[2, {1, 1}], False}, {finiteWeight[2, {-, -}], False}, 
+                                                     2  2
+ 
+>   {finiteWeight[2, {2, 2}], False}}
+0
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                   1  1
+{{finiteWeight[2, {-, -}], False}, {finiteWeight[2, {1, 1}], False}, 
+                   2  2
+ 
+                      3  3
+>   {finiteWeight[2, {-, -}], False}}
+                      2  2
+0
+finiteWeight[2, {0, 0}]
+                                                     1  1
+{{finiteWeight[2, {0, 0}], False}, {finiteWeight[2, {-, -}], False}, 
+                                                     2  2
+ 
+>   {finiteWeight[2, {1, 1}], False}}
+-5
+
+Out[29]= formalElement[table$675]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                                              1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                  2  2                                              2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                  3  3                                              5  5
+{finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+2
+finiteWeight[2, {1, 1}]
+                                           3  3
+{finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}]}
+                                           2  2
+0
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                  1  1                                              3  3
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+0
+finiteWeight[2, {0, 0}]
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+-5
+
+Out[27]= formalElement[table$614]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+                  3  3                                              5  5
+{finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+                  1  1                                              3  3
+{finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}]}
+                  2  2                                              2  2
+0
+finiteWeight[2, {1, 1}]
+                                           3  3
+{finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], finiteWeight[2, {2, 2}]}
+                                           2  2
+0
+finiteWeight[2, {0, 0}]
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}]}
+                                           2  2
+-5
+
+Out[25]= formalElement[table$553]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+{0, 0, 0}
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+{0, 0, 0}
+0
+finiteWeight[2, {1, 1}]
+{0, 0, 0}
+0
+finiteWeight[2, {0, 0}]
+{0, 0, 0}
+-5
+
+Out[23]= formalElement[table$492]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                   1     1
+finiteWeight[2, {-(-), -(-)}]
+                   2     2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+0
+finiteWeight[2, {1, 1}]
+0
+finiteWeight[2, {0, 0}]
+-5
+
+Out[21]= formalElement[table$431]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                 3  1
+finiteWeight[2, {-, -}] - projection[finiteRootSystem[1, 2, 
+                 2  2
+ 
+                                                    3  1
+>      {finiteWeight[2, {1, 1}]}]][finiteWeight[2, {-, -}]]
+                                                    2  2
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+0
+finiteWeight[2, {1, 1}]
+0
+finiteWeight[2, {0, 0}]
+-5
+
+Out[17]= formalElement[table$309]
+
+                                           1  1
+{finiteWeight[2, {0, 0}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                                           2  2
+ 
+                     1  1
+>   finiteWeight[2, {-, -}]}
+                     2  2
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], finiteWeight[2, {1, 1}], 
+                  2  2                     2  2
+ 
+>   finiteWeight[2, {0, 0}]}
+                 3  3
+finiteWeight[2, {-, -}]
+                 2  2
+2
+                 1  1
+finiteWeight[2, {-, -}]
+                 2  2
+0
+finiteWeight[2, {1, 1}]
+0
+finiteWeight[2, {0, 0}]
+-5
+
+Out[13]= formalElement[table$187]
+
+Out[12]= ourBranching[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>    finiteWeight[2, {2, 1}]]
+
+?$*Path
+
+?$DefaultPath
+
+?$ContextPath
+
+$ContextPath is a global variable that gives a list of contexts, after
+   $Context, to search in trying to find a symbol that has been entered. 
+
+$DefaultPath is the default setting for $Path for this copy of Mathematica
+    session.
+
+Global`$InitPath
+
+Out[4]= $InitPath
+
+$ContextPath $DefaultPath $InitialPath $InitPath    $LibraryPath $Path
+
+Out[1]= $InitialPath
 
 orbitWithEps[rs_?rootSystemQ][weight_?weightQ]:=Flatten[MapIndexed[Function[{x,i},Map[{#,(-1)^(i[[1]]+1)}&,x]],orbit[rs][weight]],1];
 

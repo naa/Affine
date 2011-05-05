@@ -362,7 +362,7 @@ rho::"usage"=
     "rho[rs_?rootSystemQ] - Weyl vector of root system rs (sum of fundamental weights)";
 rho[rs_?rootSystemQ]:=Plus@@fundamentalWeights[rs];
 
-rho[{posroots_?weightQ}]:=1/2*(Plus@@{posroots});
+rho[{posroots__?weightQ}]:=1/2*(Plus@@{posroots});
 
 Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[makeSimpleRootSystem[B,2]]]
 
@@ -370,9 +370,9 @@ toFundamentalChamber::"usage"=
     "toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ] acts on a weight vec by simple reflections of rs till it gets to main Weyl chamber";
 toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ]:=
     First[NestWhile[Function[v,
-		       reflection[Scan[If[#.v<0,Return[#]]&,rs[simpleRoots]]][v]],
-	      vec,
-	      Head[#]=!=reflection[Null]&]]
+			     reflection[Scan[If[#.v<0,Return[#]]&,rs[simpleRoots]]][v]],
+		    vec,
+		    Head[#]=!=reflection[Null]&]]
 
 Expect["To fundamental chamber",True,makeFiniteWeight[{1,1/2}]==toFundamentalChamber[makeSimpleRootSystem[B,2]][makeFiniteWeight[{-1,1/2}]]]
 
@@ -483,7 +483,7 @@ weightSystem::"usage"=
     The list is split in pieces by number of root substractions";
 
 weightSystem[{posroots__?weightQ}][higestWeight_?weightQ]:=Module[{minusPosRoots=-{posroots},mgrade=Max[grade/@{posroots}]},
-								  Throw["_TODO_","not implemented"];
+(*								  Throw["_TODO_","not implemented"];*)
 								  Most[NestWhileList[Function[x,Complement[
 										 Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
 										       And[checkGrade[mgrade][y],mainChamberQ[{posroots}][y]]]
@@ -636,11 +636,17 @@ weight[rs_?rootSystemQ][labels__Integer]:=fundamentalWeights[rs].{labels}
 orthogonalSubsystem::"usage"=
     "orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ] returns subset of positive roots of root system rs, which 
     are orthogonal to simple roots of subsystem subs";
-orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs], z_ /; Or @@ (z.#==0& /@ subs[simpleRoots])]
+orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs], z_ /; And @@ (z.#==0& /@ subs[simpleRoots])]
 
 projection::"usage"=
     "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system";
-projection[rs_?rootSystemQ][{weights__?weightQ}]:= Map[Apply[Plus,#]&,Outer[(#1.#2)/(#2.#2)*#2&,{weights},rs[simpleRoots]]]
+projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
+    Map[Function[w,(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])).rs[simpleRoots]],{weights}]
+
+projection[rs_affineRootSystem][{weights__?weightQ}]:= 
+    Map[makeAffineWeight[projection[rs[finiteRootSystem]][#[finitePart]],#[level],#[grade]]&,{weights}]
+
+(*    Map[Apply[Plus,#]&,Outer[(#1.#2)/(#2.#2)*#2&,{weights},rs[simpleRoots]]] *)
 
 formalElement::"usage"=
     "Datastructure to represent formal elements of the ring of characters (linear combinations of formal exponents of weights).\n
@@ -713,36 +719,47 @@ fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
 		  roots=Complement[positiveRoots[rs],orthogonalSubsystem[rs,subs]];
 		  pr=makeFormalElement[projection[subs][roots]] - makeFormalElement[positiveRoots[subs]];
 		  Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]]];
+(* !!!!!!!!!!!!!!!!!!!!!                      ^^^^^^^^ This can be negative *)
 
 getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,hweight_?weightQ]:=
-    Module[{rh=rho[{algroots}]},
+    Module[{rh=rho[subs]},
 	   Sort[
 	       Flatten[weightSystem[projection[subs][{algroots}]][projection[subs][{hweight}][[1]]]],
 	       #1.rh>#2.rh&]];
 
 ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
-    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh},
+    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
 	   orth=orthogonalSubsystem[rs,subs];
 	   anomW=anomalousWeights[rs][highestWeight];
 	   selW=Select[anomW[weights],mainChamberQ[orth]];
 	   selWM=makeFormalElement[projection[subs][selW],(anomW[#]*dimension[orth][#])&/@selW];
-(*	   Print[selWM[weights],selWM[multiplicities]]; *)
-	   Print[projection[subs][positiveRoots[rs]]];
+(*	   Print[selWM[weights],selWM[multiplicities]]; 
+	   Print[projection[subs][positiveRoots[rs]]];*)
 	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,highestWeight];
-	   Print[reprw];
+(*	   Print[projection[subs][{highestWeight}],reprw];*)
 	   fn=fan[rs,subs];
+
+	   Print[fn[weights],fn[multiplicities]];
 	   rh=rho[rs];
 	   subrh=rho[subs];
-	   def=rh-projection[subs][rh];
-	   toFC=toFundamentalChamber[subs][#-def]+def;
+
+	   gamma0=Sort[fn[weights],#1.rh<#2.rh&][[1]];
+	   sgamma0=fn[gamma0];
+	   Print[gamma0,sgamma0];
+	   fn=fn- makeFormalElement[{gamma0},{sgamma0}];
+
+	   def=subrh-projection[subs][{rh}][[1]];
+(*	   Print[def];*)
+	   toFC=(toFundamentalChamber[subs][#-def]+def)&;
 	   res=makeHashtable[{},{}];
 	   insideQ:=NumberQ[res[toFC[#]]]&;
 	   Scan[Function[v,
-			 Print[v];
-			 res[v]=
-			 selWM[v]+
-			 Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],-fan[x]*mults[toFC[v+x]],0]);
-			 Print[res[v]];
+(*			 Print[v];
+			 Print[(fn[weights] /. x_?weightQ :> {v+x,res[toFC[v+x]],fn[x],selWM[v]})];*)
+			 res[v]=-1/sgamma0*(
+			 -selWM[v-gamma0]+
+			 Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x]],0]));
+(*			 Print[res[v]];*)
 			],
 		reprw];
 	   makeFormalElement[keys[res],values[res]]
