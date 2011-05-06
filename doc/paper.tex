@@ -25,7 +25,8 @@
 
 %% if you use PostScript figures in your article
 %% use the graphics package for simple commands
-%% \usepackage{graphics}
+\usepackage{graphics}
+\usepackage{hyperref}
 %% or use the graphicx package for more complicated commands
 %% \usepackage{graphicx}
 %% or use the epsfig package if you prefer to use the old commands
@@ -243,6 +244,44 @@ From seconds to days depending on rank of algebra and complexity of representati
 %% main text
 \section{Introduction}
 \label{intro}
+
+Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. Lie algebras are used to for the description of symmetries of quantum and classical systems. Computational method in representation theory have long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}. 
+
+Most popular programs \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{fischbacher2002ilp}, \cite{coxweyl} are created to study representation theory of simple finite-dimensional Lie algebras. The main computational problems are the following:
+\begin{enumerate}
+\item Construction of root system which is used for compact description of algebra commutation relations.
+\item Weyl group traversal which is important due to Weyl symmetry of root system and characters of representations.
+\item Calculation of weight multiplicities, branching and fusion coefficients, which are essential for the construction and study of representations. 
+\end{enumerate}
+There are well-known algorithms for these tasks \cite{moody1982fast}, \cite{stembridge2001computational}, \cite{belinfante1989survey}, \cite{casselman1994machine}. 
+The third problem is most computation-intensive. There are two different recurrent algorithms which are based on Weyl character formula and Freudenthal multiplicity formula. In this paper we analyze them. 
+
+Infinite-dimensional Lie algebras also have growing number of applications in physics for example in conformal field theory and study of quantum integrable systems. But infinite-dimensional algebras are much harder to study and quantity of available computer programs is much smaller.
+
+Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}. 
+
+Construction of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results. 
+We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras. 
+
+Our package can be used for study of root and weight systems, Weyl groups, subalgebras, computations of weight multiplicities, branching and fusion coefficients. We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some example of computations relevant to physics. 
+
+The paper is started with overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and their representations (Sec. \ref{sec:core-datastructures} and used in implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
+
+\section{Theoretical background}
+\label{sec:theor-backgr}
+
+\section{Core datastructures}
+\label{sec:core-datastructures}
+
+\section{Computational algorithms}
+\label{sec:comp-algor}
+
+\section{Examples}
+\label{sec:examples}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
