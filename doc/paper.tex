@@ -62,6 +62,17 @@
 %% \biboptions{comma,round}
 
 % \biboptions{}
+\newcommand{\go}{\stackrel{\circ }{\mathfrak{g}}}
+\newcommand{\ao}{\stackrel{\circ }{\mathfrak{a}}}
+\newcommand{\co}[1]{\stackrel{\circ }{#1}}
+\newcommand{\pia}{\pi_{\mathfrak{a}}}
+\newcommand{\piab}{\pi_{\mathfrak{a}_{\bot}}}
+\newcommand{\gf}{\mathfrak{g}}
+\newcommand{\af}{\mathfrak{a}}
+\newcommand{\afb}{\mathfrak{a}_{\bot}}
+\newcommand{\hf}{\mathfrak{h}}
+\newcommand{\hfg}{\hf_{\gf}}
+\newcommand{\hfb}{\mathfrak{h}_{\bot}}
 
 %% This list environment is used for the references in the
 %% Program Summary
@@ -269,6 +280,20 @@ The paper is started with overview of Lie algebras and their representation theo
 
 \section{Theoretical background}
 \label{sec:theor-backgr}
+
+\subsection{Lie algebras of finite and affine type}
+\label{sec:lie-algebras-finite}
+
+Lie algebra $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\otimes\gf\to \gf$, which is called commutator. If we choose the basis $X_{i}$ in $\gf$ we can specify commutation relations by the structure constants $C_{ijk}$:
+\begin{equation}
+  \label{eq:1}
+  [X_{i},X_{j}]=\sum_{k} C_{ijk} X_{k}
+\end{equation}
+Lie algebra is simple if it contains no non-trivial ideals. Semisimple Lie algebra is a direct sum of simple Lie algebras. 
+
+Maximal commutative subalgebra (Cartan subalgebra) of $\gf$ is denoted by $\hfg$. Killing form gives non-degenerate bilinear form on $\hfg$.
+
+Special choice of basis gives compact description of commutation relations (\ref{eq:1}). This basis can be encoded by the root system  which is the set of vectors in Euclidean vector space $\hfg^{*}$ satisfying certain properties (See e.g. \cite{humphreys1997introduction,humphreys1992reflection} for details). 
 
 \section{Core datastructures}
 \label{sec:core-datastructures}
