@@ -406,11 +406,22 @@ Weyl character formula for irreducible highest weight modules is
 So character of irreducible highest weight module can be seen as the combination of characters of Verma modules, this is connected with Bernstein-Gelfand-Gelfand resolution (\cite{bernstein1976category,bernstein1971structure}, see also \cite{humphreys2008representations}). 
 
 We can use Weyl character formula to obtain recurrent relation on weight multiplicities which can be used for calculations \cite{il2010folded,kulish4sfa}:
+\begin{equation}
+\label{eq:14}
+m_{\xi }=-\sum_{w\in W\setminus e}\epsilon (w)m_{\xi
+-\left( w(\rho )-\rho \right) }+\sum_{w\in W}\epsilon
+(w)\delta _{\left( w(\mu +\rho )-\rho \right) ,\xi }.  
+\end{equation}
 
 This formula is a particular case of more general formula related to branching which will discuss soon.
 
+Another recurrent formula can be obtained from the study of Casimir elements action on irreducible highest weight modules \cite{humphreys1997introduction}:
+\begin{equation}
+  \label{eq:15}
+  m_{\lambda}=\frac{2}{(\mu+\rho)^{2}-(\lambda+\rho)^{2}}\sum_{\alpha\in \Delta^{+}}\sum_{k\gek 1} (\lambda+k\alpha,\alpha)m_{\lambda+k\alpha}.
+\end{equation}
+It is called Freudenthal multiplicity formula. It is valid for irreducible highest weight modules. 
 
-Irreducible highest weight modules, BGG resolution, anomalous element.
 
 \section{Core datastructures}
 \label{sec:core-datastructures}
