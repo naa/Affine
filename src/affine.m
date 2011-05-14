@@ -342,10 +342,10 @@ weylGroupElement::"usage"=
     "weylGroupElement[x__Integer][rs_?rootSystemQ] represents element of Weyl group composed of basic reflecetions x \n
     of root system rs. Example: weylGroupElement[1,2,1][makeSimpleRootSystem[B,2]] = s1 s2 s1";
 clear[weylGroupElement];
-weylGroupElement[x__Integer][rs_?rootSystemQ]:=Function[z,Fold[revApply,z,reflection /@ rs[simpleRoot]/@{x}]];
+weylGroupElement[rs_?rootSystemQ][x__Integer]:=Function[z,Fold[revApply,z,reflection /@ rs[simpleRoot]/@{x}]];
 
 Expect["Weyl reflection s1 s2 s1 in algebra B2",True,
-       weylGroupElement[1,2,1][makeSimpleRootSystem[B,2]][makeFiniteWeight[{1,0}]]==
+       weylGroupElement[makeSimpleRootSystem[B,2]][1,2,1][makeFiniteWeight[{1,0}]]==
        makeFiniteWeight[{-1,0}]]
 
 fundamentalWeights::"usage"=
@@ -633,6 +633,8 @@ weight::"usage"=
     "weight[rs_?rootSystemQ][labels__Integer] constructs weight defined by Dynkin labels";
 weight[rs_?rootSystemQ][labels__Integer]:=fundamentalWeights[rs].{labels}
 
+dynkinLabels[rs_?rootSystemQ][wg_?weightQ]:=(#.wg)& /@ rs[simpleRoots];
+
 orthogonalSubsystem::"usage"=
     "orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ] returns subset of positive roots of root system rs, which 
     are orthogonal to simple roots of subsystem subs";
@@ -689,6 +691,8 @@ formalElement/:x_formalElement*Exp[w_?weightQ]:=
     Module[{ws},
 	   ws=Select[(#+w)&/@x[weights],checkGrade[x]];
 	   makeFormalElement[ws,(x[#-w])&/@ws]]
+
+formalElement/:x_formalElement * y_formalElement:=Plus @@ ((y[#]*(x*Exp[#]))& /@ y[weights]);
 
 (* formalElement/:orbit[rs_?rootSystemQ][fe_formalElement]:= *)
 
