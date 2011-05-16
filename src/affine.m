@@ -468,6 +468,9 @@ Map[Print,orbit[makeSimpleRootSystem[B, 2]][rho[makeSimpleRootSystem[B, 2]]],2]
 SubValues[finiteWeight]
 *)
 
+
+dimension::"usage"=
+    "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight representation";
 dimension[{pr__?weightQ}][hweight_?weightQ]:=
     Module[{rh=rho[{pr}]},
 	   Plus@@((#.(hweight+rh)/rh.#)&/@{pr})];
@@ -577,11 +580,9 @@ makeAffineExtension::"usage"=
     is extension of given finite-dimensional root system";
 makeAffineExtension[fs_finiteRootSystem]:=affineRootSystem[fs[rank],fs,makeAffineWeight[-higestRoot[fs],0,1],(makeAffineWeight[#,0,0]&)/@fs[simpleRoots]]
 
+OverHat::"usage"=
+    "OverHat[rs_finiteRootSystem] creates affine extension of root system rs, it is equivalent makeAffineExtension[rs], but uses mathematical notation in notebook interface";
 OverHat[rs_finiteRootSystem]:=makeAffineExtension[rs];
-
-Append[makeAffineExtension[makeSimpleRootSystem[B,2]][simpleRoots],makeAffineExtension[makeSimpleRootSystem[B,2]][[3]]]
-
-(* makeAffineExtension[makeSimpleRootSystem[B,2]][simpleRoot][0] *)
 
 
 affineRootSystem::"usage"=
@@ -641,7 +642,8 @@ orthogonalSubsystem::"usage"=
 orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs], z_ /; And @@ (z.#==0& /@ subs[simpleRoots])]
 
 projection::"usage"=
-    "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system";
+    "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system\n
+    projection[rs_?rootSystemQ][fe_formalElement] projects the formal elements";
 projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
     Map[Function[w,(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])).rs[simpleRoots]],{weights}]
 
@@ -653,8 +655,11 @@ projection[rs_affineRootSystem][{weights__?weightQ}]:=
 formalElement::"usage"=
     "Datastructure to represent formal elements of the ring of characters (linear combinations of formal exponents of weights).\n
     Internally the data is held in hashtable.\n
-    formalElement[weight_?weightQ] returns multiplicity of a given weight (coefficient in front of Exp[weight])\n
-    
+    fe_formalElement[weight_?weightQ] returns multiplicity of a given weight (coefficient in front of Exp[weight])\n
+    fe_formalElement[weights] returns list of weights\n
+    fe_formalElement[multiplicities] returns list of multiplicities
+    formalElements can be added, multiplied by number, Exp[wg_?weightQ] and by formaElements\n
+    fe_formalElement[hashtable] returns formalElement's data as hashtable\n
 "
 
 formalElement/:fe_formalElement[weight_?weightQ]/;NumberQ[fe[[1]][weight]]:=fe[[1]][weight];
@@ -663,6 +668,10 @@ formalElement/:fe_formalElement[weight_?weightQ]:=0;
 formalElement/:fe_formalElement[weights]:=keys[fe[[1]]];
 
 formalElement/:fe_formalElement[multiplicities]:=values[fe[[1]]];
+
+makeFormalElement::"usage"=
+    "makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}] creates formal element with given weights and corresponding multiplicities\n
+    makeFormalElement[{weights__?weightQ}] creates formal element where weight multiplicity is calculated as the number of appearances of weight in arguments list"
 
 makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}]:=formalElement[makeHashtable[{weights},{multiplicities}]];
 
@@ -674,6 +683,8 @@ makeFormalElement[{weights__?weightQ}]:=
 
 makeFormalElement[h_]:=formalElement[h];
 
+subElement::"usage"=
+    "subElement[fe_formalElement,{weights___?weightQ}] creates formalElement with the given subset of weights";
 subElement[fe_formalElement,{weights___?weightQ}]:=makeFormalElement[{weights},fe/@{weights}];
 
 Expect["subElement",{1},subElement[makeFormalElement[positiveRoots[makeSimpleRootSystem[B,2]],{1,2,3,4}],{makeFiniteWeight[{1,-1}]}][multiplicities]];
@@ -701,8 +712,9 @@ projection[rs_?rootSystemQ][fe_formalElement]:=
 	   res=makeFormalElement[makeHashtable[{},{}]];
 	   Scan[(res[hashtable][(projection[rs][{#}])[[1]]]=res[(projection[rs][{#}])[[1]]]+fe[#])&,fe[weights]];
 	   res];
-
-branching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
+simpleBranching::"usage"=
+    "Calculate branching coefficients with simple algorithm, which constructs all the modules of subalgebra with Freudenthal formula";
+simpleBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{mults,pmults,rh=rho[subs],res,wgs},
 	   mults=makeFormalElement[freudenthalMultiplicities[rs][highestWeight]];
 	   Scan[(mults[hashtable][#]=mults[toFundamentalChamber[rs][#]])&,Flatten[orbit[rs][mults[weights]]]];
@@ -712,6 +724,8 @@ branching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*makeFormalElement[freudenthalMultiplicities[subs][#]])&, wgs];
 	   res];
 
+anomalousWeights::"usage"="
+    anomalousWeights[rs_?rootSystemQ][hweight_?weightQ] returns the formal element, consisting of anomalous weights";
 anomalousWeights[rs_?rootSystemQ][hweight_?weightQ]:=
     makeFormalElement @@ Transpose[{#[[1]]-rho[rs],#[[2]]}& /@ orbitWithEps[rs][hweight+rho[rs]]]
 
