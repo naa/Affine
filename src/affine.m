@@ -622,6 +622,11 @@ toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
 marks::"usage"="marks[rs_affineRootSystem] returns marks of affine Lie algebra";
 marks[rs_affineRootSystem]:=Prepend[Inverse[cartanMatrix[rs[finiteRootSystem]]].(-2*#.rs[simpleRoot][0]/(#.#)&)/@rs[realRoots],1]
 
+Expect["Marks for affine A_3", {1,1,1,1},marks[OverHat[Subscript[A,3]]]];
+
+Expect["Marks for affine C_4", {1, 2, 2, 2, 1},marks[OverHat[Subscript[C,4]]]];
+
+
 marks::"usage"="comarks[rs_affineRootSystem] returns comarks of affine Lie algebra";
 comarks[rs_affineRootSystem]:=marks[rs]*Map[#.#/2&,rs[simpleRoots]]
 
