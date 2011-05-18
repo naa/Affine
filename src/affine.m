@@ -473,11 +473,11 @@ dimension::"usage"=
     "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight representation";
 dimension[{pr__?weightQ}][hweight_?weightQ]:=
     Module[{rh=rho[{pr}]},
-	   Plus@@((#.(hweight+rh)/rh.#)&/@{pr})];
+	   Times@@((  (#.(hweight+rh))/(rh.#) )&/@{pr})];
 
 Expect["Dimension",5, dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]];
 
-dimension[rs_?rootSystemQ][hweight_?weightQ]:=dimension[positiveRoots[rs]][hweight];
+dimension[rs_?rootSystemQ][hweight_?weightQ]:=dimension[positiveRoots[rs]][toFundamentalChamber[rs][hweight]];
 
 Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2}]]];
 
@@ -749,6 +749,14 @@ getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,h
 	   Sort[
 	       Flatten[weightSystem[projection[subs][{algroots}]][projection[subs][{hweight}][[1]]]],
 	       #1.rh>#2.rh&]];
+
+extendedAnomElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
+    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
+	   orth=orthogonalSubsystem[rs,subs];
+	   anomW=anomalousWeights[rs][highestWeight];
+	   selW=(#-rho[rs])& /@ Select[(#+rho[rs])& /@ anomW[weights],mainChamberQ[orth]];
+	   selWM=makeFormalElement[projection[subs][selW],(anomW[#]*dimension[orth][#])&/@selW];
+	   {selW,selWM}]
 
 ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
