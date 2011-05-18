@@ -773,10 +773,10 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   rh=rho[rs];
 	   subrh=rho[subs];
 
-	   gamma0=Sort[fn[weights],#1.rh<#2.rh&][[1]];
+	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
 	   Print[gamma0,sgamma0];
-	   fn=fn- makeFormalElement[{gamma0},{sgamma0}];
+	   (*fn=fn- makeFormalElement[{gamma0},{sgamma0}];*)
 
 	   def=subrh-projection[subs][{rh}][[1]];
 (*	   Print[def];*)
@@ -787,7 +787,7 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 (*			 Print[v];
 			 Print[(fn[weights] /. x_?weightQ :> {v+x,res[toFC[v+x]],fn[x],selWM[v]})];*)
 			 res[v]=-1/sgamma0*(
-			 -selWM[v-gamma0]+
+			 selWM[v-gamma0]+
 			 Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x]],0]));
 (*			 Print[res[v]];*)
 			],

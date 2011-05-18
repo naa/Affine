@@ -46,14 +46,9 @@ finiteWeight[4, {-, -, -, -}]
 Export["/home/anton/programing/Affine/tests/eanom.png",Graphics[Text[eae[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ eae[weights]]]
 
 
-br=ourBranching[b4,b2][wg+rho[b4]]
-
-finiteWeight[4, {0, 0, -2, -2}]1
-
-Out[34]= formalElement[table$911]
+br=ourBranching[b4,b2][wg]
 
 Export["/home/anton/programing/Affine/tests/brc.png",Graphics[Text[br[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ br[weights]]]
-
 
 br0=simpleBranching[b4,b2][wg]
 
