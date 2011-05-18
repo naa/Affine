@@ -649,11 +649,14 @@ orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs],
 projection::"usage"=
     "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system\n
     projection[rs_?rootSystemQ][fe_formalElement] projects the formal elements";
+
 projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
     Map[Function[w,(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])).rs[simpleRoots]],{weights}]
 
 projection[rs_affineRootSystem][{weights__?weightQ}]:= 
     Map[makeAffineWeight[projection[rs[finiteRootSystem]][#[finitePart]],#[level],#[grade]]&,{weights}]
+
+projection[rs_?rootSystemQ][wg_?weightQ]:=projection[rs][{wg}][[1]];
 
 (*    Map[Apply[Plus,#]&,Outer[(#1.#2)/(#2.#2)*#2&,{weights},rs[simpleRoots]]] *)
 
@@ -750,27 +753,23 @@ getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,h
 	       Flatten[weightSystem[projection[subs][{algroots}]][projection[subs][{hweight}][[1]]]],
 	       #1.rh>#2.rh&]];
 
+
 extendedAnomElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
-    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
+    Module[{anomW,selW,selWM,rh=rho[rs],orth,ortrh},
 	   orth=orthogonalSubsystem[rs,subs];
+	   ortrh=rho[orth];
 	   anomW=anomalousWeights[rs][highestWeight];
-	   selW=(#-rho[rs])& /@ Select[(#+rho[rs])& /@ anomW[weights],mainChamberQ[orth]];
-	   selWM=makeFormalElement[projection[subs][selW],(anomW[#]*dimension[orth][#])&/@selW];
-	   {selW,selWM}]
+	   selW=Select[anomW[weights],Function[x,mainChamberQ[orth][x+rh-projection[subs][x+rh]]]];
+	   selWM=makeFormalElement[projection[subs][selW],(anomW[#]*dimension[orth][#+rh-ortrh])&/@selW];
+	   selWM];
 
 ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
 	   orth=orthogonalSubsystem[rs,subs];
-	   anomW=anomalousWeights[rs][highestWeight];
-	   selW=Select[anomW[weights],mainChamberQ[orth]];
-	   selWM=makeFormalElement[projection[subs][selW],(anomW[#]*dimension[orth][#])&/@selW];
-(*	   Print[selWM[weights],selWM[multiplicities]]; 
-	   Print[projection[subs][positiveRoots[rs]]];*)
+	   selWM=extendedAnomElement[rs,subs][highestWeight];
 	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,highestWeight];
-(*	   Print[projection[subs][{highestWeight}],reprw];*)
 	   fn=fan[rs,subs];
 
-	   Print[fn[weights],fn[multiplicities]];
 	   rh=rho[rs];
 	   subrh=rho[subs];
 
