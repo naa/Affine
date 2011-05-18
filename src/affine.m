@@ -622,6 +622,11 @@ toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
 marks::"usage"="marks[rs_affineRootSystem] returns marks of affine Lie algebra";
 marks[rs_affineRootSystem]:=Prepend[Inverse[cartanMatrix[rs[finiteRootSystem]]].(-2*#.rs[simpleRoot][0]/(#.#)&)/@rs[realRoots],1]
 
+Expect["Marks for affine A_3", {1,1,1,1},marks[OverHat[Subscript[A,3]]]];
+
+Expect["Marks for affine C_4", {1, 2, 2, 2, 1},marks[OverHat[Subscript[C,4]]]];
+
+
 marks::"usage"="comarks[rs_affineRootSystem] returns comarks of affine Lie algebra";
 comarks[rs_affineRootSystem]:=marks[rs]*Map[#.#/2&,rs[simpleRoots]]
 
@@ -724,6 +729,8 @@ simpleBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*makeFormalElement[freudenthalMultiplicities[subs][#]])&, wgs];
 	   res];
 
+anomalousWeights::"usage"="
+    anomalousWeights[rs_?rootSystemQ][hweight_?weightQ] returns the formal element, consisting of anomalous weights";
 anomalousWeights[rs_?rootSystemQ][hweight_?weightQ]:=
     makeFormalElement @@ Transpose[{#[[1]]-rho[rs],#[[2]]}& /@ orbitWithEps[rs][hweight+rho[rs]]]
 
