@@ -778,8 +778,9 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   Print[gamma0,sgamma0];
 	   (*fn=fn- makeFormalElement[{gamma0},{sgamma0}];*)
 
-	   def=subrh-projection[subs][{rh}][[1]];
-(*	   Print[def];*)
+(*	   def=subrh-projection[subs][{rh}][[1]];
+	   Print[def];*)
+	   def=-subrh;
 	   toFC=(toFundamentalChamber[subs][#-def]+def)&;
 	   res=makeHashtable[{},{}];
 	   insideQ:=NumberQ[res[toFC[#]]]&;
