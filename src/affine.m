@@ -374,6 +374,12 @@ toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ]:=
 		    vec,
 		    Head[#]=!=reflection[Null]&]]
 
+toFundamentalChamberWithParity[rs_?rootSystemQ][vec_?weightQ]:=
+    ({#[[1]][[1]],-#[[2]]})& @ NestWhile[Function[v,
+			     {reflection[Scan[If[#.v[[1]]<0,Return[#]]&,rs[simpleRoots]]][v[[1]]],-v[[2]]}],
+		    {vec,1},
+		    Head[#[[1]]]=!=reflection[Null]&]
+
 Expect["To fundamental chamber",True,makeFiniteWeight[{1,1/2}]==toFundamentalChamber[makeSimpleRootSystem[B,2]][makeFiniteWeight[{-1,1/2}]]]
 
 Expect["We can use this and other functions for mapping",True,
@@ -750,7 +756,7 @@ fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
 getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,hweight_?weightQ]:=
     Module[{rh=rho[subs]},
 	   Sort[
-	       Flatten[weightSystem[projection[subs][{algroots}]][projection[subs][{hweight}][[1]]]],
+	       Union[Flatten[weightSystem[Select[projection[subs][{algroots}],(#.rh>=0)&]][projection[subs][{hweight}][[1]]]]],
 	       #1.rh>#2.rh&]];
 
 
@@ -764,33 +770,37 @@ extendedAnomElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   selWM];
 
 ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
-    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0},
+    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0,hw},
 	   orth=orthogonalSubsystem[rs,subs];
 	   selWM=extendedAnomElement[rs,subs][highestWeight];
-	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,highestWeight];
-	   fn=fan[rs,subs];
 
 	   rh=rho[rs];
 	   subrh=rho[subs];
+	   Print[Sort[selWM[weights],#1.subrh>#2.subrh&]];
+	   hw=Sort[selWM[weights],#1.subrh>#2.subrh&][[1]];
+	   Print[hw];
+	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,hw];
+	   fn=fan[rs,subs];
+	   Print[reprw];
 
 	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
-	   Print[gamma0,sgamma0];
+(*	   Print[gamma0,sgamma0];*)
 	   (*fn=fn- makeFormalElement[{gamma0},{sgamma0}];*)
 
 (*	   def=subrh-projection[subs][{rh}][[1]];
 	   Print[def];*)
-	   def=-subrh;
-	   toFC=(toFundamentalChamber[subs][#-def]+def)&;
+	   def=-projection[subs][rh];
+	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z-def]},{tmp[[1]]+def,tmp[[2]]}]];
 	   res=makeHashtable[{},{}];
-	   insideQ:=NumberQ[res[toFC[#]]]&;
+	   insideQ:=NumberQ[res[toFC[#][[1]]]]&;
 	   Scan[Function[v,
-(*			 Print[v];
-			 Print[(fn[weights] /. x_?weightQ :> {v+x,res[toFC[v+x]],fn[x],selWM[v]})];*)
+			 Print[v];
+			 Print[(fn[weights] /. x_?weightQ :> {v+x,toFC[v+x],fn[x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]]})];
 			 res[v]=-1/sgamma0*(
-			 selWM[v-gamma0]+
-			 Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x]],0]));
-(*			 Print[res[v]];*)
+			     -selWM[v-gamma0]+
+			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
+			 Print[res[v]];
 			],
 		reprw];
 	   makeFormalElement[keys[res],values[res]]
