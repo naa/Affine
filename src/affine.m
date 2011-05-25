@@ -785,6 +785,7 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 
 	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
+	   fn=fn*Exp[-gamma0];
 (*	   Print[gamma0,sgamma0];*)
 	   (*fn=fn- makeFormalElement[{gamma0},{sgamma0}];*)
 
@@ -792,15 +793,51 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   Print[def];*)
 	   def=-projection[subs][rh];
 	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z-def]},{tmp[[1]]+def,tmp[[2]]}]];
-	   res=makeHashtable[{},{}];
+	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
 	   insideQ:=NumberQ[res[toFC[#][[1]]]]&;
 	   Scan[Function[v,
 			 Print[v];
-			 Print[(fn[weights] /. x_?weightQ :> {v+x,toFC[v+x],fn[x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]]})];
+(*			 Print[(fn[weights] /. x_?weightQ :> {v+x,toFC[v+x],fn[x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]]})];*)
 			 res[v]=-1/sgamma0*(
 			     -selWM[v-gamma0]+
 			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
 			 Print[res[v]];
+			],
+		reprw];
+	   makeFormalElement[keys[res],values[res]]
+	  ]
+
+
+branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
+    Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0,hw},
+	   orth=orthogonalSubsystem[rs,subs];
+	   selWM=extendedAnomElement[rs,subs][highestWeight];
+
+	   rh=rho[rs];
+	   subrh=rho[subs];
+	   hw=Sort[selWM[weights],#1.subrh>#2.subrh&][[1]];
+	   reprw=Sort[
+	       Flatten[orbit[subs][getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,hw]]],
+	       #1.subrh>#2.subrh&];
+
+	   Print[reprw];
+
+	   fn=fan[rs,subs];
+
+	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
+	   sgamma0=fn[gamma0];
+
+	   fn=fn*Exp[-gamma0];
+	   
+
+	   def=-projection[subs][rh];
+	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
+	   insideQ:=NumberQ[res[#]]&;
+	   Scan[Function[v,
+			 res[v]=-1/sgamma0*(
+			     -selWM[v-gamma0]+
+			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[v+x],0]));
+			 Print[v,res[v]];
 			],
 		reprw];
 	   makeFormalElement[keys[res],values[res]]

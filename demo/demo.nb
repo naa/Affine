@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     20376,        665]
-NotebookOptionsPosition[     18574,        596]
-NotebookOutlinePosition[     18909,        611]
-CellTagsIndexPosition[     18866,        608]
+NotebookDataLength[     21502,        701]
+NotebookOptionsPosition[     19376,        620]
+NotebookOutlinePosition[     19885,        642]
+CellTagsIndexPosition[     19800,        637]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{"AppendTo", "[", 
@@ -26,8 +28,30 @@ Cell[BoxData[{
     "\"\</home/anton/study/2011/Articles/AffineLieAlgebras/Mathematica/\>\""}]\
 , "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", "datastructures.m"}], ";"}]}], "Input",
- CellChangeTimes->{{3.511850132957571*^9, 3.51185016527726*^9}}],
+  RowBox[{
+   RowBox[{"<<", "datastructures.m"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"?", "Graphics"}]}], "Input",
+ CellChangeTimes->{{3.511850132957571*^9, 3.51185016527726*^9}, {
+  3.514881427513479*^9, 3.514881432925623*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Graphics\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"primitives\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"options\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) represents a \
+two-dimensional graphical image. \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Graphics"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.51488143712148*^9},
+ CellTags->"Info3514895836-9006130"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.514881503079265*^9, 3.5148815052802563`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -594,78 +618,90 @@ Cell[BoxData[
  CellChangeTimes->{{3.511863472832537*^9, 3.511863507468525*^9}}]
 }, Open  ]]
 },
-WindowSize->{1022, 766},
+WindowSize->{Full, Full},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Linux x86 (32-bit) (November 7, 2010)",
+ShowSelection->True,
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (November 7, 2010)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info3514895836-9006130"->{
+  Cell[1056, 37, 527, 12, 44, "Print",
+   CellTags->"Info3514895836-9006130"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info3514895836-9006130", 19697, 631}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 333, 9, 52, "Input"],
 Cell[CellGroupData[{
-Cell[915, 33, 208, 5, 30, "Input"],
-Cell[1126, 40, 1244, 32, 50, "Output"]
+Cell[579, 22, 474, 13, 90, "Input"],
+Cell[1056, 37, 527, 12, 44, "Print",
+ CellTags->"Info3514895836-9006130"]
+}, Open  ]],
+Cell[1598, 52, 94, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[1717, 57, 208, 5, 30, "Input"],
+Cell[1928, 64, 1244, 32, 50, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2407, 77, 210, 6, 30, "Input"],
-Cell[2620, 85, 3167, 82, 183, "Output"]
+Cell[3209, 101, 210, 6, 30, "Input"],
+Cell[3422, 109, 3167, 82, 183, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5824, 172, 343, 10, 30, "Input"],
-Cell[6170, 184, 1084, 33, 102, "Output"]
+Cell[6626, 196, 343, 10, 30, "Input"],
+Cell[6972, 208, 1084, 33, 102, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7291, 222, 249, 6, 50, "Input"],
-Cell[7543, 230, 315, 8, 30, "Output"]
+Cell[8093, 246, 249, 6, 50, "Input"],
+Cell[8345, 254, 315, 8, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7895, 243, 604, 18, 50, "Input"],
-Cell[8502, 263, 141, 2, 33, "Output"]
+Cell[8697, 267, 604, 18, 50, "Input"],
+Cell[9304, 287, 141, 2, 33, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8680, 270, 127, 2, 30, "Input"],
-Cell[8810, 274, 838, 27, 83, "Output"]
+Cell[9482, 294, 127, 2, 30, "Input"],
+Cell[9612, 298, 838, 27, 83, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9685, 306, 134, 2, 30, "Input"],
-Cell[9822, 310, 145, 3, 30, "Output"]
+Cell[10487, 330, 134, 2, 30, "Input"],
+Cell[10624, 334, 145, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10004, 318, 152, 3, 30, "Input"],
-Cell[10159, 323, 758, 23, 50, "Output"]
+Cell[10806, 342, 152, 3, 30, "Input"],
+Cell[10961, 347, 758, 23, 50, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10954, 351, 1166, 33, 50, "Input"],
-Cell[12123, 386, 167, 3, 33, "Output"]
+Cell[11756, 375, 1166, 33, 50, "Input"],
+Cell[12925, 410, 167, 3, 33, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12327, 394, 92, 1, 30, "Input"],
-Cell[12422, 397, 191, 3, 33, "Output"]
+Cell[13129, 418, 92, 1, 30, "Input"],
+Cell[13224, 421, 191, 3, 33, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12650, 405, 782, 21, 30, "Input"],
-Cell[13435, 428, 284, 6, 447, "Output"]
+Cell[13452, 429, 782, 21, 30, "Input"],
+Cell[14237, 452, 284, 6, 447, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13756, 439, 321, 11, 30, "Input"],
-Cell[14080, 452, 515, 15, 30, "Output"]
+Cell[14558, 463, 321, 11, 30, "Input"],
+Cell[14882, 476, 515, 15, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14632, 472, 444, 12, 33, "Input"],
-Cell[15079, 486, 2764, 83, 191, "Output"]
+Cell[15434, 496, 444, 12, 33, "Input"],
+Cell[15881, 510, 2764, 83, 191, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17880, 574, 445, 12, 33, "Input"],
-Cell[18328, 588, 230, 5, 30, "Output"]
+Cell[18682, 598, 445, 12, 33, "Input"],
+Cell[19130, 612, 230, 5, 30, "Output"]
 }, Open  ]]
 }
 ]

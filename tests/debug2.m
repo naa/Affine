@@ -39,14 +39,14 @@ Out[12]= finiteWeight[4, {0, 0, 1, 1}]
 
 f=fan[b4,b2];
 
-Export["/home/anton/programing/Affine/tests/fan.png",Graphics[Text[f[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ f[weights]]]
+Export["/home/anton/programing/Affine/tests/fan.png",Graphics[Text[f[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ f[weights]]]
 
 Out[5]= /home/anton/programing/Affine/tests/fan.png
 
 wg=weight[b4][0,1,0,2]; (* makeFiniteWeight[{2,2,1,1}] *)
 aw=projection[b2][anomalousWeights[b4][wg]];
 
-Export["/home/anton/programing/Affine/tests/anom.png",Graphics[Text[aw[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ aw[weights]]]
+Export["/home/anton/programing/Affine/tests/anom.png",Graphics[Text[aw[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ aw[weights]]]
 
 extendedAnomElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{anomW,selW,selWM,rh=rho[rs],orth,ortrh},
@@ -60,15 +60,128 @@ extendedAnomElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 
 eae=extendedAnomElement[b4,b2][wg];
 
-Export["/home/anton/programing/Affine/tests/eanom.png",Graphics[Text[eae[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ eae[weights],Axes->True]]
+Export["/home/anton/programing/Affine/tests/eanom.png",Graphics[Text[eae[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ eae[weights],Axes->True]]
+
+
+rh=rho[b4]
+
+def=projection[b2][{rh}][[1]]
+
+[Calculating...]
+
+Out[41]= finiteWeight[4, {0, 0, 0, 0}]
+
+                             7     5
+Out[36]= {finiteWeight[4, {-(-), -(-), 0, 0}]}
+                             2     2
+
+                                       3  1
+Out[34]= {-rh + finiteWeight[4, {0, 0, -, -}]}
+                                       2  2
+
+Out[33]= /home/anton/programing/Affine/tests/eanom.png
 
 subrh=rho[b2]
 
-hw=Sort[eae[weights],#1.subrh>#2.subrh&][[1]]
+                                3  1
+Out[22]= finiteWeight[4, {0, 0, -, -}]
+                                2  2
+
+hw=Sort[eae[weights],#1.subrh<#2.subrh&][[1]]
+
+Out[14]= finiteWeight[4, {0, 0, -4, 4}]
 
 Out[35]= finiteWeight[4, {0, 0, 4, 4}]
 
 subs=b2
+
+Sort[
+    Flatten[orbit[b2][getOrderedWeightsProjectedToWeylChamber[positiveRoots[b4],b2,finiteWeight[4, {0, 0, 4, 4}]]]],
+    #1.subrh<#2.subrh]
+
+                  
+Out[23]= {finiteWeight[4, {0, 0, 4, 4}], finiteWeight[4, {0, 0, 4, 3}], 
+ 
+>    finiteWeight[4, {0, 0, 4, 2}], finiteWeight[4, {0, 0, 4, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 4, 0}], finiteWeight[4, {0, 0, 3, 3}], 
+ 
+>    finiteWeight[4, {0, 0, 3, 2}], finiteWeight[4, {0, 0, 3, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 3, 0}], finiteWeight[4, {0, 0, 2, 2}], 
+ 
+>    finiteWeight[4, {0, 0, 2, 1}], finiteWeight[4, {0, 0, 2, 0}], 
+ 
+>    finiteWeight[4, {0, 0, 1, 1}], finiteWeight[4, {0, 0, 1, 0}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 0}], finiteWeight[4, {0, 0, 0, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 2}], finiteWeight[4, {0, 0, 0, 3}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 4}], finiteWeight[4, {0, 0, 1, -1}], 
+ 
+>    finiteWeight[4, {0, 0, 1, 2}], finiteWeight[4, {0, 0, 1, 3}], 
+ 
+>    finiteWeight[4, {0, 0, 1, 4}], finiteWeight[4, {0, 0, 2, -2}], 
+ 
+>    finiteWeight[4, {0, 0, 2, -1}], finiteWeight[4, {0, 0, 2, 3}], 
+ 
+>    finiteWeight[4, {0, 0, 2, 4}], finiteWeight[4, {0, 0, 3, -3}], 
+ 
+>    finiteWeight[4, {0, 0, 3, -2}], finiteWeight[4, {0, 0, 3, -1}], 
+ 
+>    finiteWeight[4, {0, 0, 3, 4}], finiteWeight[4, {0, 0, 4, -4}], 
+ 
+>    finiteWeight[4, {0, 0, 4, -3}], finiteWeight[4, {0, 0, 4, -2}], 
+ 
+>    finiteWeight[4, {0, 0, 4, -1}], finiteWeight[4, {0, 0, -4, 4}], 
+ 
+>    finiteWeight[4, {0, 0, -3, 3}], finiteWeight[4, {0, 0, -3, 4}], 
+ 
+>    finiteWeight[4, {0, 0, -2, 2}], finiteWeight[4, {0, 0, -2, 3}], 
+ 
+>    finiteWeight[4, {0, 0, -2, 4}], finiteWeight[4, {0, 0, -1, 1}], 
+ 
+>    finiteWeight[4, {0, 0, -1, 2}], finiteWeight[4, {0, 0, -1, 3}], 
+ 
+>    finiteWeight[4, {0, 0, -1, 4}], finiteWeight[4, {0, 0, 0, -4}], 
+ 
+>    finiteWeight[4, {0, 0, 0, -3}], finiteWeight[4, {0, 0, 0, -2}], 
+ 
+>    finiteWeight[4, {0, 0, 0, -1}], finiteWeight[4, {0, 0, 1, -4}], 
+ 
+>    finiteWeight[4, {0, 0, 1, -3}], finiteWeight[4, {0, 0, 1, -2}], 
+ 
+>    finiteWeight[4, {0, 0, 2, -4}], finiteWeight[4, {0, 0, 2, -3}], 
+ 
+>    finiteWeight[4, {0, 0, 3, -4}], finiteWeight[4, {0, 0, -4, -4}], 
+ 
+>    finiteWeight[4, {0, 0, -4, 0}], finiteWeight[4, {0, 0, -4, 1}], 
+ 
+>    finiteWeight[4, {0, 0, -4, 2}], finiteWeight[4, {0, 0, -4, 3}], 
+ 
+>    finiteWeight[4, {0, 0, -3, -4}], finiteWeight[4, {0, 0, -3, -3}], 
+ 
+>    finiteWeight[4, {0, 0, -3, 0}], finiteWeight[4, {0, 0, -3, 1}], 
+ 
+>    finiteWeight[4, {0, 0, -3, 2}], finiteWeight[4, {0, 0, -2, -4}], 
+ 
+>    finiteWeight[4, {0, 0, -2, -3}], finiteWeight[4, {0, 0, -2, -2}], 
+ 
+>    finiteWeight[4, {0, 0, -2, 0}], finiteWeight[4, {0, 0, -2, 1}], 
+ 
+>    finiteWeight[4, {0, 0, -1, -4}], finiteWeight[4, {0, 0, -1, -3}], 
+ 
+>    finiteWeight[4, {0, 0, -1, -2}], finiteWeight[4, {0, 0, -1, -1}], 
+ 
+>    finiteWeight[4, {0, 0, -1, 0}], finiteWeight[4, {0, 0, -4, -3}], 
+ 
+>    finiteWeight[4, {0, 0, -4, -2}], finiteWeight[4, {0, 0, -4, -1}], 
+ 
+>    finiteWeight[4, {0, 0, -3, -2}], finiteWeight[4, {0, 0, -3, -1}], 
+ 
+>    finiteWeight[4, {0, 0, -2, -1}]}
+
 
 Union[getOrderedWeightsProjectedToWeylChamber[positiveRoots[b4],subs,hw]]
 
@@ -108,6 +221,59 @@ Out[9]= /home/anton/programing/Affine/tests/eanom.png
 eae[makeFiniteWeight[{0,0,4,4}]]
 
 br=ourBranching[b4,b2][wg]
+
+br1=branching2[b4,b2][wg]
+
+
+
+Out[61]= formalElement[table$3776]
+
+Out[53]= formalElement[table$3412]
+
+
+(makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{2,2}]},{1,2}]*Exp[-makeFiniteWeight[{1,2}]])[weights]
+
+Out[48]= {finiteWeight[2, {0, 0}], finiteWeight[2, {1, 0}]}
+
+Out[47]= formalElement[table$3045]
+
+Export["/home/anton/programing/Affine/tests/brc1.png",Graphics[Text[br1[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ br1[weights],Axes->True]]
+
+Out[78]= /home/anton/programing/Affine/tests/brc1.png
+
+br1 /@ Select[br1[weights],mainChamberQ[b2]]
+
+Out[77]= {10, 0, 0, -194, 19, 0, 0, 0, 0, 0, -170, 0, 40, 0, 0}
+
+Out[66]= {0, 0, 0, 0, 0, 139, 0, 0, -2562, -40, 10, 0, 0, 320, 17522}
+
+Out[64]= {-194, 0, -170, 19, 0, 0, 0, 0, 0, 0, 0, 10, 40, 0, 0}
+
+Out[57]= {0, 0, 194, 0, 0, -40, -10, 0, 0, 0, 0, -19, 170, 0, 0}
+
+Out[56]= {finiteWeight[4, {0, 0, 3, 3}], finiteWeight[4, {0, 0, 3, 2}], 
+ 
+>    finiteWeight[4, {0, 0, 0, 0}], finiteWeight[4, {0, 0, 4, 3}], 
+ 
+>    finiteWeight[4, {0, 0, 3, 0}], finiteWeight[4, {0, 0, 2, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 2, 2}], finiteWeight[4, {0, 0, 4, 2}], 
+ 
+>    finiteWeight[4, {0, 0, 3, 1}], finiteWeight[4, {0, 0, 1, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 4, 4}], finiteWeight[4, {0, 0, 2, 0}], 
+ 
+>    finiteWeight[4, {0, 0, 1, 0}], finiteWeight[4, {0, 0, 4, 1}], 
+ 
+>    finiteWeight[4, {0, 0, 4, 0}]}
+
+Out[55]= {}
+
+Out[54]= /home/anton/programing/Affine/tests/brc1.png
+
+Out[28]= /home/anton/programing/Affine/tests/brc1.png
+
+Out[27]= formalElement[table$2264]
 
 10
 finiteWeight[4, {0, 0, 2, 1}]
@@ -565,7 +731,7 @@ Out[10]= makeFormalElement[{finiteWeight[4, {0, 0, 1, 1}],
  
 >     finiteWeight[4, {0, 0, 0, 0}]}, {0, finiteWeight[4, {0, 0, 0, 0}]}]
 
-Export["/home/anton/programing/Affine/tests/brc.png",Graphics[Text[br[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ br[weights],Axes->True]]
+Export["/home/anton/programing/Affine/tests/brc.png",Graphics[Text[br[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ br[weights],Axes->True]]
 
 Out[78]= /home/anton/programing/Affine/tests/brc.png
 
@@ -576,7 +742,7 @@ Out[27]= /home/anton/programing/Affine/tests/brc.png
 
 br0=simpleBranching[b4,b2][wg]
 
-Export["/home/anton/programing/Affine/tests/brc0.png",Graphics[Text[br0[#],{#[standardBase][[3]],#[standardBase][[4]]}] & /@ br0[weights]]]
+Export["/home/anton/programing/Affine/tests/brc0.png",Graphics[Text[br0[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ br0[weights]]]
 
 Out[54]= /home/anton/programing/Affine/tests/brc.png
 
