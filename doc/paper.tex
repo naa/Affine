@@ -168,9 +168,9 @@
 
 \begin{abstract}
 %% Text of abstract
-We present {\bf Affine.m} -- program for computations in representation theory of finite-dimensional and affine Lie algebras. Algorithms are based upon the properties of weights and Weyl symmetry. Central problems are weight multiplicity computation, branching of representation to representations of subalgebra and tensor product decomposition. These problems has numerous applications in physics.
+We present {\bf Affine.m} -- program for computations in representation theory of finite-dimensional and affine Lie algebras. Algorithms are based upon the properties of weights and Weyl symmetry. Weight multiplicity computation, branching of representation to representations of subalgebra and tensor product decomposition are the most important problems that we treat. These problems has numerous applications in physics.
 
-Unique features of our programs are the treatment of affine Lie algebras and implementation in popular computer algebra system {\it Mathematica}.
+The program is implemented in popular  computer algebra system {\it Mathematica} and works with finite-dimensional and affine Lie algebras.
 
 % A submitted program is expected to be of benefit to other physicists or physical chemists, or be an exemplar of good programming practice, or illustrate new or novel programming techniques which are of importance to some branch of computational physics or physical chemistry.
 %
@@ -244,7 +244,7 @@ Mathematica; Lie algebra; affine Lie algebra; Kac-Moody algebra; root system; we
   %Only required for a New Version summary, otherwise leave out.
 {\em Nature of problem:}\\
   %Describe the nature of the problem here.
-Representation theory of finite-dimensional Lie algebras has many applications in different branches of physics, including elementary particle physics, molecular physics, nuclear physics. Representations of affine Lie algebras appear in string theories and two-dimensional conformal field theory which is used for the description of critical phenomena in two-dimensional systems. Also Lie symmetries play major role in study of quantum integrable systems. 
+Representation theory of finite-dimensional Lie algebras has many applications in different branches of physics, including elementary particle physics, molecular physics, nuclear physics. Representations of affine Lie algebras appear in string theories and two-dimensional conformal field theory used for the description of critical phenomena in two-dimensional systems. Also Lie symmetries play major role in study of quantum integrable systems. 
    \\
 {\em Solution method:}\\
   %Describe the method solution here.
@@ -288,32 +288,30 @@ From seconds to days depending on rank of algebra and complexity of representati
 \section{Introduction}
 \label{intro}
 
-Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. Lie algebras are used to for the description of symmetries of quantum and classical systems. Computational method in representation theory have long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}. 
+Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. Lie algebras are used to for the description of symmetries of quantum and classical systems. Computational method in representation theory have a long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}. 
 
 Most popular programs \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{fischbacher2002ilp}, \cite{coxweyl} are created to study representation theory of simple finite-dimensional Lie algebras. The main computational problems are the following:
 \begin{enumerate}
-\item Construction of root system which is used for compact description of algebra commutation relations.
+\item Construction of root system which determine the properties of Lie algebra including its algebra commutation relations.
 \item Weyl group traversal which is important due to Weyl symmetry of root system and characters of representations.
-\item Calculation of weight multiplicities, branching and fusion coefficients, which are essential for the construction and study of representations. 
+\item Calculation of weight multiplicities, branching and fusion coefficients, which are essential for construction and study of representations. 
 \end{enumerate}
 There are well-known algorithms for these tasks \cite{moody1982fast}, \cite{stembridge2001computational}, \cite{belinfante1989survey}, \cite{casselman1994machine}. 
 The third problem is most computation-intensive. There are two different recurrent algorithms which are based on Weyl character formula and Freudenthal multiplicity formula. In this paper we analyze them. 
 
-Infinite-dimensional Lie algebras also have growing number of applications in physics for example in conformal field theory and study of quantum integrable systems. But infinite-dimensional algebras are much harder to study and quantity of available computer programs is much smaller.
+Infinite-dimensional Lie algebras also have growing number of applications in physics for example in conformal field theory and study of number integrable systems. But infinite-dimensional algebras are much harder to study and quantity of available computer programs is much smaller.
 
 Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}. 
 
-Construction of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results. 
-We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras. 
+The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results. 
+We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics. 
 
-Our package can be used for study of root and weight systems, Weyl groups, subalgebras, computations of weight multiplicities, branching and fusion coefficients. We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some example of computations relevant to physics. 
-
-The paper is started with overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and their representations (Sec. \ref{sec:core-datastructures} and used in implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
+The paper is started with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and their representations (Sec. \ref{sec:core-datastructures} and used in implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
 
 \section{Theoretical background}
 \label{sec:theor-backgr}
 
-\subsection{Lie algebras of finite and affine type}
+\subsection{Lie algebras of finite and affine types}
 \label{sec:lie-algebras-finite}
 
 Lie algebra $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\otimes\gf\to \gf$, which is called commutator. If we choose the basis $X_{i}$ in $\gf$ we can specify commutation relations by the structure constants $C_{ijk}$:
@@ -326,16 +324,16 @@ Lie algebra is simple if it contains no non-trivial ideals. Semisimple Lie algeb
 Maximal commutative subalgebra (Cartan subalgebra) of $\gf$ is denoted by $\hfg$.
 We denote the elements of basis of $\hfg$ by $H^{i}$.
 
-Killing form gives non-degenerate bilinear form $(\cdot,\cdot)$ on $\hfg$ which can be extended to the dual space $\hfg^{*}$ of linear functionals on $\hfg$. Weights are the elements of $\hfg^{*}$ and are denoted by Greek letters $\mu,\nu, \omega, \lambda\dots$   
+Killing form on $\gf$ gives a non-degenerate bilinear form $(\cdot,\cdot)$ on $\hfg$ which can be used to identify $\hfg$ with the subspace of the dual space $\hfg^{*}$ of linear functionals on $\hfg$. Weights are the elements of $\hfg^{*}$ and are denoted by Greek letters $\mu,\nu, \omega, \lambda\dots$   
 
-Special choice of basis gives compact description of commutation relations (\ref{eq:1}). This basis can be encoded by the root system  which is the set of vectors in  $\hfg^{*}$ satisfying certain properties (See e.g. \cite{humphreys1997introduction,humphreys1992reflection} for details). 
+Special choice of basis gives compact description of commutation relations (\ref{eq:1}). This basis can be encoded by the root system which is discussed in Section \ref{sec:weights-roots} (See also \cite{humphreys1997introduction,humphreys1992reflection}). 
 
 Loop algebra $L\gf=\gf\otimes \mathbb{C}[t,t^{-1}]$, corresponding to semisimple Lie algebra $\gf$ has commutation relations
 \begin{equation}
   \label{eq:6}
   [X^{i}t^{n},X^{j}t^{m}]=t^{n_+m}\sum_{k}C^{ij}_{k}X^{k}
 \end{equation}
-Central extension leads to the appearance of additional term in commutation relations
+Central extension leads to the appearance of additional term 
 \begin{equation}
   \label{eq:7}
    [X^{i}t^{n}+\alpha c,X^{j}t^{m}+\beta c]=t^{n+m}\sum_{k}C^{ij}_{k}X^{k}+(X^{i},X^{j})n\delta_{n+m,0}c
@@ -354,16 +352,16 @@ Then $\gf$-module is a vector space $V$ together with a bilinear map $\gf \times
   \label{eq:2}
   [x,y]\cdot v = x\cdot(y\cdot v) - y\cdot(x\cdot v), \quad \mbox{for}\; x,y\in \gf, v\in V
 \end{equation}
-Representation of algebra $\gf$ on vector space $V$ is the homomorphism $\gf\to gl(V)$. 
+Representation of algebra $\gf$ on a vector space $V$ is the homomorphism $\gf\to gl(V)$. 
 
-For an arbitrary representation it is possible to diagonalize Cartan generators $H^{i}$ simultaneously by special choice of basis $\{v_{j}\}$ in $V$:
+For an arbitrary representation it is possible to diagonalize the operators corresponding to Cartan generators $H^{i}$ simultaneously by special choice of basis $\{v_{j}\}$ in $V$:
 \begin{equation}
   \label{eq:3}
   H^{i}\cdot v_{j}=\nu_{j}^{i}v_{j}
 \end{equation}
-Eigenvalues of Cartan generators on element of basis $v_{j}$ are given by weight $\nu_{j}\in \hfg^{*}: \nu_{j}(H^{i})=\nu_{j}^{i}$. Vector $v\in V$ is called weight vector of weight $\lambda$ if $H v=\lambda_{j}(H)v,\; \forall H\in \hf$ , weight subspace consists of all weight vectors $V_{\lambda}=\{v\in V: H v=\lambda_{j}(H)v,\; \forall H\in \hf\}$. Weight multiplicity $m_{\lambda}=\mathrm{mult}(\lambda)=\mathrm{dim} V_{\lambda}$ is the dimension of weight subspace.
+Eigenvalues $\nu^{i}_{j}$ of Cartan generators on element of basis $v_{j}$ determine weight $\nu_{j}\in \hfg^{*}$ such that $\nu_{j}(H^{i})=\nu_{j}^{i}$. Vector $v\in V$ is called weight vector of weight $\lambda$ if $H v=\lambda_{j}(H)v,\; \forall H\in \hf$ , weight subspace consists of all weight vectors $V_{\lambda}=\{v\in V: H v=\lambda_{j}(H)v,\; \forall H\in \hf\}$. Weight multiplicity $m_{\lambda}=\mathrm{mult}(\lambda)=\mathrm{dim} V_{\lambda}$ is the dimension of weight subspace.
 
-The structure of module is determined by the set of weights since the action of generators $E^{\alpha}$ on weight vectors is
+The structure of module is determined by the set of weights since the action of generators $E^{\alpha}$ on a weight vectors is
 \begin{equation}
   \label{eq:5}
   E^{\alpha}\cdot v_{\lambda} \propto v_{\lambda+\alpha}
@@ -373,10 +371,10 @@ It can be encoded by the formal character of module
   \label{eq:10}
   \mathrm{ch}V=\sum_{\lambda}m_{\lambda} e^{\lambda}
 \end{equation}
-Character  $\mathrm{ch}V\in \mathcal{E}$ is the element of algebra $\mathcal{E}$ generated by formal exponents of weights.
-It is possible to specialise character by taking its value on some element $\xi$ of $\hf$:
+Character  $\mathrm{ch}V\in \mathcal{E}$ is an element of algebra $\mathcal{E}$ generated by formal exponents of weights.
+Character can be specialized by taking its value on some element $\xi$ of $\hf$:
 
-Roots are weights of adjoint representation of $\gf$ on itself. They encode the commutation relations of algebra in the following way. Denote by $\Delta$ the set of roots. For each $\alpha\in \Delta$ there exist root $-\alpha\in \Delta$ and generators $E^{\alpha}, E^{-\alpha}$ such that
+Roots are weights of adjoint representation of $\gf$ on itself. They encode the commutation relations of algebra in the following way. Denote by $\Delta$ the set of roots. For each $\alpha\in \Delta$ there exist a root $-\alpha\in \Delta$ and generators $E^{\alpha}, E^{-\alpha}$ such that
 \begin{align}
   \label{eq:4}
   &  [H^{i},E^{\alpha}]=\alpha^{i}E^{\alpha} \\
@@ -389,51 +387,55 @@ Roots are weights of adjoint representation of $\gf$ on itself. They encode the 
 \end{align}
 Highest weight of adjoint representation. 
 
-%%  Given a root system Φ we can always choose (in many ways) a set of positive roots. This is a subset Φ + of Φ such that
-%%  
-%%      * For each root \alpha\in\Phi exactly one of the roots α, –α is contained in Φ + .
-%%      * For any two distinct \alpha, \beta\in \Phi^+ such that α + β is a root, \alpha+\beta\in\Phi^+.
-%%  
-%%  If a set of positive roots Φ + is chosen, elements of –Φ + are called negative roots.
-%%  
-%%  An element of Φ + is called a simple root if it cannot be written as the sum of two elements of Φ + . The set Δ of simple roots is a basis of V with the property that every vector in Φ is a linear combination of elements of Δ with all coefficients non-negative, or all coefficients non-positive. For each choice of positive roots, the corresponding set of simple roots is the unique set of roots such that the positive roots are exactly those that can be expressed as a combination of them with non-negative coefficients, and such that these combinations are unique.
-%%  
-%%  Ordering. Highest root. Rho=sum of fundamental weights, not half-sum of positive roots.
+Given a root system $\Delta$ we can choose a set of positive roots. This is a subset  $\Delta^{+}\subset \Delta$ such that for each root $\alpha\in\Delta$ exactly one of the roots $\alpha, -\alpha$ is contained in $\Delta^{+}$ and for any two distinct positive roots $\alpha, \beta\in \Delta^{+}$ such that $\alpha+\beta\in \Delta$ their sum is also positive $\alpha+\beta\in\Delta^{+}$.
+Elements of $-\Delta^{+}$ are called negative roots.
 
-In the root system $\Delta$ exist simple roots $\left\{\alpha_{i}\right\}$, such that $\alpha=\sum_{i}n_{i}\alpha_{i},\; \forall\alpha\in \Delta$. In case of finite-dimensional Lie algebra $\gf$ $i=1,\dots,r,\quad r=\mathrm{rank}(\gf)$. Although the full set of roots $\Delta$ is infinite for affine Lie algebra $\hat\gf$ the number of simple roots is finite and are denoted by $\alpha_{0},\dots \alpha_{r}$ where $r=\mathrm{rank}(\gf)$. The roots $\alpha_1,\dots, \alpha_r$ are equal to the roots of the underlying finite-dimensional Lie algebra $\go$. The root $\alpha_0=\delta-\theta$ is equal to the difference of {\it imaginary root} $\delta$ and $\theta=\sum_{i=1,\dots,r} a_i \alpha_i$ -- highest root of algebra $\go$, coefficients $a_i$ are called {\it marks}. {\it Comarcs} are equal to $a_i^v=\frac{(\alpha_i,\alpha_i)}{2} a_i$.
+A positive root is simple if it cannot be written as the sum of positive roots. The set of simple roots $\left\{\alpha_{i}\right\}$ is a basis of $\hfg$ and each root can be written as $\alpha=\sum_{i}n_{i}\alpha_{i}$ with all $n_{i}$ non-negative or non-positive. In case of finite-dimensional Lie algebra $\gf$ simple roots are numbered from 1 to rank of the algebra $i=1,\dots,r,\quad r=\mathrm{rank}(\gf)$. By numbering simple roots with an index $i$ we introduce an ordering on the root system $\Delta$. Highest root with respect to this ordering is denoted by  $\theta=\sum_{i=1,\dots,r} a_i \alpha_i$, coefficients $a_i$ are called {\it marks}. {\it Comarcs} are equal to $a_i^{\vee}=\frac{(\alpha_i,\alpha_i)}{2} a_i$.
 
-Roots system can be reconstructed from the set of simple roots with the use of Weyl group $W_{\gf}$ which is generated by reflections $\{s_{i}:\hfg^{*}\to\hfg^{*}\}$ corresponding to simple roots $\{\alpha_{i}\}$:
+Although the full set of roots $\Delta$ is infinite for affine Lie algebra $\hat\gf$ the number of simple roots is finite and its elements are denoted by $\alpha_{0},\dots \alpha_{r}$ where $r=\mathrm{rank}(\gf)$. The roots $\alpha_1,\dots, \alpha_r$ are the roots of the underlying finite-dimensional Lie algebra $\go$. The root $\alpha_0=\delta-\theta$ is the difference of {\it imaginary root} $\delta$ and $\theta$ -- highest root of the algebra $\go$.
+
+Sub-algebra  $\bff_{+}\subset \gf$ spanned by the generators $H^{i}, E^{\alpha}$ for $\alpha\in \Delta^{+}$ positive is called Borel sub-algebra.
+
+{\it Parabolic subalgebra}  $\pf_{I}\supset \bff_{+}$ contains Borel subalgebra and is  generated by some subset of simple roots $\{\alpha_{j}:j\in I, I\subset \{1\dots r\}\}$. It is spanned by the subset of generators $\{H^{i}\}\cup \{E^{\alpha}:\alpha\in \Delta^{+}\}\cup \{E^{-\alpha}: \alpha\in\Delta^{+}, \alpha=\sum_{j\in I} n_{j} \alpha_{j}\}$.
+
+{\it Regular subalgebra} $\af\subset\gf$ is determined by the root system $\Delta_{\af}$ with the set of simple roots $\{\beta_{i}, i=1,\dots,r_{\af}\}$ which is a subset of set of simple roots $\{\alpha_{1},\dots,\alpha_{r}\}\cup \{\Theta\}$ with the addition of highest root.
+
+The Weyl group $W_{\gf}$ is generated by reflections $\{s_{i}:\hfg^{*}\to\hfg^{*}\}$ corresponding to simple roots $\{\alpha_{i}\}$:
 \begin{equation}
   \label{eq:8}
   s_{i}\cdot\lambda=\lambda-\frac{2(\alpha_{i},\lambda)}{(\alpha_{i},\alpha_{i})}\alpha_{i}
 \end{equation}
 Note that root multiplicity $\mathrm{mult}(\alpha)$ for affine Lie algebra can be greater than one. 
 
-Weyl groups are finite for finite-dimensional Lie algebras and finitely-generated for affine Lie algebras. In the latter case of $\hat\gf$ Weyl group can be presented as semidirect product of Weyl group $W_{\gf}$ of $\gf$ and translations by the roots of $\hat \gf$.
+Root system and characters of representation are invariant with respect to the action of Weyl group. Root system can be reconstructed from the set of simple roots with the action of Weyl group. 
+
+Weyl groups are finite for finite-dimensional Lie algebras and finitely-generated for affine Lie algebras.
+
+Consider an action of element $s_{0}s_{i}s_{0}$ of Weyl group of affine Lie algebra  $\hat\gf$. Using the definition \eqref{eq:8} it is easy to see that $s_{0}s_{i}s_{0}\cdot \lambda=\lambda+\alpha_{i}$, so Weyl group can be presented as semidirect product of Weyl group $W_{\gf}$ of $\gf$ and translations by the roots of $\hat \gf$.
 
 Fundamental domain $\bar{C}$ for the action of Weyl group $W_{\gf}$ on $\hfg^{*}$ is determined by the requirement $\xi\in \bar{C}\Leftrightarrow (\xi,\alpha_{i})\geq 0$ for all simple roots $\alpha_{i}$. It is called {\it main Weyl chamber}.
 
-Cartan matrix $A$ is defined by products of simple roots
+The Cartan matrix $A$ is defined by products of simple roots
 \begin{equation}
   \label{eq:9}
   A_{ij}=\frac{2(\alpha_{i},\alpha_{j})}{(\alpha_{j},\alpha_{j})}
 \end{equation}
 and can be used for compact description of Lie algebra commutation relations in Chevalley basis \cite{humphreys1997introduction}, \cite{fulton1991representation}, \cite{bourbaki2002lie}.
 
-The form \eqref{eq:9} induces the basis in ${\cal L}P$ dual  to the simple
+The form \eqref{eq:9} induces the basis dual  to the simple
 roots basis. It is called the fundamental weights basis. We denote
-its elements by $\omega_i$.
+its elements by $\omega_i$:
 \begin{equation}
   \label{eq:20}
-  \langle\omega_i,\alpha_j\rangele=\frac{(\omega_{i},\alpha_{j})}{(\alpha_{j},\alpha_{j})}=\delta_{ij}
+  \langle\omega_i,\alpha_j\rangle=\frac{(\omega_{i},\alpha_{j})}{(\alpha_{j},\alpha_{j})}=\delta_{ij}
 \end{equation}
-For finite-dimensional Lie algebra $i=1,\dots, r$. For affine Lie algebra $\omega_0=\lambda$, $(\lambda,\delta)=1, \; (\lambda,\lambda)=(\delta,\delta)=0$. Other fundamental weights are equal to $\omega_i=a_i^v \lambda_0 +\co{\omega_i}$, where $\co{\omega_i}$ is the fundamental weight of finite-dimensional Lie algebra $\go$.
+For finite-dimensional Lie algebra there are $r$ fundamental weights, $i=1,\dots, r$. For affine Lie algebra we have additional fundamental weight $\omega_0=\lambda$, $(\lambda,\delta)=1, \; (\lambda,\lambda)=(\delta,\delta)=0$. Other fundamental weights are equal to $\omega_i=a_i^v \lambda_0 +\co{\omega_i}$, where $\co{\omega_i}$ is the fundamental weight of finite-dimensional Lie algebra $\go$.
 
 Weyl vector is denoted by $\rho=\sum_{i} \omega_{i}$, it is of importance for 
 \subsection{Highest weight modules}
 \label{sec:high-weight-modul}
 
-We consider $\gf$-modules of the category $\mathcal{O}$, i.e. such $V$ that $V=\bigoplus_{\lambda\in \hfg^{*}} V_{\lambda}$, where each $V_{\lambda}$ is finite-dimensional and there exists finite set $\lambda_{1},\dots \lambda_{s}$ such that $V_{\lambda}\neq 0 \Rightarrow \lambda=\lambda_{i}-\sum_{k=1,\dots, r} n_{k}\alpha_{k}$, where $n_{k}\in \mathbb{Z}_{+}$ (See \cite{humphreys2008representations}, \cite{carter2005lie}).
+We consider finitely-generated $\gf$-modules $V$ such that $V=\bigoplus_{\xi\in \hfg^{*}} V_{\xi}$, where each $V_{\xi}$ is finite-dimensional and there exists finite set of weights $\lambda_{1},\dots \lambda_{s}$ which generates weight system of $V$, i.e. if $V_{\xi}\neq 0$ then $\xi=\lambda_{i}-\sum_{k=1,\dots, r} n_{k}\alpha_{k}$ where $n_{k}\in \mathbb{Z}_{+}$ (See \cite{humphreys2008representations}, \cite{carter2005lie}).
 
 Highest weight module $V^{\mu}$ contains one highest weight $\mu$, all other weights are obtained by the subtraction of linear combination of simple roots $\lambda=\mu-n_{1}\alpha_{1}-\dots-n_{r}\alpha_{r},\; n_{k}\in \mathbb{Z}_{+}$. 
 
@@ -441,10 +443,11 @@ The simplest type of highest weight modules is the Verma module
 $M^{\mu}$ who's space can be defined as the space
 \begin{equation}
   \label{eq:17}
-  M^{\mu}=U(\gf)\underset{U(\bff_{+})}{\otimes} D_{\lambda}(\bff_{+}),
+  M^{\mu}=U(\gf)\underset{U(\bff_{+})}{\otimes} D^{\mu}(\bff_{+}),
 \end{equation}
-where $\underset{U(\bff_{+})}{\otimes}$ means that the action of elements of $U(\bff_{+})$ ``falls through'' left part of tensor product onto the right part. Here $\bff_{+}$ is Borel sub-algebra, $D_{\lambda}(\bff_{+})$ is a special representation of $\bff_{+}$, such that $D(E^{\alpha})=0,\; D(h)=\lambda(h)$ for any positive root $\alpha$.
-Elements of $\gf$ act from the left, so we should expand element of $\gf$ in some basis, and then commute all the elements of $\bff_{+}$ to the right, so that they can act on space $D_{\lambda}(\bff_{+})$.
+with respect to the multiplication in $U(\gf)$, 
+where $\underset{U(\bff_{+})}{\otimes}$ means that the action of elements of $U(\bff_{+})$ ``falls through'' the left part of tensor product onto the right part. Here $\bff_{+}$ is Borel sub-algebra, $D^{\mu}(\bff_{+})$ is a representation of $\bff_{+}$ such that $D(E^{\alpha})=0,\; D(H)=\mu(H)$ for any positive root $\alpha$.
+Elements of $\gf$ act from the left and we should all the elements of $\bff_{+}$ to the right, so that they can act on the space $D_{\lambda}(\bff_{+})$.
 
 Weight multiplicities in Verma module can be found from the Weyl
 character formula
@@ -460,7 +463,7 @@ Here we have used the Weyl denominator identity
 and $\epsilon \left( w\right) :=\det \left( w\right)$ is equal to
 the parity of number of Weyl reflections generating $w$.
 
-Construction of generalized Verma modules is analogous to (\ref{eq:17}), but representation of Borel subalgebra is substituted by the representation of some parabolic subalgebra $\pf_{I}\supset \bff_{+}$ generated by some subset of simple roots $I\subset \{\alpha_{1},\dots, \alpha_{r}\}$:
+Construction of generalized Verma modules is analogous to (\ref{eq:17}), but representation of Borel subalgebra is substituted by the representation of parabolic subalgebra $\pf_{I}\supset \bff_{+}$ generated by some subset $\{\alpha_{I}\}$ of simple roots $I\subset \{1,\dots, r\}$:
 \begin{equation*}
 M_{I}^{\mu}=U\left( \gf\right)\otimes _{U\left( \pf_{I}\right) }L_{\pf_{I}}^{\mu}.
 \end{equation*}
