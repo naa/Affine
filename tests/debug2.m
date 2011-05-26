@@ -2,10 +2,126 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 <<affine.m;
 
+
+
+Throw::nocatch: 
+   Uncaught Throw[Dynkin labels of sl(3) root: GOT UNEXPECTED VALUE False
+      INSTEAD OF True, assertion exception] returned to top level.
+
+Out[45]= Hold[Throw[Dynkin labels of sl(3) root: GOT UNEXPECTED VALUE False\
+ 
+>      INSTEAD OF True, assertion exception]]
+
+Module[{rs=makeSimpleRootSystem[B,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-2}]
+
+dynkinLabels[makeSimpleRootSystem[B,2]][makeSimpleRootSystem[B,2][simpleRoot][1]]
+
+Out[50]= {2, -2}
+
+Out[46]= {1, -1}
+
+fundamentalWeights[makeSimpleRootSystem[B,2]]
+
+makeSimpleRootSystem[B,2][simpleRoots]
+
+Out[44]= {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}
+
+                                                    1  1
+Out[43]= {finiteWeight[2, {1, 0}], finiteWeight[2, {-, -}]}
+                                                    2  2
+
+Out[42]= {2, -1}
+
+Out[41]= {2, 0, -1}
+
+Out[40]= False
+
+Throw::nocatch: 
+   Uncaught Throw[Dynkin labels of so(5) root: GOT UNEXPECTED VALUE False
+      INSTEAD OF True, assertion exception] returned to top level.
+
+Out[39]= Hold[Throw[Dynkin labels of so(5) root: GOT UNEXPECTED VALUE False\
+ 
+>      INSTEAD OF True, assertion exception]]
+
 b4=Subscript[B,4];
 al=b4[simpleRoots];
 b={al[[3]],al[[4]]};
 b2=makeFiniteRootSystem[b];
+
+b2=makeAffineExtension[makeSimpleRootSystem[B,2]];
+
+weylGroupElement[b2][0,0,0] @ makeAffineWeight[{1,2},1,1]
+
+Out[15]= affineWeight[2, finiteWeight[2, {-1, 0}], 1, 3]
+
+Out[14]= affineWeight[2, finiteWeight[2, {2, 1}], 1, 1]
+
+weylGroupElement[b2][0,1,0] @ makeAffineWeight[{1,2},1,1]
+
+Out[13]= affineWeight[2, finiteWeight[2, {-1, 0}], 1, 3]
+
+Out[12]= affineWeight[2, finiteWeight[2, {1, 2}], 1, 1]
+
+b2[simpleRoot][0]
+
+Expect["Comarks for affine D_4", {1, 1, 2, 1, 1}, comarks[OverHat[Subscript[D,4]]]]
+
+Expect["Dynkin labels of sl(3) root", True, Module[{rs=makeSimpleRootSystem[A,2]},dynkinLabels[rs][rs[simpleRoot][1]]==[2,-1]]]
+
+Expect["Dynkin labels of sl(3) root", True, Module[{rs=makeSimpleRootSystem[A,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-1}]]
+
+Expect["Dynkin labels of so(5) root", True, Module[{rs=makeSimpleRootSystem[B,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-2}]]
+
+Expect["Subsistem, orthogonal to highest root of so(5)", True, Module[{b2=makeSimpleRootSystem[B,2],a1},a1=makeFiniteRootSystem[{highestRoot[b2]}]; orthogonalSubsystem[b2,a1]==makeFiniteRootSystem[{b2[simpleRoot][1]}]]]
+
+Expect["Projection to A_1 \\subset B_2",True, 
+       Module[{b2=makeSimpleRootSystem[B,2],a1},
+	      a1=makeFiniteRootSystem[{highestRoot[b2]}]; 
+	      projection[a1][rho[b2]]==2*a1[simpleRoot][1]]]
+
+Expect["Projection to A_1 \\subset B_2 for affine algebras",True, 
+       Module[{b2a=makeAffineExtension[ makeSimpleRootSystem[B,2]],a1a},
+	      a1a=makeAffineExtension[makeFiniteRootSystem[{highestRoot[b2]}]]; 
+	      projection[a1][rho[b2a]]==a1[simpleRoot][1]]]
+
+Expect["Projection to A_1 \\subset B_2 for affine algebras",True, 
+       Module[{b2a=makeAffineExtension[ makeSimpleRootSystem[B,2]],a1a},
+	      a1a=makeAffineExtension[makeFiniteRootSystem[{highestRoot[b2a]}]]; 
+	      Print[projection[a1a][rho[b2a]]];
+	      Print[a1a[simpleRoot][1]];True]]
+
+Out[16]= affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1]
+
+Out[11]= affineWeight[2, finiteWeight[2, {1, -1}], 0, 0]
+
+Out[10]= affineWeight[2, finiteWeight[2, {0, -1}], 1, 3]
+
+Out[9]= affineWeight[2, finiteWeight[2, {1, 2}], 1, 1]
+
+Out[8]= affineWeight[2, finiteWeight[2, {-1, 0}], 1, 3]
+
+Out[7]= affineWeight[2, finiteWeight[2, {1, 2}], 1, 1]
+
+Out[6]= affineWeight[2, finiteWeight[2, {1, 1}], 1, 1]
+
+Out[5]= affineWeight[2, finiteWeight[2, {1, 1}], 1, 1]
+
+Out[4]= Function[z$, Fold[revApply, z$, 
+ 
+>     reflection /@ 
+ 
+>      affineRootSystem[2, finiteRootSystem[2, 2, 
+ 
+>          {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>         affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>         {affineWeight[2, finiteWeight[2, {1, -1}], 0, 0], 
+ 
+>          affineWeight[2, finiteWeight[2, {0, 1}], 0, 0]}][simpleRoot] /@ 
+ 
+>       {0, 1}]]
 
 toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ]:=
     NestWhile[Function[v,
