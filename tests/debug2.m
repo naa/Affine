@@ -2,6 +2,180 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 <<affine.m;
 
+Module::lvsym: Local variable specification 
+    {b4 = makeSimpleRootSystem[B, 4], b2, wg, fe . mcw} contains fe . mcw
+    , which is not a symbol or an assignment to a symbol.
+
+Expect["Our branching", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Union[ourBranching[b4,b2][wg][multiplicities]]=={0,6,10,19,30,40,60}]]
+
+Expect["branching2", True, 
+
+
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      branching2[b4,b2][wg][multiplicities]]
+
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg,fe,mcw},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      fe=branching2[b4,b2][wg];
+	      mcw=Select[fe[weights],mainChamberQ[b2]];
+	      Union[fe/@mcw]]
+
+                                             
+Out[10]= {0, 6, 10, 19, 30, 40, 60}
+
+                                        
+Union::normal: Nonatomic expression expected at position 1 in Union[mcs].
+
+Out[9]= Union[mcs]
+
+                                        
+Module::lvsym: Local variable specification 
+    {b4 = makeSimpleRootSystem[B, 4], b2, wg, fe . mcw} contains fe . mcw
+    , which is not a symbol or an assignment to a symbol.
+
+Out[8]= Module[{b4 = makeSimpleRootSystem[B, 4], b2, wg, fe . mcw}, 
+ 
+>    b2 = regularSubalgebra[b4][3, 4]; wg = weight[b4][0, 1, 0, 2]; 
+ 
+>     fe = branching2[b4, b2][wg]; 
+ 
+>     mcw = Select[fe[weights], mainChamberQ[b2]]; Union[fe /@ mcs]]
+
+
+                        
+Out[7]= {0, 0, 0, 0, 0, 0, 19, 10, -60, 30, 0, 60, 0, 0, 0, -60, -10, 0, 0, 
+ 
+>    0, 0, 0, -6, -19, -60, 60, 0, -19, 19, 0, -6, 0, 60, 6, 0, 10, 6, 0, 0, 
+ 
+>    -10, -19, -6, 0, 10, -60, 6, 0, 40, 40, -6, 30, 0, -40, 30, 0, 0, 0, 0, 
+ 
+>    40, 0, -10, 0, 0, 0, -30, -30, 0, 0, 0, 0, -40, 19, 0, 30, 0, -40, 0, 
+ 
+>    -30, 6, -30, 60}
+
+                                
+Throw::nocatch: 
+   Uncaught Throw[branching2: GOT UNEXPECTED VALUE False INSTEAD OF True, 
+     assertion exception] returned to top level.
+
+Out[6]= Hold[Throw[branching2: GOT UNEXPECTED VALUE False INSTEAD OF True, 
+ 
+>     assertion exception]]
+
+
+Expect["Formal element to hastable conversion", True, 
+       Module[{fe=makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]},
+	      keys[fe[hashtable]]==fe[weights] && values[fe[hashtable]]==fe[multiplicities]]]
+
+Expect["Formal element addition", 5, 
+       (makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]+makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,5}]},{3,3}])[makeFiniteWeight[{1,2}]]]
+
+Expect["Formal element multiplication by number", 6, 
+       (3*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}])[makeFiniteWeight[{1,2}]]]
+
+Expect["Formal element multiplication by exponent of weight", 2, 
+       (Exp[makeFiniteWeight[{1,1}]]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}])[makeFiniteWeight[{2,3}]]]
+
+Square[makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]
+
+Expect["Formal elements multiplication", True,
+       Exp[makeFiniteWeight[{1,1}]]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]==
+       makeFormalElement[{makeFiniteWeight[{1,1}]}]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]
+
+projection[a1]/@ orbit[b2][weight[b2][1,1]]
+
+Module[{b2=makeSimpleRootSystem[B,2],a1},
+       a1=makeFiniteRootSystem[{highestRoot[b2]}];
+       projection[a1]/@ orbit[b2][weight[b2][1,1]]]
+
+Expect["Projection for formal elements", 2, 
+       Module[{b2=makeSimpleRootSystem[B,2],a1},
+	      a1=makeFiniteRootSystem[{highestRoot[b2]}];
+	      makeFormalElement[projection[a1]/@ Flatten[orbit[b2][weight[b2][1,1]]]][makeFiniteWeight[{1,1}]]]]
+
+Expect["Regular subalgebra B2 of B4", True, regularSubalgebra[makeSimpleRootSystem[B,4]][3,4]==makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,1}]}]]
+
+Expect["Simple branching", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Sort[simpleBranching[b4,b2][wg][multiplicities]]=={6,10,19,30,40,60}]]
+
+Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[positiveRoots[makeSimpleRootSystem[B,2]]]]
+
+Expect["Our branching", True]
+
+
+Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+       b2=regularSubalgebra[b4][3,4];
+       wg=weight[b4][0,1,0,2];
+       Sort[ourBranching[b4,b2][wg][multiplicities]]]
+
+[Calculating...]
+
+
+                          
+Throw::nocatch: 
+   Uncaught Throw[Projection for formal elements: GOT UNEXPECTED VALUE 0
+      INSTEAD OF 2, assertion exception] returned to top level.
+
+Out[17]= Hold[Throw[Projection for formal elements: GOT UNEXPECTED VALUE 0\
+ 
+>      INSTEAD OF 2, assertion exception]]
+
+
+                  
+Out[16]= {{finiteWeight[2, {1, 1}]}, 
+ 
+                                                1  1
+>    {finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}]}, 
+                                                2  2
+ 
+                       1  1                       1     1
+>    {finiteWeight[2, {-, -}], finiteWeight[2, {-(-), -(-)}]}, 
+                       2  2                       2     2
+ 
+                         1     1
+>    {finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-1, -1}]}, 
+                         2     2
+ 
+>    {finiteWeight[2, {-1, -1}]}}
+
+
+Out[15]= orbit[b2][projection[a1][weight[b2][1, 1]]]
+
+
+Out[12]= []formalElement[table$187]
+
+                                 2
+Out[11]= formalElement[table$186]
+
+
+
+
+
+
+Expect["Formal element construction", 2, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}][makeFiniteWeight[{1,2}]]]
+
+Expect["Formal element construction", 2, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}], makeFiniteWeight[{1,2}]}][makeFiniteWeight[{1,2}]]]
+
+Expect["Formal element construction", True, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]==makeFormalElement[makeHashtable[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]]
+
+Out[5]= If[True != (formalElement[table$129] == formalElement[table$130]), 
+ 
+>    Throw[ToString[Formal element construction]<>: GOT UNEXPECTED VALUE <>
+ 
+>      ToString[formalElement[table$129] == formalElement[table$130]]<>
+ 
+>       INSTEAD OF <>ToString[True], assertion exception]]
+
 
 
 Throw::nocatch: 
@@ -160,6 +334,7 @@ Export["/home/anton/programing/Affine/tests/fan.png",Graphics[Text[f[#],{#[stand
 Out[5]= /home/anton/programing/Affine/tests/fan.png
 
 wg=weight[b4][0,1,0,2]; (* makeFiniteWeight[{2,2,1,1}] *)
+
 aw=projection[b2][anomalousWeights[b4][wg]];
 
 Export["/home/anton/programing/Affine/tests/anom.png",Graphics[Text[aw[#],{#[standardBase][[4]],#[standardBase][[3]]}] & /@ aw[weights]]]

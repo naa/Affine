@@ -363,9 +363,11 @@ rho::"usage"=
     "rho[rs_?rootSystemQ] - Weyl vector of root system rs (sum of fundamental weights)";
 rho[rs_?rootSystemQ]:=Plus@@fundamentalWeights[rs];
 
-rho[{posroots__finiteWeight}]=1/2*(Plus@@{posroots});
+rho[{posroots__finiteWeight}]:=1/2*(Plus@@{posroots});
 
 Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[makeSimpleRootSystem[B,2]]]
+
+Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[positiveRoots[makeSimpleRootSystem[B,2]]]]
 
 toFundamentalChamber::"usage"=
     "toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ] acts on a weight vec by simple reflections of rs till it gets to main Weyl chamber";
@@ -714,11 +716,15 @@ formalElement/:fe_formalElement[weights]:=keys[fe[[1]]];
 
 formalElement/:fe_formalElement[multiplicities]:=values[fe[[1]]];
 
+formalElement/:x_formalElement==y_formalElement:=x[weights]==y[weights] && x[multiplicities]==y[multiplicities];
+
 makeFormalElement::"usage"=
     "makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}] creates formal element with given weights and corresponding multiplicities\n
     makeFormalElement[{weights__?weightQ}] creates formal element where weight multiplicity is calculated as the number of appearances of weight in arguments list"
 
 makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}]:=formalElement[makeHashtable[{weights},{multiplicities}]];
+
+Expect["Formal element construction", 2, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}][makeFiniteWeight[{1,2}]]]
 
 makeFormalElement[{weights__?weightQ}]:=
     Module[{res},
@@ -726,7 +732,13 @@ makeFormalElement[{weights__?weightQ}]:=
 	   Scan[(res[hashtable][#]=res[#]+1)&,{weights}];
 	   res];
 
+Expect["Formal element construction", 2, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}], makeFiniteWeight[{1,2}]}][makeFiniteWeight[{1,2}]]]
+
 makeFormalElement[h_]:=formalElement[h];
+
+Expect["Formal element construction", True, 
+       makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]==
+       makeFormalElement[makeHashtable[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]]
 
 subElement::"usage"=
     "subElement[fe_formalElement,{weights___?weightQ}] creates formalElement with the given subset of weights";
@@ -736,19 +748,37 @@ Expect["subElement",{1},subElement[makeFormalElement[positiveRoots[makeSimpleRoo
 
 formalElement/:fe_formalElement[hashtable]:=fe[[1]];
 
+Expect["Formal element to hastable conversion", True, 
+       Module[{fe=makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]},
+	      keys[fe[hashtable]]==fe[weights] && values[fe[hashtable]]==fe[multiplicities]]]
+
+
 formalElement/:x_formalElement + y_formalElement:=Module[{res},
 							 res=makeFormalElement[makeHashtable[{},{}]];
 							 Scan[(res[hashtable][#]:=x[#]+y[#])&,Union[x[weights],y[weights]]];
 							 res];
 
+Expect["Formal element addition", 5, 
+       (makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]+makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,5}]},{3,3}])[makeFiniteWeight[{1,2}]]]
+
 formalElement/:x_formalElement*n_?NumberQ:=makeFormalElement[x[weights],n*x[multiplicities]];
+
+Expect["Formal element multiplication by number", 6, 
+       (3*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}])[makeFiniteWeight[{1,2}]]]
 
 formalElement/:x_formalElement*Exp[w_?weightQ]:=
     Module[{ws},
 	   ws=Select[(#+w)&/@x[weights],checkGrade[x]];
 	   makeFormalElement[ws,(x[#-w])&/@ws]]
 
+Expect["Formal element multiplication by exponent of weight", 2, 
+       (Exp[makeFiniteWeight[{1,1}]]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}])[makeFiniteWeight[{2,3}]]]
+
 formalElement/:x_formalElement * y_formalElement:=Plus @@ ((y[#]*(x*Exp[#]))& /@ y[weights]);
+
+Expect["Formal elements multiplication", True,
+       Exp[makeFiniteWeight[{1,1}]]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]==
+       makeFormalElement[{makeFiniteWeight[{1,1}]}]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]
 
 (* formalElement/:orbit[rs_?rootSystemQ][fe_formalElement]:= *)
 
@@ -757,6 +787,19 @@ projection[rs_?rootSystemQ][fe_formalElement]:=
 	   res=makeFormalElement[makeHashtable[{},{}]];
 	   Scan[(res[hashtable][(projection[rs][{#}])[[1]]]=res[(projection[rs][{#}])[[1]]]+fe[#])&,fe[weights]];
 	   res];
+
+Expect["Projection for formal elements", 2, 
+       Module[{b2=makeSimpleRootSystem[B,2],a1},
+	      a1=makeFiniteRootSystem[{highestRoot[b2]}];
+	      makeFormalElement[projection[a1]/@ Flatten[orbit[b2][weight[b2][1,1]]]][makeFiniteWeight[{1,1}]]]]
+
+regularSubalgebra::"usage"=
+    "regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ] returns root system of regular subalgebra obtained by removing all unlisted nodes \n
+    from Dynkn diagram of the algebra";
+regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ]:=makeFiniteRootSystem[rs[simpleRoot]/@ {rootIndices}];
+
+Expect["Regular subalgebra B2 of B4", True, regularSubalgebra[makeSimpleRootSystem[B,4]][3,4]==makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,1}]}]]
+
 simpleBranching::"usage"=
     "Calculate branching coefficients with simple algorithm, which constructs all the modules of subalgebra with Freudenthal formula";
 simpleBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
@@ -768,6 +811,13 @@ simpleBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   wgs=Select[Sort[pmults[weights],#1.rh>#2.rh&],mainChamberQ[subs]];
 	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*makeFormalElement[freudenthalMultiplicities[subs][#]])&, wgs];
 	   res];
+
+Expect["Simple branching", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Sort[simpleBranching[b4,b2][wg][multiplicities]]=={6,10,19,30,40,60}]]
+
 
 anomalousWeights::"usage"="
     anomalousWeights[rs_?rootSystemQ][hweight_?weightQ] returns the formal element, consisting of anomalous weights";
@@ -807,12 +857,9 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 
 	   rh=rho[rs];
 	   subrh=rho[subs];
-	   Print[Sort[selWM[weights],#1.subrh>#2.subrh&]];
 	   hw=Sort[selWM[weights],#1.subrh>#2.subrh&][[1]];
-	   Print[hw];
 	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,hw];
 	   fn=fan[rs,subs];
-	   Print[reprw];
 
 	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
@@ -831,6 +878,13 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	  ]
 
 
+Expect["Our branching", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Union[ourBranching[b4,b2][wg][multiplicities]]=={0,6,10,19,30,40,60}]]
+
+
 branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{anomW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0,hw},
 	   orth=orthogonalSubsystem[rs,subs];
@@ -842,8 +896,6 @@ branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   reprw=Sort[
 	       Flatten[orbit[subs][getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,hw]]],
 	       #1.subrh>#2.subrh&];
-
-	   Print[reprw];
 
 	   fn=fan[rs,subs];
 
@@ -860,11 +912,15 @@ branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 			 res[v]=-1/sgamma0*(
 			     -selWM[v-gamma0]+
 			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[v+x],0]));
-			 Print[v,res[v]];
 			],
 		reprw];
 	   makeFormalElement[keys[res],values[res]]
 	  ]
 
-
-regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ]:=makeFiniteRootSystem[rs[simpleRoot]/@ {rootIndices}];
+Expect["branching2", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg,fe, mcw},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      fe=branching2[b4,b2][wg];
+	      mcw=Select[fe[weights],mainChamberQ[b2]];
+	      Union[fe/@mcw]=={0,6,10,19,30,40,60}]]
