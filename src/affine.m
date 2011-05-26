@@ -214,6 +214,7 @@ makeFiniteRootSystem[{roots__List}]:=makeFiniteRootSystem[makeFiniteWeight/@{roo
 finiteRootSystem/:x_finiteRootSystem[rank]:=x[[1]];
 finiteRootSystem/:x_finiteRootSystem[dimension]:=x[[2]];
 finiteRootSystem/:x_finiteRootSystem[simpleRoots]:=x[[3]];
+finiteRootSystem/:x_finiteRootSystem[simpleRoot][0]:=highestRoot[x];
 finiteRootSystem/:x_finiteRootSystem[simpleRoot][n_Integer]:=x[[3]][[n]];
 
 
@@ -362,7 +363,7 @@ rho::"usage"=
     "rho[rs_?rootSystemQ] - Weyl vector of root system rs (sum of fundamental weights)";
 rho[rs_?rootSystemQ]:=Plus@@fundamentalWeights[rs];
 
-rho[{posroots__?weightQ}]:=1/2*(Plus@@{posroots});
+rho[{posroots__finiteWeight}]=1/2*(Plus@@{posroots});
 
 Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[makeSimpleRootSystem[B,2]]]
 
@@ -488,21 +489,21 @@ dimension[rs_?rootSystemQ][hweight_?weightQ]:=dimension[positiveRoots[rs]][toFun
 Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2}]]];
 
 weightSystem::"usage"=
-    "weightSystem[rs_?rootSystemQ][higestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
+    "weightSystem[rs_?rootSystemQ][highestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
     The list is split in pieces by number of root substractions";
 
-weightSystem[{posroots__?weightQ}][higestWeight_?weightQ]:=Module[{minusPosRoots=-{posroots},mgrade=Max[grade/@{posroots}]},
+weightSystem[{posroots__?weightQ}][highestWeight_?weightQ]:=Module[{minusPosRoots=-{posroots},mgrade=Max[grade/@{posroots}]},
 (*								  Throw["_TODO_","not implemented"];*)
 								  Most[NestWhileList[Function[x,Complement[
 										 Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
 										       And[checkGrade[mgrade][y],mainChamberQ[{posroots}][y]]]
-										 ,x]],{higestWeight},#=!={}&]]];
+										 ,x]],{highestWeight},#=!={}&]]];
 
-weightSystem[rs_?rootSystemQ][higestWeight_?weightQ]:=Module[{minusPosRoots=-positiveRoots[rs]},
+weightSystem[rs_?rootSystemQ][highestWeight_?weightQ]:=Module[{minusPosRoots=-positiveRoots[rs]},
 							     Most[NestWhileList[Function[x,Complement[
 										 Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
 										       And[checkGrade[rs][y],mainChamberQ[rs][y]]]
-										 ,x]],{higestWeight},#=!={}&]]];
+										 ,x]],{highestWeight},#=!={}&]]];
 
 Module[{b2=makeSimpleRootSystem[B,2]},
        Expect["Weights of [2,1] module of B2",True, weightSystem[b2][makeFiniteWeight[{2,1}]]==
@@ -576,15 +577,16 @@ rh=rho[b2];
 rs=b2; 
 
 fan=Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[rs][rh]]]; *)
-higestRoot::"usage"="returns highest root of root system";
-higestRoot[rs_finiteRootSystem]:=toFundamentalChamber[rs][rs[simpleRoot][Ordering[(#.#&)/@rs[simpleRoots],-1][[1]]]]
 
-Expect["Higest root for B2",makeFiniteWeight[{1, 1}],higestRoot[makeSimpleRootSystem[B,2]]]
+highestRoot::"usage"="returns highest root of root system";
+highestRoot[rs_finiteRootSystem]:=toFundamentalChamber[rs][rs[simpleRoot][Ordering[(#.#&)/@rs[simpleRoots],-1][[1]]]]
+
+Expect["Highest root for B2",makeFiniteWeight[{1, 1}],highestRoot[makeSimpleRootSystem[B,2]]]
 
 makeAffineExtension::"usage"=
     "makeAffineExtension[fs_finiteRootSystem] creates root system of affine Lie algebra which 
     is extension of given finite-dimensional root system";
-makeAffineExtension[fs_finiteRootSystem]:=affineRootSystem[fs[rank],fs,makeAffineWeight[-higestRoot[fs],0,1],(makeAffineWeight[#,0,0]&)/@fs[simpleRoots]]
+makeAffineExtension[fs_finiteRootSystem]:=affineRootSystem[fs[rank],fs,makeAffineWeight[-highestRoot[fs],0,1],(makeAffineWeight[#,0,0]&)/@fs[simpleRoots]]
 
 OverHat::"usage"=
     "OverHat[rs_finiteRootSystem] creates affine extension of root system rs, it is equivalent makeAffineExtension[rs], but uses mathematical notation in notebook interface";
@@ -786,22 +788,14 @@ ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
 	   fn=fn*Exp[-gamma0];
-(*	   Print[gamma0,sgamma0];*)
-	   (*fn=fn- makeFormalElement[{gamma0},{sgamma0}];*)
-
-(*	   def=subrh-projection[subs][{rh}][[1]];
-	   Print[def];*)
 	   def=-projection[subs][rh];
 	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z-def]},{tmp[[1]]+def,tmp[[2]]}]];
 	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
 	   insideQ:=NumberQ[res[toFC[#][[1]]]]&;
 	   Scan[Function[v,
-			 Print[v];
-(*			 Print[(fn[weights] /. x_?weightQ :> {v+x,toFC[v+x],fn[x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]]})];*)
 			 res[v]=-1/sgamma0*(
 			     -selWM[v-gamma0]+
 			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
-			 Print[res[v]];
 			],
 		reprw];
 	   makeFormalElement[keys[res],values[res]]
@@ -842,3 +836,6 @@ branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 		reprw];
 	   makeFormalElement[keys[res],values[res]]
 	  ]
+
+
+regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ]:=makeFiniteRootSystem[rs[simpleRoot]/@ {rootIndices}];
