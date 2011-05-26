@@ -222,13 +222,13 @@ prependZeros::"usage"=
     "prependZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by prepending num zeros to its coordinates";
 prependZeros[num_Integer,vec_finiteWeight]:=makeFiniteWeight[Join[Table[0,{num}],vec[standardBase]]];
 
-Expect["prependZeros",True,makeFiniteWeight[{0,0,1,1}]==prependZeros[2,makeFiniteWeight[{1,1}]]];
+Expect["prependZeros",True,makeFiniteWeight[{0,0,1,1}]==prependZeros[2,makeFiniteWeight[{1,1}]]]
 
 appendZeros::"usage"=
     "appendZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by appending num zeros to its coordinates";
 appendZeros[num_Integer,vec_finiteWeight]:=makeFiniteWeight[Join[vec[standardBase],Table[0,{num}]]];
 
-Expect["appendZeros",True,makeFiniteWeight[{1,1,0,0,0}]==appendZeros[3,makeFiniteWeight[{1,1}]]];
+Expect["appendZeros",True,makeFiniteWeight[{1,1,0,0,0}]==appendZeros[3,makeFiniteWeight[{1,1}]]]
 
 Plus::"usage"=Plus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
 finiteRootSystem/:x_finiteRootSystem+y_finiteRootSystem:=makeFiniteRootSystem[Join[Map[appendZeros[y[dimension],#]&,x[simpleRoots]],
@@ -240,7 +240,7 @@ Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
 					   {0,1,0,0,0,0},
 					   {0,0,1,-1,0,0},
 					   {0,0,0,1,-1,0},
-					   {0,0,0,0,1,-1}}]]];
+					   {0,0,0,0,1,-1}}]]]
 
 
 affineRootSystem/:x_affineRootSystem+y_affineRootSystem:=makeAffineExtension[x[finiteRootSystem]+y[finiteRootSystem]];
@@ -251,7 +251,7 @@ Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
 					   {0,1,0,0,0,0},
 					   {0,0,1,-1,0,0},
 					   {0,0,0,1,-1,0},
-					   {0,0,0,0,1,-1}}]]]];
+					   {0,0,0,0,1,-1}}]]]]
 
 makeSimpleRootSystem::"usage"=
     "makeSimpleRootSystem[series, rank] creates root system of the algebra from given series with given rank.\n
@@ -282,7 +282,7 @@ checkGrade[rs_][w_finiteWeight]=True;
 checkGrade[rs_][w_affineWeight]:=(Abs[w[grade]]<rs[gradeLimit]) /. rs[gradeLimit]->10;
 checkGrade[gr_NumberQ][w_affineWeight]:=Abs[w[grade]]<=gr;
 
-Expect["checkGrade finite dimensional Lie algebra", True, checkGrade[makeSimpleRootSystem[B,2]][makeFiniteWeight[{2,1}]]];
+Expect["checkGrade finite dimensional Lie algebra", True, checkGrade[makeSimpleRootSystem[B,2]][makeFiniteWeight[{2,1}]]]
 
 Expect["checkGrade affine Lie algebra", False, checkGrade[makeAffineExtension[makeSimpleRootSystem[A,2]]][makeAffineWeight[{2,1,1},1,10]]]
 
@@ -298,13 +298,13 @@ weightQ[x_finiteWeight]=True;
 weightQ[x_affineWeight]=True;
 weightQ[_]=False;
 
-Expect["weight predicate on finite weights", True, weightQ[makeFiniteWeight[{1,2,3}]]];
+Expect["weight predicate on finite weights", True, weightQ[makeFiniteWeight[{1,2,3}]]]
 
-Expect["weight predicate on finite weights", False, weightQ[makeFiniteWeight[1,2,3]]];
+Expect["weight predicate on finite weights", False, weightQ[makeFiniteWeight[1,2,3]]]
 
-Expect["weight predicate on affine weights", True, weightQ[makeAffineWeight[{1,2,3},1,1]]];
+Expect["weight predicate on affine weights", True, weightQ[makeAffineWeight[{1,2,3},1,1]]]
 
-Expect["weight predicate on affine weights", False, weightQ[makeAffineWeight[1,2,3]]];
+Expect["weight predicate on affine weights", False, weightQ[makeAffineWeight[1,2,3]]]
 
 reflection::"usage"=
     "reflection[x_finiteWeight] represents reflection in the hyperplane, orthogonal to the given root x\n
@@ -443,28 +443,12 @@ Module[{b2=makeSimpleRootSystem[B,2]},
 
 positiveRoots::"usage"=
     "positiveRoots[rs_?rootSystemQ] returns positive roots of root system rs";
-(* Ugly hack *)
-positiveRoots[rs_affineRootSystem]:=Join[Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]],
-					 Join@@Table[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&],{rs[rank]}]];
-positiveRoots[rs_?rootSystemQ]:=Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]]
+positiveRoots[rs_finiteRootSystem]:=Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]]
 
 
 Module[{b2=makeSimpleRootSystem[B,2]},
        Expect["Positive roots of B2",True, positiveRoots[b2]=={makeFiniteWeight[{1,-1}],makeFiniteWeight[{0,1}],
 							       makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}]}]]
-
-Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
-       b2a[gradeLimit]=1;
-       Expect["Positive roots of affine B2",True, positiveRoots[b2a]=={makeAffineWeight[{-1, -1}, 0, 1], 
-								       makeAffineWeight[{1, -1}, 0, 0], 
-								       makeAffineWeight[{0, 1}, 0, 0], 
-								       makeAffineWeight[{1, 1}, 0, 0], 
-								       makeAffineWeight[{1, 0}, 0, 0], 
-								       makeAffineWeight[{0, 0}, 0, 0], 
-								       makeAffineWeight[{0, 0}, 0, 1], 
-								       makeAffineWeight[{0, 0}, 0, 0], 
-								       makeAffineWeight[{0, 0}, 0, 1]}];
-       b2a[gradeLimit]=.;]
 
 (*orbit[makeSimpleRootSystem[B,2]][rho[makeSimpleRootSystem[B,2]]]
 
@@ -482,11 +466,11 @@ dimension[{pr__?weightQ}][hweight_?weightQ]:=
     Module[{rh=rho[{pr}]},
 	   Times@@((  (#.(hweight+rh))/(rh.#) )&/@{pr})];
 
-Expect["Dimension",5, dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]];
+Expect["Dimension",5, dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]]
 
 dimension[rs_?rootSystemQ][hweight_?weightQ]:=dimension[positiveRoots[rs]][toFundamentalChamber[rs][hweight]];
 
-Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2}]]];
+Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2}]]]
 
 weightSystem::"usage"=
     "weightSystem[rs_?rootSystemQ][highestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
@@ -615,11 +599,31 @@ affineRootSystem/:rs_affineRootSystem[imaginaryRoot]:=rs[[3]]
 affineRootSystem/:rs_affineRootSystem[simpleRoots]:=Prepend[rs[[4]],rs[[3]]]
 
 affineRootSystem/:rs_affineRootSystem[simpleRoot][0]:=rs[[3]];
-affineRootSystem/:rs_affineRootSystem[simpleRoot][n_?NumberQ]/;n<=rs[rank]:=rs[simpleRoots][[n]];
+affineRootSystem/:rs_affineRootSystem[simpleRoot][n_?NumberQ]/;n<=rs[rank]:=rs[simpleRoots][[n+1]];
+
+Expect["simpleRoots of affine Lie algebra A1",True, OverHat[Subscript[A,1]][simpleRoot][1]==makeAffineWeight[{1},0,0]]
 
 zeroWeight::"usage"="zeroWeight[rs_?rootSystemQ] returns zero root of root system rs (zero of rs[dimension]-dimemsional space)"; 
 zeroWeight[rs_finiteRootSystem]:=makeFiniteWeight[Table[0,{rs[dimension]}]];
 zeroWeight[rs_affineRootSystem]:=makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,0];
+
+(* Ugly hack *)
+positiveRoots[rs_affineRootSystem]:=Join[Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]],
+					 Join@@Table[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&],{rs[rank]}]];
+
+Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
+       b2a[gradeLimit]=1;
+       Expect["Positive roots of affine B2",True, positiveRoots[b2a]=={makeAffineWeight[{-1, -1}, 0, 1], 
+								       makeAffineWeight[{1, -1}, 0, 0], 
+								       makeAffineWeight[{0, 1}, 0, 0], 
+								       makeAffineWeight[{1, 1}, 0, 0], 
+								       makeAffineWeight[{1, 0}, 0, 0], 
+								       makeAffineWeight[{0, 0}, 0, 0], 
+								       makeAffineWeight[{0, 0}, 0, 1], 
+								       makeAffineWeight[{0, 0}, 0, 0], 
+								       makeAffineWeight[{0, 0}, 0, 1]}];
+       b2a[gradeLimit]=.;]
+
 
 toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
     First[NestWhile[Function[v,
@@ -627,16 +631,19 @@ toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
 	      vec,
 	      Head[#]=!=reflection[Null]&]]
 
+Expect["To main Weyl chamber for affine B2", True,Module[{b2a=OverHat[Subscript[B,2]]}, toFundamentalChamber[b2a][weight[b2a][1,-1,1]]==weight[b2a][0,0,1]]]
+
 marks::"usage"="marks[rs_affineRootSystem] returns marks of affine Lie algebra";
 marks[rs_affineRootSystem]:=Prepend[Inverse[cartanMatrix[rs[finiteRootSystem]]].(-2*#.rs[simpleRoot][0]/(#.#)&)/@rs[realRoots],1]
 
-Expect["Marks for affine A_3", {1,1,1,1},marks[OverHat[Subscript[A,3]]]];
+Expect["Marks for affine A_3", {1,1,1,1},marks[OverHat[Subscript[A,3]]]]
 
-Expect["Marks for affine C_4", {1, 2, 2, 2, 1},marks[OverHat[Subscript[C,4]]]];
-
+Expect["Marks for affine C_4", {1, 2, 2, 2, 1},marks[OverHat[Subscript[C,4]]]]
 
 marks::"usage"="comarks[rs_affineRootSystem] returns comarks of affine Lie algebra";
 comarks[rs_affineRootSystem]:=marks[rs]*Map[#.#/2&,rs[simpleRoots]]
+
+Expect["Comarks for affine D_4", {1, 1, 2, 1, 1}, comarks[OverHat[Subscript[D,4]]]]
 
 fundamentalWeights[rs_affineRootSystem]:=Map[makeAffineWeight[#[[1]],#[[2]],0]&,
 					     Transpose[{Prepend[fundamentalWeights[rs[finiteRootSystem]],
@@ -647,12 +654,23 @@ weight::"usage"=
     "weight[rs_?rootSystemQ][labels__Integer] constructs weight defined by Dynkin labels";
 weight[rs_?rootSystemQ][labels__Integer]:=fundamentalWeights[rs].{labels}
 
-dynkinLabels[rs_?rootSystemQ][wg_?weightQ]:=(#.wg)& /@ rs[simpleRoots];
+Expect["weight of B_2", True,makeFiniteWeight[{3,1}]==weight[makeSimpleRootSystem[B,2]][2,2]]
+
+dynkinLabels::"usage"=
+    "dynkinLabels[rs_?rootSystemQ][wg_?weightQ] returns Dynkin labels of weight (coefficients of its decomposition to the sum of fundamental weights) ";
+dynkinLabels[rs_?rootSystemQ][wg_?weightQ]:=2*(#.wg)/(#.#)& /@ rs[simpleRoots];
+
+Expect["Dynkin labels of sl(3) root", True, Module[{rs=makeSimpleRootSystem[A,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-1}]]
+
+Expect["Dynkin labels of so(5) root", True, Module[{rs=makeSimpleRootSystem[B,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-2}]]
 
 orthogonalSubsystem::"usage"=
     "orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ] returns subset of positive roots of root system rs, which 
     are orthogonal to simple roots of subsystem subs";
 orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs], z_ /; And @@ (z.#==0& /@ subs[simpleRoots])]
+
+Expect["Subsistem, orthogonal to highest root of so(5)", True, Module[{b2=makeSimpleRootSystem[B,2],a1},a1=makeFiniteRootSystem[{highestRoot[b2]}]; orthogonalSubsystem[b2,a1]==makeFiniteRootSystem[{b2[simpleRoot][1]}]]]
+
 
 projection::"usage"=
     "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system\n
@@ -661,8 +679,19 @@ projection::"usage"=
 projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
     Map[Function[w,(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])).rs[simpleRoots]],{weights}]
 
+Expect["Projection to A_1 \\subset B_2",True, 
+       Module[{b2=makeSimpleRootSystem[B,2],a1},
+	      a1=makeFiniteRootSystem[{highestRoot[b2]}]; 
+	      projection[a1][rho[b2]]==a1[simpleRoot][1]]]
+
 projection[rs_affineRootSystem][{weights__?weightQ}]:= 
     Map[makeAffineWeight[projection[rs[finiteRootSystem]][#[finitePart]],#[level],#[grade]]&,{weights}]
+
+Expect["Projection to A_1 \\subset B_2 for affine algebras",True, 
+       Module[{b2a=makeAffineExtension[ makeSimpleRootSystem[B,2]],a1a},
+	      a1a=makeAffineExtension[makeFiniteRootSystem[{highestRoot[b2]}]]; 
+	      projection[a1][rho[b2a]]==a1[simpleRoot][1] && 
+	      projection[a1][b2a[imaginaryRoot]]==a1a[imaginaryRoot]]]
 
 projection[rs_?rootSystemQ][wg_?weightQ]:=projection[rs][{wg}][[1]];
 
@@ -703,7 +732,7 @@ subElement::"usage"=
     "subElement[fe_formalElement,{weights___?weightQ}] creates formalElement with the given subset of weights";
 subElement[fe_formalElement,{weights___?weightQ}]:=makeFormalElement[{weights},fe/@{weights}];
 
-Expect["subElement",{1},subElement[makeFormalElement[positiveRoots[makeSimpleRootSystem[B,2]],{1,2,3,4}],{makeFiniteWeight[{1,-1}]}][multiplicities]];
+Expect["subElement",{1},subElement[makeFormalElement[positiveRoots[makeSimpleRootSystem[B,2]],{1,2,3,4}],{makeFiniteWeight[{1,-1}]}][multiplicities]]
 
 formalElement/:fe_formalElement[hashtable]:=fe[[1]];
 
