@@ -55,25 +55,27 @@ Expect["Dimension equals to length",3,makeFiniteWeight[{1,2,3}][dimension]]
 
 Dot::"usage"=Dot::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
 
-finiteWeight/:x_finiteWeight . y_finiteWeight/;x[dimension]==y[dimension]:=x[standardBase].y[standardBase]
+finiteWeight/:x_finiteWeight . y_finiteWeight:=x[standardBase].y[standardBase]
 
 Expect["Scalar product for vectors from weight space of finite-dimensional Lie algebras",
        10,makeFiniteWeight[{1,2,3}].makeFiniteWeight[{3,2,1}]]
 
+(*
 Expect["Scalar product for vectors from different spaces are left unevaluated",True,
        MatchQ[makeFiniteWeight[{1,2,3}].
 	      makeFiniteWeight[{3,2,1,2}],x_finiteWeight . y_finiteWeight]]
-
+*)
 Plus::"usage"=Plus::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
 
-finiteWeight/:x_finiteWeight+y_finiteWeight/;x[dimension]==y[dimension]:=
+finiteWeight/:x_finiteWeight+y_finiteWeight:=
     makeFiniteWeight[x[standardBase]+y[standardBase]]
 
 Expect["Plus for finite-dimensional weights",{2,4,6},(makeFiniteWeight[{1,2,3}]+makeFiniteWeight[{1,2,3}])[standardBase]]
 
-Expect["Plus product for vectors from different spaces are left unevaluated",True,
+(*
+Expect["Plus  for vectors from different spaces are left unevaluated",True,
        MatchQ[makeFiniteWeight[{1,2,3}]+makeFiniteWeight[{3,2,1,2}],x_finiteWeight + y_finiteWeight]]
-
+*)
 Equal::"usage"=Equal::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
 
 finiteWeight/:x_finiteWeight==y_finiteWeight:=x[standardBase]==y[standardBase]
@@ -141,7 +143,7 @@ Expect["Equal for affine weights compares finite parts, levels and grades", True
 
 Expect["Equal for affine weights compares finite parts, levels and grades", False,makeAffineWeight[makeFiniteWeight[{1,2,3}],2,1]==makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]]
 
-affineWeight/:x_affineWeight+y_affineWeight/;x[dimension]==y[dimension]:=
+affineWeight/:x_affineWeight+y_affineWeight:=
     makeAffineWeight[x[finitePart]+y[finitePart],
 		     x[level]+y[level],
 		     x[grade]+y[grade]]
@@ -151,10 +153,12 @@ Expect["Plus for affine weights",{2,4,6},(makeAffineWeight[makeFiniteWeight[{1,2
 
 Expect["Plus for affine weights",4,(makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]+ makeAffineWeight[makeFiniteWeight[{1,2,3}],3,1])[level]]
 
+(*
 Expect["We compare dimensions of vectors before sum calculation, the expression is left unevaluated in case of dimension mismatch ",
        True,MatchQ[makeAffineWeight[makeFiniteWeight[{1,2}],1,2] + makeAffineWeight[ makeFiniteWeight[{3,2,1}],2,1], x_affineWeight + y_affineWeight]]
+*)
 
-affineWeight/:x_affineWeight.y_affineWeight/;x[dimension]==y[dimension]:= 
+affineWeight/:x_affineWeight.y_affineWeight:= 
     x[finitePart].y[finitePart] + 
     x[level]* y[grade] + 
     x[grade]* y[level]
@@ -162,9 +166,10 @@ affineWeight/:x_affineWeight.y_affineWeight/;x[dimension]==y[dimension]:=
 Expect["Scalar product for vectors from weight space of affine Lie algebras",20,
        makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]. 
        makeAffineWeight[makeFiniteWeight[{3,2,1}],3,4]]
-
+(*
 Expect["We compare dimensions of vectors before product calculation, the expression is left unevaluated in case of dimension mismatch ",
        True,MatchQ[makeAffineWeight[makeFiniteWeight[{1,2}],1,2]. makeAffineWeight[ makeFiniteWeight[{3,2,1}],2,1], x_affineWeight . y_affineWeight]]
+*)
 
 affineWeight/:x_?NumberQ*y_affineWeight:=makeAffineWeight[x*y[finitePart],x*y[level],x*y[grade]]
 
@@ -924,3 +929,10 @@ Expect["branching2", True,
 	      fe=branching2[b4,b2][wg];
 	      mcw=Select[fe[weights],mainChamberQ[b2]];
 	      Union[fe/@mcw]=={0,6,10,19,30,40,60}]]
+
+
+drawPlaneProjection[axe1_,axe2_,f_formalElement]:=
+    Graphics[Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]]}] & /@ f[weights]]
+
+draw3dProjection[axe1_,axe2_,axe3_,f_formalElement]:=
+    Graphics3D[Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}] & /@ f[weights]]

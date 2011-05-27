@@ -1,16 +1,142 @@
 AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
+Mathematica 8.0 for Linux x86 (64-bit)
+Copyright 1988-2010 Wolfram Research, Inc.
+
 <<affine.m;
+
+b4=makeSimpleRootSystem[B,10]
+
+pr=positiveRoots[b4];
+
+Length[pr]
+
+Out[5]= 100
+
+[Calculating...]
+
+rho[b4]
+
+
+
+                          19  17  15  13  11  9  7  5  3  1
+Out[6]= finiteWeight[10, {--, --, --, --, --, -, -, -, -, -}]
+                          2   2   2   2   2   2  2  2  2  2
+
+Out[8]= $Aborted
+
+                         15  13  11  9  7  5  3  1
+Out[6]= finiteWeight[8, {--, --, --, -, -, -, -, -}]
+                         2   2   2   2  2  2  2  2
+
+                         7  5  3  1
+Out[4]= finiteWeight[4, {-, -, -, -}]
+                         2  2  2  2
+
+Out[3]= finiteRootSystem[4, 4, {finiteWeight[4, {1, -1, 0, 0}], 
+ 
+>     finiteWeight[4, {0, 1, -1, 0}], finiteWeight[4, {0, 0, 1, -1}], 
+ 
+>     finiteWeight[4, {0, 0, 0, 1}]}]
+
+Dot::dotsh: Tensors {1, 2} and {3, 2, 1} have incompatible shapes.
+
+Throw::nocatch: 
+   Uncaught Throw[We compare dimensions of vectors before product calculation,
+      the expression is left unevaluated in case of dimension mismatch : GOT
+      UNEXPECTED VALUE False INSTEAD OF True, ass<<13>>ion] returned to top
+     level.
+
+Out[2]= Hold[Throw[We compare dimensions of vectors before product\
+ 
+>      calculation, the expression is left unevaluated in case of dimension\
+ 
+>      mismatch : GOT UNEXPECTED VALUE False INSTEAD OF True, 
+ 
+>     assertion exception]]
+
+Thread::tdlen: Objects of unequal length in {1, 2} + {3, 2, 1}
+     cannot be combined.
+
+Throw::nocatch: 
+   Uncaught Throw[We compare dimensions of vectors before sum calculation, the
+      expression is left unevaluated in case of dimension mismatch : GOT
+      UNEXPECTED VALUE False INSTEAD OF True, assert<<10>>ion] returned to top
+     level.
+
+Out[2]= Hold[Throw[We compare dimensions of vectors before sum calculation,\
+ 
+>      the expression is left unevaluated in case of dimension mismatch : GOT\
+ 
+>      UNEXPECTED VALUE False INSTEAD OF True, assertion exception]]
+
+Thread::tdlen: Objects of unequal length in {1, 2, 3} + {3, 2, 1, 2}
+     cannot be combined.
+
+Throw::nocatch: 
+   Uncaught Throw[Plus product for vectors from different spaces are left
+      unevaluated: GOT UNEXPECTED VALUE False INSTEAD OF True, 
+     assertion exception] returned to top level.
+
+Out[2]= Hold[Throw[Plus product for vectors from different spaces are left\
+ 
+>      unevaluated: GOT UNEXPECTED VALUE False INSTEAD OF True, 
+ 
+>     assertion exception]]
+
+Dot::dotsh: Tensors {1, 2, 3} and {3, 2, 1, 2} have incompatible shapes.
+
+Throw::nocatch: 
+   Uncaught Throw[Scalar product for vectors from different spaces are left
+      unevaluated: GOT UNEXPECTED VALUE False INSTEAD OF True, 
+     assertion exception] returned to top level.
+
+Out[2]= Hold[Throw[Scalar product for vectors from different spaces are left\
+ 
+>      unevaluated: GOT UNEXPECTED VALUE False INSTEAD OF True, 
+ 
+>     assertion exception]]
+
+{1,2,3}.{2,3}
+
+{1,2,3}+{2,3}
+
+Thread::tdlen: Objects of unequal length in {1, 2, 3} + {2, 3}
+     cannot be combined.
+
+Out[4]= {2, 3} + {1, 2, 3}
+
+Dot::dotsh: Tensors {1, 2, 3} and {2, 3} have incompatible shapes.
+
+Out[3]= {1, 2, 3} . {2, 3}
 
 Module::lvsym: Local variable specification 
     {b4 = makeSimpleRootSystem[B, 4], b2, wg, fe . mcw} contains fe . mcw
     , which is not a symbol or an assignment to a symbol.
 
 Expect["Our branching", True, 
-       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg,fe},
 	      b2=regularSubalgebra[b4][3,4];
 	      wg=weight[b4][0,1,0,2];
-	      Union[ourBranching[b4,b2][wg][multiplicities]]=={0,6,10,19,30,40,60}]]
+	      fe=ourBranching[b4,b2][wg];
+	      Export["br1.png",drawPlaneProjection[4,3,fe]];
+	      fe=simpleBranching[b4,b2][wg];
+	      Export["br2.png",drawPlaneProjection[4,3,fe]];
+	      fe=branching2[b4,b2][wg];
+	      Export["br3.png",drawPlaneProjection[4,3,fe]];
+	      True]]
+
+                                                                                
+Set::write: Tag Times in br2.png formalElement[table$2727] is Protected.
+
+Out[4]= If[True != br3.png True, 
+ 
+>    Throw[ToString[Our branching]<>: GOT UNEXPECTED VALUE <>
+ 
+>      ToString[br3.png True]<> INSTEAD OF <>ToString[True], 
+ 
+>     assertion exception]]
+
 
 Expect["branching2", True, 
 
