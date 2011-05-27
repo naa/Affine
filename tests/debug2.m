@@ -5,7 +5,511 @@ Copyright 1988-2010 Wolfram Research, Inc.
 
 <<affine.m;
 
-b4=makeSimpleRootSystem[B,10]
+b4=makeSimpleRootSystem[B,4];
+
+wg=weight[b4][0,1,0,2];
+
+pr=positiveRoots[b4];
+
+dimension[pr][wg]
+
+Out[11]= 2772
+
+Out[6]= $Aborted
+
+rho[pr]//Timing
+
+                              7  5  3  1
+Out[9]= {0., finiteWeight[4, {-, -, -, -}]}
+                              2  2  2  2
+
+                         7  5  3  1
+Out[8]= finiteWeight[4, {-, -, -, -}]
+                         2  2  2  2
+
+rho[b4]
+
+                         7  5  3  1
+Out[6]= finiteWeight[4, {-, -, -, -}]
+                         2  2  2  2
+
+
+
+Plus @@ Table[makeFiniteWeight[{i,i}],{i,120}]//Timing
+
+Out[4]= {0.012001, finiteWeight[2, {7260, 7260}]}
+
+Out[3]= {0., finiteWeight[2, {78, 78}]}
+
+Out[27]= {1.25208, finiteWeight[2, {78, 78}]}
+
+Out[26]= {0.408026, finiteWeight[2, {66, 66}]}
+
+         finiteWeight[2, {66, 66}]
+Out[25]= -------------------------
+                  Timing
+
+Out[24]= finiteWeight[2, {66, 66}]
+
+Out[23]= finiteWeight[2, {55, 55}]
+
+Out[22]= finiteWeight[2, {45, 45}]
+
+Out[21]= finiteWeight[2, {15, 15}]
+
+finiteWeight/:Plus[wgs__finiteWeight]:=
+    makeFiniteWeight[Total[ (#[standardBase]&/@ {wgs})]]
+
+
+
+
+makeFiniteWeight[Total[(#[standardBase]&/@Table[makeFiniteWeight[{i,i}],{i,154}])]]
+
+Out[17]= finiteWeight[2, {11935, 11935}]
+
+Out[16]= {11935, 11935}
+
+Out[15]= {11325, 11325}
+
+Out[14]= {11325, 11325}
+
+Out[13]= {120, 120}
+
+Out[12]= {15, 15}
+
+Out[11]= {{1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}}
+
+Out[10]= {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>    finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>    finiteWeight[2, {5, 5}]}
+
+Out[9]= {{Table[makeFiniteWeight[{i, i}], {i, 5}], 
+ 
+>     {{{i, 1}, {i, 1}, {1, 1}}, makeFiniteWeight[{1, 1}], 
+ 
+>      finiteWeight @@ {Length[{1, 1}], {1, 1}}, 
+ 
+>      {{Length[{1, 1}], 2}, {2, {1, 1}}}, finiteWeight @@ {2, {1, 1}}, 
+ 
+>      finiteWeight[2, {1, 1}]}, 
+ 
+>     {{{i, 2}, {i, 2}, {2, 2}}, makeFiniteWeight[{2, 2}], 
+ 
+>      finiteWeight @@ {Length[{2, 2}], {2, 2}}, 
+ 
+>      {{Length[{2, 2}], 2}, {2, {2, 2}}}, finiteWeight @@ {2, {2, 2}}, 
+ 
+>      finiteWeight[2, {2, 2}]}, 
+ 
+>     {{{i, 3}, {i, 3}, {3, 3}}, makeFiniteWeight[{3, 3}], 
+ 
+>      finiteWeight @@ {Length[{3, 3}], {3, 3}}, 
+ 
+>      {{Length[{3, 3}], 2}, {2, {3, 3}}}, finiteWeight @@ {2, {3, 3}}, 
+ 
+>      finiteWeight[2, {3, 3}]}, 
+ 
+>     {{{i, 4}, {i, 4}, {4, 4}}, makeFiniteWeight[{4, 4}], 
+ 
+>      finiteWeight @@ {Length[{4, 4}], {4, 4}}, 
+ 
+>      {{Length[{4, 4}], 2}, {2, {4, 4}}}, finiteWeight @@ {2, {4, 4}}, 
+ 
+>      finiteWeight[2, {4, 4}]}, 
+ 
+>     {{{i, 5}, {i, 5}, {5, 5}}, makeFiniteWeight[{5, 5}], 
+ 
+>      finiteWeight @@ {Length[{5, 5}], {5, 5}}, 
+ 
+>      {{Length[{5, 5}], 2}, {2, {5, 5}}}, finiteWeight @@ {2, {5, 5}}, 
+ 
+>      finiteWeight[2, {5, 5}]}, 
+ 
+>     {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>      finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>      finiteWeight[2, {5, 5}]}}, 
+ 
+>    Plus @@ {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>      finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>      finiteWeight[2, {5, 5}]}, 
+ 
+>    finiteWeight[2, {1, 1}] + finiteWeight[2, {2, 2}] + 
+ 
+>     finiteWeight[2, {3, 3}] + finiteWeight[2, {4, 4}] + 
+ 
+>     finiteWeight[2, {5, 5}], finiteWeight[2, {3, 3}] + 
+ 
+>     finiteWeight[2, {4, 4}] + finiteWeight[2, {5, 5}] + 
+ 
+>     makeFiniteWeight[finiteWeight[2, {1, 1}][standardBase] + 
+ 
+>       finiteWeight[2, {2, 2}][standardBase]], 
+ 
+>    {{{finiteWeight[2, {1, 1}][standardBase], finiteWeight[2, {1, 1}][[2]], 
+ 
+>       {1, 1}}, {finiteWeight[2, {2, 2}][standardBase], 
+ 
+>       finiteWeight[2, {2, 2}][[2]], {2, 2}}, {1, 1} + {2, 2}, 
+ 
+>      {1 + 2, 1 + 2}, {1 + 2, 3}, {1 + 2, 3}, {3, 3}}, 
+ 
+>     makeFiniteWeight[{3, 3}], finiteWeight @@ {Length[{3, 3}], {3, 3}}, 
+ 
+>     {{Length[{3, 3}], 2}, {2, {3, 3}}}, finiteWeight @@ {2, {3, 3}}, 
+ 
+>     finiteWeight[2, {3, 3}]}, 
+ 
+>    finiteWeight[2, {3, 3}] + finiteWeight[2, {4, 4}] + 
+ 
+>     finiteWeight[2, {5, 5}] + finiteWeight[2, {3, 3}], 
+ 
+>    finiteWeight[2, {3, 3}] + finiteWeight[2, {3, 3}] + 
+ 
+>     finiteWeight[2, {4, 4}] + finiteWeight[2, {5, 5}], 
+ 
+>    finiteWeight[2, {4, 4}] + finiteWeight[2, {5, 5}] + 
+ 
+>     makeFiniteWeight[finiteWeight[2, {3, 3}][standardBase] + 
+ 
+>       finiteWeight[2, {3, 3}][standardBase]], 
+ 
+>    {{{finiteWeight[2, {3, 3}][standardBase], finiteWeight[2, {3, 3}][[2]], 
+ 
+>       {3, 3}}, {finiteWeight[2, {3, 3}][standardBase], 
+ 
+>       finiteWeight[2, {3, 3}][[2]], {3, 3}}, {3, 3} + {3, 3}, 
+ 
+>      {3 + 3, 3 + 3}, {3 + 3, 6}, {3 + 3, 6}, {6, 6}}, 
+ 
+>     makeFiniteWeight[{6, 6}], finiteWeight @@ {Length[{6, 6}], {6, 6}}, 
+ 
+>     {{Length[{6, 6}], 2}, {2, {6, 6}}}, finiteWeight @@ {2, {6, 6}}, 
+ 
+>     finiteWeight[2, {6, 6}]}, 
+ 
+>    finiteWeight[2, {4, 4}] + finiteWeight[2, {5, 5}] + 
+ 
+>     finiteWeight[2, {6, 6}], finiteWeight[2, {6, 6}] + 
+ 
+>     makeFiniteWeight[finiteWeight[2, {4, 4}][standardBase] + 
+ 
+>       finiteWeight[2, {5, 5}][standardBase]], 
+ 
+>    {{{finiteWeight[2, {4, 4}][standardBase], finiteWeight[2, {4, 4}][[2]], 
+ 
+>       {4, 4}}, {finiteWeight[2, {5, 5}][standardBase], 
+ 
+>       finiteWeight[2, {5, 5}][[2]], {5, 5}}, {4, 4} + {5, 5}, 
+ 
+>      {4 + 5, 4 + 5}, {4 + 5, 9}, {4 + 5, 9}, {9, 9}}, 
+ 
+>     makeFiniteWeight[{9, 9}], finiteWeight @@ {Length[{9, 9}], {9, 9}}, 
+ 
+>     {{Length[{9, 9}], 2}, {2, {9, 9}}}, finiteWeight @@ {2, {9, 9}}, 
+ 
+>     finiteWeight[2, {9, 9}]}, 
+ 
+>    finiteWeight[2, {6, 6}] + finiteWeight[2, {9, 9}], 
+ 
+>    makeFiniteWeight[finiteWeight[2, {6, 6}][standardBase] + 
+ 
+>      finiteWeight[2, {9, 9}][standardBase]], 
+ 
+>    {{finiteWeight[2, {6, 6}][standardBase], finiteWeight[2, {6, 6}][[2]], 
+ 
+>      {6, 6}}, {finiteWeight[2, {9, 9}][standardBase], 
+ 
+>      finiteWeight[2, {9, 9}][[2]], {9, 9}}, {6, 6} + {9, 9}, 
+ 
+>     {6 + 9, 6 + 9}, {6 + 9, 15}, {6 + 9, 15}, {15, 15}}, 
+ 
+>    makeFiniteWeight[{15, 15}], 
+ 
+>    finiteWeight @@ {Length[{15, 15}], {15, 15}}, 
+ 
+>    {{Length[{15, 15}], 2}, {2, {15, 15}}}, finiteWeight @@ {2, {15, 15}}, 
+ 
+>    finiteWeight[2, {15, 15}]}
+
+Out[8]= $Aborted
+
+FullForm[Trace[Plus @@ {1,2,3}]]
+
+finiteWeight/:Plus[wgs__finiteWeight]:=
+    makeFiniteWeight[Plus @@ (#[standardBase]&/@ {wgs})]
+
+
+Out[2]//FullForm= 
+ 
+>   List[HoldForm[Apply[Plus, List[1, 2, 3]]], HoldForm[Plus[1, 2, 3]], 
+ 
+>    HoldForm[6]]
+
+Out[1]= {Plus @@ {1, 2, 3}, 1 + 2 + 3, 6}
+
+[Calculating...]
+
+Total[Table[makeFiniteWeight[{i,i}],{i,16}]]//Timing
+
+Out[34]= $Aborted
+
+Out[33]= {1.24008, finiteWeight[2, {78, 78}]}
+
+Out[32]= finiteWeight[2, {78, 78}]
+
+Total[Table[{i,i},{i,200}]]//Timing
+
+
+pp=Table[{i,i},{i,200}]
+
+Total[pp]//Timing
+
+Plus[1,2,3]
+
+
+?Unprotect
+
+?Protect
+
+Protect[s , s , ...] sets the attribute Protected for the symbols s
+         1   2                                                     i
+    . Protect["form ", "form ", ...]
+                   1        2
+      protects all symbols whose names match any of the string patterns form
+                                                                            i
+      . 
+
+Unprotect[s , s , ...] removes the attribute Protected for the symbols s
+           1   2                                                        i
+    . Unprotect["form ", "form ", ...]
+                     1        2
+      unprotects all symbols whose names textually match any of the form . 
+                                                                        i
+
+Unprotect[Plus]
+
+Plus[{wgs__finiteWeight}]:=
+    makeFiniteWeight[Plus[#[standardBase]&/@ {wgs}]]
+
+Protect[Plus]
+
+Protect[Plus];
+
+
+Out[22]= 6
+
+Out[20]= {20100, 20100}
+
+Out[17]= {0., {20100, 20100}}
+
+Total[Table[makeFiniteWeight[{i,i}],{i,12}]]//Timing
+
+Trace[Total[Table[makeFiniteWeight[{i,i}],{i,5}]]]
+
+Out[6]= {{Table[makeFiniteWeight[{i, i}], {i, 5}], 
+ 
+>     {{{i, 1}, {i, 1}, {1, 1}}, makeFiniteWeight[{1, 1}], 
+ 
+>      finiteWeight @@ {Length[{1, 1}], {1, 1}}, 
+ 
+>      {{Length[{1, 1}], 2}, {2, {1, 1}}}, finiteWeight @@ {2, {1, 1}}, 
+ 
+>      finiteWeight[2, {1, 1}]}, 
+ 
+>     {{{i, 2}, {i, 2}, {2, 2}}, makeFiniteWeight[{2, 2}], 
+ 
+>      finiteWeight @@ {Length[{2, 2}], {2, 2}}, 
+ 
+>      {{Length[{2, 2}], 2}, {2, {2, 2}}}, finiteWeight @@ {2, {2, 2}}, 
+ 
+>      finiteWeight[2, {2, 2}]}, 
+ 
+>     {{{i, 3}, {i, 3}, {3, 3}}, makeFiniteWeight[{3, 3}], 
+ 
+>      finiteWeight @@ {Length[{3, 3}], {3, 3}}, 
+ 
+>      {{Length[{3, 3}], 2}, {2, {3, 3}}}, finiteWeight @@ {2, {3, 3}}, 
+ 
+>      finiteWeight[2, {3, 3}]}, 
+ 
+>     {{{i, 4}, {i, 4}, {4, 4}}, makeFiniteWeight[{4, 4}], 
+ 
+>      finiteWeight @@ {Length[{4, 4}], {4, 4}}, 
+ 
+>      {{Length[{4, 4}], 2}, {2, {4, 4}}}, finiteWeight @@ {2, {4, 4}}, 
+ 
+>      finiteWeight[2, {4, 4}]}, 
+ 
+>     {{{i, 5}, {i, 5}, {5, 5}}, makeFiniteWeight[{5, 5}], 
+ 
+>      finiteWeight @@ {Length[{5, 5}], {5, 5}}, 
+ 
+>      {{Length[{5, 5}], 2}, {2, {5, 5}}}, finiteWeight @@ {2, {5, 5}}, 
+ 
+>      finiteWeight[2, {5, 5}]}, 
+ 
+>     {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>      finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>      finiteWeight[2, {5, 5}]}}, 
+ 
+>    Total[{finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>      finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>      finiteWeight[2, {5, 5}]}], finiteWeight[2, {15, 15}]}
+
+Out[15]= {{Table[makeFiniteWeight[{i, i}], {i, 5}], 
+ 
+>     {{{i, 1}, {i, 1}, {1, 1}}, makeFiniteWeight[{1, 1}], 
+ 
+>      {NumberQ[1], True}, {NumberQ[1], True}, 
+ 
+>      finiteWeight @@ {Length[{1, 1}], {1, 1}}, 
+ 
+>      {{Length[{1, 1}], 2}, {2, {1, 1}}}, finiteWeight @@ {2, {1, 1}}, 
+ 
+>      finiteWeight[2, {1, 1}]}, 
+ 
+>     {{{i, 2}, {i, 2}, {2, 2}}, makeFiniteWeight[{2, 2}], 
+ 
+>      {NumberQ[2], True}, {NumberQ[2], True}, 
+ 
+>      finiteWeight @@ {Length[{2, 2}], {2, 2}}, 
+ 
+>      {{Length[{2, 2}], 2}, {2, {2, 2}}}, finiteWeight @@ {2, {2, 2}}, 
+ 
+>      finiteWeight[2, {2, 2}]}, 
+ 
+>     {{{i, 3}, {i, 3}, {3, 3}}, makeFiniteWeight[{3, 3}], 
+ 
+>      {NumberQ[3], True}, {NumberQ[3], True}, 
+ 
+>      finiteWeight @@ {Length[{3, 3}], {3, 3}}, 
+ 
+>      {{Length[{3, 3}], 2}, {2, {3, 3}}}, finiteWeight @@ {2, {3, 3}}, 
+ 
+>      finiteWeight[2, {3, 3}]}, 
+ 
+>     {{{i, 4}, {i, 4}, {4, 4}}, makeFiniteWeight[{4, 4}], 
+ 
+>      {NumberQ[4], True}, {NumberQ[4], True}, 
+ 
+>      finiteWeight @@ {Length[{4, 4}], {4, 4}}, 
+ 
+>      {{Length[{4, 4}], 2}, {2, {4, 4}}}, finiteWeight @@ {2, {4, 4}}, 
+ 
+>      finiteWeight[2, {4, 4}]}, 
+ 
+>     {{{i, 5}, {i, 5}, {5, 5}}, makeFiniteWeight[{5, 5}], 
+ 
+>      {NumberQ[5], True}, {NumberQ[5], True}, 
+ 
+>      finiteWeight @@ {Length[{5, 5}], {5, 5}}, 
+ 
+>      {{Length[{5, 5}], 2}, {2, {5, 5}}}, finiteWeight @@ {2, {5, 5}}, 
+ 
+>      finiteWeight[2, {5, 5}]}, 
+ 
+>     {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>      finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>      finiteWeight[2, {5, 5}]}}, 
+ 
+>    Total[{finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>      finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>      finiteWeight[2, {5, 5}]}], finiteWeight[2, {15, 15}]}
+
+
+
+Out[14]= $Aborted
+
+Out[13]= $Aborted
+
+Out[12]= finiteWeight[2, {55, 55}]
+
+Out[11]= {finiteWeight[2, {1, 1}], finiteWeight[2, {2, 2}], 
+ 
+>    finiteWeight[2, {3, 3}], finiteWeight[2, {4, 4}], 
+ 
+>    finiteWeight[2, {5, 5}], finiteWeight[2, {6, 6}], 
+ 
+>    finiteWeight[2, {7, 7}], finiteWeight[2, {8, 8}], 
+ 
+>    finiteWeight[2, {9, 9}], finiteWeight[2, {10, 10}]}
+
+                         7  5  3  1
+Out[8]= finiteWeight[4, {-, -, -, -}]
+                         2  2  2  2
+
+                         7  5  3  1
+Out[7]= finiteWeight[4, {-, -, -, -}]
+                         2  2  2  2
+
+Out[6]= 2772
+
+rho[pr]
+
+Out[7]= $Aborted
+
+fe=simpleBranching[makeSimpleRootSystem[B,4],regularSubalgebra[makeSimpleRootSystem[B,4]][2,3,4]][wg]//Timing
+
+fe=ourBranching[makeSimpleRootSystem[B,4],regularSubalgebra[makeSimpleRootSystem[B,4]][2,3,4]][wg]//Timing
+
+res=freudenthalMultiplicities[b4][wg]//Timing
+
+res2=racahMultiplicities[b4][wg]//Timing
+
+Out[20]= {9.01256, mults$2231}
+
+Length[values[res[[2]]]]
+
+Out[19]= 12
+
+Out[18]= 1
+
+Out[17]= {0.912057, mults$2229}
+
+freudenthalMultiplicities[b4][wg]//Timing
+
+Out[16]= {1.40009, mults$2227}
+
+Out[15]= mults$2225
+
+Out[14]= {5.64835, formalElement[table$2224]}
+
+Out[13]= {8.41653, formalElement[table$1098]}
+
+Out[12]= formalElement[table$1047]
+
+Out[8]= formalElement[table$1046]
+
+Export["br4.png",draw3dProjection[4,2,3,fe]];
+
+dimension[positiveRoots[b4]][weight[b4][1,0,0,0]]
+
+
+Out[7]= simpleBranching[finiteRootSystem[4, 4, 
+ 
+>     {finiteWeight[4, {1, -1, 0, 0}], finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>      finiteWeight[4, {0, 0, 1, -1}], finiteWeight[4, {0, 0, 0, 1}]}], 
+ 
+>    finiteRootSystem[3, 4, {finiteWeight[4, {0, 1, -1, 0}], 
+ 
+>      finiteWeight[4, {0, 0, 1, -1}], finiteWeight[4, {0, 0, 0, 1}]}], 
+ 
+>    finiteWeight[4, {2, 2, 1, 1}]]
 
 pr=positiveRoots[b4];
 
@@ -119,11 +623,11 @@ Expect["Our branching", True,
 	      b2=regularSubalgebra[b4][3,4];
 	      wg=weight[b4][0,1,0,2];
 	      fe=ourBranching[b4,b2][wg];
-	      Export["br1.png",drawPlaneProjection[4,3,fe]];
+	      Export["br1.pdf",drawPlaneProjection[4,3,fe]];
 	      fe=simpleBranching[b4,b2][wg];
-	      Export["br2.png",drawPlaneProjection[4,3,fe]];
+	      Export["br2.pdf",drawPlaneProjection[4,3,fe]];
 	      fe=branching2[b4,b2][wg];
-	      Export["br3.png",drawPlaneProjection[4,3,fe]];
+	      Export["br3.pdf",drawPlaneProjection[4,3,fe]];
 	      True]]
 
                                                                                 

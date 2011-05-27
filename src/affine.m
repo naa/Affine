@@ -49,7 +49,8 @@ finiteWeight/:x_finiteWeight[finitePart]:=x;
 makeFiniteWeight::"usage"=
     "makeFiniteWeight[{coordinates__?NumberQ}] creates finiteWeight with given coordinates in standard base";
 
-makeFiniteWeight[{coordinates__?NumberQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}
+(*makeFiniteWeight[{coordinates__?NumberQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}*)
+makeFiniteWeight[{coordinates__}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}
 
 Expect["Dimension equals to length",3,makeFiniteWeight[{1,2,3}][dimension]]
 
@@ -67,8 +68,13 @@ Expect["Scalar product for vectors from different spaces are left unevaluated",T
 *)
 Plus::"usage"=Plus::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
 
+finiteWeight/:Plus[wgs__finiteWeight]:=
+    makeFiniteWeight[Plus @@ (#[standardBase]&/@ {wgs})]
+    
+(*
 finiteWeight/:x_finiteWeight+y_finiteWeight:=
     makeFiniteWeight[x[standardBase]+y[standardBase]]
+*)
 
 Expect["Plus for finite-dimensional weights",{2,4,6},(makeFiniteWeight[{1,2,3}]+makeFiniteWeight[{1,2,3}])[standardBase]]
 
@@ -469,7 +475,8 @@ SubValues[finiteWeight]
 
 dimension::"usage"=
     "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight representation";
-dimension[{pr__?weightQ}][hweight_?weightQ]:=
+(*dimension[{pr__?weightQ}][hweight_?weightQ]:=*)
+dimension[{pr__}][hweight_]:=
     Module[{rh=rho[{pr}]},
 	   Times@@((  (#.(hweight+rh))/(rh.#) )&/@{pr})];
 
@@ -932,7 +939,9 @@ Expect["branching2", True,
 
 
 drawPlaneProjection[axe1_,axe2_,f_formalElement]:=
-    Graphics[Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]]}] & /@ f[weights]]
+    Graphics[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]]}] &) /@ f[weights]]
 
 draw3dProjection[axe1_,axe2_,axe3_,f_formalElement]:=
-    Graphics3D[Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}] & /@ f[weights]]
+    Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights]]
+
+Print["Hello!"]

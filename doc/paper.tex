@@ -802,6 +802,13 @@ Branching algorithm \cite{2010arXiv1007.0318L}
 \label{sec:performance-testing}
 
 We have made some experiments with our implementations of Freudenthal formula and formula \eqref{eq:15} and have got the following graphs \ref{freudenthal-racah-times}.
+\begin{figure}[h]
+  \label{freudenthal-racah-times}
+  \noindent\centering{
+    \includegraphics[width=80mm]{timing.pdf}
+  }
+  \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
+\end{figure}
 
 \begin{figure}[h]
   \label{freudenthal-racah-times}
@@ -839,10 +846,20 @@ Measurements for branching computations for $\hat B_{3}\subset \hat B_{4}$ are s
 \label{sec:examples}
 In this section we present some examples of computations available with {\bf Affine.m} with the code required to produce these results. 
 
+\begin{figure}[h]
+  \label{branching-b4-b2}
+  \noindent\centering{
+    \includegraphics[width=80mm]{branching.pdf}
+  }
+  \caption{Branching coefficients of module $L^{\left[0,1,0,2\right]}$ for regular embedding $B_{2}\subset B_{4}$ displayed in the basis $\left\{e_3,e_4\right\}$}
+\end{figure}
+
+
 \section{Conclusion}
 \label{sec:conclusion}
 We present the package {\bf Affine.m} for computations in representation theory of finite-dimensional and affine Lie algebras. The package is available from {\it github} and is also submitted to the library. 
 
+\newpage
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %% \appendix
