@@ -192,6 +192,8 @@ keys = DownValues[#,Sort->False][[All,1,1,1]]&;
 values::"usage"="values[hashtable] gives all the values in hashtable (in the same order as keys)";
 values = Function[ht,(ht[#]&)/@keys[ht]]
 
+hasKey[hashtable_,key_]:=hashtable[key]=!=Unevaluated[hashtable[key]]
+
 makeHashtable::"usage"=
     "makeHashtable[keys_List,values_List] creates hashtable from the list keys and list of values";
 makeHashtable[keys_List,values_List]/; Length[keys]==Length[values] :=
@@ -721,8 +723,9 @@ formalElement::"usage"=
     fe_formalElement[hashtable] returns formalElement's data as hashtable\n
 "
 
-formalElement/:fe_formalElement[weight_?weightQ]/;NumberQ[fe[[1]][weight]]:=fe[[1]][weight];
-formalElement/:fe_formalElement[weight_?weightQ]:=0;
+(* formalElement/:fe_formalElement[weight_?weightQ]/;NumberQ[fe[[1]][weight]]:=fe[[1]][weight];*)
+
+formalElement/:fe_formalElement[weight_?weightQ]:=If[hasKey[fe[[1]],weight], fe[[1]][weight], 0]
 
 formalElement/:fe_formalElement[weights]:=keys[fe[[1]]];
 
