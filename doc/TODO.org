@@ -2,7 +2,7 @@ Affine.m
 * TODO String functions
 * TODO Branching functions
 * TODO Extract unit tests to separate files
-* TODO Define Mathematica module
+* TODO Define Mathematica package
 * TODO Tensor product decomposition
 * DONE Make sum of Lie algebras non-commutative
   CLOSED: [2011-05-31 Tue 14:06]

@@ -1,115 +1,38 @@
-(* 
-
-   finiteWeight[dimension]=dimension_Integer
-   finiteWeight[standardBase]=List[x__Integer]
-   
-   affineWeight[finitePart]=x_finiteWeight
-   affineWeight[grade]=grade_Integer
-   affineWeight[level]=level_Integer
-   
-
-   Finite Weight: finiteWeight[dimension][<id>][dimension]
-                                              [standardBase]
-   Affine Weight: affineWeight[dimension][<id>][finitePart]
-   Affine Weight: affineWeight[dimension][<id>][level]
-   Affine Weight: affineWeight[dimension][<id>][grade]
-   
-   *)
-
-Clear[finiteWeight,affineWeight,dimension,standardBase,simpleRootBase,level,grade,Expect];
+BeginPackage["Affine`"]
 
 Expect::"usage"="Expect[comment,value,expression] is used for unit tests. If expression != value it throws exception.";
-Expect[ description_, val_, expr_ ] := 
-If[
-    val != expr,
-    Throw[
-        StringJoin[ ToString[description],": GOT UNEXPECTED VALUE ", ToString[expr], 
-        " INSTEAD OF ", ToString[val] ]
-        , "assertion exception"
-    ]
-]
 
 standardBase::"usage"=
     "standardBase[coordinates] represents weight vector in standard (Bourbaki) coordinates.\
-    E.g. simple roots for B2 are standardBase[1,-1] and standardBase[0,1]"
-
-(* finiteWeight[dimension,coordinates] *)
+    E.g. simple roots for B2 are standardBase[1,-1] and standardBase[0,1]";
 
 finiteWeight::"usage"=
     "finiteWeight[dimension_?NumberQ,coordinates_standardBase] represents\ 
     vector in weight space of finite-dimensional Lie algebra.\n 
     finiteWeight[dimension] returns dimension of the space, where weight vector is embedded\ 
     (i.e. for sl_n it is n+1).\n 
-     finiteWeight[standardBase] returns standard base coordinates of weight of finite-dimensional Lie algebra";
+    finiteWeight[standardBase] returns standard base coordinates of weight of finite-dimensional Lie algebra";
 
-finiteWeight/:x_finiteWeight[dimension]:=x[[1]];
-finiteWeight/:x_finiteWeight[standardBase]:=x[[2]];
-finiteWeight/:x_finiteWeight[finitePart]:=x;
+dimension::"usage"=
+    "dimension[wg_?weightQ] returns the dimension of the space, where finite part of weight lives";
+
+finitePart::"usage"=
+    "finitePart[wg_?weightQ] returns finite part of weight";
+
+standardBase::"usage"=
+    "standardBase[wg_?weightQ] returns coorinates of finite part of finite part of weight in standard (Bourbaki) basis";
 
 makeFiniteWeight::"usage"=
     "makeFiniteWeight[{coordinates__?NumberQ}] creates finiteWeight with given coordinates in standard base";
 
-(*makeFiniteWeight[{coordinates__?NumberQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}*)
-makeFiniteWeight[{coordinates__}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}
-
-Expect["Dimension equals to length",3,makeFiniteWeight[{1,2,3}][dimension]]
-
 Dot::"usage"=Dot::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
 
-finiteWeight/:x_finiteWeight . y_finiteWeight:=x[standardBase].y[standardBase]
-
-Expect["Scalar product for vectors from weight space of finite-dimensional Lie algebras",
-       10,makeFiniteWeight[{1,2,3}].makeFiniteWeight[{3,2,1}]]
-
-(*
-Expect["Scalar product for vectors from different spaces are left unevaluated",True,
-       MatchQ[makeFiniteWeight[{1,2,3}].
-	      makeFiniteWeight[{3,2,1,2}],x_finiteWeight . y_finiteWeight]]
-*)
 Plus::"usage"=Plus::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
 
-finiteWeight/:Plus[wgs__finiteWeight]:=
-    makeFiniteWeight[Plus @@ (#[standardBase]&/@ {wgs})]
-    
-(*
-finiteWeight/:x_finiteWeight+y_finiteWeight:=
-    makeFiniteWeight[x[standardBase]+y[standardBase]]
-*)
-
-Expect["Plus for finite-dimensional weights",{2,4,6},(makeFiniteWeight[{1,2,3}]+makeFiniteWeight[{1,2,3}])[standardBase]]
-
-(*
-Expect["Plus  for vectors from different spaces are left unevaluated",True,
-       MatchQ[makeFiniteWeight[{1,2,3}]+makeFiniteWeight[{3,2,1,2}],x_finiteWeight + y_finiteWeight]]
-*)
 Equal::"usage"=Equal::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
-
-finiteWeight/:x_finiteWeight==y_finiteWeight:=x[standardBase]==y[standardBase]
-
-Expect["Equal for finite weights compares standard base representations", 
-       False,
-       makeFiniteWeight[{1,2,3}]==makeFiniteWeight[{1,3,2}]]
-
-Expect["Equal for finite weights compares standard base representations", 
-       True,
-       makeFiniteWeight[{1,2,3}]==makeFiniteWeight[{1,2,3}]]
-
-Expect["Equal for finite weights compares standard base representations", 
-       False,
-       makeFiniteWeight[{1,2,3}]==makeFiniteWeight[{1,2,3,4}]]
-
 
 Times::"usage"=Times::"usage"<>"\n\n Mutliplication by numbers is defined for the elements of weight space of affine and finite-dimensional Lie algebras.\ 
     \n For example makeFiniteWeight[{1,2,3}]*2==makeFiniteWeight[{2,4,6}]]";
-
-finiteWeight/:0*y_finiteWeight:=makeFiniteWeight[0*y[standardBase]];
-
-finiteWeight/:x_?NumberQ*y_finiteWeight:=makeFiniteWeight[x*y[standardBase]];
-
-Expect["Multiplication by scalar", True,makeFiniteWeight[{1,2,3}]*2==makeFiniteWeight[{2,4,6}]]
-
-Expect["Multiplication by scalar", True,2*makeFiniteWeight[{1,2,3}]==makeFiniteWeight[{2,4,6}]]
-
 
 affineWeight::"usage"=
     "affineWeight[dimension_?NumberQ,fw_finiteWeigt,level_?NumberQ, grade_?NumberQ] represents\ 
@@ -119,83 +42,97 @@ affineWeight::"usage"=
     affineWeight[finitePart] returns finite part of weight as finiteWeight structure\n
     affineWeight[level] returns level of affine weight\n
     affineWeight[grade] returns grade of affine weight";
-affineWeight/:x_affineWeight[dimension]:=x[[1]];
-affineWeight/:x_affineWeight[finitePart]:=x[[2]];
-affineWeight/:x_affineWeight[level]:=x[[3]];
-affineWeight/:x_affineWeight[grade]:=x[[4]];
 
-grade[x_affineWeight]:=x[grade];
-grade[x_finiteWeight]:=0;
+level::"usage"=
+    "level[w_affineWeight] or w[level] returns level of weight of affine Lie algebra";
+
+grade::"usage"=
+    "grade[w_affineWeight] or w[grade] returns grade of weight of affine Lie algebra";
 
 makeAffineWeight::"usage"= 
     "makeAffineWeight[fw_finiteWeight,level_?NumberQ,grade_?NumberQ] creates affine weight with the given finite part fw, level and grade\n
     makeAffineWeight[{fw__?NumberQ},level_?NumberQ,grade_?NumberQ] creates affine weight with the given finite part fw, level and grade
     ";
+
+makeHashtable::"usage"=
+    "makeHashtable[keys_List,values_List] creates hashtable from the list keys and list of values";
+keys::"usage"="keys[hashtable] gives all the keys in hashtable";
+values::"usage"="values[hashtable] gives all the values in hashtable (in the same order as keys)";
+
+Begin["`Private`"]
+
+Expect[ description_, val_, expr_ ] := 
+    If[
+	val != expr,
+	Throw[
+	    StringJoin[ ToString[description],": GOT UNEXPECTED VALUE ", ToString[expr], 
+			" INSTEAD OF ", ToString[val] ]
+	    , "assertion exception"
+	     ]
+      ]
+
+
+finiteWeight/:x_finiteWeight[dimension]:=x[[1]];
+finiteWeight/:x_finiteWeight[standardBase]:=x[[2]];
+finiteWeight/:x_finiteWeight[finitePart]:=x;
+
+finitePart[wg_?weightQ]=wg[finitePart];
+dimension[wg_?weightQ]=wg[dimension];
+standardBase[wg_?weightQ]=wg[finitePart][standardBase];
+
+(*makeFiniteWeight[{coordinates__?NumberQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}*)
+makeFiniteWeight[{coordinates__}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}
+
+finiteWeight/:x_finiteWeight . y_finiteWeight:=x[standardBase].y[standardBase]
+
+finiteWeight/:Plus[wgs__finiteWeight]:=
+    makeFiniteWeight[Plus @@ (#[standardBase]&/@ {wgs})]
+    
+finiteWeight/:x_finiteWeight==y_finiteWeight:=x[standardBase]==y[standardBase]
+
+finiteWeight/:0*y_finiteWeight:=makeFiniteWeight[0*y[standardBase]];
+
+finiteWeight/:x_?NumberQ*y_finiteWeight:=makeFiniteWeight[x*y[standardBase]];
+
+affineWeight/:x_affineWeight[dimension]:=x[[1]];
+affineWeight/:x_affineWeight[finitePart]:=x[[2]];
+affineWeight/:x_affineWeight[level]:=x[[3]];
+affineWeight/:x_affineWeight[grade]:=x[[4]];
+
+level[x_affineWeight]=x[level];
+
+grade[x_affineWeight]:=x[grade];
+grade[x_finiteWeight]:=0;
+
 makeAffineWeight[fp_finiteWeight,lev_?NumberQ,gr_?NumberQ]:=affineWeight[fp[dimension],fp,lev,gr];
 makeAffineWeight[{fp__?NumberQ},lev_?NumberQ,gr_?NumberQ]:=makeAffineWeight[makeFiniteWeight[{fp}],lev,gr]
 
-
-Expect["Affine weight has the same real dimension as the finite-dimensional part, since we hold level and grade separetely",
-       True,makeAffineWeight[makeFiniteWeight[{1,2,3,4,5}],1,2][dimension]==Length[{1,2,3,4,5}]]
-
-Expect["Shortened constructor",
-       True,makeAffineWeight[{1,2,3,4,5},1,2][dimension]==Length[{1,2,3,4,5}]]
-
 affineWeight/:x_affineWeight==y_affineWeight:=And[x[finitePart]==y[finitePart],
-						      x[level]==y[level],
-						      x[grade]==y[grade]]
-
-Expect["Equal for affine weights compares finite parts, levels and grades", True,makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]==makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]]
-
-Expect["Equal for affine weights compares finite parts, levels and grades", False,makeAffineWeight[makeFiniteWeight[{1,2,3}],2,1]==makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]]
+						  x[level]==y[level],
+						  x[grade]==y[grade]]
 
 affineWeight/:x_affineWeight+y_affineWeight:=
     makeAffineWeight[x[finitePart]+y[finitePart],
 		     x[level]+y[level],
 		     x[grade]+y[grade]]
 
-
-Expect["Plus for affine weights",{2,4,6},(makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]+ makeAffineWeight[makeFiniteWeight[{1,2,3}],3,1])[finitePart][standardBase]]
-
-Expect["Plus for affine weights",4,(makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]+ makeAffineWeight[makeFiniteWeight[{1,2,3}],3,1])[level]]
-
-(*
-Expect["We compare dimensions of vectors before sum calculation, the expression is left unevaluated in case of dimension mismatch ",
-       True,MatchQ[makeAffineWeight[makeFiniteWeight[{1,2}],1,2] + makeAffineWeight[ makeFiniteWeight[{3,2,1}],2,1], x_affineWeight + y_affineWeight]]
-*)
-
 affineWeight/:x_affineWeight.y_affineWeight:= 
     x[finitePart].y[finitePart] + 
     x[level]* y[grade] + 
     x[grade]* y[level]
 
-Expect["Scalar product for vectors from weight space of affine Lie algebras",20,
-       makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]. 
-       makeAffineWeight[makeFiniteWeight[{3,2,1}],3,4]]
-(*
-Expect["We compare dimensions of vectors before product calculation, the expression is left unevaluated in case of dimension mismatch ",
-       True,MatchQ[makeAffineWeight[makeFiniteWeight[{1,2}],1,2]. makeAffineWeight[ makeFiniteWeight[{3,2,1}],2,1], x_affineWeight . y_affineWeight]]
-*)
-
 affineWeight/:x_?NumberQ*y_affineWeight:=makeAffineWeight[x*y[finitePart],x*y[level],x*y[grade]]
-
-Expect["Multiplication by scalar", True,makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]*2==makeAffineWeight[makeFiniteWeight[{2,4,6}],2,4]]
-
 
 ExpandNCM[(h : NonCommutativeMultiply)[a___, b_Plus, c___]] :=  Distribute[h[a, b, c], Plus, h, Plus, ExpandNCM[h[##]] &];
 ExpandNCM[a_] := ExpandAll[a];
 ExpandNCM[(a + b) ** (a + b) ** (a + b)];
 
-keys::"usage"="keys[hashtable] gives all the keys in hashtable";
 keys = DownValues[#,Sort->False][[All,1,1,1]]&;
 
-values::"usage"="values[hashtable] gives all the values in hashtable (in the same order as keys)";
 values = Function[ht,(ht[#]&)/@keys[ht]]
 
 hasKey[hashtable_,key_]:=hashtable[key]=!=Unevaluated[hashtable[key]]
 
-makeHashtable::"usage"=
-    "makeHashtable[keys_List,values_List] creates hashtable from the list keys and list of values";
 makeHashtable[keys_List,values_List]/; Length[keys]==Length[values] :=
     Module[{table},
 	   DownValues[table]=((table[#[[1]]] -> #[[2]] &)/@ Transpose[{keys,values}]);
@@ -206,7 +143,7 @@ Module[{ht,tt},
        Expect["Hashtable test",1,ht["a"]];
        Expect["Hashtable test",3,ht[tt]];
        Expect["Hashtable test",2,ht[2]]]
-					     
+    
 
 finiteRootSystem::"usage"=
     "finiteRootSystem[rank_Integer,{roots_finiteWeight}] represents root system of finite-dimensional Lie algebra.\n
@@ -245,15 +182,15 @@ Expect["appendZeros",True,makeFiniteWeight[{1,1,0,0,0}]==appendZeros[3,makeFinit
 
 CirclePlus::"usage"=CirclePlus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
 finiteRootSystem/:CirclePlus[x_finiteRootSystem,y_finiteRootSystem]:=makeFiniteRootSystem[Join[Map[appendZeros[y[dimension],#]&,x[simpleRoots]],
-										   Map[prependZeros[x[dimension],#]&,y[simpleRoots]]]];
+											       Map[prependZeros[x[dimension],#]&,y[simpleRoots]]]];
 
 Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
        Expect["Direct sum of finite-dimensional Lie algebras",True,
 	      CirclePlus[b2,a3]==makeFiniteRootSystem[{{1,-1,0,0,0,0},
-					   {0,1,0,0,0,0},
-					   {0,0,1,-1,0,0},
-					   {0,0,0,1,-1,0},
-					   {0,0,0,0,1,-1}}]]]
+						       {0,1,0,0,0,0},
+						       {0,0,1,-1,0,0},
+						       {0,0,0,1,-1,0},
+						       {0,0,0,0,1,-1}}]]]
 
 
 affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineExtension[CirclePlus[x[finiteRootSystem],y[finiteRootSystem]]];
@@ -261,10 +198,10 @@ affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineE
 Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
        Expect["Direct sum of affine Lie algebras",True,
 	      CirclePlus[makeAffineExtension[b2] , makeAffineExtension[a3]]==makeAffineExtension[makeFiniteRootSystem[{{1,-1,0,0,0,0},
-					   {0,1,0,0,0,0},
-					   {0,0,1,-1,0,0},
-					   {0,0,0,1,-1,0},
-					   {0,0,0,0,1,-1}}]]]]
+														       {0,1,0,0,0,0},
+														       {0,0,1,-1,0,0},
+														       {0,0,0,1,-1,0},
+														       {0,0,0,0,1,-1}}]]]]
 
 makeSimpleRootSystem::"usage"=
     "makeSimpleRootSystem[series, rank] creates root system of the algebra from given series with given rank.\n
@@ -392,9 +329,9 @@ toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ]:=
 
 toFundamentalChamberWithParity[rs_?rootSystemQ][vec_?weightQ]:=
     ({#[[1]][[1]],-#[[2]]})& @ NestWhile[Function[v,
-			     {reflection[Scan[If[#.v[[1]]<0,Return[#]]&,rs[simpleRoots]]][v[[1]]],-v[[2]]}],
-		    {vec,1},
-		    Head[#[[1]]]=!=reflection[Null]&]
+						  {reflection[Scan[If[#.v[[1]]<0,Return[#]]&,rs[simpleRoots]]][v[[1]]],-v[[2]]}],
+					 {vec,1},
+					 Head[#[[1]]]=!=reflection[Null]&]
 
 Expect["To fundamental chamber",True,makeFiniteWeight[{1,1/2}]==toFundamentalChamber[makeSimpleRootSystem[B,2]][makeFiniteWeight[{-1,1/2}]]]
 
@@ -467,12 +404,12 @@ Module[{b2=makeSimpleRootSystem[B,2]},
 
 (*orbit[makeSimpleRootSystem[B,2]][rho[makeSimpleRootSystem[B,2]]]
 
-Print/@positiveRoots[makeSimpleRootSystem[B,2]]
+  Print/@positiveRoots[makeSimpleRootSystem[B,2]]
 
-Map[Print,orbit[makeSimpleRootSystem[B, 2]][rho[makeSimpleRootSystem[B, 2]]],2]
+  Map[Print,orbit[makeSimpleRootSystem[B, 2]][rho[makeSimpleRootSystem[B, 2]]],2]
 
-SubValues[finiteWeight]
-*)
+  SubValues[finiteWeight]
+  *)
 
 
 dimension::"usage"=
@@ -493,23 +430,23 @@ weightSystem::"usage"=
     The list is split in pieces by number of root substractions";
 
 weightSystem[{posroots__?weightQ}][highestWeight_?weightQ]:=Module[{minusPosRoots=-{posroots},mgrade=Max[grade/@{posroots}]},
-(*								  Throw["_TODO_","not implemented"];*)
-								  Most[NestWhileList[Function[x,Complement[
-										 Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
-										       And[checkGrade[mgrade][y],mainChamberQ[{posroots}][y]]]
-										 ,x]],{highestWeight},#=!={}&]]];
+								   (*								  Throw["_TODO_","not implemented"];*)
+								   Most[NestWhileList[Function[x,Complement[
+								       Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
+									     And[checkGrade[mgrade][y],mainChamberQ[{posroots}][y]]]
+								       ,x]],{highestWeight},#=!={}&]]];
 
 weightSystem[rs_?rootSystemQ][highestWeight_?weightQ]:=Module[{minusPosRoots=-positiveRoots[rs]},
-							     Most[NestWhileList[Function[x,Complement[
-										 Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
-										       And[checkGrade[rs][y],mainChamberQ[rs][y]]]
-										 ,x]],{highestWeight},#=!={}&]]];
+							      Most[NestWhileList[Function[x,Complement[
+								  Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
+									And[checkGrade[rs][y],mainChamberQ[rs][y]]]
+								  ,x]],{highestWeight},#=!={}&]]];
 
 Module[{b2=makeSimpleRootSystem[B,2]},
        Expect["Weights of [2,1] module of B2",True, weightSystem[b2][makeFiniteWeight[{2,1}]]==
 	      {{makeFiniteWeight[{2,1}]},
-	      {makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}],makeFiniteWeight[{2,0}]},
-	      {makeFiniteWeight[{0,0}]}}]]
+	       {makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}],makeFiniteWeight[{2,0}]},
+	       {makeFiniteWeight[{0,0}]}}]]
 
 freudenthalMultiplicities::"usage"=
     "freudenthalMultiplicities[rs_finiteRootSystem][highestWeight_finiteWeight] returns hashtable with the multiplicities of 
@@ -526,12 +463,12 @@ freudenthalMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
 			 mults[v]=
 			 2/(c[highestWeight]-c[v])*
 			 Plus@@
-			     Map[Function[r,
-					  Plus@@Map[mults[toFC[#[[1]]]]*#[[2]]&,
-						    Rest[NestWhileList[({#[[1]]+r,#[[2]]+r.r})&,
-								       {v,v.r},
-								       insideQ[#[[1]]+r]&]]]]
-				 ,posroots]],
+			 Map[Function[r,
+				      Plus@@Map[mults[toFC[#[[1]]]]*#[[2]]&,
+						Rest[NestWhileList[({#[[1]]+r,#[[2]]+r.r})&,
+								   {v,v.r},
+								   insideQ[#[[1]]+r]&]]]]
+			     ,posroots]],
 		weights];
 	   mults];
 
@@ -573,10 +510,10 @@ Module[{b2=makeSimpleRootSystem[B,2],fm,rm},
 (* racahMultiplicities[makeSimpleRootSystem[B,2]][makeFiniteWeight[{5,5}]] *)
 
 (* b2=makeSimpleRootSystem[B,2];
-rh=rho[b2];
-rs=b2; 
+   rh=rho[b2];
+   rs=b2; 
 
-fan=Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[rs][rh]]]; *)
+   fan=Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[rs][rh]]]; *)
 
 highestRoot::"usage"="returns highest root of root system";
 highestRoot[rs_finiteRootSystem]:=toFundamentalChamber[rs][rs[simpleRoot][Ordering[(#.#&)/@rs[simpleRoots],-1][[1]]]]
@@ -643,9 +580,9 @@ Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
 
 toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
     First[NestWhile[Function[v,
-		       reflection[Scan[If[#.v<0,Return[#]]&,rs[simpleRoots]]][v]],
-	      vec,
-	      Head[#]=!=reflection[Null]&]]
+			     reflection[Scan[If[#.v<0,Return[#]]&,rs[simpleRoots]]][v]],
+		    vec,
+		    Head[#]=!=reflection[Null]&]]
 
 Expect["To main Weyl chamber for affine B2", True,Module[{b2a=OverHat[Subscript[B,2]]}, toFundamentalChamber[b2a][weight[b2a][1,-1,1]]==weight[b2a][0,0,1]]]
 
@@ -721,7 +658,7 @@ formalElement::"usage"=
     fe_formalElement[multiplicities] returns list of multiplicities
     formalElements can be added, multiplied by number, Exp[wg_?weightQ] and by formaElements\n
     fe_formalElement[hashtable] returns formalElement's data as hashtable\n
-"
+    "
 
 (* formalElement/:fe_formalElement[weight_?weightQ]/;NumberQ[fe[[1]][weight]]:=fe[[1]][weight];*)
 
@@ -843,10 +780,10 @@ anomalousWeights[rs_?rootSystemQ][hweight_?weightQ]:=
 fan::"usage"=
     "Constructs fan of the embedding";
 fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
-	   Module[{pr,r,roots},
-		  roots=Complement[positiveRoots[rs],orthogonalSubsystem[rs,subs]];
-		  pr=makeFormalElement[projection[subs][roots]] - makeFormalElement[positiveRoots[subs]];
-		  Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]]];
+    Module[{pr,r,roots},
+	   roots=Complement[positiveRoots[rs],orthogonalSubsystem[rs,subs]];
+	   pr=makeFormalElement[projection[subs][roots]] - makeFormalElement[positiveRoots[subs]];
+	   Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]]];
 (* !!!!!!!!!!!!!!!!!!!!!                      ^^^^^^^^ This can be negative *)
 
 getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,hweight_?weightQ]:=
@@ -947,4 +884,6 @@ drawPlaneProjection[axe1_,axe2_,f_formalElement]:=
 draw3dProjection[axe1_,axe2_,axe3_,f_formalElement]:=
     Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights]]
 
-Print["Hello!"]
+End[]
+
+EndPackage[]

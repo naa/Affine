@@ -1,10 +1,123 @@
 AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
-Mathematica 8.0 for Linux x86 (64-bit)
-Copyright 1988-2010 Wolfram Research, Inc.
-
 <<affine.m;
 
+Hello!
+
+?dimension
+
+dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra
+   highest weight representation
+
+Message::name: Message name MessageName[finiteWeight[dimension], usage]
+     is not of the form symbol::name or symbol::name::language.
+Hello!
+
+finitePart[finiteWeight[2,{1,2}]]
+
+Out[7]= finiteWeight[2, {1, 2}]
+
+Out[6]= {1, 2}
+
+Out[5]= {1, 2}
+
+Out[4]= 2
+
+Out[3]= 2
+
+Out[5]= finiteWeight[2, {1, 2}][dimension]
+
+Out[4]= finiteWeight[2, {1, 2}]
+
+Out[3]= makeFiniteWeight[{1, 2}]
+
+Hello!
+
+Context[formalElement]
+
+?BeginPackage
+
+?Plus
+
+??formalElement
+
+Datastructure to represent formal elements of the ring of characters (linear
+   combinations of formal exponents of weights).
+
+    Internally the data is held in hashtable.
+
+    fe_formalElement[weight_?weightQ] returns multiplicity of a given weight
+   (coefficient in front of Exp[weight])
+
+    fe_formalElement[weights] returns list of weights
+
+    fe_formalElement[multiplicities] returns list of multiplicities
+    formalElements can be added, multiplied by number, Exp[wg_?weightQ] and by
+   formaElements
+
+    fe_formalElement[hashtable] returns formalElement's data as hashtable
+
+
+
+(fe_formalElement)[(weight_)?weightQ] := If[hasKey[fe[[1]], weight], 
+    fe[[1]][weight], 0]
+ 
+(fe_formalElement)[weights] := keys[fe[[1]]]
+ 
+(fe_formalElement)[multiplicities] := values[fe[[1]]]
+ 
+(fe_formalElement)[hashtable] := fe[[1]]
+ 
+(x_formalElement) == (y_formalElement) ^:= x[weights] == y[weights] && 
+    x[multiplicities] == y[multiplicities]
+ 
+(x_formalElement) + (y_formalElement) ^:= 
+   Module[{res}, res = makeFormalElement[makeHashtable[{}, {}]]; 
+     Scan[(res[hashtable][#1] := x[#1] + y[#1]) & , 
+      Union[x[weights], y[weights]]]; res]
+ 
+(x_formalElement)*(n_)?NumberQ ^:= makeFormalElement[x[weights], 
+    n*x[multiplicities]]
+ 
+formalElement /: E^(w_)?weightQ*(x_formalElement) := 
+    Module[{ws}, ws = Select[(#1 + w & ) /@ x[weights], checkGrade[x]]; 
+      makeFormalElement[ws, (x[#1 - w] & ) /@ ws]]
+ 
+(x_formalElement)*(y_formalElement) ^:= 
+   Plus @@ (y[#1]*(x*Exp[#1]) & ) /@ y[weights]
+
+Datastructure to represent formal elements of the ring of characters (linear
+   combinations of formal exponents of weights).
+
+    Internally the data is held in hashtable.
+
+    fe_formalElement[weight_?weightQ] returns multiplicity of a given weight
+   (coefficient in front of Exp[weight])
+
+    fe_formalElement[weights] returns list of weights
+
+    fe_formalElement[multiplicities] returns list of multiplicities
+    formalElements can be added, multiplied by number, Exp[wg_?weightQ] and by
+   formaElements
+
+    fe_formalElement[hashtable] returns formalElement's data as hashtable
+
+
+
+x + y + z represents a sum of terms. 
+          It is defined for weights of finite and affine Lie algebras
+          Direct sum of finite-dimensional and affine Lie algebras can be
+            specified as sum of root systems
+
+BeginPackage["context`"] makes context`
+     and System` the only active contexts. 
+
+     BeginPackage["context`", {"need `", "need `", ...}]
+                                    1         2
+      calls Needs on the need . 
+                             i
+
+Out[5]= Global`
 
 Hello!
 
