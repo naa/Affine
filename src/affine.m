@@ -59,6 +59,53 @@ makeHashtable::"usage"=
 keys::"usage"="keys[hashtable] gives all the keys in hashtable";
 values::"usage"="values[hashtable] gives all the values in hashtable (in the same order as keys)";
 
+finiteRootSystem::"usage"=
+    "finiteRootSystem[rank_Integer,{roots_finiteWeight}] represents root system of finite-dimensional Lie algebra.\n
+    finiteRootSystem[rank] returns rank of the root system\n
+    finiteRootSystem[dimension] returns the dimension of the space where the roors are realized as the vectors\n
+    finiteRootSystem[simpleRoots] returns unsorted list of simple roots in the root system.\n
+    finiteRootSystem[simpleRoot][n_Integer] returns n'th simple root"
+
+makeFiniteRootSystem::"usage"=
+    "makeFiniteRootSystem[{roots__finiteWeight}] creates finiteRootSystem structure from the List of simple roots\n
+    makeFiniteRootSystem[{roots__finiteWeight}] creates  finiteRootSystem structure from the List of simple roots\n
+    given as the lists of coordinates";
+
+rank::"usage"=
+    "rank[rs_?rootSystemQ] or rs[rank] returns rank of root system. Rank of affine root system is equal to rank of underlying \n
+    finite-dimensional root system";
+
+simpleRoot::"usage"=
+    "simpleRoot[rs_?rootSystemQ][i_Integer] or rs[simpleRoot][i_Integer] returns simple root with the index i. For affine root system i can be zero";
+
+simpleRoots::"usage"=
+    "simpleRoots[rs_?rootSystemQ] or rs[simpleRoots] returns unsorted list of simple roots";
+
+prependZeros::"usage"=
+    "prependZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by prepending num zeros to its coordinates";
+
+appendZeros::"usage"=
+    "appendZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by appending num zeros to its coordinates";
+
+CirclePlus::"usage"=CirclePlus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
+
+makeSimpleRootSystem::"usage"=
+    "makeSimpleRootSystem[series, rank] creates root system of the algebra from given series with given rank.\n
+    Exceptional Lie algebras are not supported yet";
+
+Subscript::"usage"=Subscript::"usage" <>
+    "\n Subscript[A|B|C|D|E,n_Integer] creates root system of the algebra from given series with given rank. \n
+    It is an equivalent to makeSimpleRootsSystem, but looks better in notebook interface."
+
+A::"usage"="represents root systems of series A";
+B::"usage"="represents root systems of series B";
+C::"usage"="represents root systems of series C";
+D::"usage"="represents root systems of series D";
+E::"usage"="represents root systems of series E";
+
+weightQ::"usage"=
+    "Weight predicate"
+
 Begin["`Private`"]
 
 Expect[ description_, val_, expr_ ] := 
@@ -138,25 +185,6 @@ makeHashtable[keys_List,values_List]/; Length[keys]==Length[values] :=
 	   DownValues[table]=((table[#[[1]]] -> #[[2]] &)/@ Transpose[{keys,values}]);
 	   table]
 
-Module[{ht,tt},
-       ht=makeHashtable[{"a",2,tt},{1,2,3}];
-       Expect["Hashtable test",1,ht["a"]];
-       Expect["Hashtable test",3,ht[tt]];
-       Expect["Hashtable test",2,ht[2]]]
-    
-
-finiteRootSystem::"usage"=
-    "finiteRootSystem[rank_Integer,{roots_finiteWeight}] represents root system of finite-dimensional Lie algebra.\n
-    finiteRootSystem[rank] returns rank of the root system\n
-    finiteRootSystem[dimension] returns the dimension of the space where the roors are realized as the vectors\n
-    finiteRootSystem[simpleRoots] returns unsorted list of simple roots in the root system.\n
-    finiteRootSystem[simpleRoot][n_Integer] returns n'th simple root"
-
-makeFiniteRootSystem::"usage"=
-    "makeFiniteRootSystem[{roots__finiteWeight}] creates finiteRootSystem structure from the List of simple roots\n
-    makeFiniteRootSystem[{roots__finiteWeight}] creates  finiteRootSystem structure from the List of simple roots\n
-    given as the lists of coordinates";
-
 makeFiniteRootSystem[{roots__finiteWeight}]:=finiteRootSystem[Length[{roots}],{roots}[[1]][dimension],{roots}]
 
 makeFiniteRootSystem[{roots__List}]:=makeFiniteRootSystem[makeFiniteWeight/@{roots}]
@@ -167,45 +195,19 @@ finiteRootSystem/:x_finiteRootSystem[simpleRoots]:=x[[3]];
 finiteRootSystem/:x_finiteRootSystem[simpleRoot][0]:=highestRoot[x];
 finiteRootSystem/:x_finiteRootSystem[simpleRoot][n_Integer]:=x[[3]][[n]];
 
+rank[rs_?rootSystemQ]=rs[rank];
+simpleRoot[rs_?rootSystemQ]=rs[simpleRoot];
+simpleRoots[rs_?rootSystemQ]=rs[simpleRoots];
+dimension[rs_?rootSystemQ]=rs[dimension];
 
-prependZeros::"usage"=
-    "prependZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by prepending num zeros to its coordinates";
 prependZeros[num_Integer,vec_finiteWeight]:=makeFiniteWeight[Join[Table[0,{num}],vec[standardBase]]];
 
-Expect["prependZeros",True,makeFiniteWeight[{0,0,1,1}]==prependZeros[2,makeFiniteWeight[{1,1}]]]
-
-appendZeros::"usage"=
-    "appendZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by appending num zeros to its coordinates";
 appendZeros[num_Integer,vec_finiteWeight]:=makeFiniteWeight[Join[vec[standardBase],Table[0,{num}]]];
 
-Expect["appendZeros",True,makeFiniteWeight[{1,1,0,0,0}]==appendZeros[3,makeFiniteWeight[{1,1}]]]
-
-CirclePlus::"usage"=CirclePlus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
 finiteRootSystem/:CirclePlus[x_finiteRootSystem,y_finiteRootSystem]:=makeFiniteRootSystem[Join[Map[appendZeros[y[dimension],#]&,x[simpleRoots]],
 											       Map[prependZeros[x[dimension],#]&,y[simpleRoots]]]];
 
-Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
-       Expect["Direct sum of finite-dimensional Lie algebras",True,
-	      CirclePlus[b2,a3]==makeFiniteRootSystem[{{1,-1,0,0,0,0},
-						       {0,1,0,0,0,0},
-						       {0,0,1,-1,0,0},
-						       {0,0,0,1,-1,0},
-						       {0,0,0,0,1,-1}}]]]
-
-
 affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineExtension[CirclePlus[x[finiteRootSystem],y[finiteRootSystem]]];
-
-Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
-       Expect["Direct sum of affine Lie algebras",True,
-	      CirclePlus[makeAffineExtension[b2] , makeAffineExtension[a3]]==makeAffineExtension[makeFiniteRootSystem[{{1,-1,0,0,0,0},
-														       {0,1,0,0,0,0},
-														       {0,0,1,-1,0,0},
-														       {0,0,0,1,-1,0},
-														       {0,0,0,0,1,-1}}]]]]
-
-makeSimpleRootSystem::"usage"=
-    "makeSimpleRootSystem[series, rank] creates root system of the algebra from given series with given rank.\n
-    Exceptional Lie algebras are not supported yet";
 
 makeSimpleRootSystem[A,1]:=makeFiniteRootSystem[{{1}}];
 makeSimpleRootSystem[A,r_Integer]:=makeFiniteRootSystem[makeFiniteWeight /@ Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,r},{j,1,r+1}]];
@@ -213,15 +215,10 @@ makeSimpleRootSystem[B,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,
 makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],2]]];
 makeSimpleRootSystem[D,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Append[Table[0,{rank-2}],1],1]]];
 
-
 Subscript[A,n_Integer]:=makeSimpleRootSystem[A,n];
 Subscript[B,n_Integer]:=makeSimpleRootSystem[B,n];
 Subscript[C,n_Integer]:=makeSimpleRootSystem[C,n];
 Subscript[D,n_Integer]:=makeSimpleRootSystem[D,n];
-
-Expect["B2:",True,makeSimpleRootSystem[B,2][simpleRoots][[1]]==makeFiniteWeight[{1,-1}]]
-
-Expect["B2: rank",2,makeSimpleRootSystem[B,2][rank]]
 
 
 checkGrade::"usage"=
@@ -240,9 +237,6 @@ Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
        b2a[gradeLimit]=15;
        Expect["checkGrade affine Lie algebra", True, checkGrade[b2a][makeAffineWeight[{2,1},1,10]]];
        b2a[gradeLimit]=.;]
-
-weightQ::"usage"=
-    "Weight predicate"
 
 weightQ[x_finiteWeight]=True;
 weightQ[x_affineWeight]=True;

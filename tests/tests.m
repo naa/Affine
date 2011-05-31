@@ -60,4 +60,34 @@ Expect["Scalar product for vectors from weight space of affine Lie algebras",20,
 
 Expect["Multiplication by scalar", True,makeAffineWeight[makeFiniteWeight[{1,2,3}],1,2]*2==makeAffineWeight[makeFiniteWeight[{2,4,6}],2,4]]
 
+Module[{ht,tt},
+       ht=makeHashtable[{"a",2,tt},{1,2,3}];
+       Expect["Hashtable test",1,ht["a"]];
+       Expect["Hashtable test",3,ht[tt]];
+       Expect["Hashtable test",2,ht[2]]]
+
+Expect["prependZeros",True,makeFiniteWeight[{0,0,1,1}]==prependZeros[2,makeFiniteWeight[{1,1}]]]
+
+Expect["appendZeros",True,makeFiniteWeight[{1,1,0,0,0}]==appendZeros[3,makeFiniteWeight[{1,1}]]]
+
+Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
+       Expect["Direct sum of finite-dimensional Lie algebras",True,
+	      CirclePlus[b2,a3]==makeFiniteRootSystem[{{1,-1,0,0,0,0},
+						       {0,1,0,0,0,0},
+						       {0,0,1,-1,0,0},
+						       {0,0,0,1,-1,0},
+						       {0,0,0,0,1,-1}}]]]
+
+Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
+       Expect["Direct sum of affine Lie algebras",True,
+	      CirclePlus[makeAffineExtension[b2] , makeAffineExtension[a3]]==makeAffineExtension[makeFiniteRootSystem[{{1,-1,0,0,0,0},
+														       {0,1,0,0,0,0},
+														       {0,0,1,-1,0,0},
+														       {0,0,0,1,-1,0},
+														       {0,0,0,0,1,-1}}]]]]
+Expect["B2:",True,makeSimpleRootSystem[B,2][simpleRoots][[1]]==makeFiniteWeight[{1,-1}]]
+
+Expect["B2: rank",2,makeSimpleRootSystem[B,2][rank]]
+
+
 Print["Hi!"]

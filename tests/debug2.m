@@ -4,6 +4,22 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 Hello!
 
+?Integer
+
+f[i_Integer]:=i+1
+
+f[0]
+
+FullForm[x_Integer|x_Rational]
+
+Out[7]//FullForm= 
+ 
+>   Alternatives[Pattern[x, Blank[Integer]], Pattern[x, Blank[Rational]]]
+
+Out[6]= 1
+
+Integer is the head used for integers. 
+
 ?dimension
 
 dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra
