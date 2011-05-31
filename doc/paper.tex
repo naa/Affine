@@ -908,13 +908,110 @@ Branching functions of the embedding $\af\subset\gf$ are the partition functions
 \label{sec:conclusion}
 We present the package {\bf Affine.m} for computations in representation theory of finite-dimensional and affine Lie algebras. The package is available from {\it github} and is also submitted to the library. 
 
-\newpage
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
-%% \appendix
+\appendix
 
-%% \section{}
-%% \label{}
+\section{Software package}
+\label{package}
+The package can be freely downloaded from {\it github}. Latest release can be found here. To get the development code use the command
+\begin{lstlisting}[language=bash]
+ git clone git://github.com/naa/Affine.git
+\end{lstlisting}
+
+Contents of the package:
+\begin{verbatim}
+  /home/anton/programing/Affine:
+  total used in directory 32 available 106878020
+  drwxr-xr-x  7 anton anton 4096 Apr 27 19:35 .
+  drwxr-xr-x 70 anton anton 4096 Apr 27 18:41 ..
+  drwxr-xr-x  2 anton anton 4096 May 25 23:49 demo
+  drwxr-xr-x  4 anton anton 4096 May 27 16:01 doc
+  drwxr-xr-x  8 anton anton 4096 May 27 16:03 .git
+  -rw-r--r--  1 anton anton    0 Apr 27 18:00 README~
+  -rw-r--r--  1 anton anton  838 Apr 27 19:35 README.markdown
+  drwxr-xr-x  2 anton anton 4096 May 27 15:56 src
+  drwxr-xr-x  2 anton anton 4096 May 27 16:03 tests
+
+  /home/anton/programing/Affine/demo:
+  total used in directory 84 available 106829532
+  drwxr-xr-x 2 anton anton  4096 May 25 23:49 .
+  drwxr-xr-x 7 anton anton  4096 Apr 27 19:35 ..
+  -rw-r--r-- 1 anton anton 21700 May 21 18:52 demo.nb
+  -rw-r--r-- 1 anton anton  8384 May 25 23:40 paper1.nb
+  -rw-r--r-- 1 anton anton 13110 May 30 10:53 paper.nb
+  -rw-r--r-- 1 anton anton  8385 May 25 23:39 Untitled-3.nb
+  -rw-r--r-- 1 anton anton  9298 May 25 23:49 Untitled-6.nb
+
+  /home/anton/programing/Affine/doc:
+  total used in directory 1100 available 106829532
+  drwxr-xr-x 4 anton anton   4096 May 31 14:13 .
+  drwxr-xr-x 7 anton anton   4096 Apr 27 19:35 ..
+  drwxr-xr-x 2 anton anton   4096 May 31 14:11 auto
+  -rw-r--r-- 1 anton anton  39978 May 31 14:02 bibliography.bib
+  -rw-r--r-- 1 anton anton  38052 May  5 16:21 bibliography.bib~
+  -rw-r--r-- 1 anton anton   1656 May 27 15:56 branching.pdf
+  -rw-r--r-- 1 anton anton      0 Apr 27 19:36 manual.tex
+  -rw-r--r-- 1 anton anton  11874 May 31 14:02 paper.aux
+  -rw-r--r-- 1 anton anton   7752 May 31 14:02 paper.bbl
+  -rw-r--r-- 1 anton anton   1788 May 31 14:02 paper.blg
+  -rw------- 1 anton anton  41053 May 16 14:03 paper corr from 2-3.tex
+  -rw-r--r-- 1 anton anton 116700 May 27 15:43 paper.dvi
+  -rw-r--r-- 1 anton anton  23735 May 31 14:02 paper.log
+  -rw-r--r-- 1 anton anton   1139 May 31 14:02 paper.out
+  -rw-r--r-- 1 anton anton 448209 May 31 14:02 paper.pdf
+  -rw-r--r-- 1 anton anton      0 May 31 14:02 paper.spl
+  lrwxrwxrwx 1 anton anton     38 May 31 14:11 .#paper.tex -> anton@netbook.blun.ch.28480:1306055748
+  -rw-r--r-- 1 anton anton  53281 May 31 14:13 #paper.tex#
+  -rw-r--r-- 1 anton anton  53109 May 31 14:11 paper.tex
+  -rw-r--r-- 1 anton anton      0 Apr 27 19:36 paper.tex~
+  -rw-r--r-- 1 anton anton  18490 May 22 21:56 prv_paper.log
+  -rw-r--r-- 1 anton anton 116960 May 22 21:56 _region_.log
+  drwxr-xr-x 3 anton anton   4096 May 27 15:29 _region_.prv
+  -rw-r--r-- 1 anton anton      0 May 22 21:56 _region_.spl
+  -rw-r--r-- 1 anton anton  48355 May 22 21:56 _region_.tex
+  -rw-r--r-- 1 anton anton   2509 May 27 15:43 timing.pdf
+  -rw-r--r-- 1 anton anton    488 May 31 14:07 TODO.org
+  -rw-r--r-- 1 anton anton    118 May 31 13:00 TODO.org~
+  -rw-r--r-- 1 anton anton  23893 May  5 16:21 utphys.bst
+
+  /home/anton/programing/Affine/src:
+  total used in directory 176 available 106829532
+  drwxr-xr-x 2 anton anton  4096 May 31 13:19 .
+  drwxr-xr-x 7 anton anton  4096 Apr 27 19:35 ..
+  -rw-r--r-- 1 anton anton 44264 May 31 13:19 affine.m
+  -rw-r--r-- 1 anton anton 38785 May 27 02:31 affine.m.~067bbb376d59bac3e36b73d793efea0ca5004918~
+  -rw-r--r-- 1 anton anton 40536 May 27 02:31 affine.m.~087b49ca835f88c54a5523cabe7c85ace8cbabf1~
+  -rw-r--r-- 1 anton anton 38876 May 27 02:30 affine.m.~19be799ef01b730efdad672442cdcb09d874a7ad~
+  -rw-r--r-- 1 anton anton  2509 May 27 15:41 timing.pdf
+
+  /home/anton/programing/Affine/tests:
+  total used in directory 948 available 106829532
+  drwxr-xr-x 2 anton anton   4096 May 31 14:09 .
+  drwxr-xr-x 7 anton anton   4096 Apr 27 19:35 ..
+  -rw-r--r-- 1 anton anton    722 May 14 16:26 A3reduce
+  -rw-r--r-- 1 anton anton   3295 May 20 01:13 anom.png
+  -rw-r--r-- 1 anton anton   1536 May 27 15:50 br1.pdf
+  -rw-r--r-- 1 anton anton   3132 May 27 13:15 br1.png
+  -rw-r--r-- 1 anton anton   1408 May 27 15:50 br2.pdf
+  -rw-r--r-- 1 anton anton   2654 May 27 13:15 br2.png
+  -rw-r--r-- 1 anton anton  35119 May 27 15:50 br3.pdf
+  -rw-r--r-- 1 anton anton   7170 May 27 13:16 br3.png
+  -rw-r--r-- 1 anton anton   5354 May 27 13:27 br4.png
+  -rw-r--r-- 1 anton anton   1656 May 27 15:56 branching.pdf
+  -rw-r--r-- 1 anton anton   8483 May 24 23:19 brc1.png
+  -rw-r--r-- 1 anton anton   5330 May 20 21:24 brc.png
+  -rw-r--r-- 1 anton anton 260600 Apr 27 18:23 debug1.m
+  -rw-r--r-- 1 anton anton  53187 May 31 13:18 #debug2.m#
+  -rw-r--r-- 1 anton anton  52658 May 31 13:08 debug2.m
+  -rw-r--r-- 1 anton anton   1481 May 16 21:44 debug2.m~
+  -rw-r--r-- 1 anton anton 228485 May 14 17:21 #debug.m#
+  -rw-r--r-- 1 anton anton 221743 May  6 01:50 debug.m
+  -rw-r--r-- 1 anton anton   8060 May 24 20:59 eanom.png
+  -rw-r--r-- 1 anton anton   4038 May 20 01:13 fan.png
+
+\end{verbatim}
+
 
 %% References
 %%
