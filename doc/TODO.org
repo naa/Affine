@@ -1,0 +1,18 @@
+Affine.m 
+* TODO String functions
+* TODO Branching functions
+* TODO Extract unit tests to separate files
+* TODO Define Mathematica module
+* TODO Tensor product decomposition
+* DONE Make sum of Lie algebras non-commutative
+  CLOSED: [2011-05-31 Tue 14:06]
+
+Paper
+* DONE List of examples to the paper
+  CLOSED: [2011-05-31 Tue 14:04]
+* TODO Reread paper
+* TODO Add more Rhedin's papers to bibliography
+
+Manual
+* TODO Copy inline help
+* TODO Write the section on download/installation/usage
