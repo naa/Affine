@@ -5,13 +5,118 @@ Copyright 1988-2010 Wolfram Research, Inc.
 
 <<affine.m;
 
+
+Hello!
+
+Throw::nocatch: 
+   Uncaught Throw[Formal element construction: GOT UNEXPECTED VALUE 0 INSTEAD
+      OF 2, assertion exception] returned to top level.
+
+Out[2]= Hold[Throw[Formal element construction: GOT UNEXPECTED VALUE 0\
+ 
+>      INSTEAD OF 2, assertion exception]]
+
+formalElement/:fe_formalElement[weight_?(hasKey[fe[[1]],#])&]:=fe[[1]][weight];
+
+fe=makeFormalElement[{makeFiniteWeight[{1,1}]},{3}]
+
+fe[makeFiniteWeight[{1,1}]]
+
+Out[5]= 0
+
+Out[4]= formalElement[table$127]
+
+Throw::nocatch: 
+   Uncaught Throw[Formal element construction: GOT UNEXPECTED VALUE 0 INSTEAD
+      OF 2, assertion exception] returned to top level.
+
+Out[2]= Hold[Throw[Formal element construction: GOT UNEXPECTED VALUE 0\
+ 
+>      INSTEAD OF 2, assertion exception]]
+
+
+fm=makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]
+
+fm[makeFiniteWeight[{3,4}]]
+
+?DownValues
+
+f[x]=f[x]
+
+f[x]
+
+
+hasKey[hashtable_,key_]:=hashtable[key]=!=Unevaluated[hashtable[key]]
+
+
+h=makeHashtable[{a,b,c},{2,3,4}]
+
+h[q]
+
+hasKey[h,a]
+
+Out[20]= True
+
+Out[19]= False
+
+Out[18]= table$132[q]
+
+Out[17]= 3
+
+Out[16]= table$132
+
+Out[14]= f[x]
+
+Out[13]= f[x]
+
+Out[12]= f[x]
+
+Out[11]= f[x]
+
+DownValues[f] gives a list of transformation rules corresponding to all
+     downvalues defined for the symbol f. 
+
+Out[9]= 0
+
+Out[8]= 0
+
+fm[multiplicities]
+
+Out[7]= {2, 3}
+
+Out[6]= {finiteWeight[2, {1, 2}], finiteWeight[2, {3, 4}]}
+
+Out[5]= formalElement[table$129]
+
+Out[4]= formalElement[table$128]
+
+Out[3]= 0
+
+Throw::nocatch: 
+   Uncaught Throw[Formal element construction: GOT UNEXPECTED VALUE 0 INSTEAD
+      OF 2, assertion exception] returned to top level.
+
+Out[2]= Hold[Throw[Formal element construction: GOT UNEXPECTED VALUE 0\
+ 
+>      INSTEAD OF 2, assertion exception]]
+
 b4=makeSimpleRootSystem[B,4];
+
+dimension[b4][3*wg]//Timing
+
+Out[19]= {0.036002, 13755924}
+
+Out[18]= {0.032002, 2772}
+
+Out[17]= 2772
 
 wg=weight[b4][0,1,0,2];
 
 pr=positiveRoots[b4];
 
 dimension[pr][wg]
+
+Out[15]= 2772
 
 Out[11]= 2772
 
@@ -462,7 +567,35 @@ rho[pr]
 
 Out[7]= $Aborted
 
-fe=simpleBranching[makeSimpleRootSystem[B,4],regularSubalgebra[makeSimpleRootSystem[B,4]][2,3,4]][wg]//Timing
+b6=makeSimpleRootSystem[B,6]
+
+dimension[b6][weight[b6][1,0,0,0,2,0]]
+
+Out[4]= 2844270
+
+ff=freudenthalMultiplicities[b6][weight[b6][1,0,0,0,2,0]]//Timing
+
+f1
+
+[Calculating...]
+
+Out[26]= {31.43, mults$1366}
+
+Out[25]= mults$1364
+
+
+
+Out[24]= 2844270
+
+Out[23]= 188663555808
+
+Out[22]= 13
+
+freudenthalMultiplicities[makeSimpleRootSystem[B,6]]
+
+fe=simpleBranching[makeSimpleRootSystem[B,4],regularSubalgebra[makeSimpleRootSystem[B,4]][3,4]][wg]//Timing
+
+Out[20]= {5.84437, formalElement[table$1330]}
 
 fe=ourBranching[makeSimpleRootSystem[B,4],regularSubalgebra[makeSimpleRootSystem[B,4]][2,3,4]][wg]//Timing
 

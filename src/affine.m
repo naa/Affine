@@ -243,24 +243,24 @@ appendZeros[num_Integer,vec_finiteWeight]:=makeFiniteWeight[Join[vec[standardBas
 
 Expect["appendZeros",True,makeFiniteWeight[{1,1,0,0,0}]==appendZeros[3,makeFiniteWeight[{1,1}]]]
 
-Plus::"usage"=Plus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
-finiteRootSystem/:x_finiteRootSystem+y_finiteRootSystem:=makeFiniteRootSystem[Join[Map[appendZeros[y[dimension],#]&,x[simpleRoots]],
+CirclePlus::"usage"=CirclePlus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
+finiteRootSystem/:CirclePlus[x_finiteRootSystem,y_finiteRootSystem]:=makeFiniteRootSystem[Join[Map[appendZeros[y[dimension],#]&,x[simpleRoots]],
 										   Map[prependZeros[x[dimension],#]&,y[simpleRoots]]]];
 
 Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
        Expect["Direct sum of finite-dimensional Lie algebras",True,
-	      b2+a3==makeFiniteRootSystem[{{1,-1,0,0,0,0},
+	      CirclePlus[b2,a3]==makeFiniteRootSystem[{{1,-1,0,0,0,0},
 					   {0,1,0,0,0,0},
 					   {0,0,1,-1,0,0},
 					   {0,0,0,1,-1,0},
 					   {0,0,0,0,1,-1}}]]]
 
 
-affineRootSystem/:x_affineRootSystem+y_affineRootSystem:=makeAffineExtension[x[finiteRootSystem]+y[finiteRootSystem]];
+affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineExtension[CirclePlus[x[finiteRootSystem],y[finiteRootSystem]]];
 
 Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
        Expect["Direct sum of affine Lie algebras",True,
-	      makeAffineExtension[b2] + makeAffineExtension[a3]==makeAffineExtension[makeFiniteRootSystem[{{1,-1,0,0,0,0},
+	      CirclePlus[makeAffineExtension[b2] , makeAffineExtension[a3]]==makeAffineExtension[makeFiniteRootSystem[{{1,-1,0,0,0,0},
 					   {0,1,0,0,0,0},
 					   {0,0,1,-1,0,0},
 					   {0,0,0,1,-1,0},

@@ -431,7 +431,8 @@ its elements by $\omega_i$:
 \end{equation}
 For finite-dimensional Lie algebra there are $r$ fundamental weights, $i=1,\dots, r$. For affine Lie algebra we have additional fundamental weight $\omega_0=\lambda$, $(\lambda,\delta)=1, \; (\lambda,\lambda)=(\delta,\delta)=0$. Other fundamental weights are equal to $\omega_i=a_i^v \lambda_0 +\co{\omega_i}$, where $\co{\omega_i}$ is the fundamental weight of finite-dimensional Lie algebra $\go$.
 
-Weyl vector is denoted by $\rho=\sum_{i} \omega_{i}$, it is of importance for  % what????
+We need to introduce Weyl vector denoted by $\rho=\sum_{i} \omega_{i}$. It is of importance for the construction of algebra modules.
+
 \subsection{Highest weight modules}
 \label{sec:high-weight-modul}
 
@@ -845,6 +846,54 @@ Measurements for branching computations for $\hat B_{3}\subset \hat B_{4}$ are s
 \section{Examples}
 \label{sec:examples}
 In this section we present some examples of computations available with {\bf Affine.m} with the code required to produce these results. 
+
+\subsection{Tensor product decompositon for finite-dimensional Lie algebras}
+\label{sec:tens-prod-decomp}
+
+Computation of fusion coefficients for the decomposition of tensor product of highest-weight modules to the direct sum of irreducible modules has numerous applications in physics. For example, we can consider spin of composite system such as atom. Another interesting example is integrable spin chain consisting of $N$ particles with the spins living in some representation $L$ of Lie algebra $\gf$ with $\gf$-invariant Hamiltonian $H$, describing nearest-neighbour spin-spin interaction. In order to solve such system, i.e. find eigenstates of Hamiltonian, we need to decompose $L^{\otimes N}$ into the direct sum of irreducible $\gf$-modules of lower dimension and diagonalize the Hamiltonian on these modules. 
+
+For fundamental representations of simple Lie algebras it is sometimes possible to get analytic result for the dependence of decomposition coefficients on $N$ (See \cite{2011LyakhovskyPostnova}). Our code give numerical values and can be used to check this analytic results. 
+
+\begin{figure}[h]
+  \label{tensor-product-decomposition-b2}
+  \noindent\centering{
+    \includegraphics[width=80mm]{branching.pdf}
+  }
+  \caption{Fusion coefficients for $\left(L^{(1,0)}\right)^{\otimes 10}$}
+\end{figure}
+
+\subsection{Branchig and parabolic Verma modules}
+\label{sec:branch-parab-verma}
+
+We illustrate the connection of branching with generalized BGG-resolution with the sequence of parabolic Verma modules which appear in the study of branching of irreducible $B_{2}$-modules to the modules of subalgebra $A_{1}$. Root of the subalgebra $A_{1}$ in this case is equal to the highest root $\Theta$ of algebra $B_{2}$. In this case orthogonal sub-algebra $\afb$ gives rise to the parabolic Verma modules \cite{2011arXiv1102.1702L}. 
+
+\begin{figure}[h]
+  \label{branching-bgg}
+  \noindent\centering{
+    \includegraphics[width=80mm]{branching.pdf}
+  }
+  \caption{Parabolic Verma modules from branching}
+\end{figure}
+
+\subsection{String functions of affine Lie algebras and CFT models}
+\label{sec:string-funct-affine}
+
+String functions can be used to present the formal character of affine Lie algebra highest weight representation. They have interesting analytic and modular properties \cite{kac1990idl,kac1988modular,kac1984infinite}. 
+
+String functions can be given physical meaning if we consider coset models of two-dimensional conformal field theory \cite{Goddard198588}, \cite{difrancesco1997cft}. String functions of $\hat\gf$ are equal to branching functions in the case of subalgebra $\hat{u(1)}$ and can be seen as the partition functions of $\hat\gf/\hat{u(1)}$ coset model on the torus.
+
+{\bf Affine.m} produces power series decomposition for string functions. Consider affine Lie algebra $\hat{sl(3)}=\hat A_{2}$ highest weight module $L^{(1,0,0)}$. To get string functions we can use the code:
+\begin{lstlisting}[mathescape=true]
+stringFunciton[$\hat A_2$][weight[$\hat A_{2}$][1,0,0]][weight[$\hat A_{2}$][0,1,0]]
+$1+q^2 +q^{3}+\dots$
+\end{lstlisting}
+
+\subsection{Branching functions and coset models of conformal field theory}
+\label{sec:branch-funct-coset}
+
+More complex models of CFT can be obtained from cosets $G/A$ corresponding to the embedding $\af\subset\gf$. These models can be studied as gauge theories \cite{Hwang:1994yr}.
+
+Branching functions of the embedding $\af\subset\gf$ are the partition functions of CFT on the torus.
 
 \begin{figure}[h]
   \label{branching-b4-b2}
