@@ -89,5 +89,204 @@ Expect["B2:",True,makeSimpleRootSystem[B,2][simpleRoots][[1]]==makeFiniteWeight[
 
 Expect["B2: rank",2,makeSimpleRootSystem[B,2][rank]]
 
+Expect["checkGrade finite dimensional Lie algebra", True, Affine`Private`checkGrade[makeSimpleRootSystem[B,2]][makeFiniteWeight[{2,1}]]]
+
+Expect["checkGrade affine Lie algebra", False, Affine`Private`checkGrade[makeAffineExtension[makeSimpleRootSystem[A,2]]][makeAffineWeight[{2,1,1},1,10]]]
+
+Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
+       b2a[gradeLimit]=15;
+       Expect["checkGrade affine Lie algebra", True, Affine`Private`checkGrade[b2a][makeAffineWeight[{2,1},1,10]]];
+       b2a[gradeLimit]=.;]
+
+Expect["weight predicate on finite weights", True, weightQ[makeFiniteWeight[{1,2,3}]]]
+
+Expect["weight predicate on finite weights", False, weightQ[makeFiniteWeight[1,2,3]]]
+
+Expect["weight predicate on affine weights", True, weightQ[makeAffineWeight[{1,2,3},1,1]]]
+
+Expect["weight predicate on affine weights", False, weightQ[makeAffineWeight[1,2,3]]]
+
+Expect["Reflection for finite weights", True,reflection[makeFiniteWeight[{1,0}]][makeFiniteWeight[{1,1}]]==makeFiniteWeight[{-1,1}]]
+
+Expect["Co root of [1,0]", True, coroot[makeFiniteWeight[{1,0}]]==makeFiniteWeight[{2,0}]]
+
+Expect["Co root of affine [1,0]", True, coroot[makeAffineWeight[{1,0},1,0]]==makeAffineWeight[{2,0},2,0]]
+
+Expect["Cartan matrix of B2",{{2, -1}, {-2, 2}},cartanMatrix[makeSimpleRootSystem[B,2]]]
+
+Expect["Predicate for finite and affine root systems",True,rootSystemQ[makeSimpleRootSystem[B,2]]]
+
+Expect["Weyl reflection s1 s2 s1 in algebra B2",True,
+       weylGroupElement[makeSimpleRootSystem[B,2]][1,2,1][makeFiniteWeight[{1,0}]]==
+       makeFiniteWeight[{-1,0}]]
+
+Expect["Fundamental weights for B2", True, {makeFiniteWeight[{1,0}],makeFiniteWeight[{1/2,1/2}]}==fundamentalWeights[makeSimpleRootSystem[B,2]]]
+
+Expect["Fundamental weights for A1", True, {makeFiniteWeight[{1/2}]}==fundamentalWeights[makeSimpleRootSystem[A,1]]]
+
+Expect["Fundamental weights for A2", True, {makeFiniteWeight[{2/3,-1/3,-1/3}],makeFiniteWeight[{1/3,1/3,-2/3}]}==fundamentalWeights[makeSimpleRootSystem[A,2]]]
+
+
+Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[makeSimpleRootSystem[B,2]]]
+
+Expect["Weyl vector for B2",True,makeFiniteWeight[{3/2,1/2}]==rho[positiveRoots[makeSimpleRootSystem[B,2]]]]
+
+Expect["To fundamental chamber",True,makeFiniteWeight[{1,1/2}]==toFundamentalChamber[makeSimpleRootSystem[B,2]][makeFiniteWeight[{-1,1/2}]]]
+
+Expect["We can use this and other functions for mapping",True,
+       Map[toFundamentalChamber[makeSimpleRootSystem[B,2]],{makeFiniteWeight[{-1,-1}],makeFiniteWeight[{-2,-1}]}]==
+       {makeFiniteWeight[{1, 1}], makeFiniteWeight[{2, 1}]}]
+
+Expect["Main chamber predicate",True,mainChamberQ[makeSimpleRootSystem[B,2]][toFundamentalChamber[makeSimpleRootSystem[B,2]][makeFiniteWeight[{-1,1/2}]]]]
+
+Module[{b2=makeSimpleRootSystem[B,2]},
+       Expect["Partial orbit test", True, partialOrbit[b2][{rho[b2]}]==
+	      {{makeFiniteWeight[{3/2,1/2}]},{makeFiniteWeight[{1/2,3/2}],makeFiniteWeight[{3/2,-1/2}]},
+	       {makeFiniteWeight[{-1/2,3/2}],makeFiniteWeight[{1/2,-3/2}]},
+	       {makeFiniteWeight[{-3/2,1/2}],makeFiniteWeight[{-1/2,-3/2}]},
+	       {makeFiniteWeight[{-3/2,-1/2}]}}]]
+
+Module[{b2=makeSimpleRootSystem[B,2]},
+       Expect["orbit is equivalent to partial orbit",True, partialOrbit[b2][{rho[b2]}]== orbit[b2][rho[b2]]]]
+
+Module[{b2=makeSimpleRootSystem[B,2]},
+       Expect["Positive roots of B2",True, positiveRoots[b2]=={makeFiniteWeight[{1,-1}],makeFiniteWeight[{0,1}],
+							       makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}]}]]
+
+Expect["Dimension",5, dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]]
+
+Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2}]]]
+
+Module[{b2=makeSimpleRootSystem[B,2]},
+       Expect["Weights of [2,1] module of B2",True, weightSystem[b2][makeFiniteWeight[{2,1}]]==
+	      {{makeFiniteWeight[{2,1}]},
+	       {makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}],makeFiniteWeight[{2,0}]},
+	       {makeFiniteWeight[{0,0}]}}]]
+
+Module[{b2=makeSimpleRootSystem[B,2],fm},
+       fm=freudenthalMultiplicities[b2][makeFiniteWeight[{2,1}]];
+       Expect["Mutliplicites of [2,1] B2 representation",{1, 1, 2, 3, 3},
+	      fm[#]&/@keys[fm]]]
+
+(* Expect["orbitWithEps __TODO__",False,True] *)
+
+Module[{b2=makeSimpleRootSystem[B,2],fm,rm},
+       fm=freudenthalMultiplicities[b2][makeFiniteWeight[{2,1}]];
+       rm=freudenthalMultiplicities[b2][makeFiniteWeight[{2,1}]];
+       Expect["Racah and Freudenthal formulae should give the same result",rm[#]&/@keys[rm],
+	      fm[#]&/@keys[fm]]]
+
+Expect["Highest root for B2",makeFiniteWeight[{1, 1}],highestRoot[makeSimpleRootSystem[B,2]]]
+
+Expect["simpleRoots of affine Lie algebra A1",True, OverHat[Subscript[A,1]][simpleRoot][1]==makeAffineWeight[{1},0,0]]
+
+Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
+       b2a[gradeLimit]=1;
+       Expect["Positive roots of affine B2",True, positiveRoots[b2a]=={makeAffineWeight[{-1, -1}, 0, 1], 
+								       makeAffineWeight[{1, -1}, 0, 0], 
+								       makeAffineWeight[{0, 1}, 0, 0], 
+								       makeAffineWeight[{1, 1}, 0, 0], 
+								       makeAffineWeight[{1, 0}, 0, 0], 
+								       makeAffineWeight[{0, 0}, 0, 0], 
+								       makeAffineWeight[{0, 0}, 0, 1], 
+								       makeAffineWeight[{0, 0}, 0, 0], 
+								       makeAffineWeight[{0, 0}, 0, 1]}];
+       b2a[gradeLimit]=.;]
+
+
+
+Expect["To main Weyl chamber for affine B2", True,Module[{b2a=OverHat[Subscript[B,2]]}, toFundamentalChamber[b2a][weight[b2a][1,-1,1]]==weight[b2a][0,0,1]]]
+
+
+Expect["Marks for affine A_3", {1,1,1,1},marks[OverHat[Subscript[A,3]]]]
+
+Expect["Marks for affine C_4", {1, 2, 2, 2, 1},marks[OverHat[Subscript[C,4]]]]
+
+
+Expect["Comarks for affine D_4", {1, 1, 2, 1, 1}, comarks[OverHat[Subscript[D,4]]]]
+
+
+Expect["weight of B_2", True,makeFiniteWeight[{3,1}]==weight[makeSimpleRootSystem[B,2]][2,2]]
+
+
+Expect["Dynkin labels of sl(3) root", True, Module[{rs=makeSimpleRootSystem[A,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-1}]]
+
+Expect["Dynkin labels of so(5) root", True, Module[{rs=makeSimpleRootSystem[B,2]},dynkinLabels[rs][rs[simpleRoot][1]]=={2,-2}]]
+
+
+Expect["Subsistem, orthogonal to highest root of so(5)", True, Module[{b2=makeSimpleRootSystem[B,2],a1},a1=makeFiniteRootSystem[{highestRoot[b2]}]; orthogonalSubsystem[b2,a1]==makeFiniteRootSystem[{b2[simpleRoot][1]}]]]
+
+
+
+Expect["Projection to A_1 \\subset B_2",True, 
+       Module[{b2=makeSimpleRootSystem[B,2],a1},
+	      a1=makeFiniteRootSystem[{highestRoot[b2]}]; 
+	      projection[a1][rho[b2]]==a1[simpleRoot][1]]]
+
+
+Expect["Projection to A_1 \\subset B_2 for affine algebras",True, 
+       Module[{b2a=makeAffineExtension[ makeSimpleRootSystem[B,2]],a1a},
+	      a1a=makeAffineExtension[makeFiniteRootSystem[{highestRoot[b2]}]]; 
+	      projection[a1][rho[b2a]]==a1[simpleRoot][1] && 
+	      projection[a1][b2a[imaginaryRoot]]==a1a[imaginaryRoot]]]
+
+
+Expect["Formal element construction", 2, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}][makeFiniteWeight[{1,2}]]]
+
+
+Expect["Formal element construction", 2, makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}], makeFiniteWeight[{1,2}]}][makeFiniteWeight[{1,2}]]]
+
+
+Expect["Formal element construction", True, 
+       makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]==
+       makeFormalElement[makeHashtable[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]]
+
+Expect["subElement",{1},subElement[makeFormalElement[positiveRoots[makeSimpleRootSystem[B,2]],{1,2,3,4}],{makeFiniteWeight[{1,-1}]}][multiplicities]]
+
+Expect["Formal element to hastable conversion", True, 
+       Module[{fe=makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]},
+	      keys[fe[hashtable]]==fe[weights] && values[fe[hashtable]]==fe[multiplicities]]]
+
+
+Expect["Formal element addition", 5, 
+       (makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]+makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,5}]},{3,3}])[makeFiniteWeight[{1,2}]]]
+
+Expect["Formal element multiplication by number", 6, 
+       (3*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}])[makeFiniteWeight[{1,2}]]]
+
+Expect["Formal element multiplication by exponent of weight", 2, 
+       (Exp[makeFiniteWeight[{1,1}]]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}])[makeFiniteWeight[{2,3}]]]
+
+Expect["Formal elements multiplication", True,
+       Exp[makeFiniteWeight[{1,1}]]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]==
+       makeFormalElement[{makeFiniteWeight[{1,1}]}]*makeFormalElement[{makeFiniteWeight[{1,2}],makeFiniteWeight[{3,4}]},{2,3}]]
+
+Expect["Projection for formal elements", 2, 
+       Module[{b2=makeSimpleRootSystem[B,2],a1},
+	      a1=makeFiniteRootSystem[{highestRoot[b2]}];
+	      makeFormalElement[projection[a1]/@ Flatten[orbit[b2][weight[b2][1,1]]]][makeFiniteWeight[{1,1}]]]]
+
+Expect["Regular subalgebra B2 of B4", True, regularSubalgebra[makeSimpleRootSystem[B,4]][3,4]==makeFiniteRootSystem[{makeFiniteWeight[{0,0,1,-1}],makeFiniteWeight[{0,0,0,1}]}]]
+
+Expect["Simple branching", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Sort[simpleBranching[b4,b2][wg][multiplicities]]=={6,10,19,30,40,60}]]
+
+Expect["Our branching", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Union[ourBranching[b4,b2][wg][multiplicities]]=={0,6,10,19,30,40,60}]]
+
+Expect["branching2", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg,fe, mcw},
+	      b2=regularSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      fe=branching2[b4,b2][wg];
+	      mcw=Select[fe[weights],mainChamberQ[b2]];
+	      Union[fe/@mcw]=={0,6,10,19,30,40,60}]]
+
 
 Print["Hi!"]

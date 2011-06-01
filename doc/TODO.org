@@ -1,18 +1,20 @@
-Affine.m 
-* TODO String functions
-* TODO Branching functions
-* TODO Extract unit tests to separate files
-* TODO Define Mathematica package
-* TODO Tensor product decomposition
-* DONE Make sum of Lie algebras non-commutative
+* Affine.m 
+*** TODO String functions
+*** TODO Branching functions
+*** DONE Extract unit tests to separate files
+    CLOSED: [2011-06-01 Wed 17:26]
+*** DONE Define Mathematica package
+    CLOSED: [2011-06-01 Wed 17:26]
+*** TODO Tensor product decomposition
+*** DONE Make sum of Lie algebras non-commutative
   CLOSED: [2011-05-31 Tue 14:06]
-
-Paper
-* DONE List of examples to the paper
-  CLOSED: [2011-05-31 Tue 14:04]
-* TODO Reread paper
-* TODO Add more Rhedin's papers to bibliography
-
-Manual
-* TODO Copy inline help
-* TODO Write the section on download/installation/usage
+*** TODO Constructors for exceptional simple Lie algebras
+*** TODO Constructors for twisted affine Lie algebras
+* Paper
+*** DONE List of examples to the paper
+    CLOSED: [2011-05-31 Tue 14:04]
+*** TODO Reread paper
+*** TODO Add more Rhedin's papers to bibliography
+* Manual
+*** TODO Copy inline help
+*** TODO Write the section on download/installation/usage
