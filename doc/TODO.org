@@ -7,14 +7,15 @@
     CLOSED: [2011-06-01 Wed 17:26]
 *** TODO Tensor product decomposition
 *** DONE Make sum of Lie algebras non-commutative
-  CLOSED: [2011-05-31 Tue 14:06]
+    CLOSED: [2011-05-31 Tue 14:06]
 *** TODO Constructors for exceptional simple Lie algebras
 *** TODO Constructors for twisted affine Lie algebras
 * Paper
 *** DONE List of examples to the paper
     CLOSED: [2011-05-31 Tue 14:04]
 *** TODO Reread paper
-*** TODO Add more Rhedin's papers to bibliography
+*** DONE Add more Rhedin's papers to bibliography
+    CLOSED: [2011-06-01 Wed 18:58]
 * Manual
 *** TODO Copy inline help
 *** TODO Write the section on download/installation/usage

@@ -224,7 +224,8 @@ formalElement::"usage"=
     fe_formalElement[hashtable] returns formalElement's data as hashtable\n
     "
 
-
+hashtable::"usage"=
+    "hashtable[fe_formalElement] or fe[hashtable] returns weights and multiplicities of formal element as a hash table";
 
 makeFormalElement::"usage"=
     "makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}] creates formal element with given weights and corresponding multiplicities\n
@@ -262,6 +263,15 @@ drawPlaneProjection::"usage"=
 draw3dProjection::"usage"=
     "draw3dProjection[axe1_,axe2_,axe3_,f_formalElement] draws projection to the 3d space of axe1, axe2, axe3 (e.g. 1,2,3 or 1,3,4 etc) of some formal element
     \n(branching, multiplicities, tensor product coefficients)"
+
+tensorProduct::"usage"=
+    "calculate tensor product decomposition coefficients"
+
+stringFunction::"usage"=
+    "stringFunciton[rs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of string function"
+
+branchingFunction::"usage"=
+    "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
 
 Begin["`Private`"]
 
@@ -591,6 +601,8 @@ subElement[fe_formalElement,{weights___?weightQ}]:=makeFormalElement[{weights},f
 
 formalElement/:fe_formalElement[hashtable]:=fe[[1]];
 
+hashtable[fe_formalElement]=fe[hashtable];
+
 formalElement/:x_formalElement + y_formalElement:=Module[{res},
 							 res=makeFormalElement[makeHashtable[{},{}]];
 							 Scan[(res[hashtable][#]:=x[#]+y[#])&,Union[x[weights],y[weights]]];
@@ -716,6 +728,16 @@ drawPlaneProjection[axe1_,axe2_,f_formalElement]:=
 
 draw3dProjection[axe1_,axe2_,axe3_,f_formalElement]:=
     Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights]]
+
+
+tensorProduct::"usage"=
+    "calculate tensor product decomposition coefficients"
+
+stringFunction::"usage"=
+    "stringFunciton[rs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of string function"
+
+branchingFunction::"usage"=
+    "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
 
 End[]
 

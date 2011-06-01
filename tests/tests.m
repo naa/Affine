@@ -278,6 +278,7 @@ Expect["Our branching", True,
        Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
 	      b2=regularSubalgebra[b4][3,4];
 	      wg=weight[b4][0,1,0,2];
+	      Print[wg];
 	      Union[ourBranching[b4,b2][wg][multiplicities]]=={0,6,10,19,30,40,60}]]
 
 Expect["branching2", True, 
@@ -286,6 +287,7 @@ Expect["branching2", True,
 	      wg=weight[b4][0,1,0,2];
 	      fe=branching2[b4,b2][wg];
 	      mcw=Select[fe[weights],mainChamberQ[b2]];
+	      Print[fe/@mcw];
 	      Union[fe/@mcw]=={0,6,10,19,30,40,60}]]
 
 
