@@ -387,6 +387,8 @@ Subscript[B,n_Integer]:=makeSimpleRootSystem[B,n];
 Subscript[C,n_Integer]:=makeSimpleRootSystem[C,n];
 Subscript[D,n_Integer]:=makeSimpleRootSystem[D,n];
 
+affineRootSystem/:rs_affineRootSystem[gradeLimit]=10;
+
 checkGrade[rs_][w_finiteWeight]=True;
 checkGrade[rs_][w_affineWeight]:=(Abs[w[grade]]<rs[gradeLimit]) /. rs[gradeLimit]->10;
 checkGrade[gr_NumberQ][w_affineWeight]:=Abs[w[grade]]<=gr;
@@ -736,9 +738,14 @@ tensorProduct::"usage"=
 stringFunction::"usage"=
     "stringFunciton[rs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of string function"
 
+
+stringFunction[rs_affineRootSystem][hweight_affineWeight,wg_affineWeight]:=
+    Module[{fe=makeFormalElement[freudenthalMultiplicities[rs][hweight]]},
+	   Plus @@ Table[(q^i)*fe[makeAffineWeight[wg[finitePart],wg[level],-i]],{i,0,rs[gradeLimit]}]]
+(*
 branchingFunction::"usage"=
     "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
-
+*)
 End[]
 
 EndPackage[]
