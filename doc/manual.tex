@@ -1,0 +1,385 @@
+\documentclass[preprint,12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{listings}
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+%	backgroundcolor=\color{lbcolor},
+        language=Mathematica,
+	tabsize=2,
+	rulecolor=,
+        basicstyle=\scriptsize,
+        upquote=true,
+%        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+%        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+%        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\newcommand{\go}{\stackrel{\circ }{\mathfrak{g}}}
+\newcommand{\ao}{\stackrel{\circ }{\mathfrak{a}}}
+\newcommand{\co}[1]{\stackrel{\circ }{#1}}
+\newcommand{\pia}{\pi_{\mathfrak{a}}}
+\newcommand{\piab}{\pi_{\mathfrak{a}_{\bot}}}
+\newcommand{\gf}{\mathfrak{g}}
+\newcommand{\af}{\mathfrak{a}}
+\newcommand{\bff}{\mathfrak{b}}
+\newcommand{\afb}{\mathfrak{a}_{\bot}}
+\newcommand{\hf}{\mathfrak{h}}
+\newcommand{\hfg}{\hf_{\gf}}
+\newcommand{\hfb}{\mathfrak{h}_{\bot}}
+\newcommand{\pf}{\mathfrak{p}}
+
+
+\begin{document}
+
+\title{{\bf Affine.m} reference manual}
+\author{Anton Nazarov}
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction-1}
+
+\section{Download and installation}
+\label{sec:downl-inst}
+
+\subsection{Contents of software package}
+\label{sec:cont-softw-pack}
+
+\section{Software package}
+\label{package}
+The package can be freely downloaded from {\it github}. Latest release can be found here. To get the development code use the command
+\begin{lstlisting}[language=bash]
+ git clone git://github.com/naa/Affine.git
+\end{lstlisting}
+
+Contents of the package:
+\begin{verbatim}
+    Affine/                                root folder
+      demo/                                  demonstrations
+        demo.nb                                demo notebook
+        paper.nb                               code from the paper
+      doc/                                 documentation folder
+        figures/                             figures in paper and manual
+          timing.pdf                           diagram showing performance
+          branching.pdf                        branching coefficients
+        bibliography.bib                     bibliographic database
+        manual.pdf                           manual
+        manual.tex                           manual source
+        paper.pdf                            paper
+        paper.tex                            paper source
+        TODO.org                             list of issues
+      src/                                 source folder
+        affine.m                             main software package
+      tests/                               unit tests folder
+        tests.m                              unit tests
+      README.markdown                      short description of software
+\end{verbatim}
+
+\section{Usage}
+\label{sec:usage}
+
+
+
+\section{Function reference}
+\label{sec:reference}
+\begin{lstlisting}
+  
+Expect::"usage"="Expect[comment,value,expression] is used for unit tests. If expression != value it throws exception.";
+
+standardBase::"usage"=
+    "standardBase[coordinates] represents weight vector in standard (Bourbaki) coordinates.\
+    E.g. simple roots for B2 are standardBase[1,-1] and standardBase[0,1]";
+
+finiteWeight::"usage"=
+    "finiteWeight[dimension_?NumberQ,coordinates_standardBase] represents\ 
+    vector in weight space of finite-dimensional Lie algebra.\n 
+    finiteWeight[dimension] returns dimension of the space, where weight vector is embedded\ 
+    (i.e. for sl_n it is n+1).\n 
+    finiteWeight[standardBase] returns standard base coordinates of weight of finite-dimensional Lie algebra";
+
+dimension::"usage"=
+    "dimension[wg_?weightQ] returns the dimension of the space, where finite part of weight lives";
+
+finitePart::"usage"=
+    "finitePart[wg_?weightQ] returns finite part of weight";
+
+standardBase::"usage"=
+    "standardBase[wg_?weightQ] returns coorinates of finite part of finite part of weight in standard (Bourbaki) basis";
+
+makeFiniteWeight::"usage"=
+    "makeFiniteWeight[{coordinates__?NumberQ}] creates finiteWeight with given coordinates in standard base";
+
+Dot::"usage"=Dot::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
+
+Plus::"usage"=Plus::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
+
+Equal::"usage"=Equal::"usage" <> "\n It is defined for weights of finite and affine Lie algebras";
+
+Times::"usage"=Times::"usage"<>"\n\n Mutliplication by numbers is defined for the elements of weight space of affine and finite-dimensional Lie algebras.\ 
+    \n For example makeFiniteWeight[{1,2,3}]*2==makeFiniteWeight[{2,4,6}]]";
+
+affineWeight::"usage"=
+    "affineWeight[dimension_?NumberQ,fw_finiteWeigt,level_?NumberQ, grade_?NumberQ] represents\ 
+    vector in weight space of affine Lie algebra.\n 
+    affineWeight[dimension] returns dimension of the space of real roots, where finite weight vector is embedded\ 
+    (i.e. for sl_n it is n+1).\n 
+    affineWeight[finitePart] returns finite part of weight as finiteWeight structure\n
+    affineWeight[level] returns level of affine weight\n
+    affineWeight[grade] returns grade of affine weight";
+
+level::"usage"=
+    "level[w_affineWeight] or w[level] returns level of weight of affine Lie algebra";
+
+grade::"usage"=
+    "grade[w_affineWeight] or w[grade] returns grade of weight of affine Lie algebra";
+
+makeAffineWeight::"usage"= 
+    "makeAffineWeight[fw_finiteWeight,level_?NumberQ,grade_?NumberQ] creates affine weight with the given finite part fw, level and grade\n
+    makeAffineWeight[{fw__?NumberQ},level_?NumberQ,grade_?NumberQ] creates affine weight with the given finite part fw, level and grade
+    ";
+
+makeHashtable::"usage"=
+    "makeHashtable[keys_List,values_List] creates hashtable from the list keys and list of values";
+keys::"usage"="keys[hashtable] gives all the keys in hashtable";
+values::"usage"="values[hashtable] gives all the values in hashtable (in the same order as keys)";
+
+finiteRootSystem::"usage"=
+    "finiteRootSystem[rank_Integer,{roots_finiteWeight}] represents root system of finite-dimensional Lie algebra.\n
+    finiteRootSystem[rank] returns rank of the root system\n
+    finiteRootSystem[dimension] returns the dimension of the space where the roors are realized as the vectors\n
+    finiteRootSystem[simpleRoots] returns unsorted list of simple roots in the root system.\n
+    finiteRootSystem[simpleRoot][n_Integer] returns n'th simple root"
+
+makeFiniteRootSystem::"usage"=
+    "makeFiniteRootSystem[{roots__finiteWeight}] creates finiteRootSystem structure from the List of simple roots\n
+    makeFiniteRootSystem[{roots__finiteWeight}] creates  finiteRootSystem structure from the List of simple roots\n
+    given as the lists of coordinates";
+
+rank::"usage"=
+    "rank[rs_?rootSystemQ] or rs[rank] returns rank of root system. Rank of affine root system is equal to rank of underlying \n
+    finite-dimensional root system";
+
+simpleRoot::"usage"=
+    "simpleRoot[rs_?rootSystemQ][i_Integer] or rs[simpleRoot][i_Integer] returns simple root with the index i. For affine root system i can be zero";
+
+simpleRoots::"usage"=
+    "simpleRoots[rs_?rootSystemQ] or rs[simpleRoots] returns unsorted list of simple roots";
+
+prependZeros::"usage"=
+    "prependZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by prepending num zeros to its coordinates";
+
+appendZeros::"usage"=
+    "appendZeros[num_Integer,vec_finiteWeight] embeds vec to bigger space by appending num zeros to its coordinates";
+
+CirclePlus::"usage"=CirclePlus::"usage" <> "\n Direct sum of finite-dimensional and affine Lie algebras can be specified as sum of root systems";
+
+makeSimpleRootSystem::"usage"=
+    "makeSimpleRootSystem[series, rank] creates root system of the algebra from given series with given rank.\n
+    Exceptional Lie algebras are not supported yet";
+
+Subscript::"usage"=Subscript::"usage" <>
+    "\n Subscript[A|B|C|D|E,n_Integer] creates root system of the algebra from given series with given rank. \n
+    It is an equivalent to makeSimpleRootsSystem, but looks better in notebook interface."
+
+A::"usage"="represents root systems of series A";
+B::"usage"="represents root systems of series B";
+C::"usage"="represents root systems of series C";
+D::"usage"="represents root systems of series D";
+E::"usage"="represents root systems of series E";
+
+weightQ::"usage"=
+    "Weight predicate"
+
+checkGrade::"usage"=
+    "computations for affine Lie algebras are limited by some grade, by default it is equal to 10. To change it set rs[gradeLimit].\n
+    checkGrade[rs_?rootSystemQ][w_?weightQ] checks if given weight has absolute value of grade less then gradeLimit. Returns true 
+    for finite-dimensional case";
+
+gradeLimit::"usage"=
+    "Limits computation for affine Lie algebras, i.e. b2a=OverHat[Subscript[B,2]]; b2a[gradeLimit]=15";
+
+reflection::"usage"=
+    "reflection[x_finiteWeight] represents reflection in the hyperplane, orthogonal to the given root x\n
+    reflection[x_affineWeight] represents affine reflection in the hyperplane, orthogonal to the given root x\n
+    reflection[x][y] reflects y in the hyperplane, orthogonal to x"
+
+coroot::"usage"="returns coroot of given root"
+
+cartanMatrix::"usage"=
+    "cartanMatrix[rs_?rootSystemQ] returns Cartan matrix of root system rs";
+
+rootSystemQ::"usage"=
+    "Predicate for root system data structures";
+
+weylGroupElement::"usage"=
+    "weylGroupElement[x__Integer][rs_?rootSystemQ] represents element of Weyl group composed of basic reflecetions x \n
+    of root system rs. Example: weylGroupElement[1,2,1][makeSimpleRootSystem[B,2]] = s1 s2 s1";
+
+fundamentalWeights::"usage"=
+    "fundamentalWeights[rs_?rootSystemQ] calculates fundamental weights of given root system rs";
+
+rho::"usage"=
+    "rho[rs_?rootSystemQ] - Weyl vector of root system rs (sum of fundamental weights)";
+
+toFundamentalChamber::"usage"=
+    "toFundamentalChamber[rs_?rootSystemQ][vec_?weightQ] acts on a weight vec by simple reflections of rs till it gets to main Weyl chamber";
+
+mainChamberQ::"usage"=
+    "mainChamberQ[rs_?rootSystemQ][wg_?weightQ] tells if weights wg lies inside the main Weyl chamber of root system rs or not";
+
+partialOrbit::"usage"=
+    "partialOrbit[rs_finiteRootSystem][{weights__finiteWeight}] constructs Weyl partial orbit of given set of weights. \n
+    It starts with the list of weights and reflects them away from main Weyl chamber.\n
+    For w in fundamental chamber it gives the whole orbit.";
+
+orbit::"usage"=
+    "orbit[rs_?rootSystemQ][wg_?weightQ] returns the weight of Weyl orbit, containing given weight wg. \n
+    Orbit is given as the list of lists starting with the weight in dominant Weyl chamber\n
+    orbit[rs_?rootSystemQ][{wg_?weightQ}] works for a list of weights";
+
+positiveRoots::"usage"=
+    "positiveRoots[rs_?rootSystemQ] returns positive roots of root system rs";
+
+dimension::"usage"=
+    "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight representation";
+
+weightSystem::"usage"=
+    "weightSystem[rs_?rootSystemQ][highestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
+    The list is split in pieces by number of root substractions";
+
+freudenthalMultiplicities::"usage"=
+    "freudenthalMultiplicities[rs_finiteRootSystem][highestWeight_finiteWeight] returns hashtable with the multiplicities of 
+    weights in the highest weight module";
+
+orbitWithEps::"usage"="returns orbit with the determinants of Weyl reflections";
+
+racahMultiplicities::"usage"=
+    "racahMultiplicities[rs_?rootSystemQ] returns hashtable with the multiplicities of 
+    weights in the highest weight module. It uses recurrent relation similar to Racah formula";
+
+highestRoot::"usage"="returns highest root of root system";
+
+makeAffineExtension::"usage"=
+    "makeAffineExtension[fs_finiteRootSystem] creates root system of affine Lie algebra which 
+    is extension of given finite-dimensional root system";
+
+OverHat::"usage"=
+    "OverHat[rs_finiteRootSystem] creates affine extension of root system rs, it is equivalent makeAffineExtension[rs], but uses mathematical notation in notebook interface";
+
+affineRootSystem::"usage"=
+    "affineRootSystem[rank_Integer,finiteRootSystem_finiteRootSystem,imaginaryRoot_affineWeight,realRoots_List] 
+    represents root system of affine Lie algebra.\n
+    affineRootSystem[rank] returns rank of the root system\n
+    affineRootSystem[imaginaryRoot] returns imaginary (zeroth) root\n
+    affineRootSystem[realRoots] returns list of real roots (roots of finite-dimensional subalgebra)
+    affineRootSystem[dimension] returns the dimension of the space where the roots are realized as the vectors\n
+    affineRootSystem[simpleRoots] returns unsorted list of simple roots in the root system.\n
+    affineRootSystem[simpleRoot][n_Integer] returns n'th simple root"
+
+zeroWeight::"usage"="zeroWeight[rs_?rootSystemQ] returns zero root of root system rs (zero of rs[dimension]-dimemsional space)"; 
+
+marks::"usage"="marks[rs_affineRootSystem] returns marks of affine Lie algebra";
+
+marks::"usage"="comarks[rs_affineRootSystem] returns comarks of affine Lie algebra";
+
+weight::"usage"=
+    "weight[rs_?rootSystemQ][labels__Integer] constructs weight defined by Dynkin labels";
+
+dynkinLabels::"usage"=
+    "dynkinLabels[rs_?rootSystemQ][wg_?weightQ] returns Dynkin labels of weight (coefficients of its decomposition to the sum of fundamental weights) ";
+
+orthogonalSubsystem::"usage"=
+    "orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ] returns subset of positive roots of root system rs, which 
+    are orthogonal to simple roots of subsystem subs";
+
+projection::"usage"=
+    "projection[rs_?rootSystemQ][weights__?weightQ] projects given weight to the root (sub)system\n
+    projection[rs_?rootSystemQ][fe_formalElement] projects the formal elements";
+
+
+
+formalElement::"usage"=
+    "Datastructure to represent formal elements of the ring of characters (linear combinations of formal exponents of weights).\n
+    Internally the data is held in hashtable.\n
+    fe_formalElement[weight_?weightQ] returns multiplicity of a given weight (coefficient in front of Exp[weight])\n
+    fe_formalElement[weights] returns list of weights\n
+    fe_formalElement[multiplicities] returns list of multiplicities
+    formalElements can be added, multiplied by number, Exp[wg_?weightQ] and by formaElements\n
+    fe_formalElement[hashtable] returns formalElement's data as hashtable\n
+    "
+
+hashtable::"usage"=
+    "hashtable[fe_formalElement] or fe[hashtable] returns weights and multiplicities of formal element as a hash table";
+
+makeFormalElement::"usage"=
+    "makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}] creates formal element with given weights and corresponding multiplicities\n
+    makeFormalElement[{weights__?weightQ}] creates formal element where weight multiplicity is calculated as the number of appearances of weight in arguments list"
+
+
+subElement::"usage"=
+    "subElement[fe_formalElement,{weights___?weightQ}] creates formalElement with the given subset of weights";
+
+regularSubalgebra::"usage"=
+    "regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ] returns root system of regular subalgebra obtained by removing all unlisted nodes \n
+    from Dynkn diagram of the algebra";
+
+
+simpleBranching::"usage"=
+    "Calculate branching coefficients with simple algorithm, which constructs all the modules of subalgebra with Freudenthal formula";
+
+anomalousWeights::"usage"="
+    anomalousWeights[rs_?rootSystemQ][hweight_?weightQ] returns the formal element, consisting of anomalous weights";
+
+
+fan::"usage"=
+    "Constructs fan of the embedding";
+
+ourBranching::"usage"=
+    "Calculate branching coefficients with alternative algorithm";
+
+branching2::"usage"=
+    "Calculate branching coefficients with alternative algorithm without folding to main Weyl chamber";
+
+drawPlaneProjection::"usage"=
+    "drawPlaneProjection[axe1_,axe2_,f_formalElement] draws projection to the plane of axe1, axe2 (e.g. 1,2 or 3,4, or 1,4 etc) of some formal element
+    \n(branching, multiplicities, tensor product coefficients)";
+
+draw3dProjection::"usage"=
+    "draw3dProjection[axe1_,axe2_,axe3_,f_formalElement] draws projection to the 3d space of axe1, axe2, axe3 (e.g. 1,2,3 or 1,3,4 etc) of some formal element
+    \n(branching, multiplicities, tensor product coefficients)"
+
+tensorProduct::"usage"=
+    "calculate tensor product decomposition coefficients"
+
+stringFunction::"usage"=
+    "stringFunciton[rs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of string function"
+
+branchingFunction::"usage"=
+    "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
+
+\end{lstlisting}
+
+  \end{document}
+  

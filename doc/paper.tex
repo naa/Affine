@@ -5,7 +5,7 @@
 %% completed and which will give the correct layout in the
 %% preprint and the journal.
 %% The `elsarticle' style is used and more information on this style
-%% can be found at 
+%% can be found at
 %% http://www.elsevier.com/wps/find/authorsview.authors/elsarticle.
 %%
 %%
@@ -244,11 +244,11 @@ Mathematica; Lie algebra; affine Lie algebra; Kac-Moody algebra; root system; we
   %Only required for a New Version summary, otherwise leave out.
 {\em Nature of problem:}\\
   %Describe the nature of the problem here.
-Representation theory of finite-dimensional Lie algebras has many applications in different branches of physics, including elementary particle physics, molecular physics, nuclear physics. Representations of affine Lie algebras appear in string theories and two-dimensional conformal field theory used for the description of critical phenomena in two-dimensional systems. Also Lie symmetries play major role in study of quantum integrable systems. 
+Representation theory of finite-dimensional Lie algebras has many applications in different branches of physics, including elementary particle physics, molecular physics, nuclear physics. Representations of affine Lie algebras appear in string theories and two-dimensional conformal field theory used for the description of critical phenomena in two-dimensional systems. Also Lie symmetries play major role in study of quantum integrable systems.
    \\
 {\em Solution method:}\\
   %Describe the method solution here.
-We work with weights and roots of finite-dimensional and affine Lie algebras and use Weyl symmetry extensively. Central problems which are the computations of weight multiplicities, branching and fusion coefficients are solved using one general recurrent algorithm based on generalization of Weyl character formula. We also offer alternative implementation based on Freudenthal multiplicity formula which can be faster in some cases. 
+We work with weights and roots of finite-dimensional and affine Lie algebras and use Weyl symmetry extensively. Central problems which are the computations of weight multiplicities, branching and fusion coefficients are solved using one general recurrent algorithm based on generalization of Weyl character formula. We also offer alternative implementation based on Freudenthal multiplicity formula which can be faster in some cases.
    \\
 %{\em Reasons for the new version:}*\\
   %Only required for a New Version summary, otherwise leave out.
@@ -258,11 +258,11 @@ We work with weights and roots of finite-dimensional and affine Lie algebras and
 %   \\
 {\em Restrictions:}\\
   %Describe any restrictions on the complexity of the problem here.
-Computational complexity grows fast  with the rank of algebra, so computations for algebra of rank greater than 8 are non practical. 
+Computational complexity grows fast  with the rank of algebra, so computations for algebra of rank greater than 8 are non practical.
    \\
 {\em Unusual features:}\\
   %Describe any unusual features of the program/problem here.
-We offer the possibility to use traditional mathematical notation for objects in representation theory of Lie algebras in computations if {\bf Affine.m} is used in {\it Mathematica} notebook interface. 
+We offer the possibility to use traditional mathematical notation for objects in representation theory of Lie algebras in computations if {\bf Affine.m} is used in {\it Mathematica} notebook interface.
    \\
 %{\em Additional comments:}\\
   %Provide any additional comments here.
@@ -273,10 +273,10 @@ From seconds to days depending on rank of algebra and complexity of representati
    \\
 
 % \begin{thebibliography}{0}
-% \bibitem{1}Reference 1         % This list should only contain those items referenced in the                 
-% \bibitem{2}Reference 2         % Program Summary section.   
+% \bibitem{1}Reference 1         % This list should only contain those items referenced in the
+% \bibitem{2}Reference 2         % Program Summary section.
 % \bibitem{3}Reference 3         % Type references in text as [1], [2], etc.
-%                                % This list is different from the bibliography at the end of 
+%                                % This list is different from the bibliography at the end of
 %                                % the Long Write-Up.
 % \end{thebibliography}
 % * Items marked with an asterisk are only required for new versions
@@ -288,23 +288,23 @@ From seconds to days depending on rank of algebra and complexity of representati
 \section{Introduction}
 \label{intro}
 
-Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. Lie algebras are used to for the description of symmetries of quantum and classical systems. Computational method in representation theory have a long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}. 
+Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. Lie algebras are used to for the description of symmetries of quantum and classical systems. Computational method in representation theory have a long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}.
 
 Most popular programs \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{fischbacher2002ilp}, \cite{coxweyl} are created to study representation theory of simple finite-dimensional Lie algebras. The main computational problems are the following:
 \begin{enumerate}
 \item Construction of root system which determine the properties of Lie algebra including its algebra commutation relations.
 \item Weyl group traversal which is important due to Weyl symmetry of root system and characters of representations.
-\item Calculation of weight multiplicities, branching and fusion coefficients, which are essential for construction and study of representations. 
+\item Calculation of weight multiplicities, branching and fusion coefficients, which are essential for construction and study of representations.
 \end{enumerate}
-There are well-known algorithms for these tasks \cite{moody1982fast}, \cite{stembridge2001computational}, \cite{belinfante1989survey}, \cite{casselman1994machine}. 
-The third problem is most computation-intensive. There are two different recurrent algorithms which are based on Weyl character formula and Freudenthal multiplicity formula. In this paper we analyze them. 
+There are well-known algorithms for these tasks \cite{moody1982fast}, \cite{stembridge2001computational}, \cite{belinfante1989survey}, \cite{casselman1994machine}.
+The third problem is most computation-intensive. There are two different recurrent algorithms which are based on Weyl character formula and Freudenthal multiplicity formula. In this paper we analyze them.
 
 Infinite-dimensional Lie algebras also have growing number of applications in physics for example in conformal field theory and study of number integrable systems. But infinite-dimensional algebras are much harder to study and quantity of available computer programs is much smaller.
 
-Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}. 
+Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}.
 
-The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results. 
-We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics. 
+The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results.
+We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics.
 
 The paper is started with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and their representations (Sec. \ref{sec:core-datastructures} and used in implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
 
@@ -319,40 +319,40 @@ Lie algebra $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\o
   \label{eq:1}
   [X^{i},X^{j}]=\sum_{k} C^{ij}_{k} X^{k}
 \end{equation}
-Lie algebra is simple if it contains no non-trivial ideals. Semisimple Lie algebra is a direct sum of simple Lie algebras. 
+Lie algebra is simple if it contains no non-trivial ideals. Semisimple Lie algebra is a direct sum of simple Lie algebras.
 
 Maximal commutative subalgebra (Cartan subalgebra) of $\gf$ is denoted by $\hfg$.
 We denote the elements of basis of $\hfg$ by $H^{i}$.
 
-Killing form on $\gf$ gives a non-degenerate bilinear form $(\cdot,\cdot)$ on $\hfg$ which can be used to identify $\hfg$ with the subspace of the dual space $\hfg^{*}$ of linear functionals on $\hfg$. Weights are the elements of $\hfg^{*}$ and are denoted by Greek letters $\mu,\nu, \omega, \lambda\dots$   
+Killing form on $\gf$ gives a non-degenerate bilinear form $(\cdot,\cdot)$ on $\hfg$ which can be used to identify $\hfg$ with the subspace of the dual space $\hfg^{*}$ of linear functionals on $\hfg$. Weights are the elements of $\hfg^{*}$ and are denoted by Greek letters $\mu,\nu, \omega, \lambda\dots$
 
-Special choice of basis gives compact description of commutation relations (\ref{eq:1}). This basis can be encoded by the root system which is discussed in Section \ref{sec:weights-roots} (See also \cite{humphreys1997introduction,humphreys1992reflection}). 
+Special choice of basis gives compact description of commutation relations (\ref{eq:1}). This basis can be encoded by the root system which is discussed in Section \ref{sec:weights-roots} (See also \cite{humphreys1997introduction,humphreys1992reflection}).
 
 Loop algebra $L\gf=\gf\otimes \mathbb{C}[t,t^{-1}]$, corresponding to semisimple Lie algebra $\gf$ has commutation relations
 \begin{equation}
   \label{eq:6}
   [X^{i}t^{n},X^{j}t^{m}]=t^{n_+m}\sum_{k}C^{ij}_{k}X^{k}
 \end{equation}
-Central extension leads to the appearance of additional term 
+Central extension leads to the appearance of additional term
 \begin{equation}
   \label{eq:7}
    [X^{i}t^{n}+\alpha c,X^{j}t^{m}+\beta c]=t^{n+m}\sum_{k}C^{ij}_{k}X^{k}+(X^{i},X^{j})n\delta_{n+m,0}c
 \end{equation}
 This algebra $\hat\gf=\gf\otimes\mathbb{C}[t,t^{-1}]\oplus\mathbb{C}c$ is called {\it affine Lie algebra} \cite{kac1990idl}, \cite{wakimoto2001idl,wakimoto2001lectures}, \cite{kass1990ala}.
 
-Sometimes we denote affine Lie algebra by $\gf$ then corresponding finite-dimensional Lie algebra is denoted by $\go$. 
+Sometimes we denote affine Lie algebra by $\gf$ then corresponding finite-dimensional Lie algebra is denoted by $\go$.
 
 \subsection{Weights and roots}
 \label{sec:weights-roots}
 
-Let $\gf$ be finite-dimensional or affine Lie algebra. 
+Let $\gf$ be finite-dimensional or affine Lie algebra.
 
 Then $\gf$-module is a vector space $V$ together with a bilinear map $\gf \times V\to V$ such that
 \begin{equation}
   \label{eq:2}
   [x,y]\cdot v = x\cdot(y\cdot v) - y\cdot(x\cdot v), \quad \mbox{for}\; x,y\in \gf, v\in V
 \end{equation}
-Representation of algebra $\gf$ on a vector space $V$ is the homomorphism $\gf\to gl(V)$. 
+Representation of algebra $\gf$ on a vector space $V$ is the homomorphism $\gf\to gl(V)$.
 
 For an arbitrary representation it is possible to diagonalize the operators corresponding to Cartan generators $H^{i}$ simultaneously by special choice of basis $\{v_{j}\}$ in $V$:
 \begin{equation}
@@ -379,13 +379,13 @@ Roots are weights of adjoint representation of $\gf$ on itself. They encode the 
   \label{eq:4}
   &  [H^{i},E^{\alpha}]=\alpha^{i}E^{\alpha} \\
   &\left[E^{\alpha},E^{\beta}\right]=
-  \begin{cases} 
+  \begin{cases}
     N_{\alpha,\beta} E^{\alpha+\beta}, & \mbox{if}\; \alpha+\beta\in \Delta\\
     \frac{2}{(\alpha,\alpha)} \sum_{i}\alpha^{i} H^{i},&  \mbox{if}\; \alpha=-\beta\\
     0,&\mbox{otherwise}
   \end{cases}
 \end{align}
-Highest weight of adjoint representation. 
+Highest weight of adjoint representation.
 
 Given a root system $\Delta$ we can choose a set of positive roots. This is a subset  $\Delta^{+}\subset \Delta$ such that for each root $\alpha\in\Delta$ exactly one of the roots $\alpha, -\alpha$ is contained in $\Delta^{+}$ and for any two distinct positive roots $\alpha, \beta\in \Delta^{+}$ such that $\alpha+\beta\in \Delta$ their sum is also positive $\alpha+\beta\in\Delta^{+}$.
 Elements of $-\Delta^{+}$ are called negative roots.
@@ -405,9 +405,9 @@ The Weyl group $W_{\gf}$ is generated by reflections $\{s_{i}:\hfg^{*}\to\hfg^{*
   \label{eq:8}
   s_{i}\cdot\lambda=\lambda-\frac{2(\alpha_{i},\lambda)}{(\alpha_{i},\alpha_{i})}\alpha_{i}
 \end{equation}
-Note that root multiplicity $\mathrm{mult}(\alpha)$ for affine Lie algebra can be greater than one. 
+Note that root multiplicity $\mathrm{mult}(\alpha)$ for affine Lie algebra can be greater than one.
 
-Root system and characters of representation are invariant with respect to the action of Weyl group. Root system can be reconstructed from the set of simple roots with the action of Weyl group. 
+Root system and characters of representation are invariant with respect to the action of Weyl group. Root system can be reconstructed from the set of simple roots with the action of Weyl group.
 
 Weyl groups are finite for finite-dimensional Lie algebras and finitely-generated for affine Lie algebras.
 
@@ -438,7 +438,7 @@ We need to introduce Weyl vector denoted by $\rho=\sum_{i} \omega_{i}$. It is of
 
 We consider finitely-generated $\gf$-modules $V$ such that $V=\bigoplus_{\xi\in \hfg^{*}} V_{\xi}$, where each $V_{\xi}$ is finite-dimensional and there exists finite set of weights $\lambda_{1},\dots \lambda_{s}$ which generates weight system of $V$, i.e. if $V_{\xi}\neq 0$ then $\xi=\lambda_{i}-\sum_{k=1,\dots, r} n_{k}\alpha_{k}$ where $n_{k}\in \mathbb{Z}_{+}$ (See \cite{humphreys2008representations}, \cite{carter2005lie}).
 
-Highest weight module $V^{\mu}$ contains one highest weight $\mu$, all other weights are obtained by the subtraction of linear combination of simple roots $\lambda=\mu-n_{1}\alpha_{1}-\dots-n_{r}\alpha_{r},\; n_{k}\in \mathbb{Z}_{+}$. 
+Highest weight module $V^{\mu}$ contains one highest weight $\mu$, all other weights are obtained by the subtraction of linear combination of simple roots $\lambda=\mu-n_{1}\alpha_{1}-\dots-n_{r}\alpha_{r},\; n_{k}\in \mathbb{Z}_{+}$.
 
 The simplest type of highest weight modules is the Verma module
 $M^{\mu}$ who's space can be defined as the space
@@ -446,7 +446,7 @@ $M^{\mu}$ who's space can be defined as the space
   \label{eq:17}
   M^{\mu}=U(\gf)\underset{U(\bff_{+})}{\otimes} D^{\mu}(\bff_{+}),
 \end{equation}
-with respect to the multiplication in $U(\gf)$, 
+with respect to the multiplication in $U(\gf)$,
 where $\underset{U(\bff_{+})}{\otimes}$ means that the action of elements of $U(\bff_{+})$ ``falls through'' the left part of tensor product onto the right part. Here $\bff_{+}$ is Borel sub-algebra, $D^{\mu}(\bff_{+})$ is a representation of $\bff_{+}$ such that $D(E^{\alpha})=0,\; D(H)=\mu(H)$ for any positive root $\alpha$.
 Elements of $\gf$ act from the left and we should all the elements of $\bff_{+}$ to the right, so that they can act on the space $D_{\lambda}(\bff_{+})$.
 
@@ -498,7 +498,7 @@ We can use Weyl character formula to obtain recurrent relation on weight multipl
 \label{eq:14}
 m_{\xi }=-\sum_{w\in W\setminus e}\epsilon (w)m_{\xi
 -\left( w(\rho )-\rho \right) }+\sum_{w\in W}\epsilon
-(w)\delta _{\left( w(\mu +\rho )-\rho \right) ,\xi }.  
+(w)\delta _{\left( w(\mu +\rho )-\rho \right) ,\xi }.
 \end{equation}
 
 Other recurrent formula can be obtained from the study of Casimir
@@ -537,7 +537,7 @@ Let $W_{\afb}$ be the subgroup of $W$ generated by the
 reflections $w_{\beta }$ with the roots $\beta \in \Delta _{\af_{\perp
 }}^{+}$. The subsystem $\Delta _{\afb}$ determines the
 subalgebra $\afb$ with the Cartan subalgebra $\hf_{\af%
-_{\perp }}$. 
+_{\perp }}$.
 
 For $\af$ and $\afb$ consider the
 corresponding Weyl vectors, $\rho _{\af}$ and $\rho _{\af_{\perp
@@ -662,7 +662,7 @@ of string and branching functions correspondingly:
   & b_{\nu}(q)=\sum_{n=0}^{\infty} b_{\nu-n\delta} q^n,\quad  \nu=\sum_j c_j \omega_j, \quad c_j\geq 0
 \end{align}
 
-String and branching functions have  modular and analytic properties which are important for conformal field theory, especially in  coset models and the study of CFT on higher genus surfaces \cite{kac1988modular}, \cite{difrancesco1997cft}, \cite{Walton:1999xc}, \cite{walton1989conformal}. 
+String and branching functions have  modular and analytic properties which are important for conformal field theory, especially in  coset models and the study of CFT on higher genus surfaces \cite{kac1988modular}, \cite{difrancesco1997cft}, \cite{Walton:1999xc}, \cite{walton1989conformal}.
 
 \section{Core datastructures}
 \label{sec:core-datastructures} Having introduced necessary
@@ -674,7 +674,7 @@ structured objects and do type checks with patterns
 \subsection{Weights}
 \label{sec:weights}
 
-Weights are represented  by two data-structures: \lstinline{finiteWeight} for finite-dimensional Lie algebras and \lstinline{affineWeight}  for affine. 
+Weights are represented  by two data-structures: \lstinline{finiteWeight} for finite-dimensional Lie algebras and \lstinline{affineWeight}  for affine.
 
 Internally the finite weight is a \lstinline{List} with the
 \lstinline{Head} \lstinline{finiteWeight}, its components are the
@@ -701,7 +701,7 @@ The use of orthogonal basis in the internal structure of weights allows us to wo
 \subsection{Root systems}
 \label{sec:root-systems}
 
-To specify an algebra of finite or affine type it is enough to fix 
+To specify an algebra of finite or affine type it is enough to fix
 its root system. Root systems are represented by two datatypes
 \lstinline{finiteRootSystem} and \lstinline{affineRootSystem}. The
 latter is an extension of the former. We offer several different
@@ -726,23 +726,23 @@ Non-twisted affine root systems can be created as affine extensions of finte roo
 \begin{lstlisting}
   b2affine = makeAffineExtension[b2]
 \end{lstlisting}
-In notebook interface this can be written simply as $\hat{B}_2$. 
+In notebook interface this can be written simply as $\hat{B}_2$.
 
 Semisimple Lie algebras can be created as sums of simple:
 \begin{lstlisting}[mathescape=true]
   $A_1$+$A_1$ == finiteRootSystem[2, 2, {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}]
 \end{lstlisting}
 
-Predicate \lstinline{rootSystemQ} checks if the object is root systems of finite or affine type. 
+Predicate \lstinline{rootSystemQ} checks if the object is root systems of finite or affine type.
 
-List of simple roots is the property of root system so it is accessed as \lstinline{rs[simpleRoots]}. 
+List of simple roots is the property of root system so it is accessed as \lstinline{rs[simpleRoots]}.
 
 We have implemented several functions to get major properties of root systems. Weyl vector is given by the function \lstinline{rho[rs_?rootSystemQ]}:
 \begin{lstlisting}[label=list:1]
   rho[b2]
   finiteWeight[2, {3/2, 1/2}]
 \end{lstlisting}
-Positive roots can be constructed with \lstinline{positiveRoots[rs_?rootSystemQ]}. For affine Lie algebra this and related functions return the list up to fixed grade. This grade limit is set through the value of \lstinline{rs[gradeLimit]} which is equal to 10 by default. List of roots (up to \lstinline{gradeLimit}) is returned by \lstinline{roots[rs]}. Cartan matrix and fundamental weights are calculated by the functions \lstinline{cartanMatrix} and \lstinline{fundamentalWeights} correspondingly. 
+Positive roots can be constructed with \lstinline{positiveRoots[rs_?rootSystemQ]}. For affine Lie algebra this and related functions return the list up to fixed grade. This grade limit is set through the value of \lstinline{rs[gradeLimit]} which is equal to 10 by default. List of roots (up to \lstinline{gradeLimit}) is returned by \lstinline{roots[rs]}. Cartan matrix and fundamental weights are calculated by the functions \lstinline{cartanMatrix} and \lstinline{fundamentalWeights} correspondingly.
 
 It is possible to specify a weight of Lie algebra by its Dynkin label
 \begin{lstlisting}
@@ -791,10 +791,10 @@ As we have already stated in section \ref{sec:high-weight-modul} there exist two
 \begin{enumerate}
 \item Create the list of weights in main Weyl chamber by subtraction of all possible combinations of simple roots from the highest weight (e.g. for finite-dimensional algebra subtract $\alpha_{1}$ from $\mu$ while inside $\bar C$, then subtract $\alpha_{2}$ from all the weights already obtained etc).
 \item Sort the list of weights by their product with Weyl vector.
-\item Use a recurrent formula. If the weight required for recurrent computation is outside the main chamber use Weyl symmetry. 
+\item Use a recurrent formula. If the weight required for recurrent computation is outside the main chamber use Weyl symmetry.
 \end{enumerate}
-The difference in performance of algorithms is in the number of previous values required to get the multiplicity of weight under consideration. For recurrent relation \eqref{eq:14} it is constant and equal to the number of elements in Weyl group (if we are far from the boundary of representation diagram). When Freudenthal formula \eqref{eq:15} is used number of previous values grows with the distance from the external border of representation. So Freudenthal formula is faster if the weight is close to the border or the rank of the algebra and the size of Weyl group is large \cite{moody1982fast}. 
-But Freudenthal formula is of no use if we are interested in Verma modules. 
+The difference in performance of algorithms is in the number of previous values required to get the multiplicity of weight under consideration. For recurrent relation \eqref{eq:14} it is constant and equal to the number of elements in Weyl group (if we are far from the boundary of representation diagram). When Freudenthal formula \eqref{eq:15} is used number of previous values grows with the distance from the external border of representation. So Freudenthal formula is faster if the weight is close to the border or the rank of the algebra and the size of Weyl group is large \cite{moody1982fast}.
+But Freudenthal formula is of no use if we are interested in Verma modules.
 
 In the calculation of branching coefficients use of Freudenthal formula requires full construction of formal characters of algebra representation and all the representations of subalgebra. It is impractical when the rank of algebra and subalgebra are big, for example for maximal subalgebra.
 
@@ -845,14 +845,14 @@ Measurements for branching computations for $\hat B_{3}\subset \hat B_{4}$ are s
 
 \section{Examples}
 \label{sec:examples}
-In this section we present some examples of computations available with {\bf Affine.m} with the code required to produce these results. 
+In this section we present some examples of computations available with {\bf Affine.m} with the code required to produce these results.
 
 \subsection{Tensor product decompositon for finite-dimensional Lie algebras}
 \label{sec:tens-prod-decomp}
 
-Computation of fusion coefficients for the decomposition of tensor product of highest-weight modules to the direct sum of irreducible modules has numerous applications in physics. For example, we can consider spin of composite system such as atom. Another interesting example is integrable spin chain consisting of $N$ particles with the spins living in some representation $L$ of Lie algebra $\gf$ with $\gf$-invariant Hamiltonian $H$, describing nearest-neighbour spin-spin interaction. In order to solve such system, i.e. find eigenstates of Hamiltonian, we need to decompose $L^{\otimes N}$ into the direct sum of irreducible $\gf$-modules of lower dimension and diagonalize the Hamiltonian on these modules. 
+Computation of fusion coefficients for the decomposition of tensor product of highest-weight modules to the direct sum of irreducible modules has numerous applications in physics. For example, we can consider spin of composite system such as atom. Another interesting example is integrable spin chain consisting of $N$ particles with the spins living in some representation $L$ of Lie algebra $\gf$ with $\gf$-invariant Hamiltonian $H$, describing nearest-neighbour spin-spin interaction. In order to solve such system, i.e. find eigenstates of Hamiltonian, we need to decompose $L^{\otimes N}$ into the direct sum of irreducible $\gf$-modules of lower dimension and diagonalize the Hamiltonian on these modules.
 
-For fundamental representations of simple Lie algebras it is sometimes possible to get analytic result for the dependence of decomposition coefficients on $N$ (See \cite{2011LyakhovskyPostnova}). Our code give numerical values and can be used to check this analytic results. 
+For fundamental representations of simple Lie algebras it is sometimes possible to get analytic result for the dependence of decomposition coefficients on $N$ (See \cite{2011LyakhovskyPostnova}). Our code give numerical values and can be used to check this analytic results.
 
 \begin{figure}[h]
   \label{tensor-product-decomposition-b2}
@@ -865,7 +865,7 @@ For fundamental representations of simple Lie algebras it is sometimes possible 
 \subsection{Branchig and parabolic Verma modules}
 \label{sec:branch-parab-verma}
 
-We illustrate the connection of branching with generalized BGG-resolution with the sequence of parabolic Verma modules which appear in the study of branching of irreducible $B_{2}$-modules to the modules of subalgebra $A_{1}$. Root of the subalgebra $A_{1}$ in this case is equal to the highest root $\Theta$ of algebra $B_{2}$. In this case orthogonal sub-algebra $\afb$ gives rise to the parabolic Verma modules \cite{2011arXiv1102.1702L}. 
+We illustrate the connection of branching with generalized BGG-resolution with the sequence of parabolic Verma modules which appear in the study of branching of irreducible $B_{2}$-modules to the modules of subalgebra $A_{1}$. Root of the subalgebra $A_{1}$ in this case is equal to the highest root $\Theta$ of algebra $B_{2}$. In this case orthogonal sub-algebra $\afb$ gives rise to the parabolic Verma modules \cite{2011arXiv1102.1702L}.
 
 \begin{figure}[h]
   \label{branching-bgg}
@@ -878,7 +878,7 @@ We illustrate the connection of branching with generalized BGG-resolution with t
 \subsection{String functions of affine Lie algebras and CFT models}
 \label{sec:string-funct-affine}
 
-String functions can be used to present the formal character of affine Lie algebra highest weight representation. They have interesting analytic and modular properties \cite{kac1990idl,kac1988modular,kac1984infinite}. 
+String functions can be used to present the formal character of affine Lie algebra highest weight representation. They have interesting analytic and modular properties \cite{kac1990idl,kac1988modular,kac1984infinite}.
 
 String functions can be given physical meaning if we consider coset models of two-dimensional conformal field theory \cite{Goddard198588}, \cite{difrancesco1997cft}. String functions of $\hat\gf$ are equal to branching functions in the case of subalgebra $\hat{u(1)}$ and can be seen as the partition functions of $\hat\gf/\hat{u(1)}$ coset model on the torus.
 
@@ -891,7 +891,7 @@ $1+q^2 +q^{3}+\dots$
 \subsection{Branching functions and coset models of conformal field theory}
 \label{sec:branch-funct-coset}
 
-More complex models of CFT can be obtained from cosets $G/A$ corresponding to the embedding $\af\subset\gf$. These models can be studied as gauge theories \cite{Hwang:1994yr}.
+More complex models of CFT can be obtained from cosets $G/A$ corresponding to the embedding $\af\subset\gf$. These models can be studied as gauge theories \cite{Hwang:1994yr, hwang1993brst}.
 
 Branching functions of the embedding $\af\subset\gf$ are the partition functions of CFT on the torus.
 
@@ -906,7 +906,7 @@ Branching functions of the embedding $\af\subset\gf$ are the partition functions
 
 \section{Conclusion}
 \label{sec:conclusion}
-We present the package {\bf Affine.m} for computations in representation theory of finite-dimensional and affine Lie algebras. The package is available from {\it github} and is also submitted to the library. 
+We present the package {\bf Affine.m} for computations in representation theory of finite-dimensional and affine Lie algebras. The package is available from {\it github} and is also submitted to the library.
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -921,95 +921,25 @@ The package can be freely downloaded from {\it github}. Latest release can be fo
 
 Contents of the package:
 \begin{verbatim}
-  /home/anton/programing/Affine:
-  total used in directory 32 available 106878020
-  drwxr-xr-x  7 anton anton 4096 Apr 27 19:35 .
-  drwxr-xr-x 70 anton anton 4096 Apr 27 18:41 ..
-  drwxr-xr-x  2 anton anton 4096 May 25 23:49 demo
-  drwxr-xr-x  4 anton anton 4096 May 27 16:01 doc
-  drwxr-xr-x  8 anton anton 4096 May 27 16:03 .git
-  -rw-r--r--  1 anton anton    0 Apr 27 18:00 README~
-  -rw-r--r--  1 anton anton  838 Apr 27 19:35 README.markdown
-  drwxr-xr-x  2 anton anton 4096 May 27 15:56 src
-  drwxr-xr-x  2 anton anton 4096 May 27 16:03 tests
-
-  /home/anton/programing/Affine/demo:
-  total used in directory 84 available 106829532
-  drwxr-xr-x 2 anton anton  4096 May 25 23:49 .
-  drwxr-xr-x 7 anton anton  4096 Apr 27 19:35 ..
-  -rw-r--r-- 1 anton anton 21700 May 21 18:52 demo.nb
-  -rw-r--r-- 1 anton anton  8384 May 25 23:40 paper1.nb
-  -rw-r--r-- 1 anton anton 13110 May 30 10:53 paper.nb
-  -rw-r--r-- 1 anton anton  8385 May 25 23:39 Untitled-3.nb
-  -rw-r--r-- 1 anton anton  9298 May 25 23:49 Untitled-6.nb
-
-  /home/anton/programing/Affine/doc:
-  total used in directory 1100 available 106829532
-  drwxr-xr-x 4 anton anton   4096 May 31 14:13 .
-  drwxr-xr-x 7 anton anton   4096 Apr 27 19:35 ..
-  drwxr-xr-x 2 anton anton   4096 May 31 14:11 auto
-  -rw-r--r-- 1 anton anton  39978 May 31 14:02 bibliography.bib
-  -rw-r--r-- 1 anton anton  38052 May  5 16:21 bibliography.bib~
-  -rw-r--r-- 1 anton anton   1656 May 27 15:56 branching.pdf
-  -rw-r--r-- 1 anton anton      0 Apr 27 19:36 manual.tex
-  -rw-r--r-- 1 anton anton  11874 May 31 14:02 paper.aux
-  -rw-r--r-- 1 anton anton   7752 May 31 14:02 paper.bbl
-  -rw-r--r-- 1 anton anton   1788 May 31 14:02 paper.blg
-  -rw------- 1 anton anton  41053 May 16 14:03 paper corr from 2-3.tex
-  -rw-r--r-- 1 anton anton 116700 May 27 15:43 paper.dvi
-  -rw-r--r-- 1 anton anton  23735 May 31 14:02 paper.log
-  -rw-r--r-- 1 anton anton   1139 May 31 14:02 paper.out
-  -rw-r--r-- 1 anton anton 448209 May 31 14:02 paper.pdf
-  -rw-r--r-- 1 anton anton      0 May 31 14:02 paper.spl
-  lrwxrwxrwx 1 anton anton     38 May 31 14:11 .#paper.tex -> anton@netbook.blun.ch.28480:1306055748
-  -rw-r--r-- 1 anton anton  53281 May 31 14:13 #paper.tex#
-  -rw-r--r-- 1 anton anton  53109 May 31 14:11 paper.tex
-  -rw-r--r-- 1 anton anton      0 Apr 27 19:36 paper.tex~
-  -rw-r--r-- 1 anton anton  18490 May 22 21:56 prv_paper.log
-  -rw-r--r-- 1 anton anton 116960 May 22 21:56 _region_.log
-  drwxr-xr-x 3 anton anton   4096 May 27 15:29 _region_.prv
-  -rw-r--r-- 1 anton anton      0 May 22 21:56 _region_.spl
-  -rw-r--r-- 1 anton anton  48355 May 22 21:56 _region_.tex
-  -rw-r--r-- 1 anton anton   2509 May 27 15:43 timing.pdf
-  -rw-r--r-- 1 anton anton    488 May 31 14:07 TODO.org
-  -rw-r--r-- 1 anton anton    118 May 31 13:00 TODO.org~
-  -rw-r--r-- 1 anton anton  23893 May  5 16:21 utphys.bst
-
-  /home/anton/programing/Affine/src:
-  total used in directory 176 available 106829532
-  drwxr-xr-x 2 anton anton  4096 May 31 13:19 .
-  drwxr-xr-x 7 anton anton  4096 Apr 27 19:35 ..
-  -rw-r--r-- 1 anton anton 44264 May 31 13:19 affine.m
-  -rw-r--r-- 1 anton anton 38785 May 27 02:31 affine.m.~067bbb376d59bac3e36b73d793efea0ca5004918~
-  -rw-r--r-- 1 anton anton 40536 May 27 02:31 affine.m.~087b49ca835f88c54a5523cabe7c85ace8cbabf1~
-  -rw-r--r-- 1 anton anton 38876 May 27 02:30 affine.m.~19be799ef01b730efdad672442cdcb09d874a7ad~
-  -rw-r--r-- 1 anton anton  2509 May 27 15:41 timing.pdf
-
-  /home/anton/programing/Affine/tests:
-  total used in directory 948 available 106829532
-  drwxr-xr-x 2 anton anton   4096 May 31 14:09 .
-  drwxr-xr-x 7 anton anton   4096 Apr 27 19:35 ..
-  -rw-r--r-- 1 anton anton    722 May 14 16:26 A3reduce
-  -rw-r--r-- 1 anton anton   3295 May 20 01:13 anom.png
-  -rw-r--r-- 1 anton anton   1536 May 27 15:50 br1.pdf
-  -rw-r--r-- 1 anton anton   3132 May 27 13:15 br1.png
-  -rw-r--r-- 1 anton anton   1408 May 27 15:50 br2.pdf
-  -rw-r--r-- 1 anton anton   2654 May 27 13:15 br2.png
-  -rw-r--r-- 1 anton anton  35119 May 27 15:50 br3.pdf
-  -rw-r--r-- 1 anton anton   7170 May 27 13:16 br3.png
-  -rw-r--r-- 1 anton anton   5354 May 27 13:27 br4.png
-  -rw-r--r-- 1 anton anton   1656 May 27 15:56 branching.pdf
-  -rw-r--r-- 1 anton anton   8483 May 24 23:19 brc1.png
-  -rw-r--r-- 1 anton anton   5330 May 20 21:24 brc.png
-  -rw-r--r-- 1 anton anton 260600 Apr 27 18:23 debug1.m
-  -rw-r--r-- 1 anton anton  53187 May 31 13:18 #debug2.m#
-  -rw-r--r-- 1 anton anton  52658 May 31 13:08 debug2.m
-  -rw-r--r-- 1 anton anton   1481 May 16 21:44 debug2.m~
-  -rw-r--r-- 1 anton anton 228485 May 14 17:21 #debug.m#
-  -rw-r--r-- 1 anton anton 221743 May  6 01:50 debug.m
-  -rw-r--r-- 1 anton anton   8060 May 24 20:59 eanom.png
-  -rw-r--r-- 1 anton anton   4038 May 20 01:13 fan.png
-
+    Affine/                                root folder
+      demo/                                  demonstrations
+        demo.nb                                demo notebook
+        paper.nb                               code from the paper
+      doc/                                 documentation folder
+        figures/                             figures in paper and manual
+          timing.pdf                           diagram showing performance
+          branching.pdf                        branching coefficients
+        bibliography.bib                     bibliographic database
+        manual.pdf                           manual
+        manual.tex                           manual source
+        paper.pdf                            paper
+        paper.tex                            paper source
+        TODO.org                             list of issues
+      src/                                 source folder
+        affine.m                             main software package
+      tests/                               unit tests folder
+        tests.m                              unit tests
+      README.markdown                      short description of software
 \end{verbatim}
 
 
@@ -1023,8 +953,14 @@ Contents of the package:
 
 %% References with bibTeX database:
 
-\bibliographystyle{elsarticle-num}
+\section*{References}
+\label{sec:references}
+
+
 \bibliography{bibliography}
+\bibliographystyle{elsarticle-num}
+%\bibliographystyle{model1-num-names}
+
 
 %% Authors are advised to submit their bibtex database files. They are
 %% requested to list a bibtex style file in the manuscript if they do
@@ -1046,4 +982,4 @@ Contents of the package:
 \end{document}
 
 %%
-%% End of file 
+%% End of file

@@ -1,6 +1,11 @@
 * Affine.m 
-*** TODO String functions
-*** TODO Branching functions
+*** DONE String functions
+    CLOSED: [2011-06-02 Thu 18:30]
+*** DONE Branching functions
+    CLOSED: [2011-06-02 Thu 18:30]
+*** DONE Multiplicities functions should return formalElements
+    CLOSED: [2011-06-02 Thu 19:22]
+*** TODO Affine grade limit through options 
 *** DONE Extract unit tests to separate files
     CLOSED: [2011-06-01 Wed 17:26]
 *** DONE Define Mathematica package
@@ -10,12 +15,20 @@
     CLOSED: [2011-05-31 Tue 14:06]
 *** TODO Constructors for exceptional simple Lie algebras
 *** TODO Constructors for twisted affine Lie algebras
+*** TODO Optimize branching (take a look at the formal elements operations)
+*** TODO Fix ourBranching for affine Lie algebras
 * Paper
 *** DONE List of examples to the paper
     CLOSED: [2011-05-31 Tue 14:04]
-*** TODO Reread paper
+*** DONE Reread paper
+    CLOSED: [2011-06-02 Thu 18:27]
 *** DONE Add more Rhedin's papers to bibliography
     CLOSED: [2011-06-01 Wed 18:58]
+*** TODO Add the description of branching algorithms in section 4
+*** DONE Fix software package appendix
+    CLOSED: [2011-06-02 Thu 19:07]
+*** TODO Bibliography style
 * Manual
-*** TODO Copy inline help
+*** DONE Copy inline help
+    CLOSED: [2011-06-02 Thu 13:51]
 *** TODO Write the section on download/installation/usage

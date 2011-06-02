@@ -166,15 +166,15 @@ Module[{b2=makeSimpleRootSystem[B,2]},
 Module[{b2=makeSimpleRootSystem[B,2],fm},
        fm=freudenthalMultiplicities[b2][makeFiniteWeight[{2,1}]];
        Expect["Mutliplicites of [2,1] B2 representation",{1, 1, 2, 3, 3},
-	      fm[#]&/@keys[fm]]]
+	      fm[multiplicities]]]
 
 (* Expect["orbitWithEps __TODO__",False,True] *)
 
 Module[{b2=makeSimpleRootSystem[B,2],fm,rm},
        fm=freudenthalMultiplicities[b2][makeFiniteWeight[{2,1}]];
        rm=freudenthalMultiplicities[b2][makeFiniteWeight[{2,1}]];
-       Expect["Racah and Freudenthal formulae should give the same result",rm[#]&/@keys[rm],
-	      fm[#]&/@keys[fm]]]
+       Expect["Racah and Freudenthal formulae should give the same result",rm[multiplicities],
+	      fm[multiplicities]]]
 
 Expect["Highest root for B2",makeFiniteWeight[{1, 1}],highestRoot[makeSimpleRootSystem[B,2]]]
 
@@ -290,7 +290,7 @@ Expect["branching2", True,
 (*	      Print[fe/@mcw];*)
 	      Union[fe/@mcw]=={0,6,10,19,30,40,60}]]
 
-
+(*
 
 a1=makeAffineExtension[makeSimpleRootSystem[A,1]]
 
@@ -312,5 +312,6 @@ Out[6]= 1 + 2 Affine`Private`q + 5 Affine`Private`q  + 10 Affine`Private`q  +
  
                          7                       8                       9
 >    110 Affine`Private`q  + 185 Affine`Private`q  + 300 Affine`Private`q
+ *)
 
 Print["All tests completed"]

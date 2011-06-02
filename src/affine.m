@@ -273,6 +273,9 @@ stringFunction::"usage"=
 branchingFunction::"usage"=
     "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
 
+
+q::"usage"="formal variable for string and branching funcitons";
+
 Begin["`Private`"]
 
 Expect[ description_, val_, expr_ ] := 
@@ -496,7 +499,7 @@ freudenthalMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
 								   insideQ[#[[1]]+r]&]]]]
 			     ,posroots]],
 		weights];
-	   mults];
+	   makeFormalElement[mults]];
 
 (* freudenthalMultiplicities[makeSimpleRootSystem[B,2]][makeFiniteWeight[{5,5}]] *)
 orbitWithEps[rs_?rootSystemQ][weight_?weightQ]:=Flatten[MapIndexed[Function[{x,i},Map[{#,(-1)^(i[[1]]+1)}&,x]],orbit[rs][weight]],1];
@@ -513,7 +516,7 @@ racahMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
 			 mults[v]=
 			 Plus@@(fan /. {x_?weightQ,e_Integer}:> If[insideQ[v+x],-e*mults[toFC[v+x]],0])],
 		weights];
-	   mults]
+	   makeFormalElement[mults]]
 
 
 (* racahMultiplicities[makeSimpleRootSystem[B,2]][makeFiniteWeight[{5,5}]] *)
@@ -631,12 +634,12 @@ regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ]:=makeFiniteRootSys
 
 simpleBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{mults,pmults,rh=rho[subs],res,wgs},
-	   mults=makeFormalElement[freudenthalMultiplicities[rs][highestWeight]];
+	   mults=freudenthalMultiplicities[rs][highestWeight];
 	   Scan[(mults[hashtable][#]=mults[toFundamentalChamber[rs][#]])&,Flatten[orbit[rs][mults[weights]]]];
 	   pmults=projection[subs][mults];
 	   res=makeFormalElement[makeHashtable[{},{}]];
 	   wgs=Select[Sort[pmults[weights],#1.rh>#2.rh&],mainChamberQ[subs]];
-	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*makeFormalElement[freudenthalMultiplicities[subs][#]])&, wgs];
+	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*freudenthalMultiplicities[subs][#])&, wgs];
 	   res];
 
 anomalousWeights[rs_?rootSystemQ][hweight_?weightQ]:=
@@ -739,9 +742,15 @@ stringFunction::"usage"=
     "stringFunciton[rs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of string function"
 
 
-stringFunction[rs_affineRootSystem][hweight_affineWeight,wg_affineWeight]:=
+stringSelector[fe_formalElement,wg_affineWeight,gradeLimit_Integer]:=Plus @@ Table[(q^i)*fe[makeAffineWeight[wg[finitePart],wg[level],-i]],{i,0,gradeLimit}];
+
+stringFunction[rs_affineRootSystem][hweight_affineWeight,wg_affineWeight]:=stringSelector[freudenthalMultiplicities[rs][hweight],wg,rs[gradeLimit]];
+
+branchingFunction[rs_affineRootSystem,subs_affineRootSystem][hweight_affineWeight,wg_affineWeight]:=stringSelector[ourBranching[rs,subs][hweight],wg,rs[gradeLimit]];
+
+(*
     Module[{fe=makeFormalElement[freudenthalMultiplicities[rs][hweight]]},
-	   Plus @@ Table[(q^i)*fe[makeAffineWeight[wg[finitePart],wg[level],-i]],{i,0,rs[gradeLimit]}]]
+	   Plus @@ Table[(q^i)*fe[makeAffineWeight[wg[finitePart],wg[level],-i]],{i,0,rs[gradeLimit]}]]*)
 (*
 branchingFunction::"usage"=
     "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
