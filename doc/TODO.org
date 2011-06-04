@@ -24,7 +24,8 @@
     CLOSED: [2011-06-02 Thu 18:27]
 *** DONE Add more Rhedin's papers to bibliography
     CLOSED: [2011-06-01 Wed 18:58]
-*** TODO Add the description of branching algorithms in section 4
+*** DONE Add the description of branching algorithms in section 4
+    CLOSED: [2011-06-04 Sat 15:53]
 *** DONE Fix software package appendix
     CLOSED: [2011-06-02 Thu 19:07]
 *** TODO Bibliography style
