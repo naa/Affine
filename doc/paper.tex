@@ -798,7 +798,59 @@ But Freudenthal formula is of no use if we are interested in Verma modules.
 
 In the calculation of branching coefficients use of Freudenthal formula requires full construction of formal characters of algebra representation and all the representations of subalgebra. It is impractical when the rank of algebra and subalgebra are big, for example for maximal subalgebra.
 
-Branching algorithm \cite{2010arXiv1007.0318L}
+Alternative algorithm which was presented in the paper \cite{2010arXiv1007.0318L} proceeds as follows:
+It contains the following steps:
+
+\begin{enumerate}
+\item  Construct the root system $\Delta _{\af}$ for the embedding $%
+\af\rightarrow \frak{g}$.
+
+\item  Select all positive roots $\alpha \in \Delta ^{+}$ orthogonal
+to  $\af$, i.e. form the set $\Delta_{\afb }^{+}$.
+
+\item  Construct the set $\Gamma _{\af\rightarrow \frak{g}}$. Relation
+ (\ref{eq:6}) defines the sign function
+ $s(\gamma)$ and the set $\Phi_{\af\subset \frak{g}}$ where the lowest weight
+ $\gamma_0$ is to be subtracted to get the fan (\ref{fan-defined}):
+ $\Gamma _{\af\rightarrow \frak{g}}=\left\{ \xi -\gamma _{0}|\xi \in \Phi _{%
+\af\subset \frak{g}}\right\} \setminus \left\{ 0\right\}$.
+
+\item  Construct the set $\widehat{\Psi ^{(\mu )}}=\left\{ w (\mu +\rho
+)-\rho ;\;w \in W\right\} $ of singular weights for the $\frak{g}$%
+-module $L^{(\mu )}$.
+
+\item  Select the weights $\left\{ \mu _{\widetilde{\af_{\perp }}%
+}\left( w\right) =\pi _{\widetilde{\af_{\perp }}}\left[ w(\mu +\rho
+)-\rho \right] -\mathcal{D}_{\af_{\perp }}\in \overline{C_{\widetilde{%
+\af_{\perp }}}}\right\} $. Since the set $\Delta_{\afb }^{+}$ is fixed
+we can easily check wether the weight $\mu _{\widetilde{\af_{\perp }}%
+}\left( w\right) $ belongs to the main Weyl chamber $\overline{C_{\widetilde{%
+\af_{\perp }}}}$ (by computing its scalar product with the fundamental
+weights of $\afb^{+}$).
+
+\item  For the weights $\mu _{\widetilde{\af_{\perp }}}\left( w\right) $
+calculate dimensions of the corresponding modules, $\mathrm{\dim }\left(
+L_{\widetilde{\af_{\perp }}}^{\mu _{\widetilde{\af_{\perp }}%
+}\left( u\right) }\right) $, using the Weyl dimension formula and construct
+the singular element $\Psi ^{\left( \mu \right) }_{\left(  \af, \afb \right)}$.
+
+\item  Calculate the anomalous branching coefficients using the
+recurrent relation (\ref{recurrent-relation}) and select among them those
+corresponding to the weights in the main Weyl
+chamber $\overline{C_{\af}}$.
+\end{enumerate}
+
+We can speed up the algorithm by
+one-time computation of the representatives of the conjugate classes $%
+W/W_{\afb }$.
+
+
+Consider the regular embedding $B_{2}\subset B_{4}$. In this case fan consists of 24 elements. In order to decompose $B_{4}$ module we need to construct the subset of singular weights of the module which projects to the main Weyl chamber of subalgebra $B_{2}$. Full set of singular weights consists of 384 elements. Required subset contains at most 48 elements. So time of the construction of required subset is negligible if the number of branching coefficients is greater than that. We may estimate the total number of required operations for the computation of branching coefficients as the product of number of elements in main Weyl chamber of subalgebra with non-zero branching coefficients and number of elements in fan. In the case of direct algorithm we need to compute the multiplicities for each module in the decomposition, so the number of operations grows faster than square of number of elements in main Weyl chamber of subalgebra with non-zero branching coefficients. 
+To further illustrate this performance issue we include the Figure \ref{fig:branching} where we show the time required for computations.
+
+
+
+
 \subsection{Performance testing}
 \label{sec:performance-testing}
 

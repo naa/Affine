@@ -273,6 +273,8 @@ stringFunction::"usage"=
 branchingFunction::"usage"=
     "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
 
+weights::"usage"="";
+multiplicities::"usage"="";
 
 q::"usage"="formal variable for string and branching funcitons";
 
