@@ -168,7 +168,7 @@
 
 \begin{abstract}
 %% Text of abstract
-We present {\bf Affine.m} -- program for computations in representation theory of finite-dimensional and affine Lie algebras. Algorithms are based upon the properties of weights and Weyl symmetry. Weight multiplicity computation, branching of representation to representations of subalgebra and tensor product decomposition are the most important problems that we treat. These problems has numerous applications in physics.
+We present {\bf Affine.m} -- program for computations in representation theory of finite-dimensional and affine Lie algebras. It can be used to study irreducible, Verma and parabolic Verma modules. Algorithms are based upon the properties of weights and Weyl symmetry. Weight multiplicity computation, branching of representation to representations of subalgebra and tensor product decomposition are the most important problems that we treat. These problems has numerous applications in physics. 
 
 The program is implemented in popular  computer algebra system {\it Mathematica} and works with finite-dimensional and affine Lie algebras.
 
@@ -288,18 +288,18 @@ From seconds to days depending on rank of algebra and complexity of representati
 \section{Introduction}
 \label{intro}
 
-Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. Lie algebras are used to for the description of symmetries of quantum and classical systems. Computational method in representation theory have a long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}.
+Representation theory of Lie algebras is of central importance for different areas of physics and mathematics. In physics Lie algebras are used for the description of symmetries of quantum and classical systems. Computational methods in representation theory have a long history \cite{belinfante1989survey}, there exist numerous software packages for computations related to Lie algebras \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{stembridge1995mps,coxweyl}, \cite{fischbacher2002ilp}, \cite{Fuchs:1996dd}.
 
 Most popular programs \cite{simplie}, \cite{vanleeuwen1994lsp}, \cite{fischbacher2002ilp}, \cite{coxweyl} are created to study representation theory of simple finite-dimensional Lie algebras. The main computational problems are the following:
 \begin{enumerate}
-\item Construction of root system which determine the properties of Lie algebra including its algebra commutation relations.
+\item Construction of root system which determine the properties of Lie algebra including its commutation relations.
 \item Weyl group traversal which is important due to Weyl symmetry of root system and characters of representations.
 \item Calculation of weight multiplicities, branching and fusion coefficients, which are essential for construction and study of representations.
 \end{enumerate}
 There are well-known algorithms for these tasks \cite{moody1982fast}, \cite{stembridge2001computational}, \cite{belinfante1989survey}, \cite{casselman1994machine}.
 The third problem is most computation-intensive. There are two different recurrent algorithms which are based on Weyl character formula and Freudenthal multiplicity formula. In this paper we analyze them.
 
-Infinite-dimensional Lie algebras also have growing number of applications in physics for example in conformal field theory and study of number integrable systems. But infinite-dimensional algebras are much harder to study and quantity of available computer programs is much smaller.
+Infinite-dimensional Lie algebras also have growing number of applications in physics for example in conformal field theory and study of  integrable systems. But infinite-dimensional algebras are much harder to study and number of available computer programs is much smaller.
 
 Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}.
 

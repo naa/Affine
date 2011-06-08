@@ -102,6 +102,8 @@ B::"usage"="represents root systems of series B";
 C::"usage"="represents root systems of series C";
 D::"usage"="represents root systems of series D";
 E::"usage"="represents root systems of series E";
+F::"usage"="represents root systems of series F";
+G::"usage"="represents root systems of series G";
 
 weightQ::"usage"=
     "Weight predicate"
@@ -153,25 +155,10 @@ orbit::"usage"=
     Orbit is given as the list of lists starting with the weight in dominant Weyl chamber\n
     orbit[rs_?rootSystemQ][{wg_?weightQ}] works for a list of weights";
 
-positiveRoots::"usage"=
-    "positiveRoots[rs_?rootSystemQ] returns positive roots of root system rs";
-
-dimension::"usage"=
-    "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight representation";
-
-weightSystem::"usage"=
-    "weightSystem[rs_?rootSystemQ][highestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
-    The list is split in pieces by number of root substractions";
-
-freudenthalMultiplicities::"usage"=
-    "freudenthalMultiplicities[rs_finiteRootSystem][highestWeight_finiteWeight] returns hashtable with the multiplicities of 
-    weights in the highest weight module";
-
 orbitWithEps::"usage"="returns orbit with the determinants of Weyl reflections";
 
-racahMultiplicities::"usage"=
-    "racahMultiplicities[rs_?rootSystemQ] returns hashtable with the multiplicities of 
-    weights in the highest weight module. It uses recurrent relation similar to Racah formula";
+positiveRoots::"usage"=
+    "positiveRoots[rs_?rootSystemQ] returns positive roots of root system rs";
 
 highestRoot::"usage"="returns highest root of root system";
 
@@ -213,7 +200,6 @@ projection::"usage"=
     projection[rs_?rootSystemQ][fe_formalElement] projects the formal elements";
 
 
-
 formalElement::"usage"=
     "Datastructure to represent formal elements of the ring of characters (linear combinations of formal exponents of weights).\n
     Internally the data is held in hashtable.\n
@@ -235,26 +221,78 @@ makeFormalElement::"usage"=
 subElement::"usage"=
     "subElement[fe_formalElement,{weights___?weightQ}] creates formalElement with the given subset of weights";
 
-regularSubalgebra::"usage"=
-    "regularSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ] returns root system of regular subalgebra obtained by removing all unlisted nodes \n
+parabolicSubalgebra::"usage"=
+    "parabolicSubalgebra[rs_finiteRootSystem][rootIndices__?NumberQ] returns root system of regular subalgebra obtained by removing all unlisted nodes \n
     from Dynkn diagram of the algebra";
 
 
-simpleBranching::"usage"=
-    "Calculate branching coefficients with simple algorithm, which constructs all the modules of subalgebra with Freudenthal formula";
+highestWeightModule::"usage"=
+    "highestWeightModule[rs_?rootSystemQ][hweight_?weightQ,{symgen___Integer},limit_Integer] represents highest weight module \n
+    of algebra fixed by the root system rs with the highest weight hweight and Weyl symmetry generated \n
+    by Weyl reflections {symgen} (i.e. empty list for Verma module, some subset of {1,...,r} for parabolic Verma module\n
+				  and {1,...,r} for irreducible module)\n
+    limit ";
+
+makeVermaModule::"usage"="makeVermaModule[rs_?rootSystemQ][hw_?weightQ,opts___?OptionQ] constructs Verma module. \n
+    Option 'limit' limits construction with the number of simple root subtractions. By default it is chosen in such a way\n
+    that Verma module includes corresponding irreducible module";
+
+makeParabolicVermaModule::"usage"=
+    "makeParabolicVermaModule[rs_?rootSystemQ][hw_?weightQ,{symgen___Integer},opts___?OptionQ] constructs parabolic Verma module. \n
+    {symgen} is the list of root indices of parabolic subalgbra. \n
+    Option 'limit' limits construction with the number of simple root subtractions. By default it is chosen in such a way\n
+    that Verma module includes corresponding irreducible module";
+
+makeIrreducibleModule::"usage"=
+    "makeIrreducibleModule[rs_?rootSystemQ][hw_?weightQ] constructs irreducible module";
+    
+dimension::"usage"=
+    "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight module with the highest weight hweight";
+
+weightSystem::"usage"=
+    "weightSystem[rs_?rootSystemQ][highestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
+    The list is split in pieces by number of root substractions\n
+    weightSystem[hm_highestWeightModule] returns the set of dominant weights in the highest weight module. \n
+    The list is split in pieces by number of root substractions";
+
+freudenthalMultiplicities::"usage"=
+    "freudenthalMultiplicities[rs_finiteRootSystem][highestWeight_finiteWeight] returns hashtable with the multiplicities of 
+    weights in the highest weight module";
+
+racahMultiplicities::"usage"=
+    "racahMultiplicities[rs_?rootSystemQ] returns hashtable with the multiplicities of 
+    weights in the highest weight module. It uses recurrent relation similar to Racah formula";
+
 
 anomalousWeights::"usage"="
-    anomalousWeights[rs_?rootSystemQ][hweight_?weightQ] returns the formal element, consisting of anomalous weights";
+    anomalousWeights[hm_highestWeightModule] returns the formal element, consisting of anomalous weights of module hm";
 
+character::"usage"=
+    "character[hm_highestWeightModule] returns character of highestWeightModule as formalElement datastructure";
+
+branching::"usage"=
+    "branching[hm_highestWeightModule,subs_?rootSystemQ] returns branching coefficients of decomposition of highest weight module hm to \n
+    the modules of subalgebra defined by root system subs";
+
+tensorProduct::"usage"=
+    "tensorProduct[hms__highestWeightModule] returns highest weight module which is tensor product of modules";
+
+CircleTimes::"usage"=CircleTimes::"usage" <> "\n denotes tensor product of modules";
+
+decomposion::"usage"=
+    "decomposition"
 
 fan::"usage"=
-    "Constructs fan of the embedding";
+    "fan[rs_?rootSystemQ, subs_?rootSystemQ] constructs fan of the embedding";
 
 ourBranching::"usage"=
     "Calculate branching coefficients with alternative algorithm";
 
 branching2::"usage"=
     "Calculate branching coefficients with alternative algorithm without folding to main Weyl chamber";
+
+simpleBranching::"usage"=
+    "Calculate branching coefficients with simple algorithm, which constructs all the modules of subalgebra with Freudenthal formula";
 
 drawPlaneProjection::"usage"=
     "drawPlaneProjection[axe1_,axe2_,f_formalElement] draws projection to the plane of axe1, axe2 (e.g. 1,2 or 3,4, or 1,4 etc) of some formal element
@@ -273,8 +311,8 @@ stringFunction::"usage"=
 branchingFunction::"usage"=
     "branchingFunciton[rs_affineRootSystem,subs_affineRootSystem][hweigth_affineWeight,wg_affineWeight] returns power series decomposition of branching function"
 
-weights::"usage"="";
-multiplicities::"usage"="";
+weights::"usage"="weights[fe_formalElement] or fe[weights] returns list of weights of formal element";
+multiplicities::"usage"="multiplicities[fe_formalElement] or fe[multiplicities] returns list of weight multiplicities in formalElement. List is in the same order as fe[weights] ";
 
 q::"usage"="formal variable for string and branching funcitons";
 
@@ -386,11 +424,36 @@ makeSimpleRootSystem[A,r_Integer]:=makeFiniteRootSystem[makeFiniteWeight /@ Tabl
 makeSimpleRootSystem[B,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],1]]];
 makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],2]]];
 makeSimpleRootSystem[D,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Append[Table[0,{rank-2}],1],1]]];
+makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8) :=makeFiniteRootSystem[Append[{1/2*{1,-1,-1,-1,-1,-1,-1,1},
+								   {1,1,0,0,0,0,0,0}},
+								  Table[{If [ j==i-2, 1, If [j==j-2, -1, 0]]},{i,3,rank},{j,1,8}]]];
+makeSimpleRootSystem[F,4]:=makeFiniteRootSystem[{{1,-1,0,0},{0,1,-1,0},{0,0,1,0},1/2*{1,-1,-1,-1}}];
+makeSimpleRootSystem[G,2]:=makeFiniteRootSystem[{{1,-1,0},{-2,1,1}}];
+							   
+(*
+elif L='E' and r>2 and r<9 then
+    S:=
+      seq(cat('e',j)-cat('e',j+1),j=i..i+r-3),
+      cat('e',i+r-2)+cat('e',i+r-3),
+      (-cat('e',i)-cat('e',i+1)-cat('e',i+2)-cat('e',i+3)-cat('e',i+4)
+       -cat('e',i+5)-cat('e',i+6)-cat('e',i+7))/2; i:=i+8-r
+  elif R='F4' then
+    S:=
+      cat('e',i)-cat('e',i+1),
+      cat('e',i+1)-cat('e',i+2),
+      cat('e',i+2),
+      (-cat('e',i)-cat('e',i+1)-cat('e',i+2)+cat('e',i+3))/2
+  elif R='G2' then
+    S:=-2*cat('e',i)+cat('e',i+1)+cat('e',i+2),cat('e',i)-cat('e',i+1)
+*)
 
-Subscript[A,n_Integer]:=makeSimpleRootSystem[A,n];
-Subscript[B,n_Integer]:=makeSimpleRootSystem[B,n];
-Subscript[C,n_Integer]:=makeSimpleRootSystem[C,n];
-Subscript[D,n_Integer]:=makeSimpleRootSystem[D,n];
+Subscript[A,n_Integer]=makeSimpleRootSystem[A,n];
+Subscript[B,n_Integer]=makeSimpleRootSystem[B,n];
+Subscript[C,n_Integer]=makeSimpleRootSystem[C,n];
+Subscript[D,n_Integer]=makeSimpleRootSystem[D,n];
+Subscript[E,n_Integer]=makeSimpleRootSystem[E,n];
+Subscript[F,n_Integer]=makeSimpleRootSystem[F,n];
+Subscript[G,n_Integer]=makeSimpleRootSystem[G,n];
 
 affineRootSystem/:rs_affineRootSystem[gradeLimit]=10;
 

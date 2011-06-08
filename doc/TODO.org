@@ -13,10 +13,16 @@
 *** TODO Tensor product decomposition
 *** DONE Make sum of Lie algebras non-commutative
     CLOSED: [2011-05-31 Tue 14:06]
-*** TODO Constructors for exceptional simple Lie algebras
+*** DONE Constructors for exceptional simple Lie algebras
+    CLOSED: [2011-06-08 Wed 16:56]
+*** TODO Tests for exceptional simple Lie algebras, compare with Bourbaki.
 *** TODO Constructors for twisted affine Lie algebras
 *** TODO Optimize branching (take a look at the formal elements operations)
 *** TODO Fix ourBranching for affine Lie algebras
+*** DONE Datastructure for modules 
+    CLOSED: [2011-06-08 Wed 19:13]
+*** TODO Reimplement functions for module
+*** TODO Make CirclePlus applicable to list of more than 2 elements
 * Paper
 *** DONE List of examples to the paper
     CLOSED: [2011-05-31 Tue 14:04]
@@ -29,6 +35,8 @@
 *** DONE Fix software package appendix
     CLOSED: [2011-06-02 Thu 19:07]
 *** TODO Bibliography style
+*** TODO Improve text with the notes from paper
+*** TODO Add more examples
 * Manual
 *** DONE Copy inline help
     CLOSED: [2011-06-02 Thu 13:51]

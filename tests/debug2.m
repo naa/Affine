@@ -2,6 +2,112 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 <<affine.m;
 
+Table[{i*j},{i,10},{j,10}]
+
+makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8):=True
+
+makeSimpleRootSystem[E,8]
+
+1/2*{1,-1,-1,-1}
+
+f[x_,y_:x]:=x+y
+
+fn[i_]:=NestWhileList[Function[x,x+1],1,#<i&]//Timing
+
+Table[{i,fn[i][[1]]},{i,1000,1010}]
+
+Out[21]= {{1000, 0.020001}, {1001, 0.008001}, {1002, 0.012001}, 
+ 
+>    {1003, 0.012}, {1004, 0.012001}, {1005, 0.012001}, {1006, 0.012001}, 
+ 
+>    {1007, 0.008}, {1008, 0.012001}, {1009, 0.024001}, {1010, 0.016001}}
+
+Export["listtiming2.png",ListPlot[Out[21]]]
+
+Out[22]= listtiming2.png
+
+Out[20]= {{1, 0.}, {2, 0.}, {3, 0.}, {4, 0.}, {5, 0.}, {6, 0.}, {7, 0.}, 
+ 
+>    {8, 0.}, {9, 0.}, {10, 0.}}
+
+Export["listtiming.png",ListPlot[Table[{i*200,fn[i*200][[1]]},{i,200}]]]
+
+Out[26]= listtiming.png
+
+Out[25]= $Aborted
+
+Out[24]= $Aborted
+
+Out[23]= listtiming.png
+
+Out[19]= listtiming.png
+
+Out[18]= listtiming.png
+
+?ListPlot
+
+ListPlot[{y , y , ...}] plots points corresponding to a list of values,
+           1   2
+     assumed to correspond to x coordinates 1, 2, .... 
+
+     ListPlot[{{x , y }, {x , y }, ...}]
+                 1   1     2   2
+      plots a list of points with specified x
+       and y coordinates. ListPlot[{list , list , ...}]
+                                        1      2
+         plots several lists of points. 
+
+Out[14]= {0., {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+ 
+>     19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 
+ 
+>     37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 
+ 
+>     55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 
+ 
+>     73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 
+ 
+>     91, 92, 93, 94, 95, 96, 97, 98, 99, 100}}
+
+Out[13]= {0., {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}
+
+
+f[4]
+
+Out[9]= 4 + x
+
+         1    1     1     1
+Out[7]= {-, -(-), -(-), -(-)}
+         2    2     2     2
+
+Out[6]= True
+
+Out[5]= makeSimpleRootSystem[E, 9]
+
+Out[4]= makeSimpleRootSystem[E, 2]
+
+Out[3]= True
+
+Out[1]= {{{1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}}, 
+ 
+>    {{2}, {4}, {6}, {8}, {10}, {12}, {14}, {16}, {18}, {20}}, 
+ 
+>    {{3}, {6}, {9}, {12}, {15}, {18}, {21}, {24}, {27}, {30}}, 
+ 
+>    {{4}, {8}, {12}, {16}, {20}, {24}, {28}, {32}, {36}, {40}}, 
+ 
+>    {{5}, {10}, {15}, {20}, {25}, {30}, {35}, {40}, {45}, {50}}, 
+ 
+>    {{6}, {12}, {18}, {24}, {30}, {36}, {42}, {48}, {54}, {60}}, 
+ 
+>    {{7}, {14}, {21}, {28}, {35}, {42}, {49}, {56}, {63}, {70}}, 
+ 
+>    {{8}, {16}, {24}, {32}, {40}, {48}, {56}, {64}, {72}, {80}}, 
+ 
+>    {{9}, {18}, {27}, {36}, {45}, {54}, {63}, {72}, {81}, {90}}, 
+ 
+>    {{10}, {20}, {30}, {40}, {50}, {60}, {70}, {80}, {90}, {100}}}
+
 Hello!
 
 ?Integer
@@ -73,6 +179,8 @@ Datastructure to represent formal elements of the ring of characters (linear
 
     fe_formalElement[hashtable] returns formalElement's data as hashtable
 
+
+2+2
 
 
 (fe_formalElement)[(weight_)?weightQ] := If[hasKey[fe[[1]], weight], 
