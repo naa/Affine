@@ -772,10 +772,6 @@ character[m_module]:=
     Module[{rs=rootSystem[m],subs=subSystem[m],toFC,rh,mults,aw,wgs,fan,tmp},
 	   rh=rho[rs];
 	   fan=Exp[2*rh]*anomalousWeights[rs][zeroWeight[rs]];
-(*	   Print[tmp[weights]];
-	   fan=makeFormalElement[Rest[tmp[weights]],Rest[tmp[multiplicities]]];
-	   Print[fan[weights]];
-	   Print[fan[multiplicities]];*)
 	   If [subs=!=emptyRootSystem[],
 	       toFC=toFundamentalChamber[subs],
 	       toFC=#&;
@@ -787,41 +783,23 @@ character[m_module]:=
 	   Scan[Function[v,
 			 mults[v]=
 			 Plus @@ Map[ If [insideQ[v+#], -fan[#]*mults[toFC[v+#]], 0]&, fan[weights]];
-(*			 Print[{v,mults[v],{v+#,-fan[#]*mults[toFC[v+#]]}&/@fan[weights]}];*)
 			 If [IntegerQ[aw[v]], mults[v]=mults[v]+aw[v]]],
-(*			 Print[aw[v]];
-			 Print[mults[v]]],*)
 		wgs];
 	   makeFormalElement[mults]];
-(*
-,rh,weights,mults,c,insideQ,
-	    fan,
-	    toFC=toFundamentalChamber[rs]},
-	   fan
-	   fan=Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[rs][rh]]];
-	   weights=Sort[ Rest[Flatten[weightSystem[rs][highestWeight]]], #1.rh>#2.rh&];
-	   mults[highestWeight]=1;
-	   insideQ:=IntegerQ[mults[toFC[#]]]&;
-	   Scan[Function[v,
-			 mults[v]=
-			 Plus@@(fan /. {x_?weightQ,e_Integer}:> If[insideQ[v+x],-e*mults[toFC[v+x]],0])],
-		weights];
-	   makeFormalElement[mults]]
-*)
-freudenthalMultiplicities::"usage"=
-    "freudenthalMultiplicities[rs_finiteRootSystem][highestWeight_finiteWeight] returns hashtable with the multiplicities of 
-    weights in the highest weight module";
-
-racahMultiplicities::"usage"=
-    "racahMultiplicities[rs_?rootSystemQ] returns hashtable with the multiplicities of 
-    weights in the highest weight module. It uses recurrent relation similar to Racah formula";
 
 
-anomalousWeights::"usage"="
-    anomalousWeights[m_module] returns the formal element, consisting of anomalous weights of module hm";
+directSum::"usage"=
+    "directSum[ms__module] returns module which is direct sum of modules";
 
-character::"usage"=
-    "character[m_module] returns character of module as formalElement datastructure";
+directSum[ms__module]:=makeModule[rootSystem[{ms}[[1]]]][Plus @@ (anomalousWeights/@{ms}),emptyRootSystem[]];
+
+(*/;Equal@@( rootSystem/@{ms})*)
+
+CirclePlus::"usage"=CirclePlus::"usage" <> "\n denotes direct sum of modules";
+
+
+
+
 
 branching::"usage"=
     "branching[m_module,subs_?rootSystemQ] returns branching coefficients of decomposition of module m to \n
@@ -832,10 +810,8 @@ tensorProduct::"usage"=
 
 CircleTimes::"usage"=CircleTimes::"usage" <> "\n denotes tensor product of modules";
 
-directSum::"usage"=
-    "directSum[ms__module] returns module which is direct sum of modules";
 
-CirclePlus::"usage"=CirclePlus::"usage" <> "\n denotes direct sum of modules";
+
 
 decomposion::"usage"=
     "Tensor product decomposition"

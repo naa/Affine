@@ -303,18 +303,20 @@ Infinite-dimensional Lie algebras also have growing number of applications in ph
 
 Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}.
 
-The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results.
+The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of affine Lie algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results.
 We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics.
 
-The paper is started with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and their representations (Sec. \ref{sec:core-datastructures} and used in implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
+The paper is started with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and representations (Sec. \ref{sec:core-datastructures}) and discuss implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
 
 \section{Theoretical background}
 \label{sec:theor-backgr}
 
+In this section we remind necessary definitions and present formulae used in computations. 
+
 \subsection{Lie algebras of finite and affine types}
 \label{sec:lie-algebras-finite}
 
-Lie algebra $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\otimes\gf\to \gf$, which is called commutator. If we choose the basis $X_{i}$ in $\gf$ we can specify commutation relations by the structure constants $C_{ijk}$:
+{\it Lie algebra} $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\otimes\gf\to \gf$, which is called {\it commutator}. If we choose the basis $X_{i}$ in $\gf$ we can specify commutation relations by the {\it structure constants} $C_{ijk}$:
 \begin{equation}
   \label{eq:1}
   [X^{i},X^{j}]=\sum_{k} C^{ij}_{k} X^{k}
@@ -324,11 +326,11 @@ Lie algebra is simple if it contains no non-trivial ideals. Semisimple Lie algeb
 Maximal commutative subalgebra (Cartan subalgebra) of $\gf$ is denoted by $\hfg$.
 We denote the elements of basis of $\hfg$ by $H^{i}$.
 
-Killing form on $\gf$ gives a non-degenerate bilinear form $(\cdot,\cdot)$ on $\hfg$ which can be used to identify $\hfg$ with the subspace of the dual space $\hfg^{*}$ of linear functionals on $\hfg$. Weights are the elements of $\hfg^{*}$ and are denoted by Greek letters $\mu,\nu, \omega, \lambda\dots$
+Killing form on $\gf$ gives a non-degenerate bilinear form $(\cdot,\cdot)$ on $\hfg$ which can be used to identify $\hfg$ with the subspace of the dual space $\hfg^{*}$ of linear functionals on $\hfg$. {\it Weights} are the elements of $\hfg^{*}$ and are denoted by Greek letters $\mu,\nu, \omega, \lambda\dots$
 
 Special choice of basis gives compact description of commutation relations (\ref{eq:1}). This basis can be encoded by the root system which is discussed in Section \ref{sec:weights-roots} (See also \cite{humphreys1997introduction,humphreys1992reflection}).
 
-Loop algebra $L\gf=\gf\otimes \mathbb{C}[t,t^{-1}]$, corresponding to semisimple Lie algebra $\gf$ has commutation relations
+{\it Loop algebra} $L\gf=\gf\otimes \mathbb{C}[t,t^{-1}]$, corresponding to semisimple Lie algebra $\gf$, has commutation relations
 \begin{equation}
   \label{eq:6}
   [X^{i}t^{n},X^{j}t^{m}]=t^{n_+m}\sum_{k}C^{ij}_{k}X^{k}
@@ -342,7 +344,7 @@ This algebra $\hat\gf=\gf\otimes\mathbb{C}[t,t^{-1}]\oplus\mathbb{C}c$ is called
 
 Sometimes we denote affine Lie algebra by $\gf$ then corresponding finite-dimensional Lie algebra is denoted by $\go$.
 
-\subsection{Weights and roots}
+\subsection{Modules, weights and roots}
 \label{sec:weights-roots}
 
 Let $\gf$ be finite-dimensional or affine Lie algebra.
@@ -352,7 +354,7 @@ Then $\gf$-module is a vector space $V$ together with a bilinear map $\gf \times
   \label{eq:2}
   [x,y]\cdot v = x\cdot(y\cdot v) - y\cdot(x\cdot v), \quad \mbox{for}\; x,y\in \gf, v\in V
 \end{equation}
-Representation of algebra $\gf$ on a vector space $V$ is the homomorphism $\gf\to gl(V)$.
+Representation of algebra $\gf$ on a vector space $V$ is the homomorphism $\gf\to gl(V)$ from $\gf$ to Lie algebra of endomorphisms on vector space $V$ with the commutator as the bracket.
 
 For an arbitrary representation it is possible to diagonalize the operators corresponding to Cartan generators $H^{i}$ simultaneously by special choice of basis $\{v_{j}\}$ in $V$:
 \begin{equation}
@@ -366,7 +368,7 @@ The structure of module is determined by the set of weights since the action of 
   \label{eq:5}
   E^{\alpha}\cdot v_{\lambda} \propto v_{\lambda+\alpha}
 \end{equation}
-It can be encoded by the formal character of module
+Module structure can be encoded by the formal character of module
 \begin{equation}
   \label{eq:10}
   \mathrm{ch}V=\sum_{\lambda}m_{\lambda} e^{\lambda}
@@ -374,7 +376,8 @@ It can be encoded by the formal character of module
 Character  $\mathrm{ch}V\in \mathcal{E}$ is an element of algebra $\mathcal{E}$ generated by formal exponents of weights.
 Character can be specialized by taking its value on some element $\xi$ of $\hf$:
 
-Roots are weights of adjoint representation of $\gf$ on itself. They encode the commutation relations of algebra in the following way. Denote by $\Delta$ the set of roots. For each $\alpha\in \Delta$ there exist a root $-\alpha\in \Delta$ and generators $E^{\alpha}, E^{-\alpha}$ such that
+Lie algebra is its own module. The action of generators is called adjoint and it is given by the bracket $ad_{X} Y=[X,Y]$. 
+{\it Roots} are weights of adjoint representation of $\gf$. They encode the commutation relations of algebra in the following way. Denote by $\Delta$ the set of roots. For each $\alpha\in \Delta$ there exist a root $-\alpha\in \Delta$ and generators $E^{\alpha}, E^{-\alpha}$ such that
 \begin{align}
   \label{eq:4}
   &  [H^{i},E^{\alpha}]=\alpha^{i}E^{\alpha} \\
@@ -385,14 +388,13 @@ Roots are weights of adjoint representation of $\gf$ on itself. They encode the 
     0,&\mbox{otherwise}
   \end{cases}
 \end{align}
-Highest weight of adjoint representation.
 
 Given a root system $\Delta$ we can choose a set of positive roots. This is a subset  $\Delta^{+}\subset \Delta$ such that for each root $\alpha\in\Delta$ exactly one of the roots $\alpha, -\alpha$ is contained in $\Delta^{+}$ and for any two distinct positive roots $\alpha, \beta\in \Delta^{+}$ such that $\alpha+\beta\in \Delta$ their sum is also positive $\alpha+\beta\in\Delta^{+}$.
 Elements of $-\Delta^{+}$ are called negative roots.
 
-A positive root is simple if it cannot be written as the sum of positive roots. The set of simple roots $\left\{\alpha_{i}\right\}$ is a basis of $\hfg$ and each root can be written as $\alpha=\sum_{i}n_{i}\alpha_{i}$ with all $n_{i}$ non-negative or non-positive. In case of finite-dimensional Lie algebra $\gf$ simple roots are numbered from 1 to rank of the algebra $i=1,\dots,r,\quad r=\mathrm{rank}(\gf)$. By numbering simple roots with an index $i$ we introduce an ordering on the root system $\Delta$. Highest root with respect to this ordering is denoted by  $\theta=\sum_{i=1,\dots,r} a_i \alpha_i$, coefficients $a_i$ are called {\it marks}. {\it Comarcs} are equal to $a_i^{\vee}=\frac{(\alpha_i,\alpha_i)}{2} a_i$.
+A positive root is {\it simple} if it cannot be written as the sum of positive roots. The set of simple roots $\Phi=\left\{\alpha_{i}\right\}$ is a basis of $\hfg$ and each root can be written as $\alpha=\sum_{i}n_{i}\alpha_{i}$ with all $n_{i}$ non-negative or non-positive. In case of finite-dimensional Lie algebra $\gf$ simple roots are numbered from 1 to rank of the algebra $i=1,\dots,r,\quad r=\mathrm{rank}(\gf)$. By numbering simple roots with an index $i$ we introduce an ordering on the root system $\Delta$. Highest root with respect to this ordering is denoted by  $\theta=\sum_{i=1,\dots,r} a_i \alpha_i$, coefficients $a_i$ are called {\it marks}. It is also highest weight (See section \ref{sec:high-weight-modul}) of adjoint module. {\it Comarcs} are equal to $a_i^{\vee}=\frac{(\alpha_i,\alpha_i)}{2} a_i$.
 
-Although the full set of roots $\Delta$ is infinite for affine Lie algebra $\hat\gf$ the number of simple roots is finite and its elements are denoted by $\alpha_{0},\dots \alpha_{r}$ where $r=\mathrm{rank}(\gf)$. The roots $\alpha_1,\dots, \alpha_r$ are the roots of the underlying finite-dimensional Lie algebra $\go$. The root $\alpha_0=\delta-\theta$ is the difference of {\it imaginary root} $\delta$ and $\theta$ -- highest root of the algebra $\go$.
+Although the full set of roots $\Delta$ is infinite for affine Lie algebra $\hat\gf$ the set of simple roots $\Phi$ is finite and its elements are denoted by $\alpha_{0},\dots \alpha_{r}$ where $r=\mathrm{rank}(\gf)$. The roots $\alpha_1,\dots, \alpha_r$ are the roots of the underlying finite-dimensional Lie algebra $\go$. The root $\alpha_0=\delta-\theta$ is the difference of {\it imaginary root} $\delta$ and $\theta$ -- highest root of the algebra $\go$.
 
 Sub-algebra  $\bff_{+}\subset \gf$ spanned by the generators $H^{i}, E^{\alpha}$ for $\alpha\in \Delta^{+}$ positive is called Borel sub-algebra.
 
