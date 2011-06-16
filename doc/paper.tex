@@ -626,8 +626,7 @@ _{\widetilde{\af}}\alpha }\right) ^{\mathrm{mult}(\alpha )-\mathrm{mult}%
 _{\af}(\pi _{\widetilde{\af}}\alpha )}=-\sum_{\gamma \in P_{%
 \widetilde{\af}}}s(\gamma )e^{-\gamma };\quad
 \end{equation}
-The weights in $\left\{ \xi \right\} _{\widetilde{\af}\rightarrow \frak{%
-g}}$ are to be shifted by $\gamma _{0}$ -- the lowest vector in $\left\{ \xi
+The weights in $\left\{ \xi \right\} _{\widetilde{\af}\rightarrow \gf}$ are to be shifted by $\gamma _{0}$ -- the lowest vector in $\left\{ \xi
 \right\} $ -- and the zero element is to be eliminated:
 \begin{equation}
 \Gamma _{\widetilde{\af}\rightarrow \gf}=\left\{ \xi -\gamma
@@ -786,6 +785,17 @@ We represent formal characters of representations by special structure \lstinlin
   Out[3]= {8, 8, 2}
 \end{lstlisting}
 
+\subsection{Modules}
+\label{sec:modules}
+
+{\bf Affine.m} can be used to study different kinds of modules, e.g. Verma modules, irreducible modules.  We need datastructure to represent generic module of Lie algebra $\gf$. This datastructure is \lstinline{module}. Module properties can be deduced from its set of singular weights using Weyl character formulae \eqref{eq:11},\eqref{eq:12},\eqref{eq:18},\eqref{eq:13}. Set of singular weights can have Weyl symmetry. It can be symmetry with respect to Weyl group $W_{\gf}$ or with respect to some subalgebra $W_{\af}$ as in the case of parabolic Verma modules. Then it is possible to study only main Weyl chamber $C_{\af}$. So generic constructor for \lstinline{module} datastructure is \lstinline{makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|emptyRootSystem[],opts___?OptionQ]}. Here \lstinline{rs} is root system of Lie algebra $\gf$,\lstinline{singWeights} is the set of singular weights,  \lstinline{subs} is root system corresponding to Weyl group $W_{\af}$ which is the symmetry of the set of singular weights.
+There are several constructors for different highest weight modules:
+\begin{lstlisting}[mathescape=true]
+vm=makeVermaModule[$B_{2}$][weight[$B_{2}$][2,1]];
+pm=makeParabolicVermaModule[$B_{2}$][weight[$B_{2}$][2,1],{1}];
+im=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
+drawPlaneProjection[2,1,{character[vm],character[pm],character[im]} ]
+\end{lstlisting}
 \section{Computational algorithms}
 \label{sec:comp-algor}
 
@@ -813,7 +823,7 @@ to  $\af$, i.e. form the set $\Delta_{\afb }^{+}$.
 \item  Construct the set $\Gamma _{\af\rightarrow \frak{g}}$. Relation
  (\ref{eq:6}) defines the sign function
  $s(\gamma)$ and the set $\Phi_{\af\subset \frak{g}}$ where the lowest weight
- $\gamma_0$ is to be subtracted to get the fan (\ref{fan-defined}):
+ $\gamma_0$ is to be subtracted to get the fan:
  $\Gamma _{\af\rightarrow \frak{g}}=\left\{ \xi -\gamma _{0}|\xi \in \Phi _{%
 \af\subset \frak{g}}\right\} \setminus \left\{ 0\right\}$.
 
@@ -837,7 +847,7 @@ L_{\widetilde{\af_{\perp }}}^{\mu _{\widetilde{\af_{\perp }}%
 the singular element $\Psi ^{\left( \mu \right) }_{\left(  \af, \afb \right)}$.
 
 \item  Calculate the anomalous branching coefficients using the
-recurrent relation (\ref{recurrent-relation}) and select among them those
+recurrent relation (\ref{recurrent-rel}) and select among them those
 corresponding to the weights in the main Weyl
 chamber $\overline{C_{\af}}$.
 \end{enumerate}
@@ -866,7 +876,7 @@ We have made some experiments with our implementations of Freudenthal formula an
 \end{figure}
 
 \begin{figure}[h]
-  \label{freudenthal-racah-times}
+%  \label{freudenthal-racah-times}
   \noindent\centering{
  %   \includegraphics[width=80mm]{figure1.eps}
   }
@@ -906,7 +916,7 @@ In this section we present some examples of computations available with {\bf Aff
 
 Computation of fusion coefficients for the decomposition of tensor product of highest-weight modules to the direct sum of irreducible modules has numerous applications in physics. For example, we can consider spin of composite system such as atom. Another interesting example is integrable spin chain consisting of $N$ particles with the spins living in some representation $L$ of Lie algebra $\gf$ with $\gf$-invariant Hamiltonian $H$, describing nearest-neighbour spin-spin interaction. In order to solve such system, i.e. find eigenstates of Hamiltonian, we need to decompose $L^{\otimes N}$ into the direct sum of irreducible $\gf$-modules of lower dimension and diagonalize the Hamiltonian on these modules.
 
-For fundamental representations of simple Lie algebras it is sometimes possible to get analytic result for the dependence of decomposition coefficients on $N$ (See \cite{2011LyakhovskyPostnova}). Our code give numerical values and can be used to check this analytic results.
+For fundamental representations of simple Lie algebras it is sometimes possible to get analytic result for the dependence of decomposition coefficients on $N$ (See \cite{LyakhovskyPostnova2011}). Our code give numerical values and can be used to check this analytic results.
 
 \begin{figure}[h]
   \label{tensor-product-decomposition-b2}

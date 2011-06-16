@@ -3,7 +3,13 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 Mathematica 8.0 for Linux x86 (64-bit)
 Copyright 1988-2010 Wolfram Research, Inc.
 
+Mathematica 8.0 for Linux x86 (64-bit)
+Copyright 1988-2010 Wolfram Research, Inc.
+
 <<affine.m;
+
+SetDelayed::write: 
+   Tag Times in  ourBranching[m_module, (subs_)?rootSystemQ] is Protected.
 
 b2=makeSimpleRootSystem[B,2];
 vm=makeVermaModule[b2][weight[b2][1,1]];
@@ -11,12 +17,186 @@ pm=makeParabolicVermaModule[b2][weight[b2][1,0],{1}];
 im=makeIrreducibleModule[b2][weight[b2][4,6]];
 
 
+fc=Affine`Private`fullCharacter[im]
+
+Affine`Private`subSystem[im]
+
+ch=character[im2]
+
+Out[22]= formalElement[Affine`Private`table$907]
+
+im2=makeIrreducibleModule[b2][weight[b2][3,1]];
+
+fc=Affine`Private`fullCharacter[im2]
+
+Out[50]= formalElement[Affine`Private`table$1644]
+
+Out[43]= formalElement[Affine`Private`table$1405]
+
+Out[36]= formalElement[Affine`Private`table$1047]
+
+Out[35]= formalElement[Affine`Private`table$1035]
+
+Out[34]= fullCharacter[module[finiteRootSystem[2, 2, 
+ 
+>      {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>     formalElement[Affine`Private`table$1023], 
+ 
+>     finiteRootSystem[2, 2, {finiteWeight[2, {1, -1}], 
+ 
+>       finiteWeight[2, {0, 1}]}], -5]]
+
+ch3=orbit[b2][ch]
+
+Out[26]= formalElement[Affine`Private`table$975]
+
+Export["irrep6.png",drawPlaneProjection[2,1,fc]];
+
+b2=makeSimpleRootSystem[B,2];
+vm=makeVermaModule[b2][weight[b2][2,1]];
+pm=makeParabolicVermaModule[b2][weight[b2][2,1],{1}];
+im=makeIrreducibleModule[b2][weight[b2][2,1]];
+
+pp=drawPlaneProjection[2,1,#]& /@ (Affine`Private`fullCharacter/@ {vm,pm,im})
+
+
+fe=character[vm]
+
+ps=parabolicSubalgebra[b2][1];
+
+orbit[ps]/@ fe[weights]
+
+orbit[ps][fe]
+
+
+psOut[5]= {-Graphics-, -Graphics-, -Graphics-} 
+
+Export["tt.pdf",pp]
+
+Out[6]= tt.pdf
+
+
+
+Affine`Private`rootSystem[im]
+
+Out[31]= finiteRootSystem[2, 2, 
+ 
+>    {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}]
+
+Out[30]= module[finiteRootSystem[2, 2, 
+ 
+>      {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>     formalElement[Affine`Private`table$461], 
+ 
+>     finiteRootSystem[2, 2, {finiteWeight[2, {1, -1}], 
+ 
+>       finiteWeight[2, {0, 1}]}], -24][rootSystem]
+
+Out[23]= formalElement[Affine`Private`table$912]
+
+Out[20]= $Aborted
+
+Out[19]= formalElement[Affine`Private`table$840]
+
+Out[16]= $Aborted
+
+ff=simpleBranching[im2,parabolicSubalgebra[b2][1]]
+
+Out[48]= formalElement[Affine`Private`table$1549]
+
+Out[45]= formalElement[Affine`Private`table$1467]
+
+Out[38]= formalElement[Affine`Private`table$1272]
+
+Out[15]= $Aborted
+
+Out[12]= formalElement[Affine`Private`table$624]
+
+Export["branching2.png",drawPlaneProjection[2,1,ff]];
+
+orbit[b2][weight[b2][1,1]]
+
+                            3  1
+Out[40]= {{finiteWeight[2, {-, -}]}, 
+                            2  2
+ 
+                       1  3                     3    1
+>    {finiteWeight[2, {-, -}], finiteWeight[2, {-, -(-)}]}, 
+                       2  2                     2    2
+ 
+                         1   3                     1    3
+>    {finiteWeight[2, {-(-), -}], finiteWeight[2, {-, -(-)}]}, 
+                         2   2                     2    2
+ 
+                         3   1                       1     3
+>    {finiteWeight[2, {-(-), -}], finiteWeight[2, {-(-), -(-)}]}, 
+                         2   2                       2     2
+ 
+                         3     1
+>    {finiteWeight[2, {-(-), -(-)}]}}
+                         2     2
+
+Out[10]= formalElement[Affine`Private`table$533]
+
+Out[9]= formalElement[Affine`Private`table$477]
+
 Affine`Private`limit[vm]
 
 Export["verma.png",drawPlaneProjection[2,1,weightSystem[vm]]];
 Export["verma2.png",drawPlaneProjection[2,1,character[vm]]];
 Export["pverma.png",drawPlaneProjection[2,1,weightSystem[pm]]];
 Export["pverma2.png",drawPlaneProjection[2,1,character[pm]]];
+
+pm2=makeParabolicVermaModule[b2][weight[b2][1,0],{1},limit->2];
+
+Export["pverma4.png",drawPlaneProjection[2,1,Affine`Private`fullCharacter[pm2]]];
+
+ff2=simpleBranching[pm2,makeFiniteRootSystem[{makeFiniteWeight[{1,1}]}]]
+
+Out[72]= formalElement[Affine`Private`table$2959]
+
+Export["branching3.png",drawPlaneProjection[2,1,ff2]];
+
+anomalousWeights[im2][weights]
+
+                           7  1                       1   9
+Out[74]= {finiteWeight[2, {-, -}], finiteWeight[2, {-(-), -}], 
+                           2  2                       2   2
+ 
+                      7    3                        5   9
+>    finiteWeight[2, {-, -(-)}], finiteWeight[2, {-(-), -}], 
+                      2    2                        2   2
+ 
+                        1     11                        13   1
+>    finiteWeight[2, {-(-), -(--)}], finiteWeight[2, {-(--), -}], 
+                        2     2                         2    2
+ 
+                        5     11                        13     3
+>    finiteWeight[2, {-(-), -(--)}], finiteWeight[2, {-(--), -(-)}]}
+                        2     2                         2      2
+
+Out[70]= formalElement[Affine`Private`table$2802]
+
+Out[62]= $Aborted
+
+pm2
+
+limit/.{limit->2}
+
+Out[58]= 2
+
+Out[57]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$2100], 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, -1}]}], -10]
+
+Out[52]= $Aborted
+
 Export["irrep.png",drawPlaneProjection[2,1,weightSystem[im]]];
 Export["irrep2.png",drawPlaneProjection[2,1,character[im]]];
 
