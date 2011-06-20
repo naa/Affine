@@ -1,15 +1,203 @@
 AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
-Mathematica 8.0 for Linux x86 (64-bit)
-Copyright 1988-2010 Wolfram Research, Inc.
-
-Mathematica 8.0 for Linux x86 (64-bit)
-Copyright 1988-2010 Wolfram Research, Inc.
-
 <<affine.m;
 
-SetDelayed::write: 
-   Tag Times in  ourBranching[m_module, (subs_)?rootSystemQ] is Protected.
+a1=makeSimpleRootSystem[A,1];
+m1=makeIrreducibleModule[a1][weight[a1][1]];
+m2=makeIrreducibleModule[a1][weight[a1][2]];
+
+tp=tensorProduct[m1,m2]
+
+{finiteWeight[2, {1, 0}]}
+{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}
+                    1
+{{{finiteWeight[2, {-, 1}], 1}}}
+                    2
+                  1
+{finiteWeight[2, {-, 1}]}
+                  2
+
+Out[220]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$4103], 
+ 
+>    finiteRootSystem[2, 2, {finiteWeight[2, {1, 0}], 
+ 
+>      finiteWeight[2, {0, 1}]}], 25]
+
+Affine`Private`subSystem[tp]
+
+Out[218]= emptyRootSystem[]
+
+singularWeights[tp][weights]
+
+ClearAll[f]
+
+f[y_,x_:y]:=Module[{test=3},x*y]
+
+
+f[2]
+
+Out[229]= 2 y
+
+Out[227]= 2 test
+
+Out[226]= 8
+
+                            1                          3
+Out[222]= {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                            2                          2
+ 
+                      1                           3
+>    finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}
+                      2                           2
+
+Out[221]= {1, -1, -1, 1}
+
+Out[217]= {1}
+
+                            1
+Out[216]= {finiteWeight[2, {-, 1}]}
+                            2
+
+Out[201]= {}
+
+Out[200]= formalElement[Affine`Private`table$4036]
+
+{finiteWeight[2, {1, 0}]}
+{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}
+                 1
+finiteWeight[1, {-}]finiteWeight[1, {1}]
+                 2
+
+Out[199]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$4036], emptyRootSystem[], 25]
+
+
+{finiteWeight[2, {1, 0}]}
+{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}
+                 1
+finiteWeight[1, {-}]finiteWeight[1, {1}]
+                 2
+
+Out[198]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$4034], emptyRootSystem[], 25]
+
+?Function
+
+Function[body] or body &
+       is a pure function. The formal parameters are # (or #1), #2, etc. Funct
+
+       ion[x, body] is a pure function with a single formal parameter x
+      . Function[{x , x , ...}, body]
+                   1   2
+        is a pure function with a list of formal parameters. 
+
+{finiteWeight[2, {1, 0}]}
+{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}
+
+Join::heads: Heads #1 and #2 at positions 1 and 2 are expected to be the same.
+
+Out[195]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$4022], emptyRootSystem[], 25]
+
+{finiteWeight[2, {1, 0}]}
+
+Join::heads: Heads #1 and #2 at positions 1 and 2 are expected to be the same.
+
+Out[193]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$4012], emptyRootSystem[], 25]
+
+Join::heads: Heads #1 and #2 at positions 1 and 2 are expected to be the same.
+
+Out[191]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$4002], emptyRootSystem[], 25]
+
+finiteRootSystem[1, 1, {finiteWeight[1, {1}]}]
+{finiteWeight[2, {1, 0}]}
+
+Join::heads: Heads emptyRootSystem and List at positions 1 and 2
+     are expected to be the same.
+
+Join::heads: Heads emptyRootSystem and List at positions 1 and 2
+     are expected to be the same.
+
+Join::heads: Heads #1 and #2 at positions 1 and 2 are expected to be the same.
+
+General::stop: Further output of Join::heads
+     will be suppressed during this calculation.
+
+Out[189]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$3992], emptyRootSystem[], 25]
+
+finiteRootSystem[1, 1, {finiteWeight[1, {1}]}]
+
+Join::heads: Heads emptyRootSystem and List at positions 1 and 2
+     are expected to be the same.
+
+Join::heads: Heads emptyRootSystem and List at positions 1 and 2
+     are expected to be the same.
+
+Join::heads: Heads #1 and #2 at positions 1 and 2 are expected to be the same.
+
+General::stop: Further output of Join::heads
+     will be suppressed during this calculation.
+
+Out[187]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$3981], emptyRootSystem[], 25]
+
+Join::heads: Heads emptyRootSystem and List at positions 1 and 2
+     are expected to be the same.
+
+Join::heads: Heads emptyRootSystem and List at positions 1 and 2
+     are expected to be the same.
+
+Join::heads: Heads #1 and #2 at positions 1 and 2 are expected to be the same.
+
+General::stop: Further output of Join::heads
+     will be suppressed during this calculation.
+
+Out[185]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$3971], emptyRootSystem[], 25]
+
+
+Affine`Private`rootSystem[m1]
+
+Out[182]= finiteRootSystem[1, 1, {finiteWeight[1, {1}]}]
+
+
+Out[180]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$3959], emptyRootSystem[], 25]
+
 
 b2=makeSimpleRootSystem[B,2];
 vm=makeVermaModule[b2][weight[b2][1,1]];
@@ -18,6 +206,12371 @@ im=makeIrreducibleModule[b2][weight[b2][4,6]];
 
 
 fc=Affine`Private`fullCharacter[im]
+
+a1a=makeAffineExtension[makeSimpleRootSystem[A,1]];
+
+b2a=makeAffineExtension[makeSimpleRootSystem[B,2]];
+
+ima=makeIrreducibleModule[a1a][weight[a1a][4,2]];
+vma=makeVermaModule[a1a][weight[a1a][4,2]];
+
+ima=makeIrreducibleModule[b2a][weight[b2a][1,1,1]];
+vma=makeVermaModule[b2a][weight[b2a][1,1,1]];
+
+
+
+Clear[ima]
+
+singularWeights[ima][weights]
+
+character[ima]
+
+{affineWeight[1, finiteWeight[1, {1}], 0, 0], 
+ 
+>   affineWeight[1, finiteWeight[1, {-1}], 0, 1], 
+ 
+>   affineWeight[1, finiteWeight[1, {2}], 0, 1], 
+ 
+>   affineWeight[1, finiteWeight[1, {-2}], 0, 3], 
+ 
+>   affineWeight[1, finiteWeight[1, {3}], 0, 3], 
+ 
+>   affineWeight[1, finiteWeight[1, {-3}], 0, 6], 
+ 
+>   affineWeight[1, finiteWeight[1, {4}], 0, 6]}
+affineWeight[1, finiteWeight[1, {1}], 3, 0]{0, 0, 0, 0, 0, 0, 0}
+1
+affineWeight[1, finiteWeight[1, {2}], 3, -1]{0, 1, 0, 0, 0, 0, 0}
+1
+affineWeight[1, finiteWeight[1, {0}], 3, 0]{1, 0, 0, 0, 0, 0, 0}
+1
+affineWeight[1, finiteWeight[1, {1}], 3, -1]{1, 1, 0, 0, 0, 0, 0}
+2
+affineWeight[1, finiteWeight[1, {3}], 3, -2]{0, 1, 0, 0, 0, 0, 0}
+1
+affineWeight[1, finiteWeight[1, {0}], 3, -1]{2, 1, 0, 0, 0, 0, 0}
+3
+affineWeight[1, finiteWeight[1, {2}], 3, -2]{1, 2, 0, 0, 0, 0, 0}
+3
+affineWeight[1, finiteWeight[1, {3}], 3, -3]{1, 3, 0, -1, 0, 0, 0}
+3
+affineWeight[1, finiteWeight[1, {1}], 3, -2]{3, 3, 0, 0, 0, 0, 0}
+6
+affineWeight[1, finiteWeight[1, {2}], 3, -3]{3, 6, 0, -1, 0, 0, 0}
+8
+affineWeight[1, finiteWeight[1, {0}], 3, -2]{6, 2, -1, 0, 0, 0, 0}
+7
+affineWeight[1, finiteWeight[1, {1}], 3, -3]{8, 7, -1, -1, 0, 0, 0}
+13
+affineWeight[1, finiteWeight[1, {3}], 3, -4]{3, 8, 0, -2, 0, 0, 0}
+9
+affineWeight[1, finiteWeight[1, {0}], 3, -3]{13, 6, -3, 0, 0, 0, 0}
+16
+affineWeight[1, finiteWeight[1, {2}], 3, -4]{9, 13, -1, -3, 0, 0, 0}
+18
+affineWeight[1, finiteWeight[1, {1}], 3, -4]{18, 16, -3, -2, 0, 0, 0}
+29
+affineWeight[1, finiteWeight[1, {3}], 3, -5]{8, 18, -1, -6, 0, 0, 0}
+19
+affineWeight[1, finiteWeight[1, {0}], 3, -4]{29, 13, -8, -1, 0, 0, 0}
+33
+affineWeight[1, finiteWeight[1, {2}], 3, -5]{19, 29, -3, -7, 0, 0, 0}
+38
+affineWeight[1, finiteWeight[1, {1}], 3, -5]{38, 33, -9, -6, 0, 0, 0}
+56
+affineWeight[1, finiteWeight[1, {3}], 3, -6]{18, 38, -2, -13, 0, 1, 0}
+42
+affineWeight[1, finiteWeight[1, {0}], 3, -5]{56, 29, -18, -3, 1, 0, 0}
+65
+affineWeight[1, finiteWeight[1, {2}], 3, -6]{42, 56, -8, -16, 0, 1, 0}
+75
+affineWeight[1, finiteWeight[1, {3}], 3, -7]{38, 75, -6, -29, 0, 3, 0}
+81
+affineWeight[1, finiteWeight[1, {1}], 3, -6]{75, 65, -19, -13, 1, 0, 0}
+109
+affineWeight[1, finiteWeight[1, {0}], 3, -6]{109, 56, -38, -8, 3, 0, 0}
+122
+affineWeight[1, finiteWeight[1, {2}], 3, -7]{81, 109, -18, -33, 1, 2, 0}
+142
+affineWeight[1, finiteWeight[1, {3}], 3, -8]{75, 142, -13, -56, 0, 7, 0}
+155
+affineWeight[1, finiteWeight[1, {1}], 3, -7]{142, 122, -42, -29, 3, 1, 0}
+197
+affineWeight[1, finiteWeight[1, {2}], 3, -8]{155, 197, -38, -65, 2, 6, 0}
+257
+affineWeight[1, finiteWeight[1, {0}], 3, -7]{197, 109, -75, -18, 9, 0, 0}
+222
+affineWeight[1, finiteWeight[1, {1}], 3, -8]{257, 222, -81, -56, 8, 3, 0}
+353
+affineWeight[1, finiteWeight[1, {3}], 3, -9]{142, 257, -29, -109, 1, 16, 0}
+278
+affineWeight[1, finiteWeight[1, {2}], 3, -9]{278, 353, -75, -122, 6, 13, 0}
+453
+affineWeight[1, finiteWeight[1, {0}], 3, -8]{353, 197, -142, -38, 19, 1, 0}
+390
+affineWeight[1, finiteWeight[1, {1}], 3, -9]{453, 390, -155, -109, 18, 8, 0}
+605
+affineWeight[1, finiteWeight[1, {3}], 3, -10]{257, 453, -56, -197, 3, 33, 0}
+493
+affineWeight[1, finiteWeight[1, {2}], 3, -10]{493, 605, -142, -222, 13, 29, 0}
+776
+affineWeight[1, finiteWeight[1, {0}], 3, -9]{605, 353, -257, -75, 42, 3, -1}
+670
+affineWeight[1, finiteWeight[1, {1}], 3, -10]
+ 
+>   {776, 670, -278, -197, 38, 18, -1}
+1026
+affineWeight[1, finiteWeight[1, {3}], 3, -11]{453, 776, -109, -353, 7, 65, 0}
+839
+affineWeight[1, finiteWeight[1, {0}], 3, -10]
+ 
+>   {1026, 605, -453, -142, 81, 9, -3}
+1123
+affineWeight[1, finiteWeight[1, {2}], 3, -11]
+ 
+>   {839, 1026, -257, -390, 29, 56, 0}
+1303
+
+Out[150]= formalElement[Affine`Private`table$1859]
+
+
+Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[a1a][rh]]]
+
+Out[145]= {{affineWeight[1, finiteWeight[1, {1}], 0, 0], -1}, 
+ 
+>    {affineWeight[1, finiteWeight[1, {-1}], 0, 1], -1}, 
+ 
+>    {affineWeight[1, finiteWeight[1, {2}], 0, 1], 1}, 
+ 
+>    {affineWeight[1, finiteWeight[1, {-2}], 0, 3], 1}, 
+ 
+>    {affineWeight[1, finiteWeight[1, {3}], 0, 3], -1}, 
+ 
+>    {affineWeight[1, finiteWeight[1, {-3}], 0, 6], -1}, 
+ 
+>    {affineWeight[1, finiteWeight[1, {4}], 0, 6], 1}}
+
+
+
+sw=Exp[2*rh]*singularWeights[a1a][zeroWeight[a1a]];
+
+sw[weights]
+
+sw2=singularWeights[a1a][zeroWeight[a1a]];
+gamma0=Sort[sw2[weights],#1.rh<#2.rh&][[1]];
+
+gamma0
+
+Out[133]= affineWeight[1, finiteWeight[1, {-4}], 0, -6]
+
+	   fan=fan*Exp[-gamma0];
+
+sw[weights]
+
+Out[122]= {affineWeight[1, finiteWeight[1, {1}], 2, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 2, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 2, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {-1}], 2, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 2, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {-2}], 2, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {4}], 2, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {-3}], 2, -6]}
+
+
+singularWeights[ima][multiplicities]
+
+
+Out[114]= formalElement[Affine`Private`table$1632]
+
+Text[ima[#],{ima[grade],ima[finitePart][[1]]}]&/@ 
+
+(Text[ima[#],{ima[grade],ima[finitePart][[1]]}])& /@ (Affine`Private`fullCharacter[ima][weights])
+
+Out[23]= -Graphics-
+
+
+fc=Affine`Private`fullCharacter[ima]
+
+Out[101]= formalElement[Affine`Private`table$1398]
+
+Out[93]= formalElement[Affine`Private`table$1285]
+
+Out[85]= formalElement[Affine`Private`table$1130]
+
+Out[62]= formalElement[Affine`Private`table$1015]
+
+Out[52]= formalElement[Affine`Private`table$764]
+
+Out[43]= formalElement[Affine`Private`table$659]
+
+Out[40]= formalElement[Affine`Private`table$609]
+
+
+Out[34]= formalElement[Affine`Private`table$516]
+
+fc=weightSystem[ima];
+
+rh=rho[a1a]
+
+                                           1
+Out[105]= affineWeight[1, finiteWeight[1, {-}], 1, 0]
+                                           2
+
+Export["affineverma.png",Graphics[(Text[fc[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fc[weights]]]
+
+fc=Affine`Private`fullCharacter[ima];
+Export["affineverma3d.png",Graphics3D[(Text[fc[#],{#[grade],#[finitePart][[2]][[1]],#[finitePart][[2]][[2]]}])&/@fc[weights]]]
+
+fc=Affine`Private`fullCharacter[vma];
+Export["affineverma3d2.png",Graphics3D[(Text[fc[#],{#[grade],#[finitePart][[2]][[1]],#[finitePart][[2]][[2]]}])&/@fc[weights]]]
+
+
+a1a[dimension]
+
+Join[{1,2,3},{4,5}]
+
+g[x_]:=test[EvenQ[x]]
+
+g[3]
+
+Out[165]= False
+
+f[x_,y_]/; (g[x])_test:=5
+
+Join[{},{1,2,3}]
+
+Out[177]= {1, 2, 3}
+
+f[2,3]
+
+Out[173]= f[2, 3]
+
+Head[g[2]]
+
+Out[176]= test
+
+Out[175]= _test test[True]
+
+Out[174]= test[True]
+
+Out[171]= test[True]
+
+Out[170]= f[2]
+
+Out[169]= f[2, 3]
+
+Out[162]= {1, 2, 3, 4, 5}
+
+Out[161]= affineRootSystem[1, finiteRootSystem[1, 1, {finiteWeight[1, {1}]}], 
+ 
+>     affineWeight[1, finiteWeight[1, {-1}], 0, 1], 
+ 
+>     {affineWeight[1, finiteWeight[1, {1}], 0, 0]}][dimension]
+
+          {affineWeight[2, finiteWeight[2, {3, -6}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 7}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {9, 1}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, -1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, 2}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, 5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 3}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, -5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, -4}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, -1}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, 2}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 3}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, -1}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 0}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, -3}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, 5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 6}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 4}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, -4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 1}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, 5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, -1}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, -1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 6}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 4}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, -4}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {-5, -1}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, 5}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, -1}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, -4}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, 2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, 8}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {8, 2}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-6, 0}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, -7}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -3}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, 2}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, 8}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, 2}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-6, 1}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, -1}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 6}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 3}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {8, -1}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, 2}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 0}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, -2}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, 5}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, 2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 7}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -6}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 3}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, -4}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, 5}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, -4}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 0}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, 5}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, -3}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {9, 0}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 6}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, -4}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, 2}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 1}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, -5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, -2}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -3}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, 5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, -4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-5, 2}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, -7}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -2}], 0, 1]}
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 5  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 1  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 3    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 1    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   1   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 7  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 5    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 1    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+4
+                                 3    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   1   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 7  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 5    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+9
+                                 1  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 5  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 1    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 7  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                   3   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 9  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   1   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 5    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   3   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 7    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+5
+                                 9  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 3    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 9, 3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+12
+                                   1     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+5
+                                 5  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 5    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 1    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   3   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 7    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 5  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 9, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -3}
+12
+                                 5    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   5   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 7  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 9  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 1  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -3}
+12
+                                 1    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   1   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 12, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                   1     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 5, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 11  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -4]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   1   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 3  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 11  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -4]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 5, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+21
+                                 7    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   5   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 12, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+21
+                                 1    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 7  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 9  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   1     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 5    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   3   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 3    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 7  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                   5   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 3    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                   3     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+8
+                                 5    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 21, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+29
+                                   7   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 9  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 11  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -4]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 1  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 5  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 1    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 5    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 0, 0, -9}
+16
+                                 13  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 9    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+8
+                                 1    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 21, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+29
+                                   3   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                   1     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 7    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 5  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 5    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 7  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 21, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -5}
+24
+                                   1   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -5}
+24
+                                 13  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 11  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -4]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   3     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 8, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 9  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 5    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 29, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+32
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 21, 
+ 
+>    0, 0, 0, 0, 1, 0, 0, 0, 0, -12}
+37
+                                   7   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 29, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+32
+                                 1    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   1     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 3    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   3   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 9    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 3    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 1  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   5   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 7    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 1    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   5   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 8, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                   1   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 9    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 7  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 8, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 29, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+39
+                                 11  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -4]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -5, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 8, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                   1   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    29, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 8, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+39
+                                   5   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 15  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 13  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                   9   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 11  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 5  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                   3     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -5, 9, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 7    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 5    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 32, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 7  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   3   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                 9  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                 3  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 5    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 1    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 32, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   7   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -5, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    29, 0, 0, 0, 0, 0, -5, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 37, 29, 
+ 
+>    0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+67
+                                 3    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 1  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 5  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 37, 
+ 
+>    0, 0, 0, 0, 3, 0, 0, 0, 0, -21}
+42
+                                   7   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 15  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    37, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 3, 0, 0, 0, 0, -21}
+42
+                                 7    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -13, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 39, 32, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+51
+                                   3   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                   5     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 2, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+11
+                                 7    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 3    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 13  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 3    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   1     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 4, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    32, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -12, 39, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+51
+                                 1    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 7  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   5   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 5    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 5    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   9   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                   1   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    32, 0, 0, 0, 0, 0, -6, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 67, 32, 
+ 
+>    0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+88
+                                 1    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   1     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   3     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 11    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+11
+                                 11  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 9  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 9    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 5  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   3   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -21, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    39, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -8}
+42
+                                 9  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -21, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 39, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -8}
+42
+                                   3     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   1   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 5    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 11  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                   5   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                   1     15
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 15  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 1    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 1  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 5    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 3  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   7   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 9    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 3    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 13  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   5     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 4, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -6, 11, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+13
+                                 13  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 3    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21, 88, 33, 
+ 
+>    0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+100
+                                   1     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 9, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -21, 51, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+59
+                                   7   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 3    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 1  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -21, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    67, 0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 42, 39, 
+ 
+>    0, 0, 0, 0, 3, 0, 0, 0, 0, -29}
+90
+                                 1    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   11   15
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   3   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 11    3
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+13
+                                 5  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -6, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    39, 0, 0, 0, 0, 0, -21, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 67, 
+ 
+>    0, 0, 0, 0, 3, 0, 0, 0, 0, -29}
+90
+                                 7    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 7    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 51, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+59
+                                 17  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   9   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 9  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 7  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                   5   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                   7   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                 5    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 11    5
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+14
+                                   9   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 3    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   5     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 5, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -8, 13, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+14
+                                 3  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 9, 0, 0, 0, 0, -37}
+48
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -8, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 
+ 
+>    51, 0, 0, 0, 0, 0, -29, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 90, 
+ 
+>    88, 0, 0, 0, 0, 3, 0, 0, 0, 0, -32}
+144
+                                 1  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   3     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   3   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 9  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 
+ 
+>    11, 0, 0, 0, 0, 0, -29, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 
+ 
+>    51, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+61
+                                   1   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 9    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 5    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 7    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 5  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 11  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                   3   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -29, 0, 0, 0, 0, 0, 0, 4, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    51, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -12, 42, 
+ 
+>    11, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+61
+                                   1     17
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 17  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                   7   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 15  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -29, 2, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    88, 0, 0, 0, 0, 0, -8, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -16, 90, 
+ 
+>    51, 0, 0, 0, 0, 3, 0, 0, 0, 0, -32}
+144
+                                   11   13
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 13  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 1    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   1     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 12, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -29, 59, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+62
+                                 13  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -8, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 11, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                 3    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 7  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 1    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 9  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -29, 100, 
+ 
+>    33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+103
+                                 7    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 59, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+62
+                                 7  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   5   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 1  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 13    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 1    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 9    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 5    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 15  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 17  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                   9   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 5    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -9, 12, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 
+ 
+>    59, 0, 0, 0, 0, 0, -32, 0, -37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 144, 
+ 
+>    100, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+192
+                                   1     19
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   3     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   7   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                   3   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 3    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 1    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 9    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, -32, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 12, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 61, 
+ 
+>    59, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+79
+                                 11  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   11   11
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 7    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    5, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 62, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   1   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                   9   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 7    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 11    7
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 1    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -32, 4, 0, 0, 0, 0, 0, 12, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    100, 0, 0, 0, 0, 0, -9, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -37, 
+ 
+>    144, 59, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+192
+                                 9  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                   5     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -9, 14, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   13   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 7  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -6, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -37, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 90, 
+ 
+>    0, 0, 0, 0, 5, 0, 0, 0, 0, -39}
+96
+                                 11  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -24, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 42, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                   1   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -37, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    90, 0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 42, 42, 
+ 
+>    0, 0, 0, 0, 5, 0, 0, 0, 0, -39}
+96
+                                 13  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                   7     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 4, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -6, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   5   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 15  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -32, 
+ 
+>    103, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   3     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -32, 0, 0, 0, 0, 0, 0, 12, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    59, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, -24, 61, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+79
+                                 19  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -24, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    90, 0, 0, 0, 0, 0, -24, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 90, 
+ 
+>    0, 0, 0, 0, 12, 0, 0, 0, 0, -67}
+121
+                                   1     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -32, 62, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 5    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 5  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   1     21
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 3    33
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 5    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 21, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 
+ 
+>    62, 0, 0, 0, 0, 0, -33, 0, -67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -39, 
+ 
+>    192, 103, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+218
+                                   5   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   11   9
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 7    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   1   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                   9   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                 11    9
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 5  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, -1, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 11  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   3   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 3    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   7     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 6, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, -9, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+17
+                                   3     15
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 7  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -9, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 
+ 
+>    61, 0, 0, 0, 0, 0, -67, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 96, 
+ 
+>    144, 0, 0, 0, 0, 6, 0, 0, 0, 0, -51}
+170
+                                 19  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 9  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 5    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 17  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 1    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 6, 0, 0, 0, 0, 0, 21, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    103, 0, 0, 0, 0, 0, -10, 0, -39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, -67, 
+ 
+>    192, 62, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+218
+                                 1    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   5     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 1  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, 0, 0, 0, -12, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    42, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -39, 4, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, -2, 0, 0, 
+ 
+>    144, 0, 0, 0, 0, 0, -39, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -16, 
+ 
+>    121, 144, 0, 0, 0, 0, 13, 0, 0, 0, 0, -88}
+237
+                                 9    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, 
+ 
+>    14, 0, 0, 0, 0, 0, -33, 0, -39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 13, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 79, 
+ 
+>    62, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+91
+                                   5   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -39, 0, 0, 0, 0, 0, 0, 4, 0, -1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    61, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -12, 42, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11}
+64
+                                   3     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, 0, 0, 0, 0, 21, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    62, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -39, 79, 
+ 
+>    14, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+91
+                                   1   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -67, 2, 0, 0, 0, 0, 0, 4, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    144, 0, 0, 0, 0, 0, -9, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 96, 
+ 
+>    61, 0, 0, 0, 0, 6, 0, 0, 0, 0, -51}
+170
+                                 7    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 13  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 11  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    12, 0, 0, 0, 0, 0, -39, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 
+ 
+>    61, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11}
+64
+                                   7   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                   9   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 9    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 5    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   1     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 13    3
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -10, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 14, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+17
+                                 7  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 15  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                   13   15
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 15  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                   1   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -88, 4, 0, 0, 0, 0, 0, 16, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    192, 0, 0, 0, 0, 0, -11, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -42, 
+ 
+>    170, 79, 0, 0, 0, 0, 6, 0, 0, 0, 0, -59}
+259
+                                 5    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 29, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, -1, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 21, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -51, 
+ 
+>    218, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+230
+                                 21  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 1    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 8, 0, 0, 0, 0, 0, 29, 0, 0, 6, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    104, 0, 0, 0, 0, 0, -10, 0, -51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -88, 
+ 
+>    218, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+230
+                                 1  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1     23
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   7   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   11   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 7    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   3     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 29, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -11, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -51, 
+ 
+>    91, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+99
+                                   9   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                 5    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -51, 12, 0, 0, 0, 0, 0, 12, 0, 0, 6, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    0, 192, 0, 0, 0, 0, 0, -51, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -42, 
+ 
+>    237, 192, 0, 0, 0, 0, 13, 0, 0, 0, 0, -100}
+380
+                                 13  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   13   13
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 3    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 9  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -6, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -42, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, -4, 42, 96, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                 7  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 3    35
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 1  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    121, 0, 0, 0, 0, 0, -24, -1, -4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 
+ 
+>    96, 0, 0, 0, 0, 21, 0, 0, 0, 0, -90}
+129
+                                 5  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -24, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    96, 0, 0, -1, 0, 0, -42, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 
+ 
+>    121, 0, 0, 0, 0, 21, 0, 0, 0, 0, -90}
+129
+                                 5    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 13    5
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -10, 0, -11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 15, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+19
+                                   7   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 19  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 7  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -11, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, 
+ 
+>    0, 79, 0, 0, 0, 0, 0, -88, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 21, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 
+ 
+>    170, 192, 0, 0, 0, 0, 6, 0, 0, 0, 0, -59}
+259
+                                   3     17
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   3   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 15  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -11, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 15, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                 9  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 7    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   9   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, 0]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -11, 0, 0, 0, 0, 0, 0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -6, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                 3  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 17  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 5  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 1    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 17  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 3    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   5   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 1    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   5     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 11  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -5]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -1, 
+ 
+>    15, 0, 0, 0, 0, 0, -51, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 21, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 64, 
+ 
+>    79, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13}
+89
+                                   7     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 8, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -11, 17, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+19
+                                   11   7
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 13  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -24, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 42, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 11    11
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   1     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   15   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   3   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    96, 0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 42, 42, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                 15  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                 11  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 9    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   5   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -51, 0, 0, 0, 0, 0, 0, 12, 0, -1, 21, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 79, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -24, 
+ 
+>    64, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13}
+89
+                                 9    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 
+ 
+>    91, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+99
+                                 15  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                   13   11
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 19  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   5     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   1     25
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 21  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                   1   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, 0, 0, 0, -12, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    42, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 11  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                   11   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 3  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 1    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 9, 0, 0, 0, 0, 0, 32, 0, 0, 6, 0, 0, 0, -2, 0, 0, 0, 0, 
+ 
+>    104, 0, 0, 0, 0, 0, -10, 0, -59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -100, 
+ 
+>    230, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+233
+                                   7   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -42, 0, 0, 0, 0, 0, 0, 4, 0, -1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -12, 42, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                   1     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   11   5
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                 7    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 3    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 17  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 11    13
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   15   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                   3   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   5   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 1  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -90, 4, 0, 0, 0, 0, 0, 4, 0, 0, 12, 0, 0, 0, 0, 0, -2, 0, 0, 
+ 
+>    237, 0, 0, 0, 0, 0, -42, -1, -16, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 
+ 
+>    129, 170, 0, 0, 0, 0, 29, 0, 0, 0, 0, -144}
+279
+                                   7   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   1     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -100, 6, 0, 0, 0, 0, 0, 37, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 218, 0, 0, 0, 0, 0, -13, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 
+ 
+>    0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21, 0, 
+ 
+>    -90, 259, 91, 0, 0, 0, 0, 6, 0, 0, 0, 0, -62}
+333
+                                 1    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 1    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 5    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 32, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, -2, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 29, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -59, 
+ 
+>    230, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+233
+                                 7    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 9  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -9, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    64, 0, 0, 0, 0, 0, -90, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 16, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, -12, 
+ 
+>    96, 170, 0, 0, 0, 0, 8, 0, 0, 0, 0, -61}
+176
+                                 17  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                   7     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 9, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -13, 19, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                 5  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 4, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, -4, 0, 0, 
+ 
+>    170, 0, 0, -1, 0, 0, -90, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -16, 
+ 
+>    129, 237, 0, 0, 0, 0, 29, 0, 0, 0, 0, -144}
+279
+                                 3    37
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 13    7
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -10, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 15, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                   9     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 6, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -9, 16, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+19
+                                 1  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -59, 24, 0, 0, 0, 0, 0, 24, 0, 0, 8, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    0, 218, 0, 0, 0, 0, 0, -59, 0, -90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 16, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -90, 
+ 
+>    380, 218, 0, 0, 0, 0, 13, 0, 0, 0, 0, -103}
+496
+                                   3   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -90, 2, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    170, 0, 0, 0, 0, 0, -9, 0, -12, 0, 0, 0, 0, 0, -1, 0, 0, 9, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 96, 
+ 
+>    64, 0, 0, 0, 0, 8, 0, 0, 0, 0, -61}
+176
+                                 5    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 15    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -13, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 17, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+19
+                                 13  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    12, 0, 0, 0, 0, 0, -42, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                 3    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   3     19
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 5    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   5     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -59, 0, 0, 0, 0, 0, 0, 24, 0, -1, 29, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 91, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21, 0, -42, 
+ 
+>    89, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14}
+111
+                                 7  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, -1, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 7    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -13, 37, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -21, 0, 
+ 
+>    0, 91, 0, 0, 0, 0, 0, -100, 0, -90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 12, 0, 0, 29, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -42, 
+ 
+>    259, 218, 0, 0, 0, 0, 6, 0, 0, 0, 0, -62}
+333
+                                 5  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 11    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21, 0, -1, 
+ 
+>    17, 0, 0, 0, 0, 0, -59, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 29, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 89, 
+ 
+>    91, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14}
+111
+                                 9    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    8, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 
+ 
+>    99, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+102
+                                   3     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 32, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -59, 
+ 
+>    99, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+102
+                                 9    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   9   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 13  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 9  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 1    33
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    129, 0, 0, -2, 0, 0, -42, -2, -4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 
+ 
+>    129, 0, 0, 0, 0, 37, 0, 0, 0, 0, -121}
+138
+                                   11   3
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -6, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                 21  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 19  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                   5     15
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 9    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    9, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 
+ 
+>    102, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                   9   21
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 5  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -61, 16, 0, 0, 0, 0, 0, 12, 0, 0, 6, 0, 0, 0, 0, 0, -12, 0, 
+ 
+>    0, 259, 0, 0, -1, 0, 0, -144, 0, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 0, 0, 24, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -42, 279, 380, 0, 0, 0, 0, 32, 0, 0, 0, 0, -192}
+513
+                                 7    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -14, 67, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, -1, 0, -29, 0, 
+ 
+>    0, 99, 0, 0, 0, 0, 0, -103, 0, -144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 24, 0, 0, 32, 3, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -61, 333, 230, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+387
+                                 5    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 33, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -3, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -103, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 32, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -62, 
+ 
+>    233, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                   7   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                   17   21
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   9     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 0, 9, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 0, -12, 19, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+22
+                                   3   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 15    3
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -14, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 19, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+22
+                                 15  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -24, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 42, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                   1   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -48, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    129, 0, 0, 0, 0, 0, -24, -2, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 
+ 
+>    96, 0, 0, 0, 0, 24, 0, 0, 0, 0, -96}
+129
+                                   7     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -14, 20, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                 9  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 13  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 3    39
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   7   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -61, 0, 0, 0, 0, 0, 0, 12, 0, -2, 24, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 89, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -24, 
+ 
+>    64, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+92
+                                 19  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   3   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -144, 4, 0, 0, 0, 0, 0, 16, 0, -2, 37, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 259, 0, 0, 0, 0, 0, -12, 0, -24, 0, 0, 0, 0, 0, -1, 0, 0, 12, 0, 0, 
+ 
+>    0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -42, 176, 89, 0, 0, 0, 0, 9, 0, 0, 0, 0, -79}
+286
+                                   11   15
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                 11  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3  21
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1     27
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 9  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -12, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -2, 89, 0, 0, 0, 0, 0, -144, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 37, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    -24, 176, 259, 0, 0, 0, 0, 9, 0, 0, 0, 0, -79}
+286
+                                 1    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 10, 0, 0, 0, 0, 0, 33, 0, 0, 6, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 104, 0, 0, 0, 0, 0, -10, 0, -62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -103, 233, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                   3     21
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 3    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -62, 39, 0, 0, 0, 0, 0, 39, 0, 0, 9, 0, 0, 0, -1, 0, -8, 0, 
+ 
+>    0, 230, 0, 0, 0, 0, 0, -62, 0, -144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 37, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 0, 
+ 
+>    -144, 496, 230, 0, 0, 0, 0, 13, 0, 0, 0, 0, -104}
+569
+                                   15   15
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 1  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -144, 12, 0, 0, 0, 0, 0, 16, 0, 0, 24, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    0, 380, 0, 0, 0, 0, 0, -61, -1, -42, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -48, 
+ 
+>    279, 259, 0, 0, 0, 0, 32, 0, 0, 0, 0, -192}
+513
+                                 3    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                 23  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 7  21
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 17  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                 9    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   1     15
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 1    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 11  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -6, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -42, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, -4, 42, 96, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                 5  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   1   21
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   5     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -62, 0, 0, -1, 0, 0, 0, 39, 0, -1, 32, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 99, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -29, 0, -61, 
+ 
+>    111, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+129
+                                 11    15
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   5   21
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                   3     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 33, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -62, 
+ 
+>    102, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                   1     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -103, 9, 0, -1, 0, 0, 0, 67, 0, 0, 32, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 230, 0, 0, 0, 0, 0, -14, 0, -61, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 
+ 
+>    0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -29, 0, 
+ 
+>    -144, 333, 99, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+387
+                                 7    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   13   9
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 11    3
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -29, 0, -1, 
+ 
+>    19, 0, 0, 0, 0, 0, -62, 0, -61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 1, 32, 3, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 
+ 
+>    111, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+129
+                                 5    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 5    33
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 7    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 1  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 17  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 16, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                 13    9
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -10, 0, -14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 15, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                   13   21
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   5   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    96, 0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 42, 42, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                 7  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -24, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    96, 0, 0, -2, 0, 0, -48, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, -4, 48, 
+ 
+>    129, 0, 0, 0, 0, 24, 0, 1, 0, 0, -96}
+129
+                                 15  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   9   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 13  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -2, 
+ 
+>    16, 0, 0, 0, 0, 0, -61, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 24, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 64, 
+ 
+>    89, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+92
+                                   13   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 11  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 1    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 10, 0, 0, 0, 0, 0, 33, 0, 0, 6, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 104, 0, 0, 0, 0, 0, -10, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -104, 234, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                 9    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 7  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 4, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    176, 0, 0, -3, 0, 0, -121, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, -2, 0, 
+ 
+>    -16, 129, 279, 0, 0, 0, 0, 39, 0, 1, 0, 0, -170}
+288
+                                 21  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 9    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 
+ 
+>    103, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 1    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 5  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 3    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -63, 51, 0, 0, 0, 0, 0, 51, 0, 0, 10, 0, 0, 0, -4, 0, -9, 0, 
+ 
+>    0, 233, 0, 0, 0, 0, 0, -63, 0, -192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 67, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 
+ 
+>    -192, 569, 233, 0, 0, 0, 0, 13, 0, 0, 0, 0, -104}
+601
+                                 3  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -79, 42, 0, 0, 0, 0, 0, 24, 0, 0, 9, 0, 0, 0, 0, 0, -24, 0, 
+ 
+>    0, 333, 0, 0, -1, 0, 0, -192, 0, -121, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 16, 0, 0, 39, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -96, 513, 496, 0, 0, 0, 0, 33, 0, 0, 0, 0, -218}
+774
+                                   1   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 7    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   7     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -15, 21, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                 17  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 3    41
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   5     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -63, 0, 0, -2, 0, 0, 0, 51, 0, -1, 33, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 102, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    9, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -32, 0, -79, 
+ 
+>    129, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+141
+                                 7  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   1     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -104, 11, 0, -2, 0, 0, 0, 88, 0, 0, 33, 0, 0, 0, -2, 0, 0, 
+ 
+>    0, 0, 233, 0, 0, 0, 0, 0, -15, 0, -79, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 
+ 
+>    0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -32, 0, 
+ 
+>    -192, 387, 102, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+413
+                                 15  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    12, 0, 0, 0, 0, 0, -42, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                   7   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 9  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -15, 42, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -37, 0, 
+ 
+>    -3, 111, 0, 0, 0, 0, 0, -192, 0, -96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 12, 0, 0, 67, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    -42, 286, 333, 0, 0, 0, 0, 10, 0, 0, 0, 0, -91}
+403
+                                   5   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 11    5
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -32, 0, -1, 
+ 
+>    20, 0, 0, 0, 0, 0, -63, 0, -79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    9, 0, 1, 33, 3, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 
+ 
+>    129, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+141
+                                 13  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                   5     17
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 5    35
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 13  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, -3, 
+ 
+>    19, 0, 0, 0, 0, 0, -79, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 39, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 92, 
+ 
+>    111, 0, 0, 0, 0, 0, 0, 0, 0, 0, -17}
+121
+                                   1     29
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   11   13
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                   1   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -121, 4, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, -2, 0, 
+ 
+>    0, 279, 0, 0, 0, 0, 0, -42, -3, -16, 0, 0, 0, 0, 0, -2, 0, 0, 12, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -16, 129, 176, 0, 0, 0, 0, 39, 0, 0, 0, 0, -170}
+288
+                                   1     17
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   17   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 19  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                   3     23
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 3    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 7    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -15, 88, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, -2, 0, -32, 0, 
+ 
+>    0, 102, 0, 0, 0, 0, 0, -104, 0, -192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 39, 0, 0, 33, 3, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -79, 387, 233, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+413
+                                   13   7
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                 11    17
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 19  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                   15   13
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 7    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 17  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -15, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 19, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -192, 24, 0, 0, 0, 0, 0, 42, 0, 0, 39, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    0, 496, 0, 0, 0, 0, 0, -79, -1, -96, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 
+ 
+>    0, 16, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, 
+ 
+>    -121, 513, 333, 0, 0, 0, 0, 33, 0, 0, 0, 0, -218}
+774
+                                   3     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 33, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -63, 
+ 
+>    103, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 9  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, -1, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 3  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -96, 4, 0, 0, 0, 0, 0, 4, 0, 0, 12, 0, 0, 0, 0, 0, -4, 0, 0, 
+ 
+>    279, 0, 0, -3, 0, 0, -96, -3, -16, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 
+ 
+>    138, 279, 0, 0, 0, 0, 67, 0, 0, 0, 0, -237}
+329
+                                   5   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -96, 2, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    176, 0, 0, 0, 0, 0, -9, 0, -12, 0, 0, 0, 0, 0, -2, 0, 0, 12, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 96, 
+ 
+>    64, 0, 0, 0, 0, 9, 0, 0, 0, 0, -64}
+176
+                                   7   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -79, 0, 0, 0, 0, 0, 0, 24, 0, -3, 39, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 111, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, -42, 
+ 
+>    92, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, -17}
+121
+                                 3    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   9   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 13    11
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -10, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 15, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                   3   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, 0, 0, 0, -12, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    42, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 1  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 1    35
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 5    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 11  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -9, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    64, 0, 0, 0, 0, 0, -96, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, -12, 
+ 
+>    96, 176, 0, 0, 0, 0, 9, 0, 0, 0, 0, -64}
+176
+                                   3   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -192, 6, 0, 0, 0, 0, 0, 42, 0, -3, 67, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 333, 0, 0, 0, 0, 0, -15, 0, -42, 0, 0, 0, 0, 0, -1, 0, 0, 13, 0, 0, 
+ 
+>    0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -37, 0, 
+ 
+>    -96, 286, 111, 0, 0, 0, 0, 10, 0, 0, 0, 0, -91}
+403
+                                 15  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 23  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                   11   1
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 6, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -9, 16, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                   9     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 11, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, -15, 22, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+24
+                                 5    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 33, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -3, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -63, 
+ 
+>    234, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                 15    5
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -15, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 20, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+24
+                                   9   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -42, 0, 0, 0, 0, 0, 0, 4, 0, -1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -12, 42, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                 7  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -64, 16, 0, 0, 0, 0, 0, 12, 0, 0, 6, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -2, 286, 0, 0, -3, 0, 0, -237, 0, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 0, 0, 42, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, -4, 0, 
+ 
+>    -42, 288, 513, 0, 0, 0, 0, 51, 0, 1, 0, 0, -259}
+562
+                                 1  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -48, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    138, 0, 0, -2, 0, 0, -42, -4, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 
+ 
+>    48, 129, 0, 0, 0, 0, 42, 0, 0, 0, 0, -129}
+138
+                                 21  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 5    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -91, 90, 0, 0, 0, 0, 0, 42, 0, 0, 11, 0, 0, 0, -1, 0, -39, 
+ 
+>    0, 0, 387, 0, 0, -1, 0, 0, -218, 0, -237, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 42, 0, 0, 51, 6, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, -9, 
+ 
+>    0, -170, 774, 569, 0, 0, 0, 0, 33, 0, 0, 0, 0, -230}
+1008
+                                 1    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   11   23
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -2]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 17  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -24, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 42, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                   11     1
+affineWeight[2, finiteWeight[2, {-(--), -(-)}], 3, 0]
+                                   2      2
+ 
+>   {0, 0, 0, 0, -17, 0, 0, 0, 0, 0, 0, 9, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, -12, 20, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+24
+                                 11  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -12, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -4, 92, 0, 0, 0, 0, 0, -170, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 42, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 
+ 
+>    -24, 176, 286, 0, 0, 0, 0, 11, 0, 0, 0, 0, -89}
+292
+                                   1   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -237, 12, 0, 0, 0, 0, 0, 16, 0, -2, 42, 0, 0, 0, 0, 0, -4, 
+ 
+>    0, 0, 513, 0, 0, 0, 0, 0, -64, -3, -42, 0, 0, 0, 0, 0, -3, 0, 0, 21, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -16, 
+ 
+>    0, -48, 288, 286, 0, 0, 0, 0, 51, 0, 0, 0, 0, -259}
+562
+                                 17  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   17   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 19  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                   3   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -48, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    129, 0, 0, 0, 0, 0, -24, -2, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 
+ 
+>    96, 0, 0, 0, 0, 24, 0, 0, 0, 0, -96}
+129
+                                 15  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -2, 
+ 
+>    16, 0, 0, 0, 0, 0, -64, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 24, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 64, 
+ 
+>    92, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16}
+92
+                                   13   5
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -6, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                 19  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 16, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                   5   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   7     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -15, 21, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                 1    37
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   11   11
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 3  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -170, 16, 0, 0, 0, 0, 0, 16, 0, 0, 24, 0, 0, 0, 0, 0, -12, 
+ 
+>    0, 0, 513, 0, 0, -3, 0, 0, -170, -3, -48, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 24, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 
+ 
+>    0, -48, 329, 513, 0, 0, 0, 0, 88, 0, 0, 0, 0, -380}
+693
+                                 1    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 10, 0, 0, 0, 0, 0, 33, 0, 0, 6, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 104, 0, 0, 0, 0, 0, -10, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -104, 234, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                   1     19
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   1     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -104, 13, 0, -3, 0, 0, 0, 100, 0, 0, 33, 0, 0, 0, -4, 0, 0, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -15, 0, -91, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 
+ 
+>    0, 0, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, 
+ 
+>    -218, 413, 103, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+425
+                                 9  23
+affineWeight[2, finiteWeight[2, {-, --}], 3, -7]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   7     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -91, 0, 0, -1, 0, 0, 0, 42, 0, -3, 51, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 129, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -39, 0, -64, 
+ 
+>    121, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, -19}
+149
+                                 5    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 33, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -3, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -63, 
+ 
+>    234, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                 9    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 
+ 
+>    103, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 13  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -6, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -42, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, -4, 42, 96, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                 1  23
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 13  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   13   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                 5    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   19   23
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   5     19
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   9     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 13, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, -17, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+26
+                                 3    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                 11    7
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -1, 
+ 
+>    21, 0, 0, 0, 0, 0, -63, 0, -91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    11, 0, 1, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -17, 
+ 
+>    141, 103, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+149
+                                 7    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -15, 100, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, -4, 0, -33, 
+ 
+>    0, 0, 103, 0, 0, 0, 0, 0, -104, 0, -218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 51, 0, 0, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -91, 413, 234, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+425
+                                 17    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -7]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -17, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 22, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+24
+                                 23  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 25  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -11]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   5     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -63, 0, 0, -3, 0, 0, 0, 59, 0, -1, 33, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 103, 0, 0, 0, 0, 0, 0, 0, -17, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    11, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -91, 
+ 
+>    141, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+149
+                                   3   23
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 9    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 1    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -218, 42, 0, -1, 0, 0, 0, 90, 0, 0, 51, 0, 0, 0, -1, 0, -9, 
+ 
+>    0, 0, 569, 0, 0, 0, 0, 0, -91, -1, -170, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 
+ 
+>    0, 0, 0, 42, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -39, 
+ 
+>    0, -237, 774, 387, 0, 0, 0, 0, 33, 0, 0, 0, 0, -230}
+1008
+                                 3    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -63, 59, 0, 0, 0, 0, 0, 59, 0, 0, 10, 0, 0, 0, -9, 0, -10, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -63, 0, -218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 88, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 
+ 
+>    -218, 601, 234, 0, 0, 0, 0, 13, 0, 0, 0, 0, -104}
+613
+                                 5  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    129, 0, 0, -4, 0, 0, -48, -2, -4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, -4, 48, 
+ 
+>    138, 0, 0, 0, 0, 42, 0, 1, 0, 0, -129}
+138
+                                 9    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -5]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -17, 90, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, -1, 0, -67, 0, 
+ 
+>    -3, 129, 0, 0, 0, 0, 0, -218, 0, -170, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 24, 0, 1, 88, 13, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, -64, 403, 387, 0, 0, 0, 0, 10, 0, 0, 0, 0, -99}
+513
+                                   9   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -64, 0, 0, 0, 0, 0, 0, 12, 0, -2, 24, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 92, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -24, 
+ 
+>    64, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16}
+92
+                                 9  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -24, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    96, 0, 0, -2, 0, 0, -48, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, -4, 48, 
+ 
+>    129, 0, 0, 0, 0, 24, 0, 1, 0, 0, -96}
+129
+                                   3     25
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 5    37
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   3     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 33, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -63, 
+ 
+>    103, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 21  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 7    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 15    7
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -15, 0, -17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 21, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+26
+                                 13    13
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -10, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 15, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                 11  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   15   11
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                   1   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   7   23
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 3    43
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 7  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 7    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 11    19
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   9   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 13    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -39, 0, -3, 
+ 
+>    22, 0, 0, 0, 0, 0, -91, 0, -64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 1, 51, 6, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 
+ 
+>    121, 129, 0, 0, 0, 0, 0, 0, 0, 0, 0, -19}
+149
+                                   7   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    96, 0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 42, 42, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                   15   23
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   3     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -218, 9, 0, -1, 0, 0, 0, 90, 0, -3, 88, 0, 0, 0, -1, 0, 0, 
+ 
+>    0, 0, 387, 0, 0, 0, 0, 0, -17, 0, -64, 0, 0, 0, 0, 0, -1, 0, 0, 13, 0, 
+ 
+>    0, 0, 0, 24, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -67, 
+ 
+>    0, -170, 403, 129, 0, 0, 0, 0, 10, 0, 0, 0, 0, -99}
+513
+                                   5   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -170, 4, 0, 0, 0, 0, 0, 16, 0, -4, 42, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 286, 0, 0, 0, 0, 0, -12, 0, -24, 0, 0, 0, 0, 0, -3, 0, 0, 21, 0, 0, 
+ 
+>    0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -42, 176, 92, 0, 0, 0, 0, 11, 0, 0, 0, 0, -89}
+292
+                                 3    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 15  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 5  23
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1     31
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   11     3
+affineWeight[2, finiteWeight[2, {-(--), -(-)}], 3, 0]
+                                   2      2
+ 
+>   {0, 0, 0, 0, -19, 0, 0, 0, 0, 0, 0, 12, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 0, -16, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+27
+                                   7     15
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -15, 21, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                   7   21
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   13   3
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 6, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -9, 16, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                   1     33
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 7  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                   5   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -259, 6, 0, 0, 0, 0, 0, 42, 0, -9, 90, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 403, 0, 0, 0, 0, 0, -16, 0, -42, 0, 0, 0, 0, 0, -3, 0, 0, 29, 0, 0, 
+ 
+>    0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -42, 0, 
+ 
+>    -96, 292, 121, 0, 0, 0, 0, 13, 0, 0, 0, 0, -111}
+430
+                                   9   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -89, 0, 0, 0, 0, 0, 0, 24, 0, -4, 42, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 121, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, -42, 
+ 
+>    92, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, -19}
+124
+                                   7   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -96, 2, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    176, 0, 0, 0, 0, 0, -9, 0, -12, 0, 0, 0, 0, 0, -2, 0, 0, 12, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 96, 
+ 
+>    64, 0, 0, 0, 0, 9, 0, 0, 0, 0, -64}
+176
+                                   3     27
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   3     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -230, 12, 0, -4, 0, 0, 0, 144, 0, -3, 100, 0, 0, 0, -2, 0, 
+ 
+>    0, 0, 0, 413, 0, 0, 0, 0, 0, -19, 0, -89, 0, 0, 0, 0, 0, -1, 0, 0, 13, 
+ 
+>    0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -88, 0, -259, 513, 141, 0, 0, 0, 0, 10, 0, 0, 0, 0, -102}
+593
+                                 9    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 
+ 
+>    103, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 13    15
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -10, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 15, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                   1     21
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 19  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -16, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 20, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                   9   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 1    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 3    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   1     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -104, 14, 0, -3, 0, 0, 0, 103, 0, 0, 33, 0, 0, 0, -5, 0, 0, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -15, 0, -99, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 
+ 
+>    0, 0, 59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, 
+ 
+>    -230, 425, 103, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+428
+                                 17  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    12, 0, 0, 0, 0, 0, -42, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                 11  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, -1, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 3    45
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 15    9
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -15, 0, -19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 21, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+27
+                                 5    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   9     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 14, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, -19, 26, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+27
+                                 11  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -16, 42, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -42, 0, 
+ 
+>    -9, 121, 0, 0, 0, 0, 0, -259, 0, -96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 12, 0, 0, 90, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 
+ 
+>    -42, 292, 403, 0, 0, 0, 0, 13, 0, 0, 0, 0, -111}
+430
+                                 11    21
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 5  21
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   17   15
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   15   9
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                 19  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 13  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 5    39
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -259, 42, 0, 0, 0, 0, 0, 42, 0, 0, 42, 0, 0, 0, 0, 0, -24, 
+ 
+>    0, 0, 774, 0, 0, -3, 0, 0, -259, -3, -129, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 
+ 
+>    0, 0, 0, 16, 0, 0, 42, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 
+ 
+>    0, -129, 693, 774, 0, 0, 0, 0, 100, 0, 0, 0, 0, -496}
+1215
+                                 3    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -63, 62, 0, 0, 0, 0, 0, 62, 0, 0, 10, 0, 0, 0, -12, 0, -10, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -63, 0, -230, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 100, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 
+ 
+>    0, -230, 613, 234, 0, 0, 0, 0, 13, 0, 0, 0, 0, -104}
+616
+                                 23  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   19   21
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 9  21
+affineWeight[2, finiteWeight[2, {-, --}], 3, -7]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    33
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 7  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -89, 48, 0, 0, 0, 0, 0, 24, 0, 0, 9, 0, 0, 0, 0, 0, -42, 0, 
+ 
+>    -4, 403, 0, 0, -3, 0, 0, -380, 0, -129, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 16, 0, 0, 90, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, -6, 
+ 
+>    0, -96, 562, 774, 0, 0, 0, 0, 59, 0, 1, 0, 0, -333}
+930
+                                 5  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -96, 4, 0, 0, 0, 0, 0, 4, 0, 0, 12, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -1, 288, 0, 0, -9, 0, 0, -129, -4, -16, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, -4, 0, 
+ 
+>    -16, 138, 329, 0, 0, 0, 0, 90, 0, 2, 0, 0, -279}
+340
+                                 9    27
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 21  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 15  15
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                   1   3
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -380, 24, 0, 0, 0, 0, 0, 48, 0, -4, 90, 0, 0, 0, 0, 0, -6, 
+ 
+>    0, 0, 774, 0, 0, 0, 0, 0, -89, -3, -96, 0, 0, 0, 0, 0, -3, 0, 0, 29, 0, 
+ 
+>    0, 0, 0, 16, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -42, 
+ 
+>    0, -129, 562, 403, 0, 0, 0, 0, 59, 0, 0, 0, 0, -333}
+930
+                                   3   9
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -129, 4, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, -2, 0, 
+ 
+>    0, 288, 0, 0, 0, 0, 0, -42, -4, -16, 0, 0, 0, 0, 0, -4, 0, 0, 16, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -16, 129, 176, 0, 0, 0, 0, 42, 0, 0, 0, 0, -176}
+288
+                                 3  15
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 25  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -11]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 15  3
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, -4, 
+ 
+>    20, 0, 0, 0, 0, 0, -89, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 42, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 92, 
+ 
+>    121, 0, 0, 0, 0, 0, 0, 0, 0, 0, -19}
+124
+                                 13  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -9, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    64, 0, 0, 0, 0, 0, -96, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, -12, 
+ 
+>    96, 176, 0, 0, 0, 0, 9, 0, 0, 0, 0, -64}
+176
+                                   11   9
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -42, 0, 0, 0, 0, 0, 0, 4, 0, -1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -12, 42, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                 21  9
+affineWeight[2, finiteWeight[2, {--, -}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                   3     15
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 33, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -63, 
+ 
+>    103, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                   3   21
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 1  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -129, 4, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    0, 329, 0, 0, -4, 0, 0, -96, -9, -16, 0, 0, 0, 0, 0, -2, 0, 0, 12, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -16, 138, 288, 0, 0, 0, 0, 90, 0, 0, 0, 0, -279}
+340
+                                   5     9
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -63, 0, 0, -3, 0, 0, 0, 62, 0, -1, 33, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 103, 0, 0, 0, 0, 0, 0, 0, -19, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -99, 
+ 
+>    149, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+152
+                                   11   21
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -2]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   1   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                   5     21
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 1    39
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 7    33
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 1  21
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 1    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 10, 0, 0, 0, 0, 0, 33, 0, 0, 6, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 104, 0, 0, 0, 0, 0, -10, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -104, 234, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                 17    3
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -7]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -19, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 24, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+27
+                                   7     3
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -99, 0, 0, -2, 0, 0, 0, 61, 0, -3, 59, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 141, 0, 0, 0, 0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    9, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -51, 0, -89, 
+ 
+>    149, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20}
+171
+                                   13   15
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 5    15
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 33, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -3, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -63, 
+ 
+>    234, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                 9  9
+affineWeight[2, finiteWeight[2, {-, -}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 4, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    176, 0, 0, -4, 0, 0, -129, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, -2, 0, 
+ 
+>    -16, 129, 288, 0, 0, 0, 0, 42, 0, 2, 0, 0, -176}
+288
+                                 1    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -230, 61, 0, -2, 0, 0, 0, 144, 0, 0, 59, 0, 0, 0, -4, 0, 
+ 
+>    -11, 0, 0, 601, 0, 0, 0, 0, 0, -99, -1, -259, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 90, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -51, 0, -380, 1008, 413, 0, 0, 0, 0, 33, 0, 0, 0, 0, -233}
+1158
+                                   15   21
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 11    9
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -1, 
+ 
+>    21, 0, 0, 0, 0, 0, -63, 0, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 1, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -19, 
+ 
+>    149, 103, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+152
+                                 5    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -99, 144, 0, 0, 0, 0, 0, 61, 0, 0, 13, 0, 0, 0, -4, 0, -51, 
+ 
+>    0, 0, 413, 0, 0, -1, 0, 0, -230, 0, -380, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 90, 0, 0, 59, 6, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -11, 0, -259, 1008, 601, 0, 0, 0, 0, 33, 0, 0, 0, 0, -233}
+1158
+                                 9    3
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -5]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -19, 144, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, -2, 0, -88, 
+ 
+>    0, -3, 141, 0, 0, 0, 0, 0, -230, 0, -259, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 42, 0, 2, 100, 13, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    0, 0, -89, 513, 413, 0, 0, 0, 0, 10, 0, 0, 0, 0, -102}
+593
+                                 17  21
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 7    9
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -15, 103, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, -5, 0, -33, 
+ 
+>    0, 0, 103, 0, 0, 0, 0, 0, -104, 0, -230, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 59, 0, 0, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -99, 425, 234, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+428
+                                   5   15
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, 0, 0, 0, -12, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    42, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 7    21
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 13    3
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -51, 0, -3, 
+ 
+>    24, 0, 0, 0, 0, 0, -99, 0, -89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    9, 0, 2, 59, 6, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16, 
+ 
+>    149, 141, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20}
+171
+                                 17    5
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -7]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -20, 0, -19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 26, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+30
+                                   11   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -2]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 13  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                   3     17
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 33, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -63, 
+ 
+>    103, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 17  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, -12}
+16
+                                 11  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -24, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    96, 0, 0, -2, 0, 0, -48, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, -4, 48, 
+ 
+>    129, 0, 0, 0, 0, 24, 0, 1, 0, 0, -96}
+129
+                                 7    35
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   7     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -102, 0, 0, -4, 0, 0, 0, 79, 0, -3, 62, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 149, 0, 0, 0, 0, 0, 0, 0, -19, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -59, 0, -111, 
+ 
+>    171, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21}
+189
+                                   19   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 23  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                 3  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -48, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    138, 0, 0, -4, 0, 0, -48, -4, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, -1, 0, -4, 
+ 
+>    48, 138, 0, 0, 0, 0, 48, 0, 1, 0, 0, -138}
+138
+                                 1  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -279, 16, 0, 0, 0, 0, 0, 16, 0, -2, 42, 0, 0, 0, 0, 0, -12, 
+ 
+>    0, 0, 693, 0, 0, -5, 0, 0, -176, -12, -48, 0, 0, 0, 0, 0, -4, 0, 0, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 24, 6, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -16, 0, -48, 340, 562, 0, 0, 0, 0, 144, 0, 0, 0, 0, -513}
+759
+                                 7    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -15, 104, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, -6, 0, -33, 
+ 
+>    0, 0, 103, 0, 0, 0, 0, 0, -104, 0, -233, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 62, 0, 0, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -102, 428, 234, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+429
+                                 7  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -111, 121, 0, 0, 0, 0, 0, 42, 0, 0, 12, 0, 0, 0, -1, 0, -90, 
+ 
+>    0, -5, 513, 0, 0, -3, 0, 0, -496, 0, -279, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 42, 0, 1, 144, 32, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    -9, 0, -176, 930, 1008, 0, 0, 0, 0, 62, 0, 1, 0, 0, -387}
+1347
+                                 13    17
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -10, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 15, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                 25  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -11]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                   13   13
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 24, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 1    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   9   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    96, 0, 0, 0, 0, 0, -6, 0, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 42, 42, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                 1    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -233, 79, 0, -4, 0, 0, 0, 192, 0, 0, 62, 0, 0, 0, -12, 0, 
+ 
+>    -13, 0, 0, 613, 0, 0, 0, 0, 0, -102, -1, -333, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 0, 0, 144, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -59, 0, -496, 1158, 425, 0, 0, 0, 0, 33, 0, 0, 0, 0, -234}
+1239
+                                   9   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -1]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -111, 0, 0, -1, 0, 0, 0, 42, 0, -5, 61, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 149, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -42, 0, -64, 
+ 
+>    124, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, -22}
+159
+                                 15    11
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -15, 0, -20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 21, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+28
+                                   7   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -176, 4, 0, 0, 0, 0, 0, 16, 0, -4, 42, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 292, 0, 0, 0, 0, 0, -12, 0, -24, 0, 0, 0, 0, 0, -4, 0, 0, 24, 0, 0, 
+ 
+>    0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -42, 176, 92, 0, 0, 0, 0, 12, 0, 0, 0, 0, -92}
+292
+                                   3     29
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   3     5
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -233, 15, 0, -9, 0, 0, 0, 192, 0, -3, 103, 0, 0, 0, -4, 0, 
+ 
+>    0, 0, 0, 425, 0, 0, 0, 0, 0, -20, 0, -111, 0, 0, 0, 0, 0, -1, 0, 0, 13, 
+ 
+>    0, 0, 0, 0, 61, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -100, 0, -333, 593, 149, 0, 0, 0, 0, 10, 0, 0, 0, 0, -103}
+647
+                                 5  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 11    23
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 3    47
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                   5     23
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   1   25
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -5]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   11   7
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -64, 0, 0, 0, 0, 0, 0, 12, 0, -2, 24, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 92, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -24, 
+ 
+>    64, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16}
+92
+                                 9    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -5]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -20, 192, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, -4, 0, -100, 
+ 
+>    0, -3, 149, 0, 0, 0, 0, 0, -233, 0, -333, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 61, 0, 3, 103, 13, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    0, 0, -111, 593, 425, 0, 0, 0, 0, 10, 0, 0, 0, 0, -103}
+647
+                                   5   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -48, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    129, 0, 0, 0, 0, 0, -24, -2, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 48, 
+ 
+>    96, 0, 0, 0, 0, 24, 0, 0, 0, 0, -96}
+129
+                                 23  25
+affineWeight[2, finiteWeight[2, {--, --}], 3, -11]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 5    41
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 9  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -64, 16, 0, 0, 0, 0, 0, 12, 0, 0, 6, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -4, 292, 0, 0, -5, 0, 0, -279, 0, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 0, 0, 48, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, -4, 0, 
+ 
+>    -42, 288, 562, 0, 0, 0, 0, 61, 0, 3, 0, 0, -286}
+572
+                                   1   13
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -48, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    138, 0, 0, -2, 0, 0, -42, -4, -4, 0, 0, 0, 0, 0, -1, 0, 0, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, -4, 
+ 
+>    48, 129, 0, 0, 0, 0, 42, 0, 0, 0, 0, -129}
+138
+                                 19  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -19, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+25
+                                 21  19
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -4}
+12
+                                 11    11
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -1, 
+ 
+>    21, 0, 0, 0, 0, 0, -63, 0, -102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    14, 0, 1, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, 
+ 
+>    152, 103, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+153
+                                 9  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -7]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 7  13
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -42, 1, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    129, 0, 0, -4, 0, 0, -48, -2, -4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, -4, 48, 
+ 
+>    138, 0, 0, 0, 0, 42, 0, 1, 0, 0, -129}
+138
+                                   1   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -496, 42, 0, -1, 0, 0, 0, 121, 0, -5, 144, 0, 0, 0, -1, 0, 
+ 
+>    -9, 0, 0, 1008, 0, 0, 0, 0, 0, -111, -3, -176, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    32, 0, 0, 0, 0, 42, 0, 0, 12, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -90, 0, -279, 930, 513, 0, 0, 0, 0, 62, 0, 0, 0, 0, -387}
+1347
+                                   13   1
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -19, 0, 0, 0, 0, 0, 0, 9, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 0, -12, 20, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+25
+                                   21   25
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 3    11
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -63, 63, 0, 0, 0, 0, 0, 63, 0, 0, 10, 0, 0, 0, -13, 0, -10, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -63, 0, -233, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 103, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 
+ 
+>    0, -233, 616, 234, 0, 0, 0, 0, 13, 0, 0, 0, 0, -104}
+617
+                                 15  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -42, 0, -5, 
+ 
+>    24, 0, 0, 0, 0, 0, -111, 0, -64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 1, 61, 9, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 
+ 
+>    124, 149, 0, 0, 0, 0, 0, 0, 0, 0, 0, -22}
+159
+                                 1    41
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                 1  19
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 21  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 16, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                 1    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 10, 0, 0, 0, 0, 0, 33, 0, 0, 6, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 104, 0, 0, 0, 0, 0, -10, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -104, 234, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                   3   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 3    35
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 5    5
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -102, 192, 0, 0, 0, 0, 0, 79, 0, 0, 14, 0, 0, 0, -12, 0, 
+ 
+>    -59, 0, 0, 425, 0, 0, -1, 0, 0, -233, 0, -496, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 144, 0, 0, 62, 6, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -13, 0, -333, 1158, 613, 0, 0, 0, 0, 33, 0, 0, 0, 0, -234}
+1239
+                                   11     5
+affineWeight[2, finiteWeight[2, {-(--), -(-)}], 3, 0]
+                                   2      2
+ 
+>   {0, 0, 0, 0, -20, 0, 0, 0, 0, 0, 0, 15, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -19, 27, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+30
+                                 3    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                 7  25
+affineWeight[2, finiteWeight[2, {-, --}], 3, -7]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 19  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, -24, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 24, 42, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -9}
+42
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -333, 96, 0, -1, 0, 0, 0, 96, 0, 0, 61, 0, 0, 0, -1, 0, -42, 
+ 
+>    0, 0, 1008, 0, 0, -3, 0, 0, -333, -3, -279, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 48, 0, 0, 61, 9, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -42, 0, -279, 1215, 1008, 0, 0, 0, 0, 103, 0, 0, 0, 0, -569}
+1828
+                                 13    5
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -59, 0, -3, 
+ 
+>    26, 0, 0, 0, 0, 0, -102, 0, -111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 3, 62, 6, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -19, 
+ 
+>    171, 149, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21}
+189
+                                   3   7
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -279, 12, 0, 0, 0, 0, 0, 16, 0, -4, 48, 0, 0, 0, 0, 0, -4, 
+ 
+>    0, 0, 562, 0, 0, 0, 0, 0, -64, -5, -42, 0, 0, 0, 0, 0, -9, 0, 0, 37, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, -16, 
+ 
+>    0, -48, 288, 292, 0, 0, 0, 0, 61, 0, 0, 0, 0, -286}
+572
+                                   15   7
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -6, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+16
+                                   9     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 15, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, -20, 27, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+28
+                                 27  25
+affineWeight[2, finiteWeight[2, {--, --}], 3, -12]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 17  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -2, 
+ 
+>    16, 0, 0, 0, 0, 0, -64, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    2, 0, 0, 24, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 64, 
+ 
+>    92, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16}
+92
+                                   1     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -104, 15, 0, -3, 0, 0, 0, 104, 0, 0, 33, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -15, 0, -102, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 
+ 
+>    0, 0, 62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, 
+ 
+>    -233, 428, 103, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+429
+                                 9    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 
+ 
+>    103, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 19  25
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 15  25
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 9    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   17   13
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -2, 6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+9
+                                   5   25
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   5     11
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -63, 0, 0, -3, 0, 0, 0, 63, 0, -1, 33, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 103, 0, 0, 0, 0, 0, 0, 0, -20, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    14, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -102, 
+ 
+>    152, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+153
+                                   15   19
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -4}
+12
+                                   7   19
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    16, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 16, 0, 
+ 
+>    0, 0, 0, 4, 0, 0, 0, 0, -16}
+16
+                                 5  7
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -176, 16, 0, 0, 0, 0, 0, 16, 0, 0, 24, 0, 0, 0, 0, 0, -16, 
+ 
+>    0, -2, 562, 0, 0, -12, 0, 0, -279, -5, -48, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 42, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 
+ 
+>    -12, 0, -48, 340, 693, 0, 0, 0, 0, 144, 0, 3, 0, 0, -513}
+759
+                                 11  1
+affineWeight[2, finiteWeight[2, {--, -}], 3, -6]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -19, 96, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, -1, 0, -90, 0, 
+ 
+>    -12, 149, 0, 0, 0, 0, 0, -333, 0, -176, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 24, 0, 1, 144, 32, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, -64, 430, 513, 0, 0, 0, 0, 14, 0, 0, 0, 0, -129}
+584
+                                 3  25
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 7    23
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   13   25
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -2]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 13  7
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -12, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 
+ 
+>    -4, 92, 0, 0, 0, 0, 0, -176, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 42, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 
+ 
+>    -24, 176, 292, 0, 0, 0, 0, 12, 0, 0, 0, 0, -92}
+292
+                                   1     23
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 5    17
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 33, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -3, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -63, 
+ 
+>    234, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                   17   25
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                 15  13
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -6, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -42, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, -4, 42, 96, 
+ 
+>    0, 0, 0, 0, 6, 0, 0, 0, 0, -42}
+96
+                                   5   1
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -333, 9, 0, -1, 0, 0, 0, 96, 0, -12, 144, 0, 0, 0, -1, 0, 0, 
+ 
+>    0, 0, 513, 0, 0, 0, 0, 0, -19, 0, -64, 0, 0, 0, 0, 0, -3, 0, 0, 32, 0, 
+ 
+>    0, 0, 0, 24, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -90, 
+ 
+>    0, -176, 430, 149, 0, 0, 0, 0, 14, 0, 0, 0, 0, -129}
+584
+                                   9   25
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   1     35
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 11  25
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -1}
+1
+                                   7     17
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -15, 21, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                 5    29
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 9  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -7]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 19  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    12, 0, 0, 0, 0, 0, -42, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 42, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                   11   5
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -92, 0, 0, 0, 0, 0, 0, 24, 0, -4, 42, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 124, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, -42, 
+ 
+>    92, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20}
+124
+                                 3    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -63, 63, 0, 0, 0, 0, 0, 63, 0, 0, 10, 0, 0, 0, -13, 0, -10, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -63, 0, -234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 104, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 
+ 
+>    0, -234, 617, 234, 0, 0, 0, 0, 13, 0, 0, 0, 0, -104}
+617
+                                 7    13
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -15, 104, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, -6, 0, -33, 
+ 
+>    0, 0, 103, 0, 0, 0, 0, 0, -104, 0, -234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 63, 0, 0, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -103, 429, 234, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+429
+                                 19    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -8]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -22, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 27, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+29
+                                 21  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -12, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 24, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 3  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -129, 4, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -1, 340, 0, 0, -12, 0, 0, -129, -12, -16, 0, 0, 0, 0, 0, -2, 0, 0, 12, 
+ 
+>    0, 0, 0, 0, 1, 0, 0, 16, 12, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, -2, 0, 0, 
+ 
+>    -4, 0, -16, 138, 340, 1, 0, 0, 0, 121, 0, 2, 0, 0, -329}
+352
+                                   5     25
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -10, 15, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                 9    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, -33, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 13, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 
+ 
+>    103, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                   3     31
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -6, 10, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                 1  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                   9     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 15, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, -21, 28, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+28
+                                   13     1
+affineWeight[2, finiteWeight[2, {-(--), -(-)}], 3, 0]
+                                   2      2
+ 
+>   {0, 0, 0, 0, -22, 0, 0, 0, 0, 0, 0, 12, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, -16, 25, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+29
+                                 11    25
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -4]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -6, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 10, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+15
+                                   1   23
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -5]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 7    37
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                   13   11
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -42, 0, 0, 0, 0, 0, 0, 4, 0, -1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    64, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -12, 42, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12}
+64
+                                   9   23
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                   5   23
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 7    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -5]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -129, 237, 0, 0, 0, 0, 0, 64, 0, 0, 15, 0, 0, 0, -4, 0, 
+ 
+>    -144, 0, -6, 593, 0, 0, -3, 0, 0, -569, 0, -513, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 96, 0, 2, 192, 33, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -3, 
+ 
+>    0, 0, -12, 0, -286, 1347, 1158, 0, 0, 0, 0, 63, 0, 1, 0, 0, -413}
+1715
+                                   17   23
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                 17    7
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -7]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -21, 0, -22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 27, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+32
+                                 5    43
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   3   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 9    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -5]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -21, 218, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, -6, 0, -103, 
+ 
+>    0, -3, 152, 0, 0, 0, 0, 0, -234, 0, -387, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 79, 0, 3, 104, 13, 0, 0, 1, 0, 0, -12, 0, 0, 0, 0, 0, -1, 0, 0, 
+ 
+>    0, 0, -129, 647, 428, 0, 0, 0, 0, 10, 0, 0, 0, 0, -103}
+673
+                                 7  11
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -96, 4, 0, 0, 0, 0, 0, 4, 0, 0, 12, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -1, 288, 0, 0, -12, 0, 0, -138, -4, -16, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, -4, 
+ 
+>    0, -16, 138, 340, 0, 0, 0, 0, 96, 0, 4, 0, 0, -288}
+340
+                                   3     19
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -33, 0, 0, -1, 0, 0, 0, 33, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, -63, 
+ 
+>    103, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10}
+103
+                                 21  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -16, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 20, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                 15  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -9, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    64, 0, 0, 0, 0, 0, -96, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, -12, 
+ 
+>    96, 176, 0, 0, 0, 0, 9, 0, 0, 0, 0, -64}
+176
+                                 3    37
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 13, 3, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, -1}
+13
+                                 11  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -42, 4, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, -4, 0, -1, 
+ 
+>    176, 0, 0, -4, 0, 0, -129, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, -2, 0, 
+ 
+>    -16, 129, 288, 0, 0, 0, 0, 42, 0, 2, 0, 0, -176}
+288
+                                 1  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -513, 42, 0, 0, 0, 0, 0, 48, 0, -4, 96, 0, 0, 0, 0, 0, -24, 
+ 
+>    0, 0, 1215, 0, 0, -6, 0, 0, -286, -13, -129, 0, 0, 0, 0, 0, -5, 0, 0, 
+ 
+>    39, 0, 0, 0, 0, 16, 0, 0, 42, 9, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -42, 0, -138, 759, 930, 0, 0, 0, 0, 192, 0, 0, 0, 0, -774}
+1457
+                                 11    13
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -1, 
+ 
+>    21, 0, 0, 0, 0, 0, -63, 0, -103, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 1, 33, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21, 
+ 
+>    153, 103, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+153
+                                 3    49
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 15    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -7]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -61, 0, -6, 
+ 
+>    27, 0, 0, 0, 0, 0, -129, 0, -92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    9, 0, 2, 79, 10, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16, 
+ 
+>    159, 171, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24}
+191
+                                 5    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -10, 33, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -3, 0, -6, 0, 
+ 
+>    0, 63, 0, 0, 0, 0, 0, -33, 0, -104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -63, 
+ 
+>    234, 104, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                 23  11
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -9, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 12, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                   1     37
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                 9    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+10
+                                   11   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -2]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 24, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 17  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24, 0, -4, 
+ 
+>    20, 0, 0, 0, 0, 0, -92, 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    4, 0, 0, 42, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9, 92, 
+ 
+>    124, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20}
+124
+                                   1     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -3]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -569, 64, 0, -4, 0, 0, 0, 237, 0, -6, 192, 0, 0, 0, -4, 0, 
+ 
+>    -12, 0, 0, 1158, 0, 0, 0, 0, 0, -129, -3, -286, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 96, 0, 0, 15, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -144, 0, -513, 1347, 593, 0, 0, 0, 0, 63, 0, 0, 0, 0, -413}
+1715
+                                   15   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -1]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 12, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+24
+                                 13  5
+affineWeight[2, finiteWeight[2, {--, -}], 3, -7]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -16, 42, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -42, 0, 
+ 
+>    -12, 124, 0, 0, 0, 0, 0, -286, 0, -96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 12, 0, 0, 96, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 
+ 
+>    -42, 292, 430, 0, 0, 0, 0, 15, 0, 0, 0, 0, -121}
+436
+                                   5   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -129, 4, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, -2, 0, 
+ 
+>    0, 288, 0, 0, 0, 0, 0, -42, -4, -16, 0, 0, 0, 0, 0, -4, 0, 0, 16, 0, 0, 
+ 
+>    0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    -16, 129, 176, 0, 0, 0, 0, 42, 0, 0, 0, 0, -176}
+288
+                                   9   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -96, 2, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    176, 0, 0, 0, 0, 0, -9, 0, -12, 0, 0, 0, 0, 0, -2, 0, 0, 12, 0, 0, 0, 0, 
+ 
+>    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, -16, 96, 
+ 
+>    64, 0, 0, 0, 0, 9, 0, 0, 0, 0, -64}
+176
+                                 1    43
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, 0]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+3
+                                   1   11
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -4]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -138, 4, 0, 0, 0, 0, 0, 4, 0, -1, 16, 0, 0, 0, 0, 0, -4, 0, 
+ 
+>    0, 340, 0, 0, -4, 0, 0, -96, -12, -16, 0, 0, 0, 0, 0, -4, 0, 0, 16, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 12, 4, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, -4, 
+ 
+>    0, -16, 138, 288, 0, 0, 0, 0, 96, 0, 0, 0, 0, -288}
+340
+                                   7   17
+affineWeight[2, finiteWeight[2, {-(-), --}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, 0, 0, 0, -12, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    42, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                   7     19
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, 0]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -15, 21, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                   1     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -104, 15, 0, -3, 0, 0, 0, 104, 0, 0, 33, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 234, 0, 0, 0, 0, 0, -15, 0, -103, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 
+ 
+>    0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, 
+ 
+>    -234, 429, 103, 0, 0, 0, 0, 6, 0, 0, 0, 0, -63}
+429
+                                 11    1
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, -22, 170, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, -2, 0, -144, 
+ 
+>    0, -13, 171, 0, 0, 0, 0, 0, -387, 0, -286, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 42, 0, 4, 192, 33, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    0, 0, -92, 584, 593, 0, 0, 0, 0, 15, 0, 0, 0, 0, -141}
+722
+                                 7    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 0, -13, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 63, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                   5     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -387, 12, 0, -4, 0, 0, 0, 170, 0, -13, 192, 0, 0, 0, -2, 0, 
+ 
+>    0, 0, 0, 593, 0, 0, 0, 0, 0, -22, 0, -92, 0, 0, 0, 0, 0, -3, 0, 0, 33, 
+ 
+>    0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -144, 0, -286, 584, 171, 0, 0, 0, 0, 15, 0, 0, 0, 0, -141}
+722
+                                   1     25
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, -33, 63, 
+ 
+>    10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6}
+63
+                                 7  23
+affineWeight[2, finiteWeight[2, {-, --}], 3, -7]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 9  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -92, 48, 0, 0, 0, 0, 0, 24, 0, 0, 9, 0, 0, 0, 0, 0, -48, 0, 
+ 
+>    -12, 430, 0, 0, -6, 0, 0, -513, 0, -129, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 16, 0, 0, 121, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, 
+ 
+>    -6, 0, -96, 572, 930, 0, 0, 0, 0, 79, 0, 3, 0, 0, -403}
+982
+                                   7     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -103, 0, 0, -5, 0, 0, 0, 91, 0, -3, 63, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 152, 0, 0, 0, 0, 0, 0, 0, -22, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -62, 0, -129, 
+ 
+>    189, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21}
+201
+                                   3     7
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -2]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -234, 17, 0, -12, 0, 0, 0, 218, 0, -3, 104, 0, 0, 0, -6, 0, 
+ 
+>    0, 0, 0, 428, 0, 1, 0, 0, 0, -21, 0, -129, 0, 0, 0, 0, 0, -1, 0, 0, 13, 
+ 
+>    0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    -103, 0, -387, 647, 152, 0, 0, 0, 0, 10, 0, 0, 0, 0, -103}
+673
+                                 5  5
+affineWeight[2, finiteWeight[2, {-, -}], 3, -5]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -286, 48, 0, 0, 0, 0, 0, 42, 0, 0, 42, 0, 0, 0, 0, 0, -42, 
+ 
+>    0, -4, 930, 0, 0, -13, 0, 0, -513, -6, -138, 0, 0, 0, 0, 0, 0, 0, 0, 9, 
+ 
+>    0, 0, 0, 0, 16, 0, 0, 96, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 
+ 
+>    -24, 0, -129, 759, 1215, 0, 0, 0, 0, 192, 0, 3, 0, 0, -774}
+1457
+                                 1    19
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -33, 10, 0, 0, 0, 0, 0, 33, 0, 0, 6, 0, 0, 0, -3, 0, 0, 0, 
+ 
+>    0, 104, 0, 0, 0, 0, 0, -10, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 
+ 
+>    -104, 234, 63, 0, 0, 0, 0, 3, 0, 0, 0, 0, -33}
+234
+                                   19   17
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 4, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+6
+                                   11     7
+affineWeight[2, finiteWeight[2, {-(--), -(-)}], 3, 0]
+                                   2      2
+ 
+>   {0, 0, 0, 0, -21, 0, 0, 0, 0, 0, 0, 17, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 0, -22, 30, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+32
+                                 5    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -103, 218, 0, 0, 0, 0, 0, 91, 0, 0, 15, 0, 0, 0, -21, 0, 
+ 
+>    -62, 0, 0, 428, 0, 0, -1, 0, 0, -234, 0, -569, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 192, 0, 0, 63, 6, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -14, 0, -387, 1239, 616, 0, 0, 0, 0, 33, 0, 0, 0, 0, -234}
+1271
+                                 27  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -12]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                   7   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -2]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -286, 6, 0, 0, 0, 0, 0, 42, 0, -12, 96, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 430, 0, 0, 0, 0, 0, -16, 0, -42, 0, 0, 0, 0, 0, -5, 0, 0, 39, 0, 0, 
+ 
+>    0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -42, 0, 
+ 
+>    -96, 292, 124, 0, 0, 0, 0, 15, 0, 0, 0, 0, -121}
+436
+                                 15  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    25
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -6, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    33, 0, 0, 0, 0, 0, -6, 0, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 
+ 
+>    104, 33, 0, 0, 0, 0, 1, 0, 0, 0, 0, -13}
+104
+                                   17   11
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, -4, 9, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+12
+                                   3   5
+affineWeight[2, finiteWeight[2, {-(-), -}], 3, -3]
+                                   2   2
+ 
+>   {0, 0, 0, 0, -513, 24, 0, 0, 0, 0, 0, 48, 0, -12, 121, 0, 0, 0, 0, 0, -6, 
+ 
+>    0, 0, 930, 0, 0, 0, 0, 0, -92, -6, -96, 0, 0, 0, 0, 0, -12, 0, 0, 67, 0, 
+ 
+>    0, 0, 0, 16, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, -48, 
+ 
+>    0, -129, 572, 430, 0, 0, 0, 0, 79, 0, 0, 0, 0, -403}
+982
+                                 1    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -1]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    13, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 33, 6, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                   5     13
+affineWeight[2, finiteWeight[2, {-(-), -(--)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -63, 0, 0, -3, 0, 0, 0, 63, 0, -1, 33, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 103, 0, 0, 0, 0, 0, 0, 0, -21, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+ 
+>    15, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -33, 0, -103, 
+ 
+>    153, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15}
+153
+                                 5    31
+affineWeight[2, finiteWeight[2, {-, -(--)}], 3, -2]
+                                 2    2
+ 
+>   {0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 
+ 
+>    0, 0, 0, 0, 0, -3, 0, -13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 33, 13, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, -3}
+33
+                                 13    19
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -5]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -10, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 15, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+21
+                                   9     1
+affineWeight[2, finiteWeight[2, {-(-), -(-)}], 3, -1]
+                                   2     2
+ 
+>   {0, 0, 0, 0, -129, 0, 0, -2, 0, 0, 0, 64, 0, -6, 79, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 171, 0, 0, 0, 0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 
+ 
+>    0, 9, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -61, 0, -92, 
+ 
+>    159, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, -24}
+191
+                                 5  17
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    48, 0, 0, -1, 0, 0, -16, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 16, 0, 0, 0, 0, -48}
+48
+                                 19  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -10]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 15    13
+affineWeight[2, finiteWeight[2, {--, -(--)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -15, 0, -21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 21, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+28
+                                 23  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -11]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, -2}
+4
+                                   21   23
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 3  23
+affineWeight[2, finiteWeight[2, {-, --}], 3, -6]
+                                 2  2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 3    1
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -4]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -387, 170, 0, -2, 0, 0, 0, 170, 0, 0, 79, 0, 0, 0, -4, 0, 
+ 
+>    -61, 0, 0, 1158, 0, 0, -3, 0, 0, -387, -3, -513, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    10, 0, 0, 0, 0, 121, 0, 0, 79, 10, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, -61, 0, -513, 1828, 1158, 0, 0, 0, 0, 104, 0, 0, 0, 0, -601}
+2350
+                                   13   23
+affineWeight[2, finiteWeight[2, {-(--), --}], 3, -2]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+                                 13    7
+affineWeight[2, finiteWeight[2, {--, -(-)}], 3, -6]
+                                 2     2
+ 
+>   {0, 0, 0, 0, 0, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -62, 0, -3, 
+ 
+>    27, 0, 0, 0, 0, 0, -103, 0, -129, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    15, 0, 3, 63, 6, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -22, 
+ 
+>    189, 152, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21}
+201
+                                 17  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -9]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    24, 0, 0, 0, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 42, 
+ 
+>    0, 0, 0, 0, 4, 0, 0, 0, 0, -24}
+42
+                                 25  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -11]
+                                 2   2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, -4, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+6
+                                 13  17
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    42, 0, 0, -1, 0, 0, -16, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 16, 
+ 
+>    48, 0, 0, 0, 0, 12, 0, 0, 0, 0, -42}
+48
+                                 1    7
+affineWeight[2, finiteWeight[2, {-, -(-)}], 3, -3]
+                                 2    2
+ 
+>   {0, 0, 0, 0, -234, 91, 0, -5, 0, 0, 0, 218, 0, 0, 63, 0, 0, 0, -21, 0, 
+ 
+>    -14, 0, 0, 616, 0, 0, 0, 0, 0, -103, -1, -387, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    6, 0, 0, 0, 0, 192, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, -62, 0, -569, 1239, 428, 0, 0, 0, 0, 33, 0, 0, 0, 0, -234}
+1271
+                                   15   5
+affineWeight[2, finiteWeight[2, {-(--), -}], 3, 0]
+                                   2    2
+ 
+>   {0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 6, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, -9, 16, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+20
+                                 11  23
+affineWeight[2, finiteWeight[2, {--, --}], 3, -8]
+                                 2   2
+ 
+>   {0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 
+ 
+>    0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 
+ 
+>    0, 1, 0, 0, 0, 0, -4}
+4
+
+Out[160]= affineverma3d2.png
+
+          {affineWeight[2, finiteWeight[2, {3, 7}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, -4}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, -2}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 3}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, -4}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, -1}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, 2}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, -5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, -4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, -5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, -7}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -6}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, -1}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 3}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {8, 2}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 6}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -3}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 7}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 0}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, 5}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, -1}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 6}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 6}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, 5}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, 5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, -1}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, 5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, 2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 3}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {9, 1}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {8, -1}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, -1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, 8}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {-5, 2}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, 2}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 1}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, -4}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, -2}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -3}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, 5}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {-6, 0}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, -1}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 0}], 0, 0], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, 5}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, 5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, 5}], 0, 8], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, -5}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {9, 0}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, 8}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {-6, 1}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {-5, -1}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 0}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-4, 2}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, -4}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 3}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {5, -4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, -3}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-1, 2}], 0, 1], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 4}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, -3}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {4, -4}], 0, 4], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, 2}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {1, -4}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {-2, 2}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {3, 6}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {-3, 4}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {7, -1}], 0, 5], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, -7}], 0, 9], 
+ 
+>   affineWeight[2, finiteWeight[2, {6, 1}], 0, 3], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, -6}], 0, 7], 
+ 
+>   affineWeight[2, finiteWeight[2, {0, 4}], 0, 2], 
+ 
+>   affineWeight[2, finiteWeight[2, {2, 2}], 0, 0]}
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+1
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+2
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+4
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+8
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, -2, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 
+ 
+>    0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0}
+14
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -1]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+ 
+>    0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0}
+14
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, -2, 0, 0, 0, 0, 0, 14, 0, 0, 0, 
+ 
+>    0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0}
+24
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 24, 0, -2, 0, 0, 0, 0, 0, 14, 0, 0, 0, 
+ 
+>    0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+40
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 40, 0, -14, 0, 0, 0, 0, 0, 40, 0, 0, 
+ 
+>    0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, 0, 
+ 
+>    0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 
+ 
+>    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}
+64
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -2]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 40, 0, -1, 0, 0, 0, 0, 0, 14, 0, 0, 0, 
+ 
+>    0, 0, 0, -8, 0, 0, -1, 0, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 
+>    0, 40, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 2}
+64
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 40, 0, -14, 0, 0, 0, 0, 0, 64, 0, 0, 
+ 
+>    0, 0, 0, 0, -40, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 0, 4, 0, 
+ 
+>    0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 
+ 
+>    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+100
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 1, 0, 0, -14, 0, 0, 0, 0, 100, 0, -14, 0, 0, 0, 0, 0, 64, 0, 0, 
+ 
+>    0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 0, 1, 0, 
+ 
+>    0, 0, 64, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 
+ 
+>    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2}
+156
+                                 5  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 1, 2, 0, 0, -14, 0, 0, 0, 0, 156, 0, -64, 0, 0, 0, 0, 0, 156, 0, 
+ 
+>    0, 0, 0, 0, 0, -40, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, -8, 0, 0, 2, 
+ 
+>    0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, -40, 0, 0, 0, 
+ 
+>    0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 1}
+236
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                 2  2
+ 
+>   {0, 0, 0, 2, 0, 0, -40, 0, 0, 0, 0, 156, 0, -8, 0, 0, 0, 0, 0, 64, 0, 0, 
+ 
+>    0, 0, 0, 0, -40, 0, 0, -8, 0, 0, 0, 0, 0, 0, -64, 0, 0, 0, 0, 0, 0, 2, 
+ 
+>    1, 0, 0, 156, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 0, 0, 
+ 
+>    0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 14}
+236
+                                 3  3
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 1, 0, 0, 0, -14, 0, 0, 0, 0, 156, 0, -64, 0, 0, 0, 0, 0, 236, 0, 
+ 
+>    0, 0, 0, 0, 0, -156, 0, 0, -1, 0, 0, 0, 0, 0, 0, -64, 0, 0, 0, -1, 0, 0, 
+ 
+>    24, 1, 0, 0, 236, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, -14, 0, 
+ 
+>    0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2}
+352
+                                 3  1
+affineWeight[2, finiteWeight[2, {-, -}], 3, -4]
+                                 2  2
+ 
+>   {0, 0, 0, 8, 0, 0, -64, 0, 0, 0, 0, 352, 0, -64, 0, 0, 0, 0, 0, 236, 0, 
+ 
+>    0, 0, 0, 0, 0, -100, 0, 0, -4, 0, 0, 0, 0, 0, 0, -64, 0, 0, 0, -4, 0, 0, 
+ 
+>    8, 0, 0, 0, 236, 8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, -64, 0, 0, 
+ 
+>    0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 14}
+520
+
+Out[159]= affineverma3d.png
+
+Out[156]= affineverma.png
+
+Out[152]= affine3.png
+
+fc=Affine`Private`fullCharacter[vma]
+
+Out[153]= Affine`Private`fullCharacter[vma]
+
+fc=racahMultiplicities[a1a][weight[a1a][4,2]];
+
+Export["affine4.png",Graphics[(Text[fc[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fc[weights]]]
+
+
+fc1=(fc-makeFormalElement[makeHashtable[{},{}]])
+
+fc1[weights]
+
+Out[125]= formalElement[Affine`Private`table$1740]
+
+Out[124]= affine4.png
+
+Out[106]= affine3.png
+
+Out[102]= affine2.png
+
+Out[100]= affine2.png
+
+Out[94]= affine2.png
+
+rho=rho[a1a]
+
+                                          1
+Out[87]= affineWeight[1, finiteWeight[1, {-}], 1, 0]
+                                          2
+
+
+Affine`Private`fullCharacter[ima][weights]
+
+Out[92]= {affineWeight[1, finiteWeight[1, {1}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {-1}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {5}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {-5}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {7}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {-7}], 3, -8]}
+
+Out[91]= {affineWeight[1, finiteWeight[1, {1}], 3, 0]}
+
+Out[90]= {affineWeight[1, finiteWeight[1, {1}], 3, 0]}
+
+
+a1a[simpleRoots]
+
+Out[109]= {affineWeight[1, finiteWeight[1, {-1}], 0, 1], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 0, 0]}
+
+
+Sort[Flatten[weightSystem[a1a][weight[a1a][4,2]]],#1.rh>#2.rh&]
+
+Out[112]= {affineWeight[1, finiteWeight[1, {1}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9]}
+
+
+Sort[weightSystem[ima][weights],#1.rh>#2.rh&]
+
+Out[108]= {affineWeight[1, finiteWeight[1, {1}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -10], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -10], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -11], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -10], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -11], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -10]}
+
+Out[103]= {affineWeight[1, finiteWeight[1, {0}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -10], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -11], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -10], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, 0], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -9], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -5], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -2], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -10], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -7], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -3], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -1], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {3}], 3, -11], 
+ 
+>    affineWeight[1, finiteWeight[1, {1}], 3, -6], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -4], 
+ 
+>    affineWeight[1, finiteWeight[1, {0}], 3, -8], 
+ 
+>    affineWeight[1, finiteWeight[1, {2}], 3, -10]}
+
+Out[88]= {affineWeight[1, finiteWeight[1, {1}], 3, 0]}
+
+Out[86]= affine2.png
+
+ima
+
+Out[63]= affine2.png
+
+Out[55]= affine2.png
+
+Out[53]= affine2.png
+
+mainChamberQ[a1a][makeAffineWeight[{1},1,-4]]
+
+Affine`Private`limit[ima]=-10
+
+Out[51]= -10
+
+Out[48]= True
+
+Out[47]= mainChamberQ[a1][affineWeight[1, finiteWeight[1, {1}], 1, -4]]
+
+Out[46]= affine2.png
+
+
+fc=weightSystem[ima]
+
+Out[54]= formalElement[Affine`Private`table$901]
+
+Out[45]= formalElement[Affine`Private`table$716]
+
+Out[44]= affine.png
+
+Out[41]= affine.png
+
+Out[37]= affine.png
+
+Out[35]= affine.png
+
+Out[29]= affine.png
+
+Out[28]= affine.png
+
+Out[22]= affine.png
+
+Out[21]= formalElement[Affine`Private`table$155]
+
+Out[19]= formalElement[Affine`Private`table$138]
+
+          affineWeight[1, finiteWeight[1, {-(1/2)}], -1, 0]
+Out[16]= E                                                  
+ 
+>    (formalElement[Affine`Private`table$124] + 
+ 
+>      formalElement[Affine`Private`table$123][_] 
+ 
+>       formalOrbit[affineRootSystem[1, 
+ 
+>          finiteRootSystem[1, 1, {finiteWeight[1, {1}]}], 
+ 
+>          affineWeight[1, finiteWeight[1, {-1}], 0, 1], 
+ 
+>          {affineWeight[1, finiteWeight[1, {1}], 0, 0]}]][_])
+
+vma=makeVermaModule[a][weight[b2][1,1]];
+pm=makeParabolicVermaModule[b2][weight[b2][1,0],{1}];
+im=makeIrreducibleModule[b2][weight[b2][4,6]];
+
 
 Affine`Private`subSystem[im]
 
@@ -76,6 +12629,41 @@ Export["tt.pdf",pp]
 
 Out[6]= tt.pdf
 
+
+
+makeHashtable[Table[i,{i,1000000}],Table[1,{1000000}]]//Timing
+
+Out[12]= {28.1538, Affine`Private`table$120}
+
+kt=keys[Out[12][[2]]]//Timing;
+
+kt[[1]]
+
+Out[14]= 7.88049
+
+Out[11]= 0.680042
+
+DownValues::sym: 
+   Argument {2.51216, Affine`Private`table$115} at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[{2.51216, Affine`Private`table$115}, Sort -> False][[All,1,1,
+     1]] is longer than depth of object.
+
+Out[8]= {2.51216, Affine`Private`table$115}
+
+Last[{1,2}]
+
+Out[6]= 2
+
+Out[5]= 1
+
+Out[3]= {0.032002, Affine`Private`table$104}
+
+Out[2]= {0.004, Affine`Private`table$103}
+
+[Calculating...]
 
 
 Affine`Private`rootSystem[im]
