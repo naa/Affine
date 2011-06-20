@@ -8,14 +8,990 @@ m2=makeIrreducibleModule[a1][weight[a1][2]];
 
 tp=tensorProduct[m1,m2]
 
-{finiteWeight[2, {1, 0}]}
+a11=makeFiniteRootSystem[{{1,1}/2}];
+
+CirclePlus[a1,a1]
+
+Out[232]= finiteRootSystem[2, 2, 
+ 
+>    {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}]
+
+Out[231]= finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]
+
+
+fan[Affine`Private`rootSystem[tp],a11]
+
+Out[304]= formalElement[Affine`Private`table$4643]
+
+          formalElement[Affine`Private`table$4628]
+Out[302]= ----------------------------------------
+                     finiteWeight[2, {1, 1}]
+                1 - E
+
+Out[301]= fan[rootSystem[module[finiteRootSystem[2, 2, 
+ 
+>       {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>      formalElement[Affine`Private`table$4103], 
+ 
+>      finiteRootSystem[2, 2, {finiteWeight[2, {1, 0}], 
+ 
+>        finiteWeight[2, {0, 1}]}], 25]], 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]]
+
+ourBranching[tp,a11]
+
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}
+                  4  4                     4  4
+                 3  3
+finiteWeight[2, {-, -}]
+                 4  4
+                 1  1
+finiteWeight[2, {-, -}]
+                 4  4
+
+Out[305]= formalElement[Affine`Private`table$4683]
+
+Out[305][weights]
+
+Out[305][multiplicities]
+
+
+
+
+Out[307]= {1, 1}
+
+                            3  3                     1  1
+Out[306]= {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}
+                            4  4                     4  4
+
+                  3  3                     1  1
+{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}
+                  4  4                     4  4
+                 3  3
+finiteWeight[2, {-, -}]
+                 4  4
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+                 1  1
+finiteWeight[2, {-, -}]
+                 4  4
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+                                              3  3
+Out[300]= makeFormalElement[{finiteWeight[2, {-, -}], 
+                                              4  4
+ 
+                       1  1
+>     finiteWeight[2, {-, -}]}, 
+                       4  4
+ 
+>    {-((weights - formalElement[Affine`Private`table$4584][Hold[
+ 
+>            -weights + makeFiniteWeight[Plus @@ 
+ 
+                                                           3  3
+>               (#1[standardBase] & ) /@ {finiteWeight[2, {-, -}]}]]]) / 
+                                                           4  4
+ 
+          formalElement[Affine`Private`table$4606]
+>        (----------------------------------------)[weights]), 
+                     finiteWeight[2, {1, 1}]
+                1 - E
+ 
+>     -((weights - formalElement[Affine`Private`table$4584][Hold[
+ 
+>            -weights + makeFiniteWeight[Plus @@ 
+ 
+                                                           1  1
+>               (#1[standardBase] & ) /@ {finiteWeight[2, {-, -}]}]]]) / 
+                                                           4  4
+ 
+          formalElement[Affine`Private`table$4606]
+>        (----------------------------------------)[weights])}]
+                     finiteWeight[2, {1, 1}]
+                1 - E
+
+Affine`Private`getOrderedWeightsProjectedToWeylChamber[{finiteWeight[2, 
+ 
+>     {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>   finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>   formalElement[Affine`Private`table$4103]]
 {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}
-                    1
-{{{finiteWeight[2, {-, 1}], 1}}}
-                    2
-                  1
-{finiteWeight[2, {-, 1}]}
-                  2
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][{finiteWeight[2, 
+        5  3                     3  5
+       {-, -}], finiteWeight[2, {-, -}]}] does not exist.
+        2  2                     2  2
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        finiteRootSystem[1, 2, {finiteWeight[2, {<<2>>}]}] + <<16>>[<<1>>]] + 
+       <<1>>]] does not exist.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+formalElement[Affine`Private`table$4103]
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        formalElement[Affine`Private`table$4103] + makeFiniteWeight[<<1>>]] + 
+       <<1>>]] does not exist.
+
+General::stop: Further output of Part::partw
+     will be suppressed during this calculation.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+Part::pspec: Part specification 
+    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+       {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+       formalElement[Affine`P<<11>>e$4103]], {<<3>>}][All] is neither an
+     integer nor a list of integers.
+
+Out[298]= makeFormalElement[DownValues[makeHashtable[Affine`Private`getOrdere\
+ 
+>         dWeightsProjectedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}], Sort -> False]
+ 
+>      [[All,1,1,1]], makeHashtable[Affine`Private`getOrderedWeightsProjected\
+ 
+>         ToWeylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][
+ 
+>      DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWe\
+ 
+>          ylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>         finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>         formalElement[Affine`Private`table$4103]], {0, 0, 0}], 
+ 
+>       Sort -> False]][[makeHashtable[Affine`Private`getOrderedWeightsProjec\
+ 
+>         tedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][All],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1]]]]
+
+{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][{finiteWeight[2, 
+        5  3                     3  5
+       {-, -}], finiteWeight[2, {-, -}]}] does not exist.
+        2  2                     2  2
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        finiteRootSystem[1, 2, {finiteWeight[2, {<<2>>}]}] + <<16>>[<<1>>]] + 
+       <<1>>]] does not exist.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+formalElement[Affine`Private`table$4103]
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        formalElement[Affine`Private`table$4103] + makeFiniteWeight[<<1>>]] + 
+       <<1>>]] does not exist.
+
+General::stop: Further output of Part::partw
+     will be suppressed during this calculation.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+Part::pspec: Part specification 
+    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+       {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+       formalElement[Affine`P<<11>>e$4103]], {<<3>>}][All] is neither an
+     integer nor a list of integers.
+
+Out[296]= makeFormalElement[DownValues[makeHashtable[Affine`Private`getOrdere\
+ 
+>         dWeightsProjectedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}], Sort -> False]
+ 
+>      [[All,1,1,1]], makeHashtable[Affine`Private`getOrderedWeightsProjected\
+ 
+>         ToWeylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][
+ 
+>      DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWe\
+ 
+>          ylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>         finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>         formalElement[Affine`Private`table$4103]], {0, 0, 0}], 
+ 
+>       Sort -> False]][[makeHashtable[Affine`Private`getOrderedWeightsProjec\
+ 
+>         tedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][All],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1]]]]
+
+Affine`Private`toFundamentalChamberWithParity[a11][makeFiniteWeight[{1,2}]]
+
+Out[294]= {finiteWeight[2, {1, 2}], 1}
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][{finiteWeight[2, 
+        5  3                     3  5
+       {-, -}], finiteWeight[2, {-, -}]}] does not exist.
+        2  2                     2  2
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        finiteRootSystem[1, 2, {finiteWeight[2, {<<2>>}]}] + <<16>>[<<1>>]] + 
+       <<1>>]] does not exist.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        formalElement[Affine`Private`table$4103] + makeFiniteWeight[<<1>>]] + 
+       <<1>>]] does not exist.
+
+General::stop: Further output of Part::partw
+     will be suppressed during this calculation.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+Part::pspec: Part specification 
+    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+       {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+       formalElement[Affine`P<<11>>e$4103]], {<<3>>}][All] is neither an
+     integer nor a list of integers.
+
+Out[293]= makeFormalElement[DownValues[makeHashtable[Affine`Private`getOrdere\
+ 
+>         dWeightsProjectedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}], Sort -> False]
+ 
+>      [[All,1,1,1]], makeHashtable[Affine`Private`getOrderedWeightsProjected\
+ 
+>         ToWeylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][
+ 
+>      DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWe\
+ 
+>          ylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>         finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>         formalElement[Affine`Private`table$4103]], {0, 0, 0}], 
+ 
+>       Sort -> False]][[makeHashtable[Affine`Private`getOrderedWeightsProjec\
+ 
+>         tedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][All],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1]]]]
+
+
+Affine`Private`getOrderedWeightsProjectedToWeylChamber[positiveRoots[Affine`Private`rootSystem[tp]],a11,singularWeights[tp][weights]]
+
+                            3  3                     1  1
+Out[292]= {finiteWeight[2, {-, -}], finiteWeight[2, {-, -}], 
+                            4  4                     4  4
+ 
+                        1     1                        3     3
+>    finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-(-), -(-)}], 
+                        4     4                        4     4
+ 
+                        7     7
+>    finiteWeight[2, {-(-), -(-)}]}
+                        4     4
+
+                                         1  1                     1  1
+Out[290]= weightSystem[{finiteWeight[2, {-, -}], finiteWeight[2, {-, -}]}, 
+                                         2  2                     2  2
+ 
+                       3  3                       1     1
+>    {finiteWeight[2, {-, -}], finiteWeight[2, {-(-), -(-)}], 
+                       4  4                       4     4
+ 
+                         3     3                        7     7
+>     finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-(-), -(-)}]}]
+                         4     4                        4     4
+
+Out[289]= getOrderedWeightsProjectedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>     finiteWeight[2, {0, 1}]}, 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+                       1                          3
+>    {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                       2                          2
+ 
+                       1                           3
+>     finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}]
+                       2                           2
+
+Out[287]= getOrderedWeightsProjectedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>     finiteWeight[2, {0, 1}]}, 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+                       1                          3
+>    {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                       2                          2
+ 
+                       1                           3
+>     finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}]
+                       2                           2
+
+Out[286]= Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>    {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+                       1                          3
+>    {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                       2                          2
+ 
+                       1                           3
+>     finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}]
+                       2                           2
+
+Out[284]= Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>    {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+                       1                          3
+>    {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                       2                          2
+ 
+                       1                           3
+>     finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}]
+                       2                           2
+
+Out[283]= Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>    positiveRoots[rootSystem[module[finiteRootSystem[2, 2, 
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}], 
+ 
+>       formalElement[Affine`Private`table$4103], 
+ 
+>       finiteRootSystem[2, 2, {finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}], 25]]], 
+ 
+>    finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+                       1                          3
+>    {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                       2                          2
+ 
+                       1                           3
+>     finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}]
+                       2                           2
+
+
+                    3  3                       1     1
+{}{finiteWeight[2, {-, -}], finiteWeight[2, {-(-), -(-)}], 
+                    4  4                       4     4
+ 
+                        3     3                        7     7
+>    finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-(-), -(-)}]}{1, -1, -1, 
+                        4     4                        4     4
+ 
+>    1}
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][{finiteWeight[2, 
+        5  3                     3  5
+       {-, -}], finiteWeight[2, {-, -}]}] does not exist.
+        2  2                     2  2
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        finiteRootSystem[1, 2, {finiteWeight[2, {<<2>>}]}] + <<16>>[<<1>>]] + 
+       <<1>>]] does not exist.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}]][Hold[Hold[
+        formalElement[Affine`Private`table$4103] + makeFiniteWeight[<<1>>]] + 
+       <<1>>]] does not exist.
+
+General::stop: Further output of Part::partw
+     will be suppressed during this calculation.
+
+                                 1
+Power::infy: Infinite expression - encountered.
+                                 0
+
+General::stop: Further output of Power::infy
+     will be suppressed during this calculation.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+DownValues::sym: 
+   Argument makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamb
+       er[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+      formalElement[Affine`Private`table$4103]], {0, <<2>>}] at position 1
+     is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylCh
+         amber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<2>>], 
+       {0, 0, 0}], Sort -> False][[All,1,1,1]] is longer than depth of object.
+
+Part::pspec: Part specification 
+    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+       {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, <<1>>, 
+       formalElement[Affine`P<<11>>e$4103]], {<<3>>}][All] is neither an
+     integer nor a list of integers.
+
+Out[282]= makeFormalElement[DownValues[makeHashtable[Affine`Private`getOrdere\
+ 
+>         dWeightsProjectedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}], Sort -> False]
+ 
+>      [[All,1,1,1]], makeHashtable[Affine`Private`getOrderedWeightsProjected\
+ 
+>         ToWeylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][
+ 
+>      DownValues[makeHashtable[Affine`Private`getOrderedWeightsProjectedToWe\
+ 
+>          ylChamber[{finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>         finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>         formalElement[Affine`Private`table$4103]], {0, 0, 0}], 
+ 
+>       Sort -> False]][[makeHashtable[Affine`Private`getOrderedWeightsProjec\
+ 
+>         tedToWeylChamber[{finiteWeight[2, {1, 0}], 
+ 
+>         finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][All],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1],
+ 
+>     makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}, 
+ 
+>        finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$4103]], {0, 0, 0}][1]]]]
+
+
+Affine`Private`extendedSingElement[tp,a11][weights]
+
+finiteWeight[2, {0, 0}]
+                  1                          3
+{finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                  2                          2
+ 
+                     1                           3
+>   finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}
+                     2                           2
+
+                            3  3                       1     1
+Out[280]= {finiteWeight[2, {-, -}], finiteWeight[2, {-(-), -(-)}], 
+                            4  4                       4     4
+ 
+                        3     3                        7     7
+>    finiteWeight[2, {-(-), -(-)}], finiteWeight[2, {-(-), -(-)}]}
+                        4     4                        4     4
+
+finiteWeight[2, {0, 0}]
+                  1                          3
+{finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                  2                          2
+ 
+                     1                           3
+>   finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}
+                     2                           2
+
+Out[279]= formalElement[Affine`Private`table$4357]
+
+finiteWeight[2, {0, 0}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+{}
+
+Out[276]= makeFormalElement[projection[finiteRootSystem[1, 2, 
+ 
+>       {finiteWeight[2, {1, 1}]}]][{}], {}]
+
+singularWeights[tp][weights]
+
+mainChamberQ[{}][makeFiniteWeight[{1,2}]]
+
+Select[singularWeights[tp][weights],True&]
+
+                            1                          3
+Out[274]= {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                            2                          2
+ 
+                      1                           3
+>    finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}
+                      2                           2
+
+Out[273]= {}
+
+Out[272]= True
+
+                            1                          3
+Out[271]= {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                            2                          2
+ 
+                      1                           3
+>    finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}
+                      2                           2
+
+Out[270]= formalElement[Affine`Private`table$4311]
+
+finiteWeight[2, {0, 0}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+{}
+
+Out[269]= makeFormalElement[projection[finiteRootSystem[1, 2, 
+ 
+>       {finiteWeight[2, {1, 1}]}]][{}], {}]
+
+rho[{}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+{}
+
+Out[267]= makeFormalElement[projection[finiteRootSystem[1, 2, 
+ 
+>       {finiteWeight[2, {1, 1}]}]][{}], {}]
+
+Trace[rho[{}]]
+
+
+rho
+
+                                           1
+Out[263]= affineWeight[1, finiteWeight[1, {-}], 1, 0]
+                                           2
+
+                                                  1
+Out[262]= {{rho, affineWeight[1, finiteWeight[1, {-}], 1, 0]}, 
+                                                  2
+ 
+                                      1
+>    affineWeight[1, finiteWeight[1, {-}], 1, 0][{}], 
+                                      2
+ 
+>    {rootSystemQ[{}], MatchQ[{}, 
+ 
+>      (Affine`Private`x_finiteRootSystem) | 
+ 
+>       (Affine`Private`x_affineRootSystem)], False}, 
+ 
+                                      1
+>    affineWeight[1, finiteWeight[1, {-}], 1, 0][{}]}
+                                      2
+
+                                           1
+Out[261]= affineWeight[1, finiteWeight[1, {-}], 1, 0][{}]
+                                           2
+
+                                           1
+Out[259]= affineWeight[1, finiteWeight[1, {-}], 1, 0][{}]
+                                           2
+
+                                 1
+affineWeight[1, finiteWeight[1, {-}], 1, 0][{}]
+                                 2
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+{}
+
+Out[258]= makeFormalElement[projection[finiteRootSystem[1, 2, 
+ 
+>       {finiteWeight[2, {1, 1}]}]][{}], {}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+{}
+
+Out[256]= makeFormalElement[projection[finiteRootSystem[1, 2, 
+ 
+>       {finiteWeight[2, {1, 1}]}]][{}], {}]
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+$IterationLimit::itlim: Iteration limit of 4096 exceeded.
+
+General::stop: Further output of $IterationLimit::itlim
+     will be suppressed during this calculation.
+
+Out[252]= makeFormalElement[projection[finiteRootSystem[1, 2, 
+ 
+>       {finiteWeight[2, {1, 1}]}]][{}], {}]
+
+singularWeights[tp][weights]
+
+mainChamberQ[{}][makeFiniteWeight[{1,2}]]
+
+And[]
+
+Out[250]= True
+
+Out[249]= True
+
+mainChamberQ[{roots___?weightQ}][wg_?weightQ]:=And@@(#.wg>=0&/@{roots});
+
+Out[247]= mainChamberQ[{}][finiteWeight[2, {1, 2}]]
+
+                            1                          3
+Out[246]= {finiteWeight[2, {-, 1}], finiteWeight[2, {-(-), 1}], 
+                            2                          2
+ 
+                      1                           3
+>    finiteWeight[2, {-, -2}], finiteWeight[2, {-(-), -2}]}
+                      2                           2
+
+Out[245]= formalElement[Affine`Private`table$4209]
 
 Out[220]= module[finiteRootSystem[2, 2, 
  
@@ -204,6 +1180,121 @@ vm=makeVermaModule[b2][weight[b2][1,1]];
 pm=makeParabolicVermaModule[b2][weight[b2][1,0],{1}];
 im=makeIrreducibleModule[b2][weight[b2][4,6]];
 
+
+bb=ourBranching[im,makeFiniteRootSystem[{{1,1}}]]
+
+bb[weights]
+
+Export["branch1121.png",drawPlaneProjection[2,1,bb]];
+
+Export["branch1122.png",drawPlaneProjection[2,1,Affine`Private`fullCharacter[im]]];
+
+
+Export["branch1123.png",drawPlaneProjection[2,1,ourBranching[vm,makeFiniteRootSystem[{{1,1}}]]]]
+
+Out[316]= branch1123.png
+
+{finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}], finiteWeight[2, {2, -1}], 
+ 
+>   finiteWeight[2, {1, 2}], finiteWeight[2, {3, 0}], 
+ 
+>   finiteWeight[2, {2, 2}], finiteWeight[2, {3, 1}]}
+finiteWeight[2, {7, 3}]{0, 0, 0, 0, 0, 0, 0}
+1
+finiteWeight[2, {7, 2}]{0, 1, 0, 0, 0, 0, 0}
+1
+finiteWeight[2, {6, 4}]{1, 0, 0, 0, 0, 0, 0}
+1
+finiteWeight[2, {7, 1}]{0, 1, 0, 0, 0, 0, 0}
+1
+finiteWeight[2, {6, 3}]{1, 1, 0, 0, 0, 0, 0}
+2
+finiteWeight[2, {7, 0}]{0, 1, 0, 0, 0, 0, 0}
+1
+finiteWeight[2, {5, 5}]{1, 0, 0, 0, 0, 0, 0}
+1
+finiteWeight[2, {6, 2}]{1, 2, 0, 0, 0, 0, 0}
+3
+finiteWeight[2, {5, 4}]{2, 1, -1, 0, 0, 0, 0}
+2
+finiteWeight[2, {6, 1}]{1, 3, 0, -1, 0, 0, 0}
+3
+finiteWeight[2, {5, 3}]{3, 2, -1, 0, 0, 0, 0}
+4
+finiteWeight[2, {6, 0}]{1, 3, 0, -1, 0, 0, 0}
+3
+finiteWeight[2, {5, 2}]{3, 4, -1, -1, 0, 0, 0}
+5
+finiteWeight[2, {5, 1}]{3, 5, -1, -2, 0, 1, 0}
+6
+finiteWeight[2, {4, 4}]{4, 2, -2, 0, 0, 0, 0}
+4
+finiteWeight[2, {5, 0}]{3, 6, -1, -3, 0, 1, 0}
+6
+finiteWeight[2, {4, 3}]{5, 4, -3, -1, 1, 0, 0}
+6
+finiteWeight[2, {4, 2}]{6, 6, -3, -2, 1, 1, -1}
+8
+finiteWeight[2, {4, 1}]{6, 8, -3, -4, 1, 2, -1}
+9
+finiteWeight[2, {3, 3}]{8, 6, -5, -2, 2, 1, -1}
+9
+finiteWeight[2, {4, 0}]{6, 9, -3, -5, 1, 3, -1}
+10
+finiteWeight[2, {3, 2}]{9, 9, -6, -4, 3, 2, -2}
+11
+finiteWeight[2, {3, 1}]{10, 11, -6, -6, 3, 4, -3}
+13
+finiteWeight[2, {3, 0}]{9, 13, -6, -8, 3, 5, -3}
+13
+finiteWeight[2, {2, 2}]{13, 11, -9, -6, 5, 4, -4}
+14
+finiteWeight[2, {2, 1}]{13, 14, -10, -9, 6, 6, -5}
+15
+finiteWeight[2, {2, 0}]{13, 15, -9, -11, 6, 8, -6}
+16
+finiteWeight[2, {1, 1}]{16, 15, -13, -11, 9, 9, -8}
+17
+finiteWeight[2, {1, 0}]{15, 17, -13, -14, 10, 11, -9}
+17
+finiteWeight[2, {0, 0}]{17, 17, -15, -15, 13, 14, -13}
+18
+
+                                                     9  9
+Out[313]= {finiteWeight[2, {5, 5}], finiteWeight[2, {-, -}], 
+                                                     2  2
+ 
+                                               7  7
+>    finiteWeight[2, {4, 4}], finiteWeight[2, {-, -}], 
+                                               2  2
+ 
+                                               5  5
+>    finiteWeight[2, {3, 3}], finiteWeight[2, {-, -}], 
+                                               2  2
+ 
+                                               3  3
+>    finiteWeight[2, {2, 2}], finiteWeight[2, {-, -}], 
+                                               2  2
+ 
+                                               1  1
+>    finiteWeight[2, {1, 1}], finiteWeight[2, {-, -}], 
+                                               2  2
+ 
+>    finiteWeight[2, {0, 0}]}
+
+Out[312]= formalElement[Affine`Private`table$4825]
+
+Out[311]= ourBranching[module[finiteRootSystem[2, 2, 
+ 
+>      {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>     formalElement[Affine`Private`table$4694], 
+ 
+>     finiteRootSystem[2, 2, {finiteWeight[2, {1, -1}], 
+ 
+>       finiteWeight[2, {0, 1}]}], -24], makeFiniteRootSystem[{1, 1}]]
+
+Out[309]= im
 
 fc=Affine`Private`fullCharacter[im]
 
@@ -11948,6 +13039,8 @@ Out[100]= affine2.png
 Out[94]= affine2.png
 
 rho=rho[a1a]
+
+ClearAll[rho]
 
                                           1
 Out[87]= affineWeight[1, finiteWeight[1, {-}], 1, 0]
