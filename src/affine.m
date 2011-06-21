@@ -661,8 +661,8 @@ orthogonalSubsystem[rs_?rootSystemQ,subs_?rootSystemQ]:=Cases[positiveRoots[rs],
 projection[rs_finiteRootSystem][{weights__?weightQ}]:= 
     Map[Function[w,(Inverse[cartanMatrix[rs]]. ( 2*(w.#/(#.#))& /@ rs[simpleRoots])).rs[simpleRoots]],{weights}]
 
-projection[rs_affineRootSystem][{weights__?weightQ}]:= 
-    Map[makeAffineWeight[projection[rs[finiteRootSystem]][#[finitePart]],#[level],#[grade]]&,{weights}]
+projection[rs_affineRootSystem][{weights__?weightQ},ei_?NumberQ:1]:= 
+    Map[makeAffineWeight[projection[rs[finiteRootSystem]][#[finitePart]],#[level]*ei,#[grade]]&,{weights}]
 
 projection[rs_?rootSystemQ][wg_?weightQ]:=projection[rs][{wg}][[1]];
 
@@ -676,7 +676,11 @@ formalElement/:fe_formalElement[multiplicities]:=values[fe[[1]]];
 
 formalElement/:x_formalElement==y_formalElement:=x[weights]==y[weights] && x[multiplicities]==y[multiplicities];
 
-makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}]:=formalElement[makeHashtable[{weights},{multiplicities}]];
+makeFormalElement[{weights___?weightQ},{multiplicities___?NumberQ}]:=
+    Module[{ht=makeHashtable[{},{}]},
+	   Scan[If[NumberQ[ht[#[[1]]]], ht[#[[1]]]=ht[#[[1]]]+#[[2]],ht[#[[1]]]=#[[2]]]&,
+		Transpose[{{weights},{multiplicities}}]];
+	   makeFormalElement[ht]];
 
 makeFormalElement[{weights__?weightQ}]:=
     Module[{res},
@@ -743,11 +747,25 @@ singularWeights[rs_?rootSystemQ][hweight_?weightQ]:=
 
 fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
     Module[{pr,r,roots},
-	   roots=Complement[positiveRoots[rs],orthogonalSubsystem[rs,subs]];
-	   pr=makeFormalElement[projection[subs][roots]] - makeFormalElement[positiveRoots[subs]];
-	   Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]]];
+	   roots=Select[projection[subs][positiveRoots[rs]],#=!= zeroWeight[subs]&];
+	   pr=makeFormalElement[roots] - makeFormalElement[positiveRoots[subs]];
+	   r=makeFormalElement[{zeroWeight[subs]}];
+	   Scan[Function[w,
+			 r=Expand[r*(1-Exp[w])^(pr[w])];
+			 r=subElement[r,Select[r[weights],checkGrade[subs]]];
+			],
+		pr[weights]];
+	   r];
+(*	   r=Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]];
+	   subElement[r,Select[r[weights],checkGrade[rs]]]];*)
 (* !!!!!!!!!!!!!!!!!!!!!                      ^^^^^^^^ This can be negative *)
 
+(*
+fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
+    Module[{pr,r,roots},
+	   roots=Complement[positiveRoots[rs],orthogonalSubsystem[rs,subs]];
+	   pr=makeFormalElement[projection[subs][roots]] - makeFormalElement[positiveRoots[subs]]];
+*)	   
 (*
 module::"usage"=
     "module[rs_?rootSystemQ,singWeights_formalElement,subs_?rootSystemQ,limit_?NumberQ] represents Lie algebra module \n
