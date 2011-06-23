@@ -184,6 +184,8 @@ affineRootSystem::"usage"=
     affineRootSystem[simpleRoots] returns unsorted list of simple roots in the root system.\n
     affineRootSystem[simpleRoot][n_Integer] returns n'th simple root"
 
+imaginaryRoot::"usage"="Symbol used to get imaginary root of affine Lie algebra";
+
 zeroWeight::"usage"="zeroWeight[rs_?rootSystemQ] returns zero root of root system rs (zero of rs[dimension]-dimemsional space)"; 
 
 marks::"usage"="marks[rs_affineRootSystem] returns marks of affine Lie algebra";
@@ -278,6 +280,10 @@ character::"usage"=
 branching::"usage"=
     "branching[m_module,subs_?rootSystemQ] returns branching coefficients of decomposition of module m to \n
     the irreducible modules of subalgebra defined by root system subs";
+
+simpleBranching::"usage"="Temporary function";
+ourBranching::"usage"="Temporary function";
+branching2::"usage"="Temporary function";
 
 tensorProduct::"usage"=
     "tensorProduct[m__module] returns module which is tensor product of modules";
@@ -547,12 +553,12 @@ dimension[rs_?rootSystemQ][hweight_?weightQ]:=dimension[positiveRoots[rs]][toFun
 
 weightSystem[{posroots__?weightQ},{initialWeights__?weightQ}, mainChamberPredicate_, gradePredicate_]:=
     Module[{minusPosRoots=-{posroots}},
-	   Most[NestWhileList[Function[x,Complement[
+	   Flatten[NestWhileList[Function[x,Complement[
 	       Cases[Flatten[Outer[Plus,minusPosRoots,x]],y_/;
 		     And[gradePredicate[y],mainChamberPredicate[y]]]
 	       ,x]],{initialWeights},#=!={}&]]];
 
-weightSystem[{posroots__?weightQ},{initialWeights__?weightQ}, mainChamberPredicate__]:=
+weightSystem[{posroots__?weightQ},{initialWeights__?weightQ}, mainChamberPredicate_]:=
     Module[{mgrade=Max[grade/@{posroots}]},
 	   weightSystem[{posroots},{initialWeights},mainChamberPredicate,checkGrade[mgrade]]];
 
@@ -560,7 +566,7 @@ weightSystem[{posroots__?weightQ},{initialWeights__?weightQ}]:=weightSystem[{pos
 
 weightSystem[{posroots__?weightQ}][highestWeight_?weightQ]:=weightSystem[{posroots},{highestWeight},mainChamberQ[{posroots}]];
 
-weightSystem[rs_?rootSystemQ][highestWeight_?weightQ]:=weightSystem[{positiveRoots[rs]},{highestWeight},mainChamberQ[rs]];
+weightSystem[rs_?rootSystemQ][highestWeight_?weightQ]:=weightSystem[positiveRoots[rs],{highestWeight},mainChamberQ[rs]];
 
 freudenthalMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{rh=rho[rs],weights,mults,c,insideQ,
@@ -633,7 +639,7 @@ zeroWeight[rs_affineRootSystem]:=makeAffineWeight[zeroWeight[rs[finiteRootSystem
 
 (* Ugly hack *)
 positiveRoots[rs_affineRootSystem]:=Join[Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]],
-					 Join@@Table[Rest[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&]],{rs[rank]}]];
+					 Join@@Table[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&],{rs[rank]}]];
 
 toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
     First[NestWhile[Function[v,
@@ -793,18 +799,23 @@ singularWeights[m_module]:=If [subSystem[m]=!=emptyRootSystem[], Exp[-rho[subSys
 
 cSingularWeights[m_module]:=m[[2]];
 
+weightSystem[{posroots__?weightQ},{initialWeights__?weightQ}]:=weightSystem[{posroots},{initialWeights},mainChamberQ[{posroots}]];
+
+weightSystem[m_module]:=makeFormalElement[weightSystem[positiveRoots[rootSystem[m]],cSingularWeights[m][weights],mainChamberQ[rootSystem[m]]]];
+
+(*
 weightSystem[m_module]:=Module[{minusRoots, checkChamber, rs,res,rh},
 			       minusRoots=-positiveRoots[rootSystem[m]];
 			       rh=rho[rootSystem[m]];
 			       checkChamber=If [subSystem[m]=!=emptyRootSystem[],
 						rh.#>=limit[m] && mainChamberQ[subSystem[m]][#] && grade[#]<=rs[gradeLimit] & , 
 						rh.#>=limit[m] && grade[#]<=rs[gradeLimit] &];
-			       res=Flatten[Most[NestWhileList[Function[x,Complement[
+			       res=Flatten[NestWhileList[Function[x,Complement[
 				   Select[Flatten[Outer[Plus,minusRoots,x]],
 					  checkChamber],
-				   x]],m[[2]][weights],#=!={}&]]];
+				   x]],m[[2]][weights],#=!={}&]];
 			       makeFormalElement[res,Table[1,{Length[res]}]]];
-
+*)
 
 character[m_module]:=
     Module[{rs=rootSystem[m],subs=subSystem[m],toFC,rh,mults,aw,wgs,fan,tmp,gamma0},
@@ -813,7 +824,6 @@ character[m_module]:=
 (*	   fan=singularWeights[rs][zeroWeight[rs]];
 	   gamma0=Sort[fan[weights],#1.rh>#2.rh&][[1]];
 	   fan=fan*Exp[-gamma0];*)
-	   Print[fan[weights]];
 
 	   If [subs=!=emptyRootSystem[],
 	       toFC=toFundamentalChamber[subs],
@@ -826,9 +836,7 @@ character[m_module]:=
 	   Scan[Function[v,
 			 mults[v]=
 			 Plus @@ Map[ If [insideQ[v+#], -fan[#]*mults[toFC[v+#]], 0]&, fan[weights]];
-			 Print[v,Map[ If [insideQ[v+#], -fan[#]*mults[toFC[v+#]], 0]&, fan[weights]]];
 			 If [IntegerQ[aw[v]], mults[v]=mults[v]+aw[v]];
-			 Print[mults[v]];
 			],
 		wgs];
 	   makeFormalElement[mults]];
@@ -856,18 +864,14 @@ tensorProduct[m1_module,m2_module]/; Head[rootSystem[m1]]==finiteRootSystem && H
 	   rs=CirclePlus[rootSystem[m1],rootSystem[m2]];
 	   If [subSystem[m1]=!=emptyRootSystem[],
 	       subroots=Join[subroots,Map[appendZeros[rootSystem[m2][dimension],#]&,subSystem[m1][simpleRoots]]]];
-	   Print[subroots];
 	   If [subSystem[m2]=!=emptyRootSystem[],
 	       subroots=Join[subroots,Map[prependZeros[rootSystem[m1][dimension],#]&,subSystem[m2][simpleRoots]]]];
-	   Print[subroots];
 	   If [Length[subroots]>0,
 	       subs=makeFiniteRootSystem[subroots],
 	       subs=emptyRootSystem[]];
 	   sw1=cSingularWeights[m1];
 	   sw2=cSingularWeights[m2];
-	   Print[Outer[{makeFiniteWeight[Join[#1[standardBase],#2[standardBase]]],sw1[#1]*sw2[#2]}&,sw1[weights],sw2[weights]]];
 	   aw=makeFormalElement @@ Transpose @@ Outer[{makeFiniteWeight[Join[#1[standardBase],#2[standardBase]]],sw1[#1]*sw2[#2]}&,sw1[weights],sw2[weights]];
-	   Print[aw[weights]];
 	   makeModule[rs][aw,subs,limit->limit[m1]*limit[m2]]];
 
 
@@ -920,18 +924,17 @@ getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,{
 ourBranching[m_module,subs_?rootSystemQ]:=
     Module[{singW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0,hw,rs=rootSystem[m],ei},
 	   ei=embeddingIndex[rs,subs];
-	   Print[ei];
 	   orth=orthogonalSubsystem[rs,subs];
 	   selWM=extendedSingElement[m,subs];
 	   rh=rho[rs];
 	   subrh=rho[subs];
-	   Print[subrh];
 	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,cSingularWeights[m][weights],ei];
 	   Print[reprw];
 	   fn=fan[rs,subs];
 
-	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
+	   gamma0=Sort[Select[fn[weights],grade[#]==0&],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
+	   Print[gamma0,sgamma0];
 	   fn=fn*Exp[-gamma0];
 	   def=-projection[subs][rh,ei];
 	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z-def]},{tmp[[1]]+def,tmp[[2]]}]];
@@ -940,7 +943,7 @@ ourBranching[m_module,subs_?rootSystemQ]:=
 	   Scan[Function[v,
 (*			 Print[v];*)
 			 res[v]=-1/sgamma0*(
-			     -selWM[v-gamma0]+
+			     selWM[v-gamma0]+
 			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
 			],
 		reprw];

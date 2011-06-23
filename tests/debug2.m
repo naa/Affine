@@ -2,11 +2,21 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 <<affine.m;
 
+[Calculating...]
+
 a2=makeSimpleRootSystem[A,2];
+
+a1=makeFiniteRootSystem[{(Plus @@ a2[simpleRoots])}];
+
+ima=makeIrreducibleModule[a2][weight[a2][2,0]];
+
+fcc=ourBranching[ima,a1]
+
+Out[153]= formalElement[Affine`Private`table$28040]
 
 a2a=makeAffineExtension[a2];
 
-a1a=makeAffineExtension[makeFiniteRootSystem[{(Plus @@ a2[simpleRoots])/2}]];
+a1a=makeAffineExtension[makeFiniteRootSystem[{(Plus @@ a2[simpleRoots])}]];
 
 a2a[gradeLimit]=6;
 
@@ -14,7 +24,2087 @@ a1a[gradeLimit]=6;
 
 ima=makeIrreducibleModule[a2a][weight[a2a][1,0,0]];
 
+im=makeIrreducibleModule[a1a][weight[a1a][1,1]];
+
+fcc3=Affine`Private`fullCharacter[im]
+
+Export["affineCharacter4.png",Graphics[(Text[fcc3[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fcc3[weights]]]
+
+Out[134]= affineCharacter4.png
+
+Out[131]= affineCharacter4.png
+
+Out[128]= affineCharacter3.png
+
+Out[126]= affineCharacter2.png
+
+Out[123]= affineCharacter1.png
+
+Out[121]= affineCharacter1.png
+
+Out[105]= affineCharacter1.png
+
+Out[102]= affineCharacter1.png
+
+Out[99]= affineCharacter1.png
+
+Out[96]= affineCharacter1.png
+
+Part::partw: Part 2 of weights[finitePart] does not exist.
+
+Out[82]= affineCharacter1.png
+
+Out[80]= affineCharacter1.png
+
+Out[78]= affineCharacter1.png
+
+Out[76]= affineCharacter1.png
+
+Out[72]= affineCharacter1.png
+
+Out[69]= affineCharacter1.png
+
+Out[66]= affineCharacter1.png
+
+fcc2=simpleBranching[ima,a1a]
+
+fcc2[weights]
+
+fcc2[multiplicities]
+
+Export["affineBranch8.png",Graphics[(Text[fcc2[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fcc2[weights]]]
+
 fcc=ourBranching[ima,a1a]
+
+Out[149]= formalElement[Affine`Private`table$27929]
+
+a1a
+
+Affine`Private`rootSystem[ima]
+
+Export["affineBranch13.png",Graphics[(Text[fcc[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fcc[weights]]]
+
+Out[150]= affineBranch13.png
+
+Out[59]= affineBranch9.png
+
+a1a[finiteRootSystem]
+
+                                                  1       1
+Out[18]= finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}]
+                                                  2       2
+
+projection[a1a[finiteRootSystem]][finiteWeight[3,{1,0,1}]]
+
+Out[17]= finiteWeight[3, {0, 0, 0}]
+
+                                                             1       1
+Out[12]= projection[finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}]][
+                                                             2       2
+ 
+>    finiteWeight[3, {1, 0, 1}]]
+
+                                                      1       1
+2 projection[finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}]][
+                                                      2       2
+ 
+>     finiteWeight[3, {1, 0, -1}]] . 
+ 
+                                                         1       1
+>    projection[finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}]][
+                                                         2       2
+ 
+>     finiteWeight[3, {1, 0, -1}]]
+                                 1       1     1
+affineWeight[3, finiteWeight[3, {-, 0, -(-)}], -, 0]
+                                 4       4     2
+Affine`Private`getOrderedWeightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>     finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>   affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                        1       1
+>     {finiteWeight[3, {-, 0, -(-)}]}], 
+                        2       2
+ 
+                                        1      1
+>    affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                        2      2
+ 
+                                       1       1
+>    {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                       2       2
+ 
+>   {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+                                                          1       1
+>   2 projection[finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}]][
+                                                          2       2
+ 
+>      finiteWeight[3, {1, 0, -1}]] . 
+ 
+                                                          1       1
+>     projection[finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}]][
+                                                          2       2
+ 
+>      finiteWeight[3, {1, 0, -1}]]]
+
+DownValues::sym: 
+   Argument projection[affineRootSystem[1, 
+                                                1       1
+       finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}], 
+                                                2       2
+       affineWeight[3, <<2>>, 1], 
+                                         1       1
+       {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]][{<<45>>}] at
+                                         2       2
+     position 1 is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[projection[affineRootSystem[1, 
+         finiteRootSystem[1, 3, {f<<9>>ht[<<2>>]}], <<11>>t[<<4>>], 
+                                           1       1
+         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]][{<<45>>}], 
+                                           2       2
+      <<1>>][[All,<<3>>]] is longer than depth of object.
+
+Union::heads: Heads Part and List at positions 2 and 1
+     are expected to be the same.
+
+DownValues::sym: 
+   Argument projection[affineRootSystem[1, <<2>>, 
+       {If[Affine`Private`insideQ[{affineWeight[3, 
+             finiteWeight[3, {-1, 0, 1}], 0, 1], <<43>>, 
+            affineWeight[3, <<2>>, 6]} + <<1>>], <<1>>, 0]}]][{<<45>>}] at
+     position 1 is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[projection[affineRootSystem[1, <<2>>, 
+         {If[Affine`Private`insideQ[{affineWeight[3, f<<9>>ht[<<2>>], 0, 1], 
+              <<44>>} + <<11>>t[<<4>>]], <<1>>, 0]}]][{<<45>>}], <<1>>][[All,
+     <<3>>]] is longer than depth of object.
+
+DownValues::sym: 
+   Argument projection[affineRootSystem[1, <<2>>, 
+       {If[Affine`Private`insideQ[{affineWeight[3, 
+             finiteWeight[3, {-1, 0, 1}], 0, 1], <<43>>, 
+            affineWeight[3, <<2>>, 6]} + <<1>>], <<1>>, 0]}]][{<<45>>}] at
+     position 1 is expected to be a symbol.
+
+General::stop: Further output of DownValues::sym
+     will be suppressed during this calculation.
+
+Part::partd: Part specification 
+    DownValues[projection[affineRootSystem[1, <<2>>, 
+         {If[Affine`Private`insideQ[{affineWeight[3, f<<9>>ht[<<2>>], 0, 1], 
+              <<44>>} + <<11>>t[<<4>>]], <<1>>, 0]}]][{<<45>>}], <<1>>][[All,
+     <<3>>]] is longer than depth of object.
+
+General::stop: Further output of Part::partd
+     will be suppressed during this calculation.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      affineRootSystem[1, finiteRootSystem[1, 3, {<<12>>[<<2>>]}], 
+                                                        1       1
+       <<12>>[<<4>>], {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]]
+                                                        2       2
+      [<<1>>] does not exist.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      affineRootSystem[1, finiteRootSystem[1, 3, {<<12>>[<<2>>]}], 
+                                                        1       1
+       <<12>>[<<4>>], {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]]
+                                                        2       2
+      [<<1>>] does not exist.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      affineRootSystem[1, finiteRootSystem[1, 3, {<<12>>[<<2>>]}], 
+                                                        1       1
+       <<12>>[<<4>>], {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]]
+                                                        2       2
+      [<<1>>] does not exist.
+
+General::stop: Further output of Part::partw
+     will be suppressed during this calculation.
+
+Part::pspec: Part specification 
+    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+       {affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 1], <<43>>, 
+        affineWeight[3, <<2>>, 6]}, <<3>>], {0, <<3>>}][All] is neither an
+     integer nor a list of integers.
+
+Out[11]= makeFormalElement[DownValues[makeHashtable[Affine`Private`getOrdered\
+ 
+>         WeightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>          finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}], Sort -> False][[All,1,1,1]], 
+ 
+>    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][DownValues[makeHashtable[Affine`Private`getOrderedWe\
+ 
+>          ightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>           finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>         affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                              1       1
+>           {finiteWeight[3, {-, 0, -(-)}]}], 
+                              2       2
+ 
+                                              1      1
+>          affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                              2      2
+ 
+                                             1       1
+>          {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                             2       2
+ 
+>         {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>         2 projection[finiteRootSystem[1, 3, 
+ 
+                                 1       1
+>              {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                 2       2
+ 
+>            . projection[finiteRootSystem[1, 3, 
+ 
+                                 1       1
+>              {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]
+                                 2       2
+ 
+>         , {0, 0, 0, 0}], Sort -> False]][[makeHashtable[Affine`Private`getO\
+ 
+>         rderedWeightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>          finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][All],makeHashtable[Affine`Private`getOrderedWeightsP\
+ 
+>         rojectedToWeylChamber[{affineWeight[3, finiteWeight[3, {-1, 0, 1}], 
+ 
+>          0, 1], affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][1],makeHashtable[Affine`Private`getOrderedWeightsPro\
+ 
+>         jectedToWeylChamber[{affineWeight[3, finiteWeight[3, {-1, 0, 1}], 
+ 
+>          0, 1], affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][1],makeHashtable[Affine`Private`getOrderedWeightsPro\
+ 
+>         jectedToWeylChamber[{affineWeight[3, finiteWeight[3, {-1, 0, 1}], 
+ 
+>          0, 1], affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][1]]]]
+
+DownValues::sym: 
+   Argument projection[affineRootSystem[1, 
+                                                1       1
+       finiteRootSystem[1, 3, {finiteWeight[3, {-, 0, -(-)}]}], 
+                                                2       2
+       affineWeight[3, <<2>>, 1], 
+                                         1       1
+       {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]][{<<45>>}] at
+                                         2       2
+     position 1 is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[projection[affineRootSystem[1, 
+         finiteRootSystem[1, 3, {finiteWeight[<<2>>]}], <<11>>t[<<4>>], 
+                                           1       1
+         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]][<<1>>], 
+                                           2       2
+      <<1>>][[All,<<2>>,1]] is longer than depth of object.
+
+Union::heads: Heads Part and List at positions 2 and 1
+     are expected to be the same.
+
+DownValues::sym: 
+   Argument projection[affineRootSystem[1, <<2>>, 
+       {If[Affine`Private`insideQ[{affineWeight[3, 
+             finiteWeight[3, {-1, 0, 1}], 0, 1], <<43>>, 
+            affineWeight[3, <<2>>, 6]} + <<1>>], <<1>>, 0]}]][{<<45>>}] at
+     position 1 is expected to be a symbol.
+
+Part::partd: Part specification 
+    DownValues[projection[affineRootSystem[1, <<2>>, 
+         {If[Affine`Private`insideQ[{affineWeight[3, finiteWeight[<<2>>], 0, 
+               1], <<44>>} + <<11>>t[<<4>>]], <<2>>]}]][{<<45>>}], <<1>>][[
+     All,<<2>>,1]] is longer than depth of object.
+
+DownValues::sym: 
+   Argument projection[affineRootSystem[1, <<2>>, 
+       {If[Affine`Private`insideQ[{affineWeight[3, 
+             finiteWeight[3, {-1, 0, 1}], 0, 1], <<43>>, 
+            affineWeight[3, <<2>>, 6]} + <<1>>], <<1>>, 0]}]][{<<45>>}] at
+     position 1 is expected to be a symbol.
+
+General::stop: Further output of DownValues::sym
+     will be suppressed during this calculation.
+
+Part::partd: Part specification 
+    DownValues[projection[affineRootSystem[1, <<2>>, 
+         {If[Affine`Private`insideQ[{affineWeight[3, finiteWeight[<<2>>], 0, 
+               1], <<44>>} + <<11>>t[<<4>>]], <<2>>]}]][{<<45>>}], <<1>>][[
+     All,<<2>>,1]] is longer than depth of object.
+
+General::stop: Further output of Part::partd
+     will be suppressed during this calculation.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      affineRootSystem[1, finiteRootSystem[1, 3, {<<10>>ht[<<2>>]}], 
+                                                         1       1
+       <<11>>t[<<4>>], {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]
+                                                         2       2
+       ][<<1>>] does not exist.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      affineRootSystem[1, finiteRootSystem[1, 3, {<<10>>ht[<<2>>]}], 
+                                                         1       1
+       <<11>>t[<<4>>], {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]
+                                                         2       2
+       ][<<1>>] does not exist.
+
+Part::partw: Part 2 of Affine`Private`toFundamentalChamberWithParity[
+      affineRootSystem[1, finiteRootSystem[1, 3, {<<10>>ht[<<2>>]}], 
+                                                         1       1
+       <<11>>t[<<4>>], {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}]
+                                                         2       2
+       ][<<1>>] does not exist.
+
+General::stop: Further output of Part::partw
+     will be suppressed during this calculation.
+
+Part::pspec: Part specification 
+    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+       {affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 1], <<43>>, 
+        affineWeight[3, <<2>>, 6]}, <<3>>], {0, <<2>>, 0}][All] is neither an
+     integer nor a list of integers.
+
+Out[9]= makeFormalElement[DownValues[makeHashtable[Affine`Private`getOrderedW\
+ 
+>         eightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>          finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}], Sort -> False][[All,1,1,1]], 
+ 
+>    makeHashtable[Affine`Private`getOrderedWeightsProjectedToWeylChamber[
+ 
+>        {affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][DownValues[makeHashtable[Affine`Private`getOrderedWe\
+ 
+>          ightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>           finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>          affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>         affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                              1       1
+>           {finiteWeight[3, {-, 0, -(-)}]}], 
+                              2       2
+ 
+                                              1      1
+>          affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                              2      2
+ 
+                                             1       1
+>          {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                             2       2
+ 
+>         {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>         2 projection[finiteRootSystem[1, 3, 
+ 
+                                 1       1
+>              {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                 2       2
+ 
+>            . projection[finiteRootSystem[1, 3, 
+ 
+                                 1       1
+>              {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]
+                                 2       2
+ 
+>         , {0, 0, 0, 0}], Sort -> False]][[makeHashtable[Affine`Private`getO\
+ 
+>         rderedWeightsProjectedToWeylChamber[{affineWeight[3, 
+ 
+>          finiteWeight[3, {-1, 0, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][All],makeHashtable[Affine`Private`getOrderedWeightsP\
+ 
+>         rojectedToWeylChamber[{affineWeight[3, finiteWeight[3, {-1, 0, 1}], 
+ 
+>          0, 1], affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][1],makeHashtable[Affine`Private`getOrderedWeightsPro\
+ 
+>         jectedToWeylChamber[{affineWeight[3, finiteWeight[3, {-1, 0, 1}], 
+ 
+>          0, 1], affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][1],makeHashtable[Affine`Private`getOrderedWeightsPro\
+ 
+>         jectedToWeylChamber[{affineWeight[3, finiteWeight[3, {-1, 0, 1}], 
+ 
+>          0, 1], affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 0], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 0, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, -1, 1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {-1, 1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 1, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {1, 0, -1}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 1], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 2], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 3], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 4], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 5], 
+ 
+>         affineWeight[3, finiteWeight[3, {0, 0, 0}], 0, 6]}, 
+ 
+>        affineRootSystem[1, finiteRootSystem[1, 3, 
+ 
+                             1       1
+>          {finiteWeight[3, {-, 0, -(-)}]}], 
+                             2       2
+ 
+                                             1      1
+>         affineWeight[3, finiteWeight[3, {-(-), 0, -}], 0, 1], 
+                                             2      2
+ 
+                                            1       1
+>         {affineWeight[3, finiteWeight[3, {-, 0, -(-)}], 0, 0]}], 
+                                            2       2
+ 
+>        {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0]}, 
+ 
+>        2 projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]\
+                                2       2
+ 
+>           . projection[finiteRootSystem[1, 3, 
+ 
+                                1       1
+>             {finiteWeight[3, {-, 0, -(-)}]}]][finiteWeight[3, {1, 0, -1}]]]\
+                                2       2
+ 
+>        , {0, 0, 0, 0}][1]]]]
 
 Out[103]= formalElement[Affine`Private`table$7657]
 
@@ -1355,6 +3445,8 @@ vma=makeVermaModule[a1a][weight[a1a][4,2]];
 
 b2a[gradeLimit]=5
 
+Out[24]= 5
+
 Out[87]= 5
 
 Out[5]= 3
@@ -1374,7 +3466,25 @@ fcc=Affine`Private`fullCharacter[ima]
 
 a11a=makeAffineExtension[makeFiniteRootSystem[{{1,1}}]]
 
+Out[109]= affineRootSystem[1, finiteRootSystem[1, 2, 
+ 
+>     {finiteWeight[2, {1, 1}]}], 
+ 
+>    affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>    {affineWeight[2, finiteWeight[2, {1, 1}], 0, 0]}]
+
+Out[22]= affineRootSystem[1, finiteRootSystem[1, 2, 
+ 
+>     {finiteWeight[2, {1, 1}]}], 
+ 
+>    affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>    {affineWeight[2, finiteWeight[2, {1, 1}], 0, 0]}]
+
 a11a[gradeLimit]=5
+
+Out[25]= 5
 
 Out[88]= 5
 
@@ -1428,6 +3538,248 @@ Out[15]= affineBranch0.png
 Out[14]= affineBranch0.png
 
 fcc=ourBranching[ima,a11a]
+
+Out[139]= formalElement[Affine`Private`table$26846]
+
+Out[113]= formalElement[Affine`Private`table$25550]
+
+Out[110]= formalElement[Affine`Private`table$24628]
+
+1
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 2, 0]
+                                 2  2
+                                  1  1
+{affineWeight[2, finiteWeight[2, {-, -}], 1, 0], 
+                                  2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, 0], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -1], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -1], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -2], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -2], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -3], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -3], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -4], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -4], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -5], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -5]}
+
+Out[38]= formalElement[Affine`Private`table$19845]
+
+1
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 2, 0]
+                                 2  2
+                                  1  1
+{affineWeight[2, finiteWeight[2, {-, -}], 1, 0], 
+                                  2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, 0], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -1], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -1], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -2], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -2], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -3], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -3], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -4], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -4], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -5], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -5], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -6], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -6], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -7], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -7], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -8], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -8], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -9], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -9]}
+
+Out[35]= formalElement[Affine`Private`table$18909]
+
+1
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 2, 0]
+                                 2  2
+                                  1  1
+{affineWeight[2, finiteWeight[2, {-, -}], 1, 0], 
+                                  2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, 0], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -1], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -1], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -2], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -2], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -3], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -3], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -4], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -4], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -5], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -5], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -6], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -6], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -7], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -7], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -8], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -8], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -9], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -9]}
+
+Out[32]= formalElement[Affine`Private`table$17445]
+
+1
+                                 1  1
+affineWeight[2, finiteWeight[2, {-, -}], 2, 0]
+                                 2  2
+{affineWeight[2, finiteWeight[2, {0, 0}], 1, 0], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -1], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -1], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -2], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -2], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -3], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -3], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -4], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -4], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -5], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -5], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -6], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -6], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -7], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -7], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -8], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -8], 
+ 
+                                     1  1
+>   affineWeight[2, finiteWeight[2, {-, -}], 1, -9], 
+                                     2  2
+ 
+>   affineWeight[2, finiteWeight[2, {0, 0}], 1, -9]}
+
+Out[28]= formalElement[Affine`Private`table$15942]
 
 Out[90]= formalElement[Affine`Private`table$5552]
 
@@ -3561,12 +5913,60 @@ Out[47]= makeFormalElement[{affineWeight[2, finiteWeight[2, {0, 0}], 3, -4],
 
 Out[16]= $Aborted
 
-Export["affineBranch4.png",Graphics[(Text[fcc[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fcc[weights]]]
+Export["affineBranch12.png",Graphics[(Text[fcc[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fcc[weights]]]
+
+Out[140]= affineBranch12.png
+
+Out[114]= affineBranch11.png
+
+Out[111]= affineBranch11.png
+
+Out[47]= affineBranch6.png
+
+Out[39]= affineBranch5.png
+
+Out[36]= affineBranch5.png
+
+Out[33]= affineBranch5.png
+
+Out[31]= affineBranch5.png
+
+Out[29]= affineBranch5.png
+
+Out[21]= affineBranch4.png
 
 highestRoot[b2a]
 
-[Calculating...]
-Out[106]= highestRoot[affineRootSystem[2, 
+embeddingIndex[rs_?rootSystemQ,subs_?rootSystemQ]:=
+					     ((#.#)& @ projection[subs[finiteRootSystem]][highestRoot[rs[finiteRootSystem]]])/
+					     ((#.#)& @ highestRoot[subs[finiteRootSystem]]);
+
+Out[115]= 4
+
+embeddingIndex[a2a,a1a]
+
+(#.#)&@highestRoot[a1a[finiteRootSystem]]
+
+(#.#)&@projection[a1a[finiteRootSystem]][highestRoot[a2a[finiteRootSystem]]]
+
+Out[113]= 2
+
+
+
+Out[112]= 2
+
+          1
+Out[111]= -
+          2
+
+                           1       1
+Out[110]= finiteWeight[3, {-, 0, -(-)}]
+                           2       2
+
+Out[109]= 1
+
+
+ut[106]= highestRoot[affineRootSystem[2, 
  
 >     finiteRootSystem[2, 2, {finiteWeight[2, {1, -1}], 
  
