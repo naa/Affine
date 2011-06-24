@@ -287,8 +287,49 @@ Expect["branching2", True,
 	      wg=weight[b4][0,1,0,2];
 	      fe=branching2[b4,b2][wg];
 	      mcw=Select[fe[weights],mainChamberQ[b2]];
-(*	      Print[fe/@mcw];*)
 	      Union[fe/@mcw]==={0,6,10,19,30,40,60}]]
+
+
+Expect["Irreducible module",True,
+       Module[{b2=makeSimpleRootSystem[B,2],im,ch},
+	      im=makeIrreducibleModule[b2][weight[b2][1,0]];
+	      ch=character[im];
+	      ch[weight[b2][0,0]]==1]]
+
+
+Expect["Our branching for modules", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg,im},
+	      b2=parabolicSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+(*	      Print[wg];*)
+	      im=makeIrreducibleModule[b4][wg];
+	      Union[ourBranching[im,b2][multiplicities]]==={0,6,10,19,30,40,60}]]
+
+
+Expect["Our branching for modules", True,
+       Module[{b2=makeSimpleRootSystem[B,2],a1,wg,im},
+	      a1=makeFiniteRootSystem[{{1,1}}];
+	      wg=weight[b2][1,1];
+	      im=makeIrreducibleModule[b2][wg];
+	      Union[ourBranching[im,a1][multiplicities]]==={2,4}]]
+
+
+Expect["Our branching for b4 modules", True, 
+       Module[{b4=makeSimpleRootSystem[B,4],b2,wg},
+	      b2=parabolicSubalgebra[b4][3,4];
+	      wg=weight[b4][0,1,0,2];
+	      Union[ourBranching[makeIrreducibleModule[b4][wg],b2][multiplicities]]==={0,6,10,19,30,40,60}]]
+
+
+(*
+Expect["Branching for affine Lie algebras",True,
+       Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]], a1a,ima,fe},
+	      b2a[gradeLimit]=4;
+	      a1a[gradeLimit]=4;
+	      ima=makeIrreducibleModule[b2a][weight[b2a][0,1,0]];
+	      a1a=makeAffineExtension[makeFiniteRootSystem[{{1,1}}]];
+	      fe=ourBranching[ima,a1a]]]
+*)
 
 (*Expect["ourBranching for affine Lie algebras"]*)
 (*

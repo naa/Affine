@@ -928,22 +928,26 @@ ourBranching[m_module,subs_?rootSystemQ]:=
 	   selWM=extendedSingElement[m,subs];
 	   rh=rho[rs];
 	   subrh=rho[subs];
-	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,cSingularWeights[m][weights],ei];
-	   Print[reprw];
-	   fn=fan[rs,subs];
 
+	   fn=fan[rs,subs];
 	   gamma0=Sort[Select[fn[weights],grade[#]==0&],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
-	   Print[gamma0,sgamma0];
 	   fn=fn*Exp[-gamma0];
+	   Print[gamma0,sgamma0];
+
+	   reprw=getOrderedWeightsProjectedToWeylChamber[positiveRoots[rs],subs,(cSingularWeights[m]*Exp[-gamma0])[weights],ei];
+	   Print[reprw];
+
+
+
 	   def=-projection[subs][rh,ei];
 	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z-def]},{tmp[[1]]+def,tmp[[2]]}]];
 	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
 	   insideQ:=NumberQ[res[toFC[#][[1]]]]&;
 	   Scan[Function[v,
-(*			 Print[v];*)
+			 Print[v];
 			 res[v]=-1/sgamma0*(
-			     selWM[v-gamma0]+
+			     -selWM[v-gamma0]+
 			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
 			],
 		reprw];
@@ -1037,8 +1041,8 @@ branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   makeFormalElement[keys[res],values[res]]
 	  ]
 
-drawPlaneProjection[axe1_,axe2_,f_formalElement]:=
-    Graphics[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]]}] &) /@ f[weights]]
+drawPlaneProjection[axe1_,axe2_,f_formalElement,opts___?OptionQ]:=
+    Graphics[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]]}] &) /@ f[weights],opts]
 
 draw3dProjection[axe1_,axe2_,axe3_,f_formalElement]:=
     Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights]]
