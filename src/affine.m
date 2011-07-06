@@ -639,7 +639,7 @@ zeroWeight[rs_affineRootSystem]:=makeAffineWeight[zeroWeight[rs[finiteRootSystem
 
 (* Ugly hack *)
 positiveRoots[rs_affineRootSystem]:=Join[Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]],
-					 Join@@Table[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&],{rs[rank]}]];
+					 Join@@Table[Rest[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&]],{rs[rank]}]];
 
 toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
     First[NestWhile[Function[v,
@@ -940,8 +940,8 @@ ourBranching[m_module,subs_?rootSystemQ]:=
 
 
 
-	   def=-projection[subs][rh,ei];
-	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z-def]},{tmp[[1]]+def,tmp[[2]]}]];
+	   (*def=-projection[subs][rh,ei];*)
+	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z+subrh]},{tmp[[1]]-subrh,tmp[[2]]}]];
 	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
 	   insideQ:=NumberQ[res[toFC[#][[1]]]]&;
 	   Scan[Function[v,
