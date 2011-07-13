@@ -149,9 +149,11 @@ Module[{b2=makeSimpleRootSystem[B,2]},
 Module[{b2=makeSimpleRootSystem[B,2]},
        Expect["orbit is equivalent to partial orbit",True, partialOrbit[b2][{rho[b2]}]=== orbit[b2][rho[b2]]]]
 
-Module[{b2=makeSimpleRootSystem[B,2]},
-       Expect["Positive roots of B2",True, Union[positiveRoots[b2]]===Union[{makeFiniteWeight[{1,-1}],makeFiniteWeight[{0,1}],
-							       makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}]}]]]
+
+Expect["Positive roots of B2",True, 
+       Module[{b2=makeSimpleRootSystem[B,2]},
+	      Union[positiveRoots[b2]]===Union[{makeFiniteWeight[{1,-1}],makeFiniteWeight[{0,1}],
+						makeFiniteWeight[{1,0}],makeFiniteWeight[{1,1}]}]]]
 
 Expect["Dimension",5, dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]]
 
@@ -187,9 +189,7 @@ Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
 								       makeAffineWeight[{0, 1}, 0, 0], 
 								       makeAffineWeight[{1, 1}, 0, 0], 
 								       makeAffineWeight[{1, 0}, 0, 0], 
-								       makeAffineWeight[{0, 0}, 0, 0], 
 								       makeAffineWeight[{0, 0}, 0, 1], 
-								       makeAffineWeight[{0, 0}, 0, 0], 
 								       makeAffineWeight[{0, 0}, 0, 1]}]];
        b2a[gradeLimit]=.;]
 
