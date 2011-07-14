@@ -827,16 +827,30 @@ weightSystem[{posroots__?weightQ},{initialWeights__?weightQ}]:=weightSystem[{pos
 dropWhile = Drop[#, LengthWhile[#, #2]] &;
 
 weightSystem[m_module]:=
-    Module[{check,rs=rootSystem[m],res},
-	   check=If [subSystem[m]=!=emptyRootSystem[],
-		     mainChamberQ[subSystem[m]][#] && checkGrade[rs][#] & , 
-		     checkGrade[rs]];
+    Module[{check,rs=rootSystem[m],res,roots},
+	   res=
+	   If [subSystem[m]=!=emptyRootSystem[],
+	       roots=simpleRoots[subSystem[m]];
+	       Select[
+		   Union[Flatten[
+		       FixedPointList[
+			   Function[x,
+				    Complement[Select[
+					Flatten[Outer[If[#1.#2>0 && checkGrade[rs][#2-#1],#2-#1]&,roots,x]],
+						   #=!=Null&],x]],
+			   cSingularWeights[m][weights]]]],
+		   mainChamberQ[subSystem[m]]],
+	       cSingularWeights[m][weights]];
+	   roots=If [subSystem[m]=!=emptyRootSystem[],Complement[simpleRoots[rs],simpleRoots[subSystem[m]]],simpleRoots[rs]];
 	   res=Select[
 	       Flatten[
 		   Function[x,
-			    x-((Plus @@ (simpleRoots[rs]*#) )& /@ Flatten[Permutations/@IntegerPartitions[#,{Length[simpleRoots[rs]]},Range[0,#]]&/@Range[0,limit[m]],2])]/@cSingularWeights[m][weights]],
-	       check];
+			    x-((Plus @@ (roots*#) )& /@ 
+			       Flatten[Permutations/@IntegerPartitions[#,{Length[roots]},Range[0,#]]&/@
+				       Range[0,limit[m]],2])]/@res],
+	       checkGrade[rs]];
 	   makeFormalElement[res,Table[1,{Length[res]}]]];
+
 (*
 weightSystem[m_module]:=Module[{roots,checkLimit,rh,rs=rootSystem[m],res},
 			       roots=simpleRoots[rs];
