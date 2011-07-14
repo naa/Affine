@@ -795,32 +795,23 @@ We represent formal characters of representations by special structure \lstinlin
 {\bf Affine.m} can be used to study different kinds of modules, i.e. Verma modules, irreducible modules and parabolic Verma modules .  We need datastructure \lstinline{module} to represent generic module of Lie algebra $\gf$. Module properties can be deduced from its set of singular weights using Weyl character formulae \eqref{eq:11},\eqref{eq:12},\eqref{eq:18},\eqref{eq:13}. Set of singular weights can have Weyl symmetry. It can be symmetry with respect to Weyl group $W_{\gf}$ or with respect to some subalgebra $W_{\af}$ as in the case of parabolic Verma modules. Then it is possible to study only main Weyl chamber $C_{\af}$. To use this symmetry generic constructor for \lstinline{module} datastructure accepts several parameters \lstinline{makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|emptyRootSystem[],opts___?OptionQ]}. Here \lstinline{rs} is root system of Lie algebra $\gf$,\lstinline{singWeights} is the set of singular weights,  \lstinline{subs} is root system corresponding to Weyl group $W_{\af}$ which is the symmetry of the set of singular weights.
 There are several specialized constructors for different types of highest weight modules:
 \begin{lstlisting}[mathescape=true]
-\leabel
 vm=makeVermaModule[$B_{2}$][weight[$B_{2}$][2,1]];
 pm=makeParabolicVermaModule[$B_{2}$][weight[$B_{2}$][2,1],{1}];
 im=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
-Show[textPlot/@{im,vm,pm}]
+GraphicsRow[textPlot/@{im,vm,pm}]
+$\includegraphics[width=130mm]{irrep-verma-pverma.pdf}$
 \end{lstlisting}
-\begin{figure}[h]
-  \label{irrep-verma-pverma}
-  \noindent\centering{
-    \includegraphics[width=150mm]{irrep-verma-pverma.pdf}
-  }
-  \caption{Weight diagrams of $B_{2}$ highest weight modules with highest weight $[2,1]$: irreducible, Verma, parabolic Verma. Produced by code of Listing}
-\end{figure}
-
 
 As we already stated properties of the module are encoded by its singular element. Function \lstinline{singularElement[m_module]} returns singular element of module as \lstinline{formalElement} datastructure. Character (up to \lstinline{limit} for (parabolic) Verma modules) is returned by function \lstinline{character[m_module]}. Direct sum of modules is module and we use natural notation
 \begin{lstlisting}[mathescape=true]
 im1=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
 im2=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][1,2]];
-character[im1$\oplus$ im2]
+textPlot[im1$\oplus$ im2]
+$\includegraphics[width=60mm]{irrep-sum.pdf}$
 \end{lstlisting}
-Figure
 
 Tensor product is also implemented but only for finite-dimensional Lie algebras, since tensor product of affine Lie algebra modules leads to rich new structures \cite{kazhdan1994tensor3,kazhdan1993tensor1,kazhdan1993tensor2} which are out of the scope of present paper.
 
-Computation of weight multiplicities in function and branching coefficients 
 \section{Computational algorithms}
 \label{sec:comp-algor}
 
@@ -831,7 +822,18 @@ As we have already stated in section \ref{sec:high-weight-modul} there exist two
 \item Use a recurrent formula. If the weight required for recurrent computation is outside the main chamber use Weyl symmetry.
 \end{enumerate}
 The difference in performance of algorithms is in the number of previous values required to get the multiplicity of weight under consideration. For recurrent relation \eqref{eq:14} it is constant and equal to the number of elements in Weyl group (if we are far from the boundary of representation diagram). When Freudenthal formula \eqref{eq:15} is used number of previous values grows with the distance from the external border of representation. So Freudenthal formula is faster if the weight is close to the border or the rank of the algebra and the size of Weyl group is large \cite{moody1982fast}.
-But Freudenthal formula is of no use if we are interested in Verma modules.
+Note that Freudenthal formula is valid for irreducible modules only, so it can not be used to study (generalized) Verma modules.
+
+We have made some experiments with our implementations of Freudenthal formula and formula \eqref{eq:15} and have got Figure  \ref{fig:freudenthal-racah-times}, which depicts dependence of computation time on number of weights in module.
+
+\begin{figure}[h]
+  \noindent\centering{
+    \includegraphics[width=80mm]{timing.pdf}
+  }
+  \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
+\label{fig:freudenthal-racah-times}
+
+\end{figure}
 
 In the calculation of branching coefficients use of Freudenthal formula requires full construction of formal characters of algebra representation and all the representations of subalgebra. It is impractical when the rank of algebra and subalgebra are big, for example for maximal subalgebra.
 
@@ -883,53 +885,15 @@ W/W_{\afb }$.
 
 
 Consider the regular embedding $B_{2}\subset B_{4}$. In this case fan consists of 24 elements. In order to decompose $B_{4}$ module we need to construct the subset of singular weights of the module which projects to the main Weyl chamber of subalgebra $B_{2}$. Full set of singular weights consists of 384 elements. Required subset contains at most 48 elements. So time of the construction of required subset is negligible if the number of branching coefficients is greater than that. We may estimate the total number of required operations for the computation of branching coefficients as the product of number of elements in main Weyl chamber of subalgebra with non-zero branching coefficients and number of elements in fan. In the case of direct algorithm we need to compute the multiplicities for each module in the decomposition, so the number of operations grows faster than square of number of elements in main Weyl chamber of subalgebra with non-zero branching coefficients. 
-To further illustrate this performance issue we include the Figure \ref{fig:branching} where we show the time required for computations.
 
-
-
-
-\subsection{Performance testing}
-\label{sec:performance-testing}
-
-We have made some experiments with our implementations of Freudenthal formula and formula \eqref{eq:15} and have got the following graphs \ref{freudenthal-racah-times}.
-\begin{figure}[h]
-  \label{freudenthal-racah-times}
-  \noindent\centering{
-    \includegraphics[width=80mm]{timing.pdf}
-  }
-  \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
-\end{figure}
+To further illustrate this performance issue we include the Figure \ref{fig:branching} where we show the time required for computations of branching coefficients for $B_{3}\subset B_{4}$.
 
 \begin{figure}[h]
-%  \label{freudenthal-racah-times}
   \noindent\centering{
- %   \includegraphics[width=80mm]{figure1.eps}
+   \includegraphics[width=100mm]{branching-timing.pdf}
   }
-  \caption{Freudenthal run time with the number of weights in $\bar C$.}
-
-  \noindent\centering{
- %   \includegraphics[width=80mm]{figure1.eps}
-  }
-  \caption{Racah run time with the number of weights in $\bar C$.}
-
-  \noindent\centering{
- %   \includegraphics[width=80mm]{figure1.eps}
-  }
-  \caption{Freudenthal run time with rank of the algebra}
-
-  \noindent\centering{
- %   \includegraphics[width=80mm]{figure1.eps}
-  }
-  \caption{Racah run time with rank of the algebra}
-\end{figure}
-
-Measurements for branching computations for $\hat B_{3}\subset \hat B_{4}$ are shown at the Fig. \ref{fig:branching}.
-\begin{figure}[h]
+  \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of branching coefficients for $B_{3}\subset B_{4}$.}
   \label{fig:branching}
-  \noindent\centering{
- %   \includegraphics[width=80mm]{figure1.eps}
-  }
-  \caption{Branching}
 \end{figure}
 
 \section{Examples}
@@ -943,13 +907,24 @@ Computation of fusion coefficients for the decomposition of tensor product of hi
 
 For fundamental representations of simple Lie algebras it is sometimes possible to get analytic result for the dependence of decomposition coefficients on $N$ (See \cite{LyakhovskyPostnova2011}). Our code give numerical values and can be used to check this analytic results.
 
-\begin{figure}[h]
-  \label{tensor-product-decomposition-b2}
-  \noindent\centering{
-    \includegraphics[width=80mm]{branching.pdf}
-  }
-  \caption{Fusion coefficients for $\left(L^{(1,0)}\right)^{\otimes 10}$}
-\end{figure}
+Consider tensor power of $B_{2}$ first fundamental representations $\left(L^{[1,0]}\right)^{\otimes 4}$. Decomposition coefficients are just branching coefficients for tensor product module to the diagonal subalgebra $B_{2}\subset B_{2}\oplus B_{2}\oplus B_{2}\oplus B_{2}$. So following code calculates these coefficients:
+\begin{lstlisting}[mathescape=true]
+fm = makeIrreducibleModule[$B_{2}$][1, 0];
+tp = ((fm$\otimes$ ]fm)$\otimes$ fm)$\otimes$]fm;
+subs = makeFiniteRootSystem[
+  {1/4*{1, -1, 1, -1, 1, -1, 1, -1}, 
+   1/4*{0, 1, 0, 1, 0, 1, 0, 1}}];
+bc = branching[tp, subs];
+{bc[#], dynkinLabels[subs][#]} & /@ bc[weights]
+\end{lstlisting}
+It produces list of highest weights and tensor product decomposition coefficients:
+\begin{lstlisting}
+{{1, {4, 0}}, {3, {2, 2}}, {0, {3, 0}}, 
+{2, {0, 4}}, {3, {1, 2}}, {6, {2, 0}}, 
+{6, {0, 2}}, {1, {1, 0}}, {3, {0, 0}}}]
+\end{lstlisting}
+
+Returning to the problem of spin chain Hamiltonian diagonalization we can see that instead of diagonalizing operator in space of dimension $625$ we can diagonalize operators in spaces of dimensions $55, 81, 30, 35, 35, 14, 10, 5, 1$.
 
 \subsection{Branchig and parabolic Verma modules}
 \label{sec:branch-parab-verma}
@@ -973,8 +948,17 @@ String functions can be given physical meaning if we consider coset models of tw
 
 {\bf Affine.m} produces power series decomposition for string functions. Consider affine Lie algebra $\hat{sl(3)}=\hat A_{2}$ highest weight module $L^{(1,0,0)}$. To get string functions we can use the code:
 \begin{lstlisting}[mathescape=true]
-stringFunciton[$\hat A_2$][weight[$\hat A_{2}$][1,0,0]][weight[$\hat A_{2}$][0,1,0]]
-$1+q^2 +q^{3}+\dots$
+stringFunctions[$\hat A_2$,{1,1,2}]
+{{0, 0, 4}, 
+  $2 q + 10 q^2 + 40 q^3 + 133 q^4 + 398 q^5 + 1084 q^6 + 2760 q^7 + 6632 q^8 + 15214 q^9 + 33508 q^{10}$}, 
+{{0, 3, 1}, 
+  $2 q + 12 q^2 + 49 q^3 + 166 q^4 + 494 q^5 + 1340 q^6 + 3387 q^7 + 8086 q^8 + 18415 q^9 + 40302 q^{10}$}, 
+{{1, 1, 2}, 
+  $1 + 6 q + 27 q^2 + 96 q^3 + 298 q^4 + 836 q^5 + 2173 q^6 + 5310 q^7 + 12341 q^8 + 27486 q^9 + 59029 q^{10}$}, 
+{{2, 2, 0}, 
+  $1 + 8 q + 35 q^2 + 124 q^3 + 379 q^4 + 1052 q^5 + 2700 q^6 + 6536 q^7 + 15047 q^8 + 33248 q^9 + 70877 q^{10}$}, 
+{{3, 0, 1}, 
+  $2 + 12 q + 49 q^2 + 166 q^3 + 494 q^4 + 1340 q^5 + 3387 q^6 + 8086 q^7 + 18415 q^8 + 40302 q^9 + 85226 q^{10}$}
 \end{lstlisting}
 
 \subsection{Branching functions and coset models of conformal field theory}
@@ -983,6 +967,19 @@ $1+q^2 +q^{3}+\dots$
 More complex models of CFT can be obtained from cosets $G/A$ corresponding to the embedding $\af\subset\gf$. These models can be studied as gauge theories \cite{Hwang:1994yr, hwang1993brst}.
 
 Branching functions of the embedding $\af\subset\gf$ are the partition functions of CFT on the torus.
+
+\begin{lstlisting}[mathescape=true]
+branchingFunctions[$\hat B_{2}$,makeAffineExtension[makeFiniteRootSystem[{{1, 1}}]], {1, 1, 1}]
+
+ {{3, 0}, 
+  $2 + 14 q + 52 q^2 + 154 q^3 + 410 q^4 + 994 q^5 + 2248 q^6 + 4832 q^7 + 9934 q^8 + 19680 q^9 + 37802 q^{10}$},
+ {{2, 1}, 
+  $4 + 20 q + 72 q^2 + 220 q^3 + 584 q^4 + 1424 q^5 + 3248 q^6 + 7012 q^7 + 14488 q^8 + 28844 q^9 + 55616 q^{10}$},
+ {{0, 3}, 
+  $4 q + 20 q^2 + 68 q^3 + 200 q^4 + 516 q^5 + 1224 q^6 + 2736 q^7 + 5808 q^8 + 11820 q^9 + 23236 q^{10}$},
+ {{1, 2}, 
+  $2 + 14 q + 54 q^2 + 168 q^3 + 462 q^4 + 1148 q^5 + 2656 q^6 + 5812 q^7 + 12130 q^8 + 24358 q^9 + 47328 q^{10}$}
+\end{lstlisting}
 
 \begin{figure}[h]
   \label{branching-b4-b2}

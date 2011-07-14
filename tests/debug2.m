@@ -2,7 +2,196 @@ AppendTo[$Path,$InitialDirectory <> "/../src/"];
 
 <<affine.m;
 
-[Calculating...]
+b2=makeSimpleRootSystem[B,2];
+vm=makeVermaModule[b2][{2,2},3];
+pm=makeParabolicVermaModule[b2][weight[b2][2,2],{1},3];
+im=makeIrreducibleModule[b2][2,2];
+
+vm=makeModule[b2][makeFormalElement[{weight[b2][2,2]},{1}],emptyRootSystem[],{limit->20}]
+
+
+textPlot[m_module]:=drawPlaneProjection[2,1,character[m],{Axes->False}];
+
+Export["mplot.png",GraphicsRow[textPlot/@{im,vm,pm}]]
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{5 >= -(Affine`Private`limit -> 
+ 
+>       Min[-10, -finiteRootSystem[2, 2, 
+ 
+>           {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}][gradeLimit]])
+ 
+>    }
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{True}
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{True}
+
+Out[6]= mplot.png
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{5 >= -(Affine`Private`limit -> 
+ 
+>       Min[-10, -finiteRootSystem[2, 2, 
+ 
+>           {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}][gradeLimit]])
+ 
+>    }
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{True}
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{True}
+
+Out[4]= mplot.png
+
+Out[20]= $Aborted
+
+weightSystem[vm]
+
+Length[Out[18][weights]]
+
+Out[19]= 42436
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{True}
+
+Out[18]= formalElement[Affine`Private`table$177]
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{0 <= finiteRootSystem[2, 2, {finiteWeight[2, {1, -1}], 
+ 
+>       finiteWeight[2, {0, 1}]}][gradeLimit]}
+
+Out[16]= formalElement[Affine`Private`table$166]
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+{0 <= Affine`Private`rs$153[gradeLimit]}
+
+Out[14]= formalElement[Affine`Private`table$155]
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+
+Out[12]= formalElement[Affine`Private`table$144]
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+Affine`Private`rh$131 . #1 >= -Affine`Private`limit[module[finiteRootSystem[
+ 
+>         2, 2, {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>        formalElement[Affine`Private`table$104], emptyRootSystem[], 200]] && 
+ 
+>    grade[#1] <= Affine`Private`rs$131[gradeLimit] & 
+
+Out[10]= formalElement[Affine`Private`table$133]
+
+Affine`Private`limit[vm]
+
+{finiteWeight[2, {-1, 1}], finiteWeight[2, {0, -1}]}
+
+Out[6]= {finiteWeight[2, {3, 1}]}
+
+Affine`Private`limit[vm]
+
+
+Out[87]= formalElement[Affine`Private`table$2953]
+
+Out[86]= mplot.png
+
+character[vm]
+
+Out[83]= formalElement[Affine`Private`table$2839]
+
+Out[81]= mplot.png
+
+Out[79]= mplot.png
+
+                                             
+Out[54]= mplot.png
+
+
+                                             
+Out[51]= mplot.png
+
+
+Length[character[vm][weights]]
+
+Out[55]= 8
+
+Out[50]= 8
+
+Out[49]= formalElement[Affine`Private`table$2232]
+
+Out[48]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$2073], emptyRootSystem[], 20]
+                                             
+Out[46]= mplot.png
+
+vm
+
+makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|subs_emptyRootSystem,opts___?OptionQ]:=
+    module[rs,singWeights,subs,((limit/.Flatten[{opts}])/. limit-> -rs[gradeLimit]) /.rs[gradeLimit]->5];
+
+makeModule[b2][makeFormalElement[{weight[b2][2,2]},{1}],emptyRootSystem[],limit->20]
+
+makeVermaModule[rs_?rootSystemQ][hw_?weightQ,opts___?OptionQ]:=makeModule[rs][makeFormalElement[{hw},{1}],emptyRootSystem[],opts];
+makeVermaModule[rs_?rootSystemQ][ls__?NumberQ,opts___?OptionQ]:=makeVermaModule[rs][weight[rs][ls],opts];
+
+makeVermaModule[b2][2,2,limit->20]
+
+Out[45]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$2071], emptyRootSystem[], 20]
+
+
+Out[43]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$2069], emptyRootSystem[], 20]
+                                             
+Out[39]= mplot.png
+
+                                             
+Out[28]= mplot.png
+
+
+(limit/.({limit->20} /.limit->4))
+
+Out[37]= limit
+
+Out[36]= 20
+
+Out[35]= 20
+
+Out[34]= 20
+
+OptionQ[limit->20]
+
+Out[31]= {__?OptionQ (limit -> 20)}
+
+Out[30]= 20
+
+vm
+
+Out[29]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$1755], emptyRootSystem[], -5]
+
+Out[27]= module[finiteRootSystem[2, 2, 
+ 
+>     {finiteWeight[2, {1, -1}], finiteWeight[2, {0, 1}]}], 
+ 
+>    formalElement[Affine`Private`table$1602], emptyRootSystem[], -5]
+                                             
+Out[26]= mplot.png
+
 
 a2=makeSimpleRootSystem[A,2];
 
@@ -3425,8 +3614,10 @@ fc=Affine`Private`fullCharacter[im]
 
 a1a=makeAffineExtension[makeSimpleRootSystem[A,1]];
 
+b2a=makeAffineExtension[makeSimpleRootSystem[B,2]];
+b2a[gradeLimit]=4;
+ima=makeIrreducibleModule[b2a][weight[b2a][0,1,0]];
 
-b2a[gradeLimit]=4
 
 Out[63]= 4
 
@@ -3438,7 +3629,7 @@ Out[9]= 3
 
 Out[6]= b2a
 
-b2a=makeAffineExtension[makeSimpleRootSystem[B,2]];
+
 
 ima=makeIrreducibleModule[a1a][weight[a1a][4,2]];
 vma=makeVermaModule[a1a][weight[a1a][4,2]];
@@ -3458,7 +3649,7 @@ Out[5]= 4
 Out[4]= 10
 
 
-ima=makeIrreducibleModule[b2a][weight[b2a][0,1,0]];
+
 
 vma=makeVermaModule[b2a][weight[b2a][1,1,1]];
 
@@ -109441,3 +109632,92 @@ dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]
 
 b2
 
+b2
+
+b2=makeSimpleRootSystem[B,2]
+
+dimension[positiveRoots[b2]][weight[b2][0,1]]
+
+dimension[positiveRoots[b2]][weight[b2][0,2]]
+
+Out[12]= 10
+
+Out[11]= 16
+
+Out[10]= 4
+
+Out[9]= 5
+
+dimension[b2]
+
+Out[7]= 2
+
+Out[6]= 2[finiteWeight[2, {1, 0}]]
+
+Out[5]= finiteRootSystem[2, 2, {finiteWeight[2, {1, -1}], 
+ 
+>     finiteWeight[2, {0, 1}]}]
+
+Out[4]= b2
+
+
+b2a=makeAffineExtension[makeSimpleRootSystem[B,2]];
+a1a=makeAffineExtension[makeFiniteRootSystem[{{1,1}}]];
+
+mainChamberQ[a1a][makeAffineWeight[{-1/2,-1/2},1,0]]
+
+Out[6]= False
+
+
+Affine`Private`toFundamentalChamberWithParity[a1a][makeAffineWeight[{3/2,3/2},1,-1]]
+
+mainChamberQ[a1a][makeAffineWeight[{1/2,1/2},1,0]]
+
+a1a[gradeLimit]=4;
+
+orbit[a1a][makeAffineWeight[{1/2,1/2},1,0]]
+
+                                            1  1
+Out[19]= {{affineWeight[2, finiteWeight[2, {-, -}], 1, 0]}, 
+                                            2  2
+ 
+                                         1     1
+>    {affineWeight[2, finiteWeight[2, {-(-), -(-)}], 1, 0]}, 
+                                         2     2
+ 
+                                       3  3
+>    {affineWeight[2, finiteWeight[2, {-, -}], 1, -2]}, 
+                                       2  2
+ 
+                                         3     3
+>    {affineWeight[2, finiteWeight[2, {-(-), -(-)}], 1, -2]}}
+                                         2     2
+
+
+                                           1  1
+Out[13]= {affineWeight[2, finiteWeight[2, {-, -}], 1, 1], 1}
+                                           2  2
+
+                                           1  1
+Out[11]= {affineWeight[2, finiteWeight[2, {-, -}], 1, 1], 1}
+                                           2  2
+
+Out[10]= {affineWeight[2, finiteWeight[2, {0, 0}], 1, 0], 1}
+
+Out[9]= {affineWeight[2, finiteWeight[2, {0, 0}], 1, 1], 1}
+
+                                          1  1
+Out[8]= {affineWeight[2, finiteWeight[2, {-, -}], 1, 0], -1}
+                                          2  2
+
+Out[7]= toFundamentalChamberWithParity[affineRootSystem[1, 
+ 
+>      finiteRootSystem[1, 2, {finiteWeight[2, {1, 1}]}], 
+ 
+>      affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>      {affineWeight[2, finiteWeight[2, {1, 1}], 0, 0]}]][affineWeight[2, 
+ 
+                         1     1
+>     finiteWeight[2, {-(-), -(-)}], 1, 0]]
+                         2     2

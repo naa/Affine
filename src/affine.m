@@ -299,7 +299,7 @@ directSum::"usage"=
 
 CirclePlus::"usage"=CirclePlus::"usage" <> "\n denotes direct sum of modules";
 
-decomposion::"usage"=
+decomposition::"usage"=
     "Tensor product decomposition"
 
 fan::"usage"=
@@ -440,7 +440,7 @@ finiteRootSystem/:x_finiteRootSystem[finiteRootSystem]=x;
 rank[rs_?rootSystemQ]=rs[rank];
 simpleRoot[rs_?rootSystemQ]=rs[simpleRoot];
 simpleRoots[rs_?rootSystemQ]=rs[simpleRoots];
-dimension[rs_?rootSystemQ]=rs[dimension];
+(*dimension[rs_?rootSystemQ]=rs[dimension];*)
 
 prependZeros[num_Integer,vec_finiteWeight]:=makeFiniteWeight[Join[Table[0,{num}],vec[standardBase]]];
 
@@ -828,27 +828,25 @@ dropWhile = Drop[#, LengthWhile[#, #2]] &;
 
 weightSystem[m_module]:=
     Module[{check,rs=rootSystem[m],res,roots},
-	   res=
-	   If [subSystem[m]=!=emptyRootSystem[],
-	       roots=simpleRoots[subSystem[m]];
-	       Select[
-		   Union[Flatten[
-		       FixedPointList[
-			   Function[x,
-				    Complement[Select[
-					Flatten[Outer[If[#1.#2>0 && checkGrade[rs][#2-#1],#2-#1]&,roots,x]],
-						   #=!=Null&],x]],
-			   cSingularWeights[m][weights]]]],
-		   mainChamberQ[subSystem[m]]],
-	       cSingularWeights[m][weights]];
 	   roots=If [subSystem[m]=!=emptyRootSystem[],Complement[simpleRoots[rs],simpleRoots[subSystem[m]]],simpleRoots[rs]];
 	   res=Select[
 	       Flatten[
 		   Function[x,
 			    x-((Plus @@ (roots*#) )& /@ 
 			       Flatten[Permutations/@IntegerPartitions[#,{Length[roots]},Range[0,#]]&/@
-				       Range[0,limit[m]],2])]/@res],
+				       Range[0,limit[m]],2])]/@cSingularWeights[m][weights]],
 	       checkGrade[rs]];
+	   If [subSystem[m]=!=emptyRootSystem[],
+	       roots=simpleRoots[subSystem[m]];
+	       res=Select[
+		   Union[Flatten[
+		       FixedPointList[
+			   Function[x,
+				    Complement[Select[
+					Flatten[Outer[If[#1.#2>0 && checkGrade[rs][#2-#1],#2-#1]&,roots,x]],
+						   #=!=Null&],x]],
+			   res]]],
+		   mainChamberQ[subSystem[m]]]];
 	   makeFormalElement[res,Table[1,{Length[res]}]]];
 
 (*
@@ -936,7 +934,7 @@ tensorProduct[m1_module,m2_module]/; Head[rootSystem[m1]]==finiteRootSystem && H
 	   sw1=cSingularWeights[m1];
 	   sw2=cSingularWeights[m2];
 	   aw=makeFormalElement @@ Transpose @@ Outer[{makeFiniteWeight[Join[#1[standardBase],#2[standardBase]]],sw1[#1]*sw2[#2]}&,sw1[weights],sw2[weights]];
-	   makeModule[rs][aw,subs,limit->limit[m1]*limit[m2]]];
+	   makeModule[rs][aw,subs,limit[m1]*limit[m2]]];
 
 
 (*tensorProduct[m1_module,m2_module]:=Module[{rs,subs=emptyRootSystem[],subroots={},aw},
@@ -961,6 +959,11 @@ affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineE
 *)
 
 CircleTimes[m1_module,m2_module]=tensorProduct[m1,m2];
+
+decomposition[m__module]:=ourBranching[Fold[tensorProduct,First[{m}],Rest[{m}]],
+						    makeFiniteRootSystem[1/Length[{m}]*Fold[Plus,0,simpleRoots[rootSystem[#]]&/@{m}]]]
+					     
+					     
 
 embeddingIndex[rs_?rootSystemQ,subs_?rootSystemQ]:=
 					     ((#.#)& @ projection[subs[finiteRootSystem]][highestRoot[rs[finiteRootSystem]]])/
@@ -1017,10 +1020,7 @@ branching::"usage"=
 
 
 
-
-
-decomposion::"usage"=
-    "Tensor product decomposition"
+branching[m_module,subs_?rootSystemQ]=ourBranching[m,subs];
 
 getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,hweight_?weightQ]:=
     Module[{rh=rho[subs]},
@@ -1101,8 +1101,8 @@ branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 drawPlaneProjection[axe1_,axe2_,f_formalElement,opts___?OptionQ]:=
     Graphics[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]]}] &) /@ f[weights],opts]
 
-draw3dProjection[axe1_,axe2_,axe3_,f_formalElement]:=
-    Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights]]
+draw3dProjection[axe1_,axe2_,axe3_,f_formalElement,opts___?OptionQ]:=
+    Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights],opts]
 
 textPlot[m_module]:=drawPlaneProjection[1,2,character[m],{Axes->False}];
 					     
