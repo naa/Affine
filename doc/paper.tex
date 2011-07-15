@@ -105,6 +105,7 @@
 \newcommand{\hfg}{\hf_{\gf}}
 \newcommand{\hfb}{\mathfrak{h}_{\bot}}
 \newcommand{\pf}{\mathfrak{p}}
+\newcommand{\aft}{\widetilde{\mathfrak{a}}}
 
 %% This list environment is used for the references in the
 %% Program Summary
@@ -302,7 +303,7 @@ Infinite-dimensional Lie algebras also have growing number of applications in ph
 Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}.
 
 The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of affine Lie algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results.
-We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper and in the manual \cite{affinemanual}. In present paper we also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics.
+We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper.  We also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics.
 
 The paper is started with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and representations (Sec. \ref{sec:core-datastructures}) and discuss implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
 
@@ -689,7 +690,7 @@ coordinates of the weight in the orthogonal basis of
 Affine weight is an extension of a finite weight by supplying it
 with level and grade coordinates. There is a set of functions
 defined for finite and affine weights. The complete list can be
-found in the user manual \cite{affinemanual}. The most important
+found in package online help. The most important
 are the definitions of addition, multiplication by number and
 scalar product (bilinear form) for weights. These definitions
 allow to use traditional notation when working with {\bf
@@ -799,7 +800,7 @@ vm=makeVermaModule[$B_{2}$][weight[$B_{2}$][2,1]];
 pm=makeParabolicVermaModule[$B_{2}$][weight[$B_{2}$][2,1],{1}];
 im=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
 GraphicsRow[textPlot/@{im,vm,pm}]
-$\includegraphics[width=130mm]{irrep-verma-pverma.pdf}$
+$\includegraphics[width=130mm]{figures/irrep-verma-pverma.pdf}$
 \end{lstlisting}
 
 As we already stated properties of the module are encoded by its singular element. Function \lstinline{singularElement[m_module]} returns singular element of module as \lstinline{formalElement} datastructure. Character (up to \lstinline{limit} for (parabolic) Verma modules) is returned by function \lstinline{character[m_module]}. Direct sum of modules is module and we use natural notation
@@ -807,7 +808,7 @@ As we already stated properties of the module are encoded by its singular elemen
 im1=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
 im2=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][1,2]];
 textPlot[im1$\oplus$ im2]
-$\includegraphics[width=60mm]{irrep-sum.pdf}$
+$\includegraphics[width=60mm]{figures/irrep-sum.pdf}$
 \end{lstlisting}
 
 Tensor product is also implemented but only for finite-dimensional Lie algebras, since tensor product of affine Lie algebra modules leads to rich new structures \cite{kazhdan1994tensor3,kazhdan1993tensor1,kazhdan1993tensor2} which are out of the scope of present paper.
@@ -828,7 +829,7 @@ We have made some experiments with our implementations of Freudenthal formula an
 
 \begin{figure}[h]
   \noindent\centering{
-    \includegraphics[width=80mm]{timing.pdf}
+    \includegraphics[width=80mm]{figures/timing.pdf}
   }
   \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
 \label{fig:freudenthal-racah-times}
@@ -890,7 +891,7 @@ To further illustrate this performance issue we include the Figure \ref{fig:bran
 
 \begin{figure}[h]
   \noindent\centering{
-   \includegraphics[width=100mm]{branching-timing.pdf}
+   \includegraphics[width=100mm]{figures/branching-timing.pdf}
   }
   \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of branching coefficients for $B_{3}\subset B_{4}$.}
   \label{fig:branching}
@@ -929,14 +930,28 @@ Returning to the problem of spin chain Hamiltonian diagonalization we can see th
 \subsection{Branchig and parabolic Verma modules}
 \label{sec:branch-parab-verma}
 
-We illustrate the connection of branching with generalized BGG-resolution with the sequence of parabolic Verma modules which appear in the study of branching of irreducible $B_{2}$-modules to the modules of subalgebra $A_{1}$. Root of the subalgebra $A_{1}$ in this case is equal to the highest root $\Theta$ of algebra $B_{2}$. In this case orthogonal sub-algebra $\afb$ gives rise to the parabolic Verma modules \cite{2011arXiv1102.1702L}.
+We illustrate generalized BGG-resolution with the diagrams of $G_{2}$ parabolic Verma modules which appear in the decomposition of irreducible module $L^{[1,1]}_{G_{2}}$:
+\begin{equation}
+\mathrm{ch}\left( L^{\mu }\right) =\sum_{u\in U}\;e^{\mu _{\aft}\left(
+u\right) }\epsilon (u)\mathrm{ch}M_{I}^{\mu _{\frak{a}_{\perp }}\left(
+u\right) }.  \label{char-in-gen-verma-mod}
+\end{equation}
+Character of $L^{[1,1]}$ is presented in Figure \ref{branching-bgg}, characters of generalized Verma modules in decomposition \eqref{char-in-gen-verma-mod} are shown in Figure \ref{g2-pverma}. Characters in upper row appear in \eqref{char-in-gen-verma-mod} with positive sign and in lower row with negative.
+
 
 \begin{figure}[h]
   \label{branching-bgg}
   \noindent\centering{
-    \includegraphics[width=80mm]{branching.pdf}
+    \includegraphics[width=80mm]{figures/G2-irrep.pdf}
   }
-  \caption{Parabolic Verma modules from branching}
+  \caption{Character of irreducible $G_{2}$-module $L^{[1,1]}$}
+\end{figure}
+\begin{figure}[h]
+  \label{g2-pverma}
+  \noindent\centering{
+    \includegraphics[width=150mm]{figures/G2-pverma.pdf}
+  }
+  \caption{Character of $G_{2}$ generalized Verma modules appearing in decomposition of $L^{[1,1]}$}
 \end{figure}
 
 \subsection{String functions of affine Lie algebras and CFT models}
@@ -966,8 +981,9 @@ stringFunctions[$\hat A_2$,{1,1,2}]
 
 More complex models of CFT can be obtained from cosets $G/A$ corresponding to the embedding $\af\subset\gf$. These models can be studied as gauge theories \cite{Hwang:1994yr, hwang1993brst}.
 
-Branching functions of the embedding $\af\subset\gf$ are the partition functions of CFT on the torus.
+Branching functions of the embedding $\af\subset\gf$ are the partition functions of CFT on the torus (see \cite{difrancesco1997cft}).
 
+As first example we show computation of branching functions for the embedding $\hat A_{1}\to \hat B_{2}$ up to tenth grade:
 \begin{lstlisting}[mathescape=true]
 branchingFunctions[$\hat B_{2}$,makeAffineExtension[makeFiniteRootSystem[{{1, 1}}]], {1, 1, 1}]
 
@@ -981,18 +997,34 @@ branchingFunctions[$\hat B_{2}$,makeAffineExtension[makeFiniteRootSystem[{{1, 1}
   $2 + 14 q + 54 q^2 + 168 q^3 + 462 q^4 + 1148 q^5 + 2656 q^6 + 5812 q^7 + 12130 q^8 + 24358 q^9 + 47328 q^{10}$}
 \end{lstlisting}
 
-\begin{figure}[h]
-  \label{branching-b4-b2}
-  \noindent\centering{
-    \includegraphics[width=80mm]{branching.pdf}
-  }
-  \caption{Branching coefficients of module $L^{\left[0,1,0,2\right]}$ for regular embedding $B_{2}\subset B_{4}$ displayed in the basis $\left\{e_3,e_4\right\}$}
-\end{figure}
+Another example is computation of branching functions for the regular embedding $\hat B_{2}\subset \hat C_{3}$:
+\begin{lstlisting}[mathescape=true]
+sub=makeAffineExtension[parabolicSubalgebra[$C_{3}$][2,3]];
+branchingFunctions[$\hat C_{3}$,sub, {2, 0, 0, 0}]
 
+{{0, 1, 0}, 
+  $2 q - 20 q^3 + 24 q^4 + 82 q^5 - 320 q^6 + 108 q^7$}, 
+{{1, 0, 0}, 
+  $1 - q - 8 q^2 + 19 q^3 + 16 q^4 - 156 q^5 + 205 q^6 + 640 q^7$}, 
+{{0, 0, 1}, 
+  $q - 5 q^3 + 7 q^5$}
+\end{lstlisting}
 
 \section{Conclusion}
 \label{sec:conclusion}
-We present the package {\bf Affine.m} for computations in representation theory of finite-dimensional and affine Lie algebras. The package is available from {\it github} and is also submitted to the library.
+We have presented the package {\bf Affine.m} for computations in representation theory of finite-dimensional and affine Lie algebras. It can be used to study Weyl groups, roots systems, irreducible, Verma and parabolic Verma modules of finite-dimensional and affine Lie algebras.  In present paper we have also discussed main ideas used for implementation of the package and described most important notions of representation theory required to use {\bf Affine.m}. 
+
+We have demonstrated that recurrent approach based upon Weyl character formula is not only useful for calculations but also allows to see connection with (generalized) Bernstein-Bernstein-Gelfand resolution. 
+
+Also we have presented examples of computations with this package connected with problems of physics and mathematics. 
+
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+The work is supported by the Chebyshev Laboratory
+(Department of Mathematics and Mechanics, Saint-Petersburg State
+University) under the grant 11.G34.31.0026 of the Government of the
+Russian Federation.
+
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -1000,7 +1032,7 @@ We present the package {\bf Affine.m} for computations in representation theory 
 
 \section{Software package}
 \label{package}
-The package can be freely downloaded from {\it github}. Latest release can be found here. To get the development code use the command
+The package can be freely downloaded from \url{http://github.com/naa/Affine}. To get the development code use the command
 \begin{lstlisting}[language=bash]
  git clone git://github.com/naa/Affine.git
 \end{lstlisting}
@@ -1010,22 +1042,24 @@ Contents of the package:
     Affine/                                root folder
       demo/                                  demonstrations
         demo.nb                                demo notebook
-        paper.nb                               code from the paper
+        paper.nb                               code for the paper
       doc/                                 documentation folder
-        figures/                             figures in paper and manual
+        figures/                             figures in paper 
           timing.pdf                           diagram showing performance
-          branching.pdf                        branching coefficients
+          branching-timing.pdf                 ...  for branching coefficients  
+          irrep-sum.pdf                        sum of B2 irreps
+          irrep-verma-pverma.pdf               irrep, Verma, (p)Verma for B2
+          G2-irrep.pdf                         irrep for G2
+          G2-pverma.pdf                        parabolic Verma for G2
         bibliography.bib                     bibliographic database
-        manual.pdf                           manual
-        manual.tex                           manual source
-        paper.pdf                            paper
+        paper.pdf                            present paper
         paper.tex                            paper source
         TODO.org                             list of issues
       src/                                 source folder
         affine.m                             main software package
       tests/                               unit tests folder
         tests.m                              unit tests
-      README.markdown                      short description of software
+      README.markdown                      installation and usage notes
 \end{verbatim}
 
 

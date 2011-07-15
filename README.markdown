@@ -6,13 +6,13 @@ Affine.m
 Overview
 ----------
 
-This program is based on the properties of weight system and uses Weyl symmetry. Central problems are weight multiplicity calculation, branching of representation to representation of subalgebras and tensor product decomposition. For more detail see `doc/manual.pdf`.
+This program is based on the properties of weight system and uses Weyl symmetry. Central problems are weight multiplicity calculation, branching of representation to representation of subalgebras and tensor product decomposition. For more detail see `doc/paper.pdf`.
 
 System requirements
 ----------
 
 Mathematica. Tested with versions 7 and 8 on Linux and Windows.
-More details in `doc/manual.pdf`
+More details in `doc/paper.pdf`
 
 Installation
 ----------
@@ -28,4 +28,4 @@ Usage
 `<<affine.m;`
 
 Use the functions of the package. 
-See `demo/demo.nb` and `doc/manual.pdf`
+See online help for functions and files `demo/demo.nb`,`demo/paper.nb` and `doc/paper.pdf`. 
