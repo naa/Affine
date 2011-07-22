@@ -169,7 +169,7 @@
 
 \begin{abstract}
 %% Text of abstract
-In this paper we present {\bf Affine.m} -- program for computations in representation theory of finite-dimensional and affine Lie algebras and describe implemented algorithms.  Algorithms are based upon the properties of weights and Weyl symmetry. The most important for us problems are computation of weight multiplicities in irreducible and Verma modules, branching of representations and tensor product decomposition. These problems have numerous applications in physics and we provide some examples of these applications. The program is implemented in popular computer algebra system {\it Mathematica} and works with finite-dimensional and affine Lie algebras. 
+In this paper we present {\bf Affine.m} -- program for computations in representation theory of finite-dimensional and affine Lie algebras and describe implemented algorithms.  Algorithms are based upon the properties of weights and Weyl symmetry. The most important problems for us are the ones, concerning computation of weight multiplicities in irreducible and Verma modules, branching of representations and tensor product decomposition. These problems have numerous applications in physics and we provide some examples of these applications. The program is implemented in popular computer algebra system {\it Mathematica} and works with finite-dimensional and affine Lie algebras. 
 
 % A submitted program is expected to be of benefit to other physicists or physical chemists, or be an exemplar of good programming practice, or illustrate new or novel programming techniques which are of importance to some branch of computational physics or physical chemistry.
 %
@@ -303,9 +303,9 @@ Infinite-dimensional Lie algebras also have growing number of applications in ph
 Affine Lie algebras \cite{kac1990idl} constitute important and tractable class of infinite-dimensional Lie algebras. They are constructed as the central extensions of loop algebras of (semi-simple) finite-dimensional Lie algebras and appear naturally in the study of Wess-Zumino-Witten and coset models of conformal field theory \cite{Walton:1999xc}, \cite{difrancesco1997cft}, \cite{Goddard198588}, \cite{Dunbar:1992gh}.
 
 The structure of affine Lie algebras allows to extend computational algorithms created for finite-dimensional Lie algebras  \cite{Fuchs:1996dd}, \cite{gannon2001algorithms}, \cite{kass1990ala}. The book \cite{kass1990ala} with the tables of multiplicities and other computed characteristics of affine Lie algebras and representations was published in 1990. But we are not aware of software packages for popular computer algebra systems which can be used to extend these results.
-We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper.  We also provide representation-theoretical background of implemented algorithms and present some examples of computations relevant to physics.
+We address this issue and present {\bf Affine.m} -- {\it Mathematica} package for computations in representation theory of affine and finite-dimensional Lie algebras.  We describe the features and limitations of the package in present paper.  We also provide representation-theoretical background of implemented algorithms and present examples of computations relevant to physics.
 
-The paper is started with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and representations (Sec. \ref{sec:core-datastructures}) and discuss implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
+The paper starts with an overview of Lie algebras and their representation theory (Sec. \ref{sec:theor-backgr}). Then we describe datastructures of {\bf Affine.m} used to present different objects related to Lie algebras and representations (Sec. \ref{sec:core-datastructures}) and discuss implemented algorithms (Sec. \ref{sec:comp-algor}). Next section consists of physically interesting examples (Sec. \ref{sec:examples}). The paper is concluded with the discussion of possible extensions and refinements (Sec. \ref{sec:conclusion}).
 
 \section{Theoretical background}
 \label{sec:theor-backgr}
@@ -315,7 +315,7 @@ In this section we remind necessary definitions and present formulae used in com
 \subsection{Lie algebras of finite and affine types}
 \label{sec:lie-algebras-finite}
 
-{\it Lie algebra} $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\otimes\gf\to \gf$, which is called {\it commutator}. If we choose the basis $X_{i}$ in $\gf$ we can specify commutation relations by the {\it structure constants} $C_{ijk}$:
+{\it Lie algebra} $\gf$ is a vector space with bilinear operation $[\cdot,\cdot]:\gf\otimes\gf\to \gf$, which is called {\it Lie bracket}. If we choose the basis $X_{i}$ in $\gf$ we can specify commutation relations by the {\it structure constants} $C_{ijk}$:
 \begin{equation}
   \label{eq:1}
   [X^{i},X^{j}]=\sum_{k} C^{ij}_{k} X^{k}
@@ -339,9 +339,9 @@ Central extension leads to the appearance of additional term
   \label{eq:7}
    [X^{i}t^{n}+\alpha c,X^{j}t^{m}+\beta c]=t^{n+m}\sum_{k}C^{ij}_{k}X^{k}+(X^{i},X^{j})n\delta_{n+m,0}c
 \end{equation}
-This algebra $\hat\gf=\gf\otimes\mathbb{C}[t,t^{-1}]\oplus\mathbb{C}c$ is called {\it affine Lie algebra} \cite{kac1990idl}, \cite{wakimoto2001idl,wakimoto2001lectures}, \cite{kass1990ala}.
+This algebra $\hat\gf=\gf\otimes\mathbb{C}[t,t^{-1}]\oplus\mathbb{C}c$ is called non-twisted {\it affine Lie algebra} \cite{kac1990idl}, \cite{wakimoto2001idl,wakimoto2001lectures}, \cite{kass1990ala}.
 
-Sometimes we denote affine Lie algebra by $\gf$ then corresponding finite-dimensional Lie algebra is denoted by $\go$.
+We do not treat twisted affine Lie algebras in present paper.
 
 \subsection{Modules, weights and roots}
 \label{sec:weights-roots}
@@ -360,7 +360,7 @@ For an arbitrary representation it is possible to diagonalize the operators corr
   \label{eq:3}
   H^{i}\cdot v_{j}=\nu_{j}^{i}v_{j}
 \end{equation}
-Eigenvalues $\nu^{i}_{j}$ of Cartan generators on element of basis $v_{j}$ determine weight $\nu_{j}\in \hfg^{*}$ such that $\nu_{j}(H^{i})=\nu_{j}^{i}$. Vector $v\in V$ is called weight vector of weight $\lambda$ if $H v=\lambda_{j}(H)v,\; \forall H\in \hf$ , weight subspace consists of all weight vectors $V_{\lambda}=\{v\in V: H v=\lambda_{j}(H)v,\; \forall H\in \hf\}$. Weight multiplicity $m_{\lambda}=\mathrm{mult}(\lambda)=\mathrm{dim} V_{\lambda}$ is the dimension of weight subspace.
+Eigenvalues $\nu^{i}_{j}$ of Cartan generators on element of basis $v_{j}$ determine weight $\nu_{j}\in \hfg^{*}$ such that $\nu_{j}(H^{i})=\nu_{j}^{i}$. Vector $v\in V$ is called weight vector of weight $\lambda$ if $H v=\lambda_{j}(H)v,\; \forall H\in \hf$. Weight subspace consists of all weight vectors $V_{\lambda}=\{v\in V: H v=\lambda_{j}(H)v,\; \forall H\in \hf\}$. Weight multiplicity $m_{\lambda}=\mathrm{mult}(\lambda)=\mathrm{dim} V_{\lambda}$ is the dimension of weight subspace.
 
 The structure of module is determined by the set of weights since the action of generators $E^{\alpha}$ on a weight vectors is
 \begin{equation}
@@ -373,7 +373,7 @@ Module structure can be encoded by the formal character of module
   \mathrm{ch}V=\sum_{\lambda}m_{\lambda} e^{\lambda}
 \end{equation}
 Character  $\mathrm{ch}V\in \mathcal{E}$ is an element of algebra $\mathcal{E}$ generated by formal exponents of weights.
-Character can be specialized by taking its value on some element $\xi$ of $\hf$:
+Character can be specialized by taking its value on some element $\xi$ of $\hf$.
 
 Lie algebra is its own module. The action of generators is called adjoint and it is given by the bracket $ad_{X} Y=[X,Y]$. 
 {\it Roots} are weights of adjoint representation of $\gf$. They encode the commutation relations of algebra in the following way. Denote by $\Delta$ the set of roots. For each $\alpha\in \Delta$ there exist a root $-\alpha\in \Delta$ and generators $E^{\alpha}, E^{-\alpha}$ such that
@@ -391,18 +391,18 @@ Lie algebra is its own module. The action of generators is called adjoint and it
 Given a root system $\Delta$ we can choose a set of positive roots. This is a subset  $\Delta^{+}\subset \Delta$ such that for each root $\alpha\in\Delta$ exactly one of the roots $\alpha, -\alpha$ is contained in $\Delta^{+}$ and for any two distinct positive roots $\alpha, \beta\in \Delta^{+}$ such that $\alpha+\beta\in \Delta$ their sum is also positive $\alpha+\beta\in\Delta^{+}$.
 Elements of $-\Delta^{+}$ are called negative roots.
 
-A positive root is {\it simple} if it cannot be written as the sum of positive roots. The set of simple roots $\Phi=\left\{\alpha_{i}\right\}$ is a basis of $\hfg$ and each root can be written as $\alpha=\sum_{i}n_{i}\alpha_{i}$ with all $n_{i}$ non-negative or non-positive. In case of finite-dimensional Lie algebra $\gf$ simple roots are numbered from 1 to rank of the algebra $i=1,\dots,r,\quad r=\mathrm{rank}(\gf)$. By numbering simple roots with an index $i$ we introduce an ordering on the root system $\Delta$. Highest root with respect to this ordering is denoted by  $\theta=\sum_{i=1,\dots,r} a_i \alpha_i$, coefficients $a_i$ are called {\it marks}. It is also highest weight (See section \ref{sec:high-weight-modul}) of adjoint module. {\it Comarcs} are equal to $a_i^{\vee}=\frac{(\alpha_i,\alpha_i)}{2} a_i$.
+A positive root is {\it simple} if it cannot be written as the sum of positive roots. The set of simple roots $\Phi=\left\{\alpha_{i}\right\}$ is a basis of $\hfg$ and each root can be written as $\alpha=\sum_{i}n_{i}\alpha_{i}$ with all $n_{i}$ non-negative or non-positive. In case of finite-dimensional Lie algebra $\gf$ simple roots are numbered from 1 to rank of the algebra $i=1,\dots,r,\quad r=\mathrm{rank}(\gf)$. By numbering simple roots with an index $i$ we introduce lexicographic ordering on the root system $\Delta$. Highest root with respect to this ordering is denoted by  $\theta=\sum_{i=1,\dots,r} a_i \alpha_i$, coefficients $a_i$ are called {\it marks}. It is also highest weight (See section \ref{sec:high-weight-modul}) of adjoint module. {\it Comarcs} are equal to $a_i^{\vee}=\frac{(\alpha_i,\alpha_i)}{2} a_i$.
 
 Although the full set of roots $\Delta$ is infinite for affine Lie algebra $\hat\gf$ the set of simple roots $\Phi$ is finite and its elements are denoted by $\alpha_{0},\dots \alpha_{r}$ where $r=\mathrm{rank}(\gf)$. The roots $\alpha_1,\dots, \alpha_r$ are the roots of the underlying finite-dimensional Lie algebra $\go$. The root $\alpha_0=\delta-\theta$ is the difference of {\it imaginary root} $\delta$ and $\theta$ -- highest root of the algebra $\go$.
 Note that root multiplicity $\mathrm{mult}(\alpha)$ for affine Lie algebra can be greater than one.
 
-Sub-algebra  $\bff_{+}\subset \gf$ spanned by the generators $H^{i}, E^{\alpha}$ for $\alpha\in \Delta^{+}$ positive is called Borel sub-algebra.
+Subalgebra  $\bff_{+}\subset \gf$ spanned by the generators $H^{i}, E^{\alpha}$ for positive roots $\alpha\in \Delta^{+}$ is called Borel subalgebra.
 
 {\it Parabolic subalgebra}  $\pf_{I}\supset \bff_{+}$ contains Borel subalgebra and is  generated by some subset of simple roots $\{\alpha_{j}:j\in I, I\subset \{1\dots r\}\}$. It is spanned by the subset of generators $\{H^{i}\}\cup \{E^{\alpha}:\alpha\in \Delta^{+}\}\cup \{E^{-\alpha}: \alpha\in\Delta^{+}, \alpha=\sum_{j\in I} n_{j} \alpha_{j}\}$.
 
 {\it Regular subalgebra} $\af\subset\gf$ is determined by the root system $\Delta_{\af}$ with the set of simple roots $\{\beta_{i}, i=1,\dots,r_{\af}\}$ which is a subset of set of simple roots $\{\alpha_{1},\dots,\alpha_{r}\}\cup \{\Theta\}$ with the addition of highest root.
 
-The Weyl group $W_{\gf}$ is generated by reflections $\{s_{i}:\hfg^{*}\to\hfg^{*}\}$ corresponding to simple roots $\{\alpha_{i}\}$:
+The {\it Weyl group} $W_{\gf}$ is generated by reflections $\{s_{i}:\hfg^{*}\to\hfg^{*}\}$ corresponding to simple roots $\{\alpha_{i}\}$:
 \begin{equation}
   \label{eq:8}
   s_{i}\cdot\lambda=\lambda-\frac{2(\alpha_{i},\lambda)}{(\alpha_{i},\alpha_{i})}\alpha_{i}
@@ -411,11 +411,13 @@ Root system and characters of representation are invariant with respect to the a
 
 Weyl groups are finite for finite-dimensional Lie algebras and finitely-generated for affine Lie algebras.
 
-Consider an action of element $s_{0}s_{i}s_{0}$ of Weyl group of affine Lie algebra  $\hat\gf$. Using the definition \eqref{eq:8} it is easy to see that $s_{0}s_{i}s_{0}\cdot \lambda=\lambda+\alpha_{i}$, so Weyl group can be presented as semidirect product of Weyl group $W_{\gf}$ of $\gf$ and translations by the roots of $\hat \gf$. Weyl group element can be presented as the product of elementary reflections in multiple ways. Number of elementary reflections in shortest sequence representing element $w\in W_{\gf}$ is called {\it length} of $w$ and denoted $l(w)$. We also use the notation $\epsilon(w)=(-1)^{l(w)}$ for parity of number of Weyl reflections generating $w$. 
+Consider an action of element $s_{\alpha}s_{\alpha+\delta}$ of Weyl group of affine Lie algebra  $\hat\gf$ for $\alpha$ simple root of underlying finite-dimensional Lie algebra $\gf$. Using the definition \eqref{eq:8} it is easy to see that $s_{\alpha}s_{\alpha+\delta} \cdot \lambda=\lambda+\frac{2}{(\alpha,\alpha)}\alpha+\left(\frac{(\alpha,\alpha)}{2 (\lambda,\delta)}+(\lambda,\alpha)\right) \delta$. So Weyl group can be presented as semidirect product of Weyl group $W_{\gf}$ of $\gf$ and translations corresponding to the roots of $\gf$. 
+
+Weyl group element can be presented as the product of elementary reflections in multiple ways. Number of elementary reflections in shortest sequence representing element $w\in W_{\gf}$ is called {\it length} of $w$ and denoted $l(w)$. We also use the notation $\epsilon(w)=(-1)^{l(w)}$ for parity of number of Weyl reflections generating $w$. 
 
 Fundamental domain $\bar{C}$ for the action of Weyl group $W_{\gf}$ on $\hfg^{*}$ is determined by the requirement $\xi\in \bar{C}\Leftrightarrow (\xi,\alpha_{i})\geq 0$ for all simple roots $\alpha_{i}$. It is called {\it main Weyl chamber}. 
 
-The Cartan matrix $A$ is defined by products of simple roots
+The {\it Cartan matrix} $A$ is defined by products of simple roots
 \begin{equation}
   \label{eq:9}
   A_{ij}=\frac{2(\alpha_{i},\alpha_{j})}{(\alpha_{j},\alpha_{j})}
@@ -423,15 +425,15 @@ The Cartan matrix $A$ is defined by products of simple roots
 and can be used for compact description of Lie algebra commutation relations in Chevalley basis \cite{humphreys1997introduction}, \cite{fulton1991representation}, \cite{bourbaki2002lie}.
 
 The form \eqref{eq:9} induces the basis dual  to the simple
-roots basis. It is called the fundamental weights basis. We denote
+roots basis. It is called the {\it fundamental weights basis}. We denote
 its elements by $\omega_i$:
 \begin{equation}
   \label{eq:20}
   \langle\omega_i,\alpha_j\rangle=\frac{2(\omega_{i},\alpha_{j})}{(\alpha_{j},\alpha_{j})}=\delta_{ij}
 \end{equation}
-For finite-dimensional Lie algebra there are $r$ fundamental weights, $i=1,\dots, r$. For affine Lie algebra we have additional fundamental weight $\omega_0=\lambda$, $(\lambda,\delta)=1, \; (\lambda,\lambda)=(\delta,\delta)=0$. Other fundamental weights are equal to $\omega_i=a_i^v \lambda_0 +\co{\omega_i}$, where $\co{\omega_i}$ is the fundamental weight of finite-dimensional Lie algebra $\go$.
+For finite-dimensional Lie algebra there are $r$ fundamental weights, $i=1,\dots, r$. For affine Lie algebra we have additional fundamental weight $\omega_0=\lambda$, $(\lambda,\delta)=1, \; (\lambda,\lambda)=(\delta,\delta)=0$. Other fundamental weights are equal to $\omega_i=a_i^v \lambda_0 +\co{\omega_i}$, where $\co{\omega_i}$ is the fundamental weight of finite-dimensional Lie algebra $\gf$.
 
-We need to introduce Weyl vector denoted by $\rho=\sum_{i} \omega_{i}$. It is of importance for the construction of algebra modules.
+{\it Weyl vector} is equal to the sum of fundamental weights $\rho=\sum_{i} \omega_{i}$. It is of importance for the construction of algebra modules.
 
 \subsection{Highest weight modules}
 \label{sec:high-weight-modul}
@@ -447,7 +449,7 @@ $M^{\mu}$ who's space can be defined as the space
   M^{\mu}=U(\gf)\underset{U(\bff_{+})}{\otimes} D^{\mu}(\bff_{+}),
 \end{equation}
 with respect to the multiplication in $U(\gf)$,
-where $\underset{U(\bff_{+})}{\otimes}$ means that the action of elements of $U(\bff_{+})$ ``falls through'' the left part of tensor product onto the right part. Here $\bff_{+}$ is Borel sub-algebra, $D^{\mu}(\bff_{+})$ is a representation of $\bff_{+}$ such that $D(E^{\alpha})=0,\; D(H)=\mu(H)$ for any positive root $\alpha$.
+where $\underset{U(\bff_{+})}{\otimes}$ means that the action of elements of $U(\bff_{+})$ ``falls through'' the left part of tensor product onto the right part. Here $\bff_{+}$ is Borel subalgebra, $D^{\mu}(\bff_{+})$ is a representation of $\bff_{+}$ such that $D(E^{\alpha})=0,\; D(H)=\mu(H)$ for any positive root $\alpha$.
 Elements of $\gf$ act from the left and we should commute all the elements of $\bff_{+}$ to the right, so that they can act on the space $D_{\lambda}(\bff_{+})$.
 
 Weight multiplicities in Verma module can be found from the Weyl
@@ -466,7 +468,10 @@ the parity of number of Weyl reflections generating $w$.
 
 Verma module $M^{\mu}$ has the unique maximal submodule and the
 unique nontrivial simple quotient $L^{\mu}$ which is an
-irreducible highest weight module. Weyl character formula for
+{\it irreducible highest weight module}. 
+
+Irreducible highest weight modules have no non-trivial submodules. 
+Weyl character formula for
 irreducible highest weight modules is
 \begin{equation}
   \label{eq:13}
@@ -494,13 +499,16 @@ Verma module can be written as
 
 %% Define external border of irreducible representation here
 
-We can use Weyl character formula to obtain recurrent relation on weight multiplicities which can be used for calculations \cite{il2010folded,kulish4sfa}:
+We can use Weyl character formula to obtain recurrent relation on weight multiplicities which can be used for calculations \cite{il2010folded,kulish4sfa}. 
+
+For irreducible highest-weight modules recurrent relation has form
 \begin{equation}
 \label{eq:14}
 m_{\xi }=-\sum_{w\in W\setminus e}\epsilon (w)m_{\xi
 -\left( w(\rho )-\rho \right) }+\sum_{w\in W}\epsilon
 (w)\delta _{\left( w(\mu +\rho )-\rho \right) ,\xi }.
 \end{equation}
+Formulae for Verma and generalized Verma modules differs only in second term on the right-hand side. In case of Verma module it is just $\delta_{\xi,\mu}$. For generalized Verma module summation in second term on the right-hand side \eqref{eq:14} is over the Weyl subgroup generated by reflections corresponding to roots $\{\alpha_{I}\}$.
 
 Other recurrent formula can be obtained from the study of Casimir
 elements action on irreducible highest weight modules
@@ -510,6 +518,10 @@ elements action on irreducible highest weight modules
   m_{\lambda}=\frac{2}{(\mu+\rho)^{2}-(\lambda+\rho)^{2}}\sum_{\alpha\in \Delta^{+}}\sum_{k\geq 1} (\lambda+k\alpha,\alpha)m_{\lambda+k\alpha}.
 \end{equation}
 It is called the Freudenthal multiplicity formula.
+Note that it is applicable only to irreducible only to irreducible modules. 
+
+
+We discuss the use of formulae \eqref{eq:14} and \eqref{eq:15} for computations in section \ref{sec:comp-algor}. 
 
 Now consider an algebra $\gf$ and a reductive subalgebra
 $\af\subset \gf$. Simple roots $\beta_{i}$ of the subalgebra $\af$
@@ -527,7 +539,10 @@ decomposed into the sum of irreducible $\af$-modules:
 Coefficients in this decomposition are called the branching
 coefficients. 
 
-Before we proceed to recurrent relation for branching coefficients we need several definitions.
+It is possible to calculate branching coefficients by the construction and repeated subtraction of characters of modules $L^{\nu}_{\af}$. This traditional approach has serious limitations especially in case of affine Lie algebras. We discuss them in the end of section \ref{sec:comp-algor}. 
+
+Now we describe alternative approach which is based upon recurrent relation on branching coefficients. 
+But before we proceed to this recurrent relation we need several definitions.
 
 For a subalgebra $\af\subset \gf$ we introduce a subalgebra
 $\afb$. Consider the root subspace $\hf_{\perp \af}^{\ast }$
@@ -552,11 +567,19 @@ reflections $w_{\beta }$ with the roots $\beta \in \Delta _{\af_{\perp
 subalgebra $\afb$ with the Cartan subalgebra $\hf_{\af%
 _{\perp }}$.
 
-For $\af$ and $\afb$ consider the
-corresponding Weyl vectors, $\rho _{\af}$ and $\rho _{\af_{\perp
-}} $.
+Cartan subalgebra can be decomposed in the following way:  $\frak{h}=\frak{\frak{h}_{\af}}\oplus
+\frak{h}_{\afb}\oplus \frak{h}_{\perp }$
 
-Compose the so called ''defects'' $\mathcal{D}_{\af}$ and $\mathcal{%
+We also introduce notation
+\begin{eqnarray}
+\widetilde{\frak{a}_{\perp }} :=\frak{a}_{\perp }\oplus \frak{h}_{\perp }
+\qquad
+\widetilde{\frak{a}} :=\frak{a}\oplus \frak{h}_{\perp }.
+\end{eqnarray}
+
+For $\af$ and $\afb$ we consider the
+corresponding Weyl vectors, $\rho _{\af}$ and $\rho _{\af_{\perp
+}} $ and compose the so called ''defects'' $\mathcal{D}_{\af}$ and $\mathcal{%
 D}_{\afb}$ of the injection:
 \begin{equation}
 \mathcal{D}_{\af}:=\rho _{\af}-\pi _{\af}\rho , \qquad
@@ -617,7 +640,7 @@ _{\perp }}\left( u\right) }\right) \delta _{\xi -\gamma _{0},\pi _{%
 \end{array}
 \label{recurrent-rel}
 \end{equation}
-The recursion is goverened by the set $\Gamma _{\widetilde{\af}\rightarrow \gf}$ called the injection fan. The latter is defined by the
+The recursion is governed by the set $\Gamma _{\af\rightarrow \gf}$ called the injection fan. The latter is defined by the
 carrier set $\left\{ \xi \right\} _{\af\rightarrow \gf}$ for the
 coefficient function $s(\xi )$
 \begin{equation*}
@@ -634,7 +657,7 @@ _{\af}(\pi _{\widetilde{\af}}\alpha )}=-\sum_{\gamma \in P_{%
 The weights in $\left\{ \xi \right\} _{\widetilde{\af}\rightarrow \gf}$ are to be shifted by $\gamma _{0}$ -- the lowest vector in $\left\{ \xi
 \right\} $ -- and the zero element is to be eliminated:
 \begin{equation}
-\Gamma _{\widetilde{\af}\rightarrow \gf}=\left\{ \xi -\gamma
+\Gamma _{\af\rightarrow \gf}=\left\{ \xi -\gamma
 _{0}|\xi \in \left\{ \xi \right\} \right\} \setminus \left\{ 0\right\} .
 \end{equation}
 The formula (\ref{eq:14}) is a particular case of recurrent relation for branching coefficients (\ref{recurrent-rel}) in the case of Cartan subalgebra $\af=\hfg$.
@@ -656,7 +679,7 @@ $\gf$-module but not irreducible in general. So
 The coefficients $f^{\mu\nu}_{\gamma}$ are called fusion
 coefficients. The problem of computation of fusion coefficients is
 equivalent to branching problem for the diagonal subalgebra
-$\gf\subset \gf\otimes \gf$ (see \cite{LyakhovskyPostnova2011}).
+$\gf\subset \gf\otimes \gf$ (see \cite{LyakhovskyPostnova2011}). So our implementation of recurrent algorithm can be used to decompose tensor products (See Section \ref{sec:tens-prod-decomp}).
 
 In the case of affine Lie algebras $\gf, \af$  the multiplicities
 $m_{\nu}$ and the corresponding branching coefficients $b_{\nu}$
@@ -667,8 +690,10 @@ of string and branching functions correspondingly:
   &\sigma_{\nu}(q)=\sum_{n=0}^{\infty} m_{\nu-n\delta} q^n, \quad \nu=\sum_j c_j \omega_j,\quad c_j\geq 0\\
   & b_{\nu}(q)=\sum_{n=0}^{\infty} b_{\nu-n\delta} q^n,\quad  \nu=\sum_j c_j \omega_j, \quad c_j\geq 0
 \end{align}
-
 String and branching functions have  modular and analytic properties which are important for conformal field theory, especially in  coset models and the study of CFT on higher genus surfaces \cite{kac1988modular}, \cite{difrancesco1997cft}, \cite{Walton:1999xc}, \cite{walton1989conformal}.
+
+
+{\bf Affine.m}  calculates weight multiplicities and branching coefficients for affine Lie algebras up to some finite grade. We present examples of computations in Sections \ref{sec:string-funct-affine}, \ref{sec:branch-funct-coset}. Now we proceed to the description of datastructures and algorithms implemented in {\bf Affine.m}.
 
 \section{Core datastructures}
 \label{sec:core-datastructures} Having introduced necessary
@@ -684,13 +709,13 @@ Weights are represented  by two data-structures: \lstinline{finiteWeight} for fi
 
 Internally the finite weight is a \lstinline{List} with the
 \lstinline{Head} \lstinline{finiteWeight}, its components are the
-coordinates of the weight in the orthogonal basis of
+coordinates of the weight in the orthogonal basis of Bourbaki 
 \cite{bourbaki2002lie}.
 
 Affine weight is an extension of a finite weight by supplying it
 with level and grade coordinates. There is a set of functions
 defined for finite and affine weights. The complete list can be
-found in package online help. The most important
+found in  online help of the package. The most important
 are the definitions of addition, multiplication by number and
 scalar product (bilinear form) for weights. These definitions
 allow to use traditional notation when working with {\bf
@@ -721,7 +746,7 @@ There are constructors for root systems of simple finite-dimensional Lie algebra
 \begin{lstlisting}
   b2=makeSimpleRootSystem[B,2]
 \end{lstlisting}
-We use typographic features of {\it Mathematica} frontend to offer traditional mathematical notation for simple Lie algebras:
+We use typographic features of {\it Mathematica} frontend to offer mathematical notation for simple Lie algebras:
 
 
 \begin{lstlisting}[mathescape=true]
@@ -756,13 +781,13 @@ It is possible to specify a weight of Lie algebra by its Dynkin label
 \end{lstlisting}
 The function \lstinline{dynkinLabels[rs_?rootSystemQ][wg_?weightQ]} returns Dynkin labels of weight \lstinline{wg} in the root system \lstinline{rs}.
 
-Elements of Weyl group are specified by the set of indices of reflections, so element of Weyl group of algebra $B_{2}$ which is equal to $w=s_{1}s_{2}s_{1}$ is constructed with \lstinline{weylGroupElement[b2][1,2,1]}. Then it can be applied to the weights:
+Elements of Weyl group are specified by the set of indices of reflections, so element  $w=s_{1}s_{2}s_{1}$ of Weyl group of algebra $B_{2}$ is constructed with \lstinline{weylGroupElement[b2][1,2,1]}. Then it can be applied to the weights:
 \begin{lstlisting}
   w = weylGroupElement[b2][1,2,1];
   w @ makeFiniteWeight[{1,0}] == makeFiniteWeight[{-1,0}]
 \end{lstlisting}
 
-Computation of lexicographically minimal form \cite{casselman1994machine,casselman1995automata} for Weyl group elements can be conveniently implemented through the use of pattern-matching features of {\it Mathematica}. In \cite{KallenShortlex} rewrite rules for simple finite dimensional and affine Lie algebras are presented as {\it Mathematica} patterns. Our presentation of Weyl group elements is compatible with the code of \cite{KallenShortlex}
+Computation of lexicographically minimal form \cite{casselman1994machine,casselman1995automata} for Weyl group elements can be conveniently implemented through the use of pattern-matching in {\it Mathematica}. In \cite{KallenShortlex} rewrite rules for simple finite dimensional and affine Lie algebras are presented as {\it Mathematica} patterns. Our presentation of Weyl group elements is compatible with the code of \cite{KallenShortlex}
 \begin{lstlisting}[mathescape=true]
   In[1]  = $<<$A3reduce;
            reduce[s[1,2,1,2,1,3,2,1,1]]
@@ -793,12 +818,12 @@ We represent formal characters of representations by special structure \lstinlin
 \subsection{Modules}
 \label{sec:modules}
 
-{\bf Affine.m} can be used to study different kinds of modules, i.e. Verma modules, irreducible modules and parabolic Verma modules .  We need datastructure \lstinline{module} to represent generic module of Lie algebra $\gf$. Module properties can be deduced from its set of singular weights using Weyl character formulae \eqref{eq:11},\eqref{eq:12},\eqref{eq:18},\eqref{eq:13}. Set of singular weights can have Weyl symmetry. It can be symmetry with respect to Weyl group $W_{\gf}$ or with respect to some subalgebra $W_{\af}$ as in the case of parabolic Verma modules. Then it is possible to study only main Weyl chamber $C_{\af}$. To use this symmetry generic constructor for \lstinline{module} datastructure accepts several parameters \lstinline{makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|emptyRootSystem[],opts___?OptionQ]}. Here \lstinline{rs} is root system of Lie algebra $\gf$,\lstinline{singWeights} is the set of singular weights,  \lstinline{subs} is root system corresponding to Weyl group $W_{\af}$ which is the symmetry of the set of singular weights.
+{\bf Affine.m} can be used to study different kinds of modules, i.e. Verma modules, irreducible modules and parabolic Verma modules .  We need datastructure \lstinline{module} to represent generic module of Lie algebra $\gf$. Module properties can be deduced from its set of singular weights using Weyl character formulae \eqref{eq:11},\eqref{eq:12},\eqref{eq:18},\eqref{eq:13}. Set of singular weights can have Weyl symmetry. It can be symmetry with respect to Weyl group $W_{\gf}$ or with respect to some subalgebra $W_{\af}$ as in the case of parabolic Verma modules. Then it is possible to study only main Weyl chamber $C_{\af}$. To use this symmetry generic constructor for \lstinline{module} datastructure accepts several parameters \lstinline{makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|emptyRootSystem[],limit:10}. Here \lstinline{rs} is root system of Lie algebra $\gf$,\lstinline{singWeights} is the set of singular weights,  \lstinline{subs} is root system corresponding to Weyl group $W_{\af}$ which is the symmetry of the set of singular weights. Parameter \lstinline{limit} limits computation for infinite-dimensional modules such as Verma or parabolic Verma.
 There are several specialized constructors for different types of highest weight modules:
 \begin{lstlisting}[mathescape=true]
-vm=makeVermaModule[$B_{2}$][weight[$B_{2}$][2,1]];
+vm=makeVermaModule[$B_{2}$][{2,1}];
 pm=makeParabolicVermaModule[$B_{2}$][weight[$B_{2}$][2,1],{1}];
-im=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
+im=makeIrreducibleModule[$B_{2}$][2,1];
 GraphicsRow[textPlot/@{im,vm,pm}]
 $\includegraphics[width=130mm]{figures/irrep-verma-pverma.pdf}$
 \end{lstlisting}
@@ -812,17 +837,20 @@ $\includegraphics[width=60mm]{figures/irrep-sum.pdf}$
 \end{lstlisting}
 
 Tensor product is also implemented but only for finite-dimensional Lie algebras, since tensor product of affine Lie algebra modules leads to rich new structures \cite{kazhdan1994tensor3,kazhdan1993tensor1,kazhdan1993tensor2} which are out of the scope of present paper.
-
+\begin{lstlisting}[mathescape=true]
+textPlot[makeIrreducibleModule[$A_{1}$][5]$\otimes$ makeIrreducibleModule[$A_{1}$][3]];
+$\includegraphics[width=60mm]{figures/tensor-product.pdf}$
+\end{lstlisting}
 \section{Computational algorithms}
 \label{sec:comp-algor}
-
+   
 As we have already stated in section \ref{sec:high-weight-modul} there exist two recurrent relations which can be used to calculate weight multiplicities in irreducible modules. Both algorithms proceed in the following way to calculate weight multiplicities:
 \begin{enumerate}
 \item Create the list of weights in main Weyl chamber by subtraction of all possible combinations of simple roots from the highest weight (e.g. for finite-dimensional algebra subtract $\alpha_{1}$ from $\mu$ while inside $\bar C$, then subtract $\alpha_{2}$ from all the weights already obtained etc).
 \item Sort the list of weights by their product with Weyl vector.
 \item Use a recurrent formula. If the weight required for recurrent computation is outside the main chamber use Weyl symmetry.
 \end{enumerate}
-The difference in performance of algorithms is in the number of previous values required to get the multiplicity of weight under consideration. For recurrent relation \eqref{eq:14} it is constant and equal to the number of elements in Weyl group (if we are far from the boundary of representation diagram). When Freudenthal formula \eqref{eq:15} is used number of previous values grows with the distance from the external border of representation. So Freudenthal formula is faster if the weight is close to the border or the rank of the algebra and the size of Weyl group is large \cite{moody1982fast}.
+The difference in performance of algorithms is in the number of previous values required to get the multiplicity of weight under consideration. For  Weyl formula-based recurrent relation \eqref{eq:14} it is constant and equal to the number of elements in Weyl group (if we are far from the boundary of representation diagram). When Freudenthal formula \eqref{eq:15} is used number of previous values grows with the distance from the external border of representation. So Freudenthal formula is faster if the weight is close to the border or the rank of the algebra and the size of Weyl group is large \cite{moody1982fast}.
 Note that Freudenthal formula is valid for irreducible modules only, so it can not be used to study (generalized) Verma modules.
 
 We have made some experiments with our implementations of Freudenthal formula and formula \eqref{eq:15} and have got Figure  \ref{fig:freudenthal-racah-times}, which depicts dependence of computation time on number of weights in module.
@@ -831,7 +859,7 @@ We have made some experiments with our implementations of Freudenthal formula an
   \noindent\centering{
     \includegraphics[width=80mm]{figures/timing.pdf}
   }
-  \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
+  \caption{Running time of algorithms based on Freudenthal formula \eqref{eq:15} (dashed) and recurrent relation \eqref{eq:14} (solid) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
 \label{fig:freudenthal-racah-times}
 
 \end{figure}
@@ -893,7 +921,7 @@ To further illustrate this performance issue we include the Figure \ref{fig:bran
   \noindent\centering{
    \includegraphics[width=100mm]{figures/branching-timing.pdf}
   }
-  \caption{Running time of algorithms based on recurrent formula \eqref{eq:15} (in blue) and \eqref{eq:14} (in red) with the number of weights in $\bar C$ for calculation of branching coefficients for $B_{3}\subset B_{4}$.}
+  \caption{Running time of algorithms based on Freudenthal formula \eqref{eq:15} (dashed) and recurrent relation \eqref{recurrent-rel} (solid) with the number of weights in $\bar C$ for calculation of branching coefficients for $B_{3}\subset B_{4}$.}
   \label{fig:branching}
 \end{figure}
 
@@ -927,7 +955,7 @@ It produces list of highest weights and tensor product decomposition coefficient
 
 Returning to the problem of spin chain Hamiltonian diagonalization we can see that instead of diagonalizing operator in space of dimension $625$ we can diagonalize operators in spaces of dimensions $55, 81, 30, 35, 35, 14, 10, 5, 1$.
 
-\subsection{Branchig and parabolic Verma modules}
+\subsection{Branching and parabolic Verma modules}
 \label{sec:branch-parab-verma}
 
 We illustrate generalized BGG-resolution with the diagrams of $G_{2}$ parabolic Verma modules which appear in the decomposition of irreducible module $L^{[1,1]}_{G_{2}}$:
@@ -950,7 +978,7 @@ Character of $L^{[1,1]}$ is presented in Figure \ref{branching-bgg}, characters 
   \noindent\centering{
     \includegraphics[width=150mm]{figures/G2-pverma.pdf}
   }
-  \caption{Character of $G_{2}$ generalized Verma modules appearing in decomposition of $L^{[1,1]}$}
+  \caption{Character of $G_{2}$ generalized Verma modules appearing in decomposition of $L^{[1,1]}$. Parabolic Verma modules in upper row appear in decomposition with positive sign, in lower row -- with negative.}
   \label{g2-pverma}
 \end{figure}
 
@@ -1078,7 +1106,7 @@ Contents of the package:
 
 
 \bibliography{bibliography}
-\bibliographystyle{elsarticle-num}
+\bibliographystyle{phcpc}
 %\bibliographystyle{model1-num-names}
 
 

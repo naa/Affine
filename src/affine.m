@@ -242,16 +242,16 @@ module::"usage"=
     limit limits number of subtraction in the construction of infinite-dimensional modules"
 
 makeModule::"usage"=
-    "makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|emptyRootSystem,opts___?OptionQ] is general construction for modules";
+    "makeModule[rs_?rootSystemQ][singWeights_formalElement,subs_?rootSystemQ|emptyRootSystem,limit:10] is general construction for modules";
 
-makeVermaModule::"usage"="makeVermaModule[rs_?rootSystemQ][hw_?weightQ,opts___?OptionQ] constructs Verma module. \n
-    Option 'limit' limits construction with the number of simple root subtractions. By default it is chosen in such a way\n
+makeVermaModule::"usage"="makeVermaModule[rs_?rootSystemQ][hw_?weightQ,limit:10] constructs Verma module. \n
+    Parameter 'limit' limits construction with the number of simple root subtractions. By default it is chosen in such a way\n
     that Verma module includes corresponding irreducible module";
 
 makeParabolicVermaModule::"usage"=
-    "makeParabolicVermaModule[rs_?rootSystemQ][hw_?weightQ,{symgen___Integer},opts___?OptionQ] constructs parabolic Verma module. \n
+    "makeParabolicVermaModule[rs_?rootSystemQ][hw_?weightQ,{symgen___Integer},limit:10] constructs parabolic Verma module. \n
     {symgen} is the list of root indices of parabolic subalgbra. \n
-    Option 'limit' limits construction with the number of simple root subtractions. By default it is chosen in such a way\n
+    Parameter 'limit' limits construction with the number of simple root subtractions. By default it is chosen in such a way\n
     that Verma module includes corresponding irreducible module";
 
 makeIrreducibleModule::"usage"=
@@ -1104,7 +1104,7 @@ drawPlaneProjection[axe1_,axe2_,f_formalElement,opts___?OptionQ]:=
 draw3dProjection[axe1_,axe2_,axe3_,f_formalElement,opts___?OptionQ]:=
     Graphics3D[(Text[f[#],{#[standardBase][[axe1]],#[standardBase][[axe2]], #[standardBase][[axe3]]}]) & /@ f[weights],opts]
 
-textPlot[m_module]:=drawPlaneProjection[1,2,character[m],{Axes->False}];
+textPlot[m_module,opts___?OptionQ]:=drawPlaneProjection[1,2,character[m],opts];
 					     
 
 tensorProduct::"usage"=
