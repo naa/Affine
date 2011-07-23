@@ -367,10 +367,10 @@ standardBase[wg_?weightQ]=wg[finitePart][standardBase];
 (*makeFiniteWeight[{coordinates__?NumericQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}*)
 makeFiniteWeight[{coordinates__}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}
 
-finiteWeight/:x_finiteWeight . y_finiteWeight:=x[standardBase].y[standardBase]
+finiteWeight/:x_finiteWeight . y_finiteWeight:=Simplify[x[standardBase].y[standardBase]]
 
 finiteWeight/:Plus[wgs__finiteWeight]:=
-    makeFiniteWeight[Plus @@ (#[standardBase]&/@ {wgs})]
+    makeFiniteWeight[Simplify[Plus @@ (#[standardBase]&/@ {wgs})]]
     
 finiteWeight/:x_finiteWeight==y_finiteWeight:=x[standardBase]==y[standardBase]
 
@@ -460,7 +460,7 @@ makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8) :=makeFiniteRootSy
 								   {1,1,0,0,0,0,0,0}},
 								  Table[{If [ j==i-2, 1, If [j==j-2, -1, 0]]},{i,3,rank},{j,1,8}]]];
 makeSimpleRootSystem[F,4]:=makeFiniteRootSystem[{{1,-1,0,0},{0,1,-1,0},{0,0,1,0},1/2*{1,-1,-1,-1}}];
-makeSimpleRootSystem[G,2]:=makeFiniteRootSystem[{{1,-1,0},{-2,1,1}}];
+makeSimpleRootSystem[G,2]:=makeFiniteRootSystem[{1/Sqrt[3]*{1,-1,0},1/Sqrt[3]*{-2,1,1}}];
 							   
 (*
 elif L='E' and r>2 and r<9 then
