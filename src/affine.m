@@ -169,6 +169,9 @@ formalOrbit::"usage"="returns the same thing as orbitWithEps, but as formalEleme
 positiveRoots::"usage"=
     "positiveRoots[rs_?rootSystemQ] returns positive roots of root system rs";
 
+roots::"usage"=
+    "roots[rs_?rootSystemQ] returns all roots of root system rs (up to gradeLimit for affine Lie algebra)";
+
 highestRoot::"usage"="returns highest root of root system";
 
 makeAffineExtension::"usage"=
@@ -451,14 +454,15 @@ finiteRootSystem/:CirclePlus[x_finiteRootSystem,y_finiteRootSystem]:=makeFiniteR
 
 affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineExtension[CirclePlus[x[finiteRootSystem],y[finiteRootSystem]]];
 
-makeSimpleRootSystem[A,1]:=makeFiniteRootSystem[{{1}}];
+(*makeSimpleRootSystem[A,1]:=makeFiniteRootSystem[{{1}}];*)
 makeSimpleRootSystem[A,r_Integer]:=makeFiniteRootSystem[makeFiniteWeight /@ Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,r},{j,1,r+1}]];
 makeSimpleRootSystem[B,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],1]]];
 makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],2]]];
 makeSimpleRootSystem[D,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Append[Table[0,{rank-2}],1],1]]];
-makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8) :=makeFiniteRootSystem[Append[{1/2*{1,-1,-1,-1,-1,-1,-1,1},
+makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8) :=makeFiniteRootSystem[Join[{1/2*{1,-1,-1,-1,-1,-1,-1,1},
 								   {1,1,0,0,0,0,0,0}},
-								  Table[{If [ j==i-2, 1, If [j==j-2, -1, 0]]},{i,3,rank},{j,1,8}]]];
+								  Table[If [ j==i-2, 1, If [j==i-1, -1, 0]],{i,3,rank},{j,1,8}]]];
+
 makeSimpleRootSystem[F,4]:=makeFiniteRootSystem[{{1,-1,0,0},{0,1,-1,0},{0,0,1,0},1/2*{1,-1,-1,-1}}];
 makeSimpleRootSystem[G,2]:=makeFiniteRootSystem[{1/Sqrt[3]*{1,-1,0},1/Sqrt[3]*{-2,1,1}}];
 							   
@@ -656,6 +660,8 @@ zeroWeight[rs_affineRootSystem]:=makeAffineWeight[zeroWeight[rs[finiteRootSystem
 (* Ugly hack *)
 positiveRoots[rs_affineRootSystem]:=Join[Map[-#&,Flatten[partialOrbit[rs][Map[-#&,rs[simpleRoots]]]]],
 					 Join@@Table[Rest[NestWhileList[#+makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,1]&,zeroWeight[rs],checkGrade[rs][#]&]],{rs[rank]}]];
+
+roots[rs_?rootSystemQ]:=Union[positiveRoots[rs],-positiveRoots[rs]];
 
 toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
     First[NestWhile[Function[v,
