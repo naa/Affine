@@ -219,6 +219,953 @@ fcc3=Affine`Private`fullCharacter[im]
 
 Export["affineCharacter4.png",Graphics[(Text[fcc3[#],{#[grade],#[finitePart][[2]][[1]]}])&/@fcc3[weights]]]
 
+
+a2a=makeAffineExtension[makeSimpleRootSystem[A,2]];
+
+im=makeIrreducibleModule[a2a][
+
+b2a=makeAffineExtension[makeSimpleRootSystem[B,2]];
+im=makeIrreducibleModule[b2a][1,0,0];
+se=singularElement[im];
+
+Export["b2sing.pdf",Graphics[Text[se[#],{grade[#]*10+#[finitePart][standardBase][[1]],#[finitePart][standardBase][[2]]}]&/@ Select[se[weights],grade[#]>-5&],{Frame->True,GridLines->Automatic}]]
+
+
+
+a1a1=makeAffineExtension[CirclePlus[makeSimpleRootSystem[A,1],makeSimpleRootSystem[A,1]]]
+
+imaa=makeIrreducibleModule[a1a1][1,0,0];
+se=singularElement[imaa];
+
+Export["a1a1sing.pdf",Graphics[Text[se[#],{grade[#]*10+#[finitePart][standardBase][[1]],#[finitePart][standardBase][[2]]}]&/@ Select[se[weights],grade[#]>-8&],{Frame->True,GridLines->Automatic}]]
+
+b2a
+
+dynkinLabels[b2a] @ (weylGroupElement[b2a][1,2,1] @ weight[b2a][1,1,1])
+
+a1=makeSimpleRootSystem[A,1]
+
+Out[65]= finiteRootSystem[1, 1, {finiteWeight[1, {1}]}]
+
+imm=CircleTimes[makeIrreducibleModule[a1][5],makeIrreducibleModule[a1][3]]
+
+Export["tensor-product.pdf",textPlot[imm,{Axes->True}]]
+
+g2a=makeAffineExtension[makeSimpleRootSystem[G,2]]
+
+makeAffineExtension[makeSimpleRootSystem[G,2]]
+
+g2=makeSimpleRootSystem[G,2]
+
+partialOrbit[g2][{weight[g2][1,-1]}]
+
+g2[simpleRoots]
+
+
+
+Out[113]= partialOrbit[finiteRootSystem[2, 3, 
+ 
+                            1          1
+>      {finiteWeight[3, {-------, -(-------), 0}], 
+                         Sqrt[3]    Sqrt[3]
+ 
+                           -2        1        1
+>       finiteWeight[3, {-------, -------, -------}]}]][finiteWeight[3, 
+                         Sqrt[3]  Sqrt[3]  Sqrt[3]
+ 
+          4                       1
+>     {------- - Sqrt[3], 0, -(-------)}]]
+       Sqrt[3]                 Sqrt[3]
+
+
+
+                              4                       1
+Out[110]= finiteWeight[3, {------- - Sqrt[3], 0, -(-------)}]
+                           Sqrt[3]                 Sqrt[3]
+
+fundamentalWeights[g2]
+
+                                    1         1
+Out[108]= {finiteWeight[3, {0, -(-------), -------}], 
+                                 Sqrt[3]   Sqrt[3]
+ 
+                        -4                  2                  2
+>    finiteWeight[3, {------- + Sqrt[3], ------- - Sqrt[3], -------}]}
+                      Sqrt[3]            Sqrt[3]            Sqrt[3]
+
+Out[107]= finiteRootSystem[2, 3, 
+ 
+                           1          1
+>     {finiteWeight[3, {-------, -(-------), 0}], 
+                        Sqrt[3]    Sqrt[3]
+ 
+                          -2        1        1
+>      finiteWeight[3, {-------, -------, -------}]}][fundamentalWeights]
+                        Sqrt[3]  Sqrt[3]  Sqrt[3]
+
+
+
+Out[104]= finiteRootSystem[2, 3, 
+ 
+                          1          1
+>    {finiteWeight[3, {-------, -(-------), 0}], 
+                       Sqrt[3]    Sqrt[3]
+ 
+                         -2        1        1
+>     finiteWeight[3, {-------, -------, -------}]}]
+                       Sqrt[3]  Sqrt[3]  Sqrt[3]
+
+g2a[gradeLimit]=7
+
+Out[4]= 7
+
+Out[78]= 7
+
+stringFunctions[g2a,{1,1,0}]
+
+e8=makeSimpleRootSystem[E,8]
+
+Out[39]= finiteRootSystem[8, 8, 
+ 
+                       1    1     1     1     1     1     1   1
+>    {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                       2    2     2     2     2     2     2   2
+ 
+>     finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {1, -1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 1, -1, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 1, -1, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 1, -1, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 1, -1, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 0, 1, -1, 0}]}]
+
+cartanMatrix[e8]
+
+Out[40]= {{2, 0, 1, 0, 0, 0, 0, 0}, {0, 2, 0, 1, 0, 0, 0, 0}, 
+ 
+>    {1, 0, 2, -1, 0, 0, 0, 0}, {0, 1, -1, 2, -1, 0, 0, 0}, 
+ 
+>    {0, 0, 0, -1, 2, -1, 0, 0}, {0, 0, 0, 0, -1, 2, -1, 0}, 
+ 
+>    {0, 0, 0, 0, 0, -1, 2, -1}, {0, 0, 0, 0, 0, 0, -1, 2}}
+
+e8[simpleRoots]
+
+                           1    1     1     1     1     1     1   1
+Out[37]= {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                           2    2     2     2     2     2     2   2
+ 
+>    finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {1, 0, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 1, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 1, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 1, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 0, 1, 0, 0}]}
+
+                           1    1     1     1     1     1     1   1
+Out[35]= {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                           2    2     2     2     2     2     2   2
+ 
+>    finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {1, 0, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 1, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 1, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 1, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 0, 1, 0, 0}]}
+
+                 1    1     1     1     1     1
+Out[34]= {{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, {0, 2, 1, 1, 0, 0, 0, 0}, 
+                 2    2     2     2     2     2
+ 
+>    {1, 2, 2, 0, 0, 0, 0, 0}, {-1, 2, 0, 2, 0, 0, 0, 0}, 
+ 
+>    {-1, 0, 0, 0, 2, 0, 0, 0}, {-1, 0, 0, 0, 0, 2, 0, 0}, 
+ 
+>    {-1, 0, 0, 0, 0, 0, 2, 0}, {-1, 0, 0, 0, 0, 0, 0, 2}}
+
+                 1    1     1     1     1     1
+Out[32]= {{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, {0, 2, 1, 1, 0, 0, 0, 0}, 
+                 2    2     2     2     2     2
+ 
+>    {1, 2, 2, 0, 0, 0, 0, 0}, {-1, 2, 0, 2, 0, 0, 0, 0}, 
+ 
+>    {-1, 0, 0, 0, 2, 0, 0, 0}, {-1, 0, 0, 0, 0, 2, 0, 0}, 
+ 
+>    {-1, 0, 0, 0, 0, 0, 2, 0}, {-1, 0, 0, 0, 0, 0, 0, 2}}
+
+                              1    1     1     1     1     1
+Inverse::sing: Matrix {{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                              2    2     2     2     2     2
+     {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+     {-1, 2, 0, 2, 0, 0, 0, 0}, <<2>>, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+     {-1, 0, 0, 0, 0, 0, 0, 2}} is singular.
+
+Out[31]= finiteWeight[8, {0, 0, 0, 0, 0, 1, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 1, 0, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+>    finiteWeight[8, {0, 0, 0, 1, 0, 0, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+>    finiteWeight[8, {0, 0, 1, 0, 0, 0, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+>    finiteWeight[8, {0, 1, 0, 0, 0, 0, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+                      1    1     1     1     1     1     1   1
+>    finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}] 
+                      2    2     2     2     2     2     2   2
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+>    finiteWeight[8, {1, 0, 0, 0, 0, 0, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}] + 
+ 
+>    finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}] 
+ 
+                      1    1     1     1     1     1
+>     Inverse[{{2, 0, -, -(-), -(-), -(-), -(-), -(-)}, 
+                      2    2     2     2     2     2
+ 
+>       {0, 2, 1, 1, 0, 0, 0, 0}, {1, 2, 2, 0, 0, 0, 0, 0}, 
+ 
+>       {-1, 2, 0, 2, 0, 0, 0, 0}, {-1, 0, 0, 0, 2, 0, 0, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 2, 0, 0}, {-1, 0, 0, 0, 0, 0, 2, 0}, 
+ 
+>       {-1, 0, 0, 0, 0, 0, 0, 2}}]
+
+                           1    1     1     1     1     1     1   1
+Out[30]= {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                           2    2     2     2     2     2     2   2
+ 
+>    finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {1, 0, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 1, 0, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 1, 0, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 1, 0, 0, 0}], 
+ 
+>    finiteWeight[8, {0, 0, 0, 0, 0, 1, 0, 0}]}
+
+Out[28]= finiteRootSystem[8, 8, 
+ 
+                       1    1     1     1     1     1     1   1
+>    {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                       2    2     2     2     2     2     2   2
+ 
+>     finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {1, 0, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 1, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 1, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 1, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 0, 1, 0, 0}]}]
+
+Join[{1,2,3},{4,5,5}]
+
+Out[26]= {1, 2, 3, 4, 5, 5}
+
+Out[25]= {1, 2, 3, {4, 5, 5}}
+
+Out[24]= finiteRootSystem[3, 8, 
+ 
+                       1    1     1     1     1     1     1   1
+>    {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                       2    2     2     2     2     2     2   2
+ 
+>     finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[6, {{1, 0, 0, 0, 0, 0, 0, 0}, {0, 1, 0, 0, 0, 0, 0, 0}, 
+ 
+>       {0, 0, 1, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0, 0}, 
+ 
+>       {0, 0, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 0, 0, 1, 0, 0}}]}]
+
+makeSimpleRootSystem[D,8]
+
+Out[16]= finiteRootSystem[8, 8, 
+ 
+>    {finiteWeight[8, {1, -1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 1, -1, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 1, -1, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 1, -1, 0, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 1, -1, 0, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 0, 1, -1, 0}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 0, 0, 1, -1}], 
+ 
+>     finiteWeight[8, {0, 0, 0, 0, 0, 0, 1, 1}]}]
+
+Out[15]= finiteRootSystem[3, 8, 
+ 
+                       1    1     1     1     1     1     1   1
+>    {finiteWeight[8, {-, -(-), -(-), -(-), -(-), -(-), -(-), -}], 
+                       2    2     2     2     2     2     2   2
+ 
+>     finiteWeight[8, {1, 1, 0, 0, 0, 0, 0, 0}], 
+ 
+>     finiteWeight[6, {{{1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}}, 
+ 
+>       {{0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}}, 
+ 
+>       {{0}, {0}, {1}, {0}, {0}, {0}, {0}, {0}}, 
+ 
+>       {{0}, {0}, {0}, {1}, {0}, {0}, {0}, {0}}, 
+ 
+>       {{0}, {0}, {0}, {0}, {1}, {0}, {0}, {0}}, 
+ 
+>       {{0}, {0}, {0}, {0}, {0}, {1}, {0}, {0}}}]}]
+
+Clear[rank]
+
+Out[17]= 6
+
+Table[If [ j==i-2, 1, If [j==j-2, -1, 0]],{i,3,rank},{j,1,8}]
+
+Out[19]= {{1, 0, 0, 0, 0, 0, 0, 0}, {0, 1, 0, 0, 0, 0, 0, 0}, 
+ 
+>    {0, 0, 1, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0, 0}}
+
+Out[18]= {{{1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}}, 
+ 
+>    {{0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}}, 
+ 
+>    {{0}, {0}, {1}, {0}, {0}, {0}, {0}, {0}}, 
+ 
+>    {{0}, {0}, {0}, {1}, {0}, {0}, {0}, {0}}}
+
+Out[6]//InputForm
+
+Out[14]//InputForm= 
+{{{2, 0, 0}, 1 + 8*q + 37*q^2 + 138*q^3 + 431*q^4 + 1227*q^5 + 3208*q^6 + 
+   7901*q^7}, {{0, 0, 1}, 3*q + 18*q^2 + 73*q^3 + 247*q^4 + 736*q^5 + 
+   2000*q^6 + 5070*q^7}, {{1, 1, 0}, 1 + 7*q + 32*q^2 + 117*q^3 + 370*q^4 + 
+   1055*q^5 + 2780*q^6 + 6880*q^7}, 
+ {{0, 2, 0}, 3*q + 15*q^2 + 63*q^3 + 210*q^4 + 633*q^5 + 1725*q^6 + 4407*q^7}}
+
+?*InputForm
+
+InputForm[expr] prints as a version of expr
+     suitable for input to Mathematica. 
+
+DefaultInputFormatType  ReturnInputFormPacket   $SuppressInputFormHeads
+InputForm
+
+Global`LatexForm
+
+Information::nomatch: No symbol matching *LaTeX* found.
+
+Information::nomatch: No symbol matching *LaTeX found.
+
+                                   2        3        4         5         6
+Out[6]= {{{2, 0, 0}, 1 + 8 q + 37 q  + 138 q  + 431 q  + 1227 q  + 3208 q  + 
+ 
+             7                         2       3        4        5
+>      7901 q }, {{0, 0, 1}, 3 q + 18 q  + 73 q  + 247 q  + 736 q  + 
+ 
+             6         7
+>      2000 q  + 5070 q }, {{1, 1, 0}, 
+ 
+                    2        3        4         5         6         7
+>     1 + 7 q + 32 q  + 117 q  + 370 q  + 1055 q  + 2780 q  + 6880 q }, 
+ 
+                           2       3        4        5         6         7
+>    {{0, 2, 0}, 3 q + 15 q  + 63 q  + 210 q  + 633 q  + 1725 q  + 4407 q }}
+
+                                  2       3       4       5        6
+Out[5]= {{{1, 0, 0}, 1 + 2 q + 6 q  + 14 q  + 32 q  + 66 q  + 135 q  + 
+ 
+            7                      2      3       4       5       6        7
+>      258 q }, {{0, 1, 0}, q + 3 q  + 9 q  + 21 q  + 48 q  + 99 q  + 199 q }}
+
+[Calculating...]
+
+fw=fundamentalWeights[g2a]
+
+Out[83]= {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 1, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, -1, 2}], 2, 0]}
+
+im=makeIrreducibleModule[g2a][fw[[2]]]
+
+ch=character[im]
+
+ch[weights]
+
+g2a[simpleRoots]
+
+comarks[g2a]
+
+orbit[g2a][fw[[2]]]
+
+weylGroupElement[g2][1] @ weight[g2][1,1]
+
+                             -2          1
+Out[128]= finiteWeight[3, {-------, -(-------), Sqrt[3]}]
+                           Sqrt[3]    Sqrt[3]
+
+
+r=g2[simpleRoots][[1]]
+
+w=weight[g2][1,1]
+
+reflection[r]@w
+
+                             -2          1
+Out[127]= finiteWeight[3, {-------, -(-------), Sqrt[3]}]
+                           Sqrt[3]    Sqrt[3]
+
+w.w
+
+Simplify[w.w]
+
+?Simplify
+makeSimpleRootSystem[G,2]:=makeFiniteRootSystem[{1/Sqrt[3]*{1,-1,0},1/Sqrt[3]*{-2,1,1}}];
+
+Out[101]= 2
+
+Out[100]= {0.133333, 0.0333333, 0.0333333}
+
+
+          -2 {-2, 1, 1} . 1  {-2, 1, 1} . 1  {-2, 1, 1} . 1
+Out[99]= {-----------------, --------------, --------------}
+               Sqrt[3]          Sqrt[3]         Sqrt[3]
+
+Out[98]= 2 Sqrt[3]
+
+Out[97]= 6
+
+                                          2    1     1        2
+Out[96]= affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -]
+                                          3    3     3        3
+
+                                          2    1     1        2
+Out[93]= affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -]
+                                          3    3     3        3
+
+Out[91]= {{affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 1]}, 
+ 
+                                         1     1   2       2
+>    {affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -]}, 
+                                         3     3   3       3
+ 
+                                       1    2   1       2
+>    {affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -]}, 
+                                       3    3   3       3
+ 
+                                         2   1  1       2
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -]}, 
+                                         3   3  3       3
+ 
+                                       2    1     1        2
+>    {affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -]}, 
+                                       3    3     3        3
+ 
+                                         1   2    1        2
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -], 
+                                         3   3    3        3
+ 
+>     affineWeight[3, finiteWeight[3, {0, -1, 1}], 1, 0]}, 
+ 
+>    {affineWeight[3, finiteWeight[3, {-1, 0, 1}], 1, 0], 
+ 
+                                       1  1    2        2
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -]}, 
+                                       3  3    3        3
+ 
+                                         2     2   4         1
+>    {affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(-)], 
+                                         3     3   3         3
+ 
+>     affineWeight[3, finiteWeight[3, {1, -1, 0}], 1, 0]}, 
+ 
+>    {affineWeight[3, finiteWeight[3, {-1, 1, 0}], 1, 0], 
+ 
+                                       2    4   2         1
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(-)]}, 
+                                       3    3   3         3
+ 
+                                         4   2  2         1
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(-)], 
+                                         3   3  3         3
+ 
+>     affineWeight[3, finiteWeight[3, {1, 0, -1}], 1, 0]}, 
+ 
+                                         1     4   5         4
+>    {affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(-)], 
+                                         3     3   3         3
+ 
+>     affineWeight[3, finiteWeight[3, {0, 1, -1}], 1, 0], 
+ 
+                                       4    2     2          1
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(-)]}, 
+                                       3    3     3          3
+ 
+                                         4     1   5         4
+>    {affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(-)], 
+                                         3     3   3         3
+ 
+                                         2   4    2          1
+>     affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(-)], 
+                                         3   3    3          3
+ 
+                                       1    5   4         4
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(-)]}, 
+                                       3    3   3         3
+ 
+                                         5   1  4         4
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(-)], 
+                                         3   3  3         3
+ 
+                                       2  2    4          1
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(-)], 
+                                       3  3    3          3
+ 
+                                       4    5   1         4
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(-)]}, 
+                                       3    3   3         3
+ 
+                                         5   4  1         4
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(-)], 
+                                         3   3  3         3
+ 
+>     affineWeight[3, finiteWeight[3, {-1, -1, 2}], 1, -2], 
+ 
+                                       5    4     1          4
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(-)]}, 
+                                       3    3     3          3
+ 
+                                         4   5    1          4
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(-)], 
+                                         3   3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {1, -2, 1}], 1, -2], 
+ 
+                                       5    1     4          4
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(-)]}, 
+                                       3    3     3          3
+ 
+>    {affineWeight[3, finiteWeight[3, {-2, 1, 1}], 1, -2], 
+ 
+                                         1   5    4          4
+>     affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(-)], 
+                                         3   3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {0, -2, 2}], 1, -3], 
+ 
+                                       4  1    5          4
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(-)]}, 
+                                       3  3    3          3
+ 
+>    {affineWeight[3, finiteWeight[3, {-2, 0, 2}], 1, -3], 
+ 
+                                         2     5   7         10
+>     affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(--)], 
+                                         3     3   3         3
+ 
+                                       1  4    5          4
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(-)], 
+                                       3  3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {2, -1, -1}], 1, -2]}, 
+ 
+                                         5     2   7         10
+>    {affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(--)], 
+                                         3     3   3         3
+ 
+>     affineWeight[3, finiteWeight[3, {-1, 2, -1}], 1, -2], 
+ 
+                                       2    7   5         10
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(--)], 
+                                       3    3   3         3
+ 
+>     affineWeight[3, finiteWeight[3, {2, -2, 0}], 1, -3]}, 
+ 
+                                         7   2  5         10
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(--)], 
+                                         3   3  3         3
+ 
+>     affineWeight[3, finiteWeight[3, {-2, 2, 0}], 1, -3], 
+ 
+>     affineWeight[3, finiteWeight[3, {1, 1, -2}], 1, -2], 
+ 
+                                       5    7   2         10
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(--)]}, 
+                                       3    3   3         3
+ 
+                                         7   5  2         10
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(--)], 
+                                         3   3  3         3
+ 
+                                         4     4   8         13
+>     affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(--)], 
+                                         3     3   3         3
+ 
+>     affineWeight[3, finiteWeight[3, {2, 0, -2}], 1, -3], 
+ 
+                                       7    5     2          10
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(--)]}, 
+                                       3    3     3          3
+ 
+                                         5   7    2          10
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(--)], 
+                                         3   3    3          3
+ 
+                                         1     7   8         16
+>     affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(--)], 
+                                         3     3   3         3
+ 
+>     affineWeight[3, finiteWeight[3, {0, 2, -2}], 1, -3], 
+ 
+                                       4    8   4         13
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(--)], 
+                                       3    3   3         3
+ 
+                                       7    2     5          10
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(--)]}, 
+                                       3    3     3          3
+ 
+                                         8   4  4         13
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(--)], 
+                                         3   3  3         3
+ 
+                                         7     1   8         16
+>     affineWeight[3, finiteWeight[3, {-(-), -(-), -}], 1, -(--)], 
+                                         3     3   3         3
+ 
+                                         2   7    5          10
+>     affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(--)], 
+                                         3   3    3          3
+ 
+                                       1    8   7         16
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(--)], 
+                                       3    3   3         3
+ 
+                                       5  2    7          10
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(--)]}, 
+                                       3  3    3          3
+ 
+                                         8   1  7         16
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(--)], 
+                                         3   3  3         3
+ 
+>     affineWeight[3, finiteWeight[3, {-1, -2, 3}], 1, -6], 
+ 
+                                       2  5    7          10
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(--)], 
+                                       3  3    3          3
+ 
+                                       7    8   1         16
+>     affineWeight[3, finiteWeight[3, {-, -(-), -}], 1, -(--)], 
+                                       3    3   3         3
+ 
+                                       8    4     4          13
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(--)]}, 
+                                       3    3     3          3
+ 
+                                         8   7  1         16
+>    {affineWeight[3, finiteWeight[3, {-(-), -, -}], 1, -(--)], 
+                                         3   3  3         3
+ 
+>     affineWeight[3, finiteWeight[3, {-2, -1, 3}], 1, -6], 
+ 
+                                         4   8    4          13
+>     affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(--)], 
+                                         3   3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {1, -3, 2}], 1, -6], 
+ 
+                                       8    7     1          16
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(--)]}, 
+                                       3    3     3          3
+ 
+>    {affineWeight[3, finiteWeight[3, {-3, 1, 2}], 1, -6], 
+ 
+                                         7   8    1          16
+>     affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(--)], 
+                                         3   3    3          3
+ 
+                                       4  4    8          13
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(--)], 
+                                       3  3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {2, -3, 1}], 1, -6], 
+ 
+                                       8    1     7          16
+>     affineWeight[3, finiteWeight[3, {-, -(-), -(-)}], 1, -(--)]}, 
+                                       3    3     3          3
+ 
+>    {affineWeight[3, finiteWeight[3, {-3, 2, 1}], 1, -6], 
+ 
+                                         1   8    7          16
+>     affineWeight[3, finiteWeight[3, {-(-), -, -(-)}], 1, -(--)], 
+                                         3   3    3          3
+ 
+                                       7  1    8          16
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(--)], 
+                                       3  3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {3, -2, -1}], 1, -6]}, 
+ 
+>    {affineWeight[3, finiteWeight[3, {-2, 3, -1}], 1, -6], 
+ 
+                                       1  7    8          16
+>     affineWeight[3, finiteWeight[3, {-, -, -(-)}], 1, -(--)], 
+                                       3  3    3          3
+ 
+>     affineWeight[3, finiteWeight[3, {3, -1, -2}], 1, -6]}, 
+ 
+>    {affineWeight[3, finiteWeight[3, {-1, 3, -2}], 1, -6], 
+ 
+>     affineWeight[3, finiteWeight[3, {2, 1, -3}], 1, -6]}, 
+ 
+>    {affineWeight[3, finiteWeight[3, {1, 2, -3}], 1, -6]}}
+
+Out[89]= {1, 1, 2}
+
+Out[88]= {1, 3, 2}
+
+Out[87]= {affineWeight[3, finiteWeight[3, {1, 1, -2}], 0, 1], 
+ 
+>    affineWeight[3, finiteWeight[3, {1, -1, 0}], 0, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {-2, 1, 1}], 0, 0]}
+
+Out[85]= formalElement[Affine`Private`table$1247]
+
+Out[82]= {affineWeight[3, finiteWeight[3, {0, 0, 0}], 1, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {0, -1, 1}], 1, 0], 
+ 
+>    affineWeight[3, finiteWeight[3, {-1, -1, 2}], 2, 0]}
+
+
+            1               4
+Out[81]= {{{-, 1, 0}, 0}, {{-, 0, 0}, 0}}
+            3               3
+
+            2
+Out[80]= {{{-, 0, 0}, 0}}
+            3
+
+            1                  2    3    4    5    6
+Out[79]= {{{-, 0, 0}, 1 + q + q  + q  + q  + q  + q }}
+            3
+
+Out[76]= tensor-product.pdf
+
+Out[74]= tensor-product.pdf
+
+Out[72]= tensor-product.pdf
+
+Out[70]= tensor-product.pdf
+
+Out[68]= tensor-product.pdf
+
+textPlot[m_module,opts___?OptionQ]:=drawPlaneProjection[1,2,character[m],opts];
+
+Out[64]= {4, -2, 1}
+
+Out[59]= {-1, 1, 3}
+
+Out[58]= {-1, 1, 3}
+
+Out[57]= {-2, 4, 1}
+
+Out[56]= {1, -1, 3}
+
+dynkinLabels[b2a]/@ (coroot/@b2a[simpleRoots])
+
+Out[55]= {{2, 0, -2}, {0, 2, -2}, {-2, -2, 4}}
+
+Out[54]= {1, -1, 3}
+
+Out[53]= {-2, 4, 1}
+
+                                          9  1
+Out[52]= affineWeight[2, finiteWeight[2, {-, -}], 3, -3]
+                                          2  2
+
+weight[b2a][1,1,1]
+
+                                          3  1
+Out[51]= affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                          2  2
+
+                                          1  3
+Out[50]= affineWeight[2, finiteWeight[2, {-, -}], 3, 0]
+                                          2  2
+
+cartanMatrix[b2a]
+
+
+
+Out[48]= {{2, 0, -1}, {0, 2, -1}, {-2, -2, 2}}
+
+Out[47]= affineWeight[2, finiteWeight[2, {1, 0}], 1, 0]
+
+fundamentalWeights[b2a][[2]]
+
+b2a[simpleRoots]
+
+coroot/@b2a[simpleRoots]
+
+Out[45]= {affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>    affineWeight[2, finiteWeight[2, {1, -1}], 0, 0], 
+ 
+>    affineWeight[2, finiteWeight[2, {0, 2}], 0, 0]}
+
+Out[44]= {affineWeight[2, finiteWeight[2, {-1, -1}], 0, 1], 
+ 
+>    affineWeight[2, finiteWeight[2, {1, -1}], 0, 0], 
+ 
+>    affineWeight[2, finiteWeight[2, {0, 1}], 0, 0]}
+
+Out[43]= affineWeight[2, finiteWeight[2, {1, 0}], 1, 0]
+
+Out[42]= affineWeight[2, finiteWeight[2, {0, 1}], 1, 0]
+
+Out[38]= a1a1sing.pdf
+
+Out[35]= a1a1sing.pdf
+
+Out[33]= a1a1sing.pdf
+
+Out[32]= a1a1sing.pdf
+
+Out[30]= a1a1sing.pdf
+
+Out[26]= b2sing.pdf
+
+Out[25]= b2sing.pdf
+
+Out[24]= b2sing.pdf
+
+Out[19]= b2sing.pdf
+
+Out[18]= b2sing.pdf
+
+Out[13]= a2a
+
 Out[134]= affineCharacter4.png
 
 Out[131]= affineCharacter4.png
