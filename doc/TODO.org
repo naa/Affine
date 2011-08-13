@@ -48,4 +48,5 @@
 * Manual
 *** DONE Copy inline help
     CLOSED: [2011-06-02 Thu 13:51]
-*** TODO Write the section on download/installation/usage
+*** DONE Write the section on download/installation/usage
+    CLOSED: [2011-08-13 Sat 12:48]
