@@ -381,7 +381,7 @@ finiteWeight/:0*y_finiteWeight:=makeFiniteWeight[0*y[standardBase]];
 
 finiteWeight/:x_?NumericQ*y_finiteWeight:=makeFiniteWeight[x*y[standardBase]];
 
-affineWeight/:x_affineWeight[dimension]:=x[[1]];
+ affineWeight/:x_affineWeight[dimension]:=x[[1]];
 affineWeight/:x_affineWeight[finitePart]:=x[[2]];
 affineWeight/:x_affineWeight[level]:=x[[3]];
 affineWeight/:x_affineWeight[grade]:=x[[4]];
@@ -885,13 +885,33 @@ weightSystem[m_module]:=Module[{minusRoots, checkChamber, rs=rootSystem[m],res,r
 				   x]],m[[2]][weights],#=!={}&]];
 			       makeFormalElement[res,Table[1,{Length[res]}]]];
 *)
+
+
 partialCharacter[m_module]:=
-    Module[{rs=rootSystem[m],subs=subSystem[m],toFC,rh,mults,aw,wgs,fan,tmp,gamma0},
+    Module[{rs=rootSystem[m],subs=subSystem[m],toFC,rh,mults,aw,wgs,fan,tmp,gamma0,fw},
 	   rh=rho[rs];
 	   fan=makeFormalElement @@ Transpose[Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[rs][rh]]]];
-(*	   fan=singularElement[rs][zeroWeight[rs]];
-	   gamma0=Sort[fan[weights],#1.rh>#2.rh&][[1]];
-	   fan=fan*Exp[-gamma0];*)
+	   If [subs=!=emptyRootSystem[],
+	       toFC=toFundamentalChamber[subs],
+	       toFC=#&;
+	      ];
+	   wgs=Sort[weightSystem[m][weights],#1.rh>#2.rh&];
+	   aw=singularElement[m];
+	   mults=makeHashtable[{},{}];
+	   insideQ=IntegerQ[mults[toFC[#]]]&;
+	   fw=Sort[fan[weights],grade[#1]<grade[#2]&];
+	   Scan[Function[v,
+			 mults[v]=
+			 Plus @@ Map[ If [insideQ[v+#], -fan[#]*mults[toFC[v+#]], 0]&, TakeWhile[fw,grade[#]+grade[v]<=0&]];
+			 If [IntegerQ[aw[v]], mults[v]=mults[v]+aw[v]];
+			],
+		wgs];
+	   makeFormalElement[mults]];
+(*
+partialCharacter[m_module]:=
+    Module[{rs=rootSystem[m],subs=subSystem[m],toFC,rh,mults,aw,wgs,fan,tmp,gamma0,fw},
+	   rh=rho[rs];
+	   fan=makeFormalElement @@ Transpose[Map[{rh-#[[1]],#[[2]]}&,Rest[orbitWithEps[rs][rh]]]];
 
 	   If [subs=!=emptyRootSystem[],
 	       toFC=toFundamentalChamber[subs],
@@ -901,14 +921,15 @@ partialCharacter[m_module]:=
 	   aw=singularElement[m];
 	   mults=makeHashtable[{},{}];
 	   insideQ=IntegerQ[mults[toFC[#]]]&;
+	   fw=fan[weights];
 	   Scan[Function[v,
 			 mults[v]=
-			 Plus @@ Map[ If [insideQ[v+#], -fan[#]*mults[toFC[v+#]], 0]&, fan[weights]];
+			 Plus @@ Map[ If [insideQ[v+#], -fan[#]*mults[toFC[v+#]], 0]&, fw];
 			 If [IntegerQ[aw[v]], mults[v]=mults[v]+aw[v]];
 			],
 		wgs];
 	   makeFormalElement[mults]];
-
+*)
 (*character[m_module]:=If [subSystem[m]=!=emptyRootSystem[], character[makeModule[rootSystem[m]][singularElement[m],emptyRootSystem[]]]]*)
 
 character[m_module]:=If [subSystem[m]=!=emptyRootSystem[], noSignOrbit[subSystem[m]][partialCharacter[m]], partialCharacter[m]]
