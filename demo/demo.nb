@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    109734,       2765]
-NotebookOptionsPosition[    102604,       2530]
-NotebookOutlinePosition[    102961,       2546]
-CellTagsIndexPosition[    102918,       2543]
+NotebookDataLength[    126613,       3446]
+NotebookOptionsPosition[    108019,       2780]
+NotebookOutlinePosition[    117241,       3087]
+CellTagsIndexPosition[    117147,       3081]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,15 +22,19 @@ Cell[TextData[{
  StyleBox["Demonstration of ", "Title"],
  StyleBox["Affine.m", "Title",
   FontSlant->"Italic"],
- StyleBox[" usage", "Title"]
+ StyleBox[" usage", "Title"],
+ "\n",
+ StyleBox["First we need to setup path and load the package", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873247139276*^9, 3.521873270215405*^9}, {
-  3.521873317159025*^9, 3.5218733183659353`*^9}, {3.521873874978292*^9, 
-  3.52187402707727*^9}, {3.52187416321414*^9, 3.52187416458253*^9}}],
-
-Cell[TextData[StyleBox["First we need to setup path and load the package", \
-"Text"]], "Input",
- CellChangeTimes->{{3.521873326641025*^9, 3.521873371817109*^9}}],
+   3.521873317159025*^9, 3.5218733183659353`*^9}, {3.521873874978292*^9, 
+   3.52187402707727*^9}, {3.52187416321414*^9, 3.52187416458253*^9}, {
+   3.522904276810939*^9, 3.5229042790499067`*^9}, 3.522984643613719*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[{
  RowBox[{
@@ -45,12 +49,19 @@ Cell[BoxData[{
  CellChangeTimes->{{3.511850132957571*^9, 3.51185016527726*^9}, {
    3.514881427513479*^9, 3.514881432925623*^9}, {3.521873174179186*^9, 
    3.521873192522464*^9}, 3.521873393683514*^9, {3.521873520093526*^9, 
-   3.5218735398350573`*^9}}],
+   3.5218735398350573`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[TextData[StyleBox["Or we can run unit tests to see that package works \
 correctly:", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873326641025*^9, 3.521873371817109*^9}, {
-  3.522143576451425*^9, 3.522143591079445*^9}}],
+  3.522143576451425*^9, 3.522143591079445*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -63,64 +74,18 @@ Cell[BoxData[{
      "\"\<../tests/\>\""}]}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"<<", "tests.m"}], ";"}]}], "Input",
- CellChangeTimes->{{3.52214360552756*^9, 3.522143612433168*^9}}],
+ CellChangeTimes->{{3.52214360552756*^9, 3.522143612433168*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData["\<\"All tests completed\"\>"], "Print",
- CellChangeTimes->{3.522144438367837*^9}]
+ CellChangeTimes->{3.522985877364559*^9},
+ CellTags->"Code"]
 }, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"OverHat", "[", 
-    RowBox[{"Subscript", "[", 
-     RowBox[{"A", ",", "1"}], "]"}], "]"}], "[", "simpleRoot", "]"}], "[", 
-  "1", "]"}]], "Input",
- CellChangeTimes->{{3.5221438680036993`*^9, 3.522143868009614*^9}}],
-
-Cell[BoxData[
- RowBox[{"affineWeight", "[", 
-  RowBox[{"2", ",", 
-   RowBox[{"finiteWeight", "[", 
-    RowBox[{"2", ",", 
-     RowBox[{"{", 
-      RowBox[{"1", ",", 
-       RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", "0", ",", "0"}], 
-  "]"}]], "Output",
- CellChangeTimes->{3.522143871753428*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"makeAffineWeight", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"1", ",", 
-     RowBox[{"-", "1"}]}], "}"}], ",", "0", ",", "0"}], "]"}]], "Input",
- CellChangeTimes->{{3.522143886825441*^9, 3.522143896039834*^9}}],
-
-Cell[BoxData[
- RowBox[{"affineWeight", "[", 
-  RowBox[{"2", ",", 
-   RowBox[{"finiteWeight", "[", 
-    RowBox[{"2", ",", 
-     RowBox[{"{", 
-      RowBox[{"1", ",", 
-       RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", "0", ",", "0"}], 
-  "]"}]], "Output",
- CellChangeTimes->{3.522143896591613*^9}]
-}, Open  ]],
-
-Cell[TextData[StyleBox["Weights", "Subtitle"]], "Input",
- CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952431431405*^9, 3.5219524368895597`*^9}}],
 
 Cell[TextData[{
+ StyleBox["Weights", "Subtitle"],
+ "\n",
  StyleBox["We review basic datastructures. \n", "Text"],
  StyleBox["finiteWeight",
   FontVariations->{"Underline"->True}],
@@ -131,24 +96,32 @@ Cell[TextData[{
 Lie algebra weights correspondingly.  We have following generic \
 constructors:", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
    3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, 
-   3.5219529626141853`*^9}],
+   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
+   3.521952431431405*^9, 3.5219524368895597`*^9}, 3.522985032888318*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[
  RowBox[{"makeFiniteWeight", "[", 
   RowBox[{"{", 
    RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}]], "Text",
  Evaluatable->True,
- CellChangeTimes->{{3.521874237838254*^9, 3.521874291603204*^9}}],
+ CellChangeTimes->{{3.521874237838254*^9, 3.521874291603204*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteWeight", "[", 
   RowBox[{"3", ",", 
    RowBox[{"{", 
     RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.521874309180957*^9}],
+ CellChangeTimes->{3.5229858775671387`*^9},
+ CellTags->"Code"],
 
 Cell[TextData[{
  "Here the argument of constructor is the list of coordinates in orthogonal \
@@ -156,11 +129,16 @@ basis",
  StyleBox[".\nConstructor for affine LIe algebra weights is similar but it \
 also needs level and grade of weight.", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
   3.521874503291995*^9, 3.5218745078972883`*^9}, {3.5218746640868883`*^9, 
-  3.521874696022236*^9}}],
+  3.521874696022236*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[
  RowBox[{"aw", "=", 
@@ -171,7 +149,9 @@ Cell[BoxData[
    "]"}]}]], "Text",
  Evaluatable->True,
  CellChangeTimes->{{3.521874321661553*^9, 3.521874335492091*^9}, {
-  3.521874533674336*^9, 3.521874585669978*^9}}],
+  3.521874533674336*^9, 3.521874585669978*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"affineWeight", "[", 
@@ -181,36 +161,53 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"1", ",", "2"}], "}"}]}], "]"}], ",", "2", ",", "3"}], 
   "]"}]], "Output",
- CellChangeTimes->{{3.521874570293523*^9, 3.521874586268064*^9}}],
+ CellChangeTimes->{3.52298587760754*^9},
+ CellTags->"Code"],
 
 Cell["\<\
 We can get level and grade of affine weight with the functions:\
 \>", "Input",
- CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}}],
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
+ CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"level", "[", "aw", "]"}]], "Input",
- CellChangeTimes->{{3.5218745879141293`*^9, 3.521874590284514*^9}}],
+ CellChangeTimes->{{3.5218745879141293`*^9, 3.521874590284514*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData["2"], "Output",
- CellChangeTimes->{3.521874591192325*^9}]
+ CellChangeTimes->{3.522985877763505*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"grade", "[", "aw", "]"}]], "Input",
- CellChangeTimes->{{3.5218745926516333`*^9, 3.5218745955480757`*^9}}],
+ CellChangeTimes->{{3.5218745926516333`*^9, 3.5218745955480757`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData["3"], "Output",
- CellChangeTimes->{3.521874596060747*^9}]
+ CellChangeTimes->{3.522985877808118*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["We can add and multiply weights by numbers. ", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
-  3.5218776827531633`*^9, 3.5218776976502533`*^9}}],
+  3.5218776827531633`*^9, 3.5218776976502533`*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -223,23 +220,22 @@ Cell[BoxData[
    RowBox[{"makeFiniteWeight", "[", 
     RowBox[{"{", 
      RowBox[{"1", ",", "1"}], "}"}], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.5218777030156403`*^9, 3.521877721067938*^9}}],
+ CellChangeTimes->{{3.5218777030156403`*^9, 3.521877721067938*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteWeight", "[", 
   RowBox[{"2", ",", 
    RowBox[{"{", 
     RowBox[{"3", ",", "4"}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.5218777284567738`*^9}]
+ CellChangeTimes->{3.522985877914961*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
-Cell[TextData[StyleBox["Root systems", "Subtitle"]], "Input",
- CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952463187976*^9, 3.5219524670070477`*^9}}],
-
 Cell[TextData[{
+ StyleBox["Root systems", "Subtitle"],
+ "\n",
  "Now we can introduce root systems. We can specify root system by hand by \
 listing the set of simple roots. For example to specify the root system of \
 algebra ",
@@ -248,8 +244,15 @@ algebra ",
    SubscriptBox["B", "2"], TraditionalForm]]],
  " (so(5)) we can use this code:"
 }], "Input",
- CellChangeTimes->{{3.521874767595481*^9, 3.521874811735478*^9}, {
-  3.521874963447112*^9, 3.5218750037404823`*^9}}],
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
+ CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
+   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
+   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
+   3.521952463187976*^9, 3.5219524670070477`*^9}, 3.52298514509665*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -264,7 +267,9 @@ Cell[BoxData[
     RowBox[{"makeFiniteWeight", "[", 
      RowBox[{"{", 
       RowBox[{"0", ",", "1"}], "}"}], "]"}]}], "}"}], "]"}]], "Input",
- CellChangeTimes->{{3.52187485537164*^9, 3.521874905075886*^9}}],
+ CellChangeTimes->{{3.52187485537164*^9, 3.521874905075886*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteRootSystem", "[", 
@@ -280,12 +285,18 @@ Cell[BoxData[
       RowBox[{"2", ",", 
        RowBox[{"{", 
         RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{{3.521874892942511*^9, 3.52187490568867*^9}}]
+ CellChangeTimes->{3.522985877967083*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["Or in more concise form:", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.5218749128347273`*^9, 3.521874931166287*^9}, 
-   3.5218750081183243`*^9}],
+   3.5218750081183243`*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -301,7 +312,9 @@ Cell[BoxData[
       RowBox[{"0", ",", "1"}], "}"}]}], "}"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.521874936696598*^9, 3.521874951770589*^9}, {
   3.521875011227066*^9, 3.521875011925099*^9}, {3.521875077254133*^9, 
-  3.521875078703928*^9}}],
+  3.521875078703928*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteRootSystem", "[", 
@@ -317,21 +330,29 @@ Cell[BoxData[
       RowBox[{"2", ",", 
        RowBox[{"{", 
         RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.5218750141164913`*^9, 3.521875079448626*^9}]
+ CellChangeTimes->{3.522985878001676*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
 Root systems of (non-twisted) affine Lie algebras are constructed as 
 affine extensions of finite-dimensional ones:\
 \>", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521875045646961*^9, 3.521875091176461*^9}, 
-   3.521952970570891*^9}],
+   3.521952970570891*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"makeAffineExtension", "[", "rs", "]"}]], "Input",
- CellChangeTimes->{{3.521875094316946*^9, 3.521875100293325*^9}}],
+ CellChangeTimes->{{3.521875094316946*^9, 3.521875100293325*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"affineRootSystem", "[", 
@@ -375,21 +396,29 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", "0", ",", "0"}], 
       "]"}]}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.521875100795157*^9}]
+ CellChangeTimes->{3.522985878034721*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
 We have special constructors for root systems of simple Lie algebras. Long \
 form is\
 \>", "Input",
- CellChangeTimes->{{3.5218752754950743`*^9, 3.52187532124365*^9}}],
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
+ CellChangeTimes->{{3.5218752754950743`*^9, 3.52187532124365*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"makeSimpleRootSystem", "[", 
   RowBox[{"C", ",", "3"}], "]"}]], "Input",
- CellChangeTimes->{{3.5218753229238987`*^9, 3.521875329653369*^9}}],
+ CellChangeTimes->{{3.5218753229238987`*^9, 3.521875329653369*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteRootSystem", "[", 
@@ -411,17 +440,25 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"0", ",", "0", ",", "2"}], "}"}]}], "]"}]}], "}"}]}], 
   "]"}]], "Output",
- CellChangeTimes->{3.52187533060507*^9}]
+ CellChangeTimes->{3.5229858781474543`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["Concise form is just", "Input",
- CellChangeTimes->{{3.521875337444303*^9, 3.521875342403859*^9}}],
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
+ CellChangeTimes->{{3.521875337444303*^9, 3.521875342403859*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  SubscriptBox["C", "3"]], "Input",
- CellChangeTimes->{{3.521875345351853*^9, 3.521875348928938*^9}}],
+ CellChangeTimes->{{3.521875345351853*^9, 3.521875348928938*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteRootSystem", "[", 
@@ -443,23 +480,32 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"0", ",", "0", ",", "2"}], "}"}]}], "]"}]}], "}"}]}], 
   "]"}]], "Output",
- CellChangeTimes->{3.521875352739525*^9}]
+ CellChangeTimes->{3.5229858781790524`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
 Now we can get some properties of root system and algebra. For example\
 \>", "Input",
- CellChangeTimes->{{3.5218753813096247`*^9, 3.521875412253256*^9}}],
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
+ CellChangeTimes->{{3.5218753813096247`*^9, 3.521875412253256*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"rank", "[", 
   SubscriptBox["C", "3"], "]"}]], "Input",
- CellChangeTimes->{{3.5218754164155607`*^9, 3.521875420485729*^9}}],
+ CellChangeTimes->{{3.5218754164155607`*^9, 3.521875420485729*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData["3"], "Output",
- CellChangeTimes->{3.521875421066877*^9}]
+ CellChangeTimes->{3.522985878273384*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -467,7 +513,9 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"roots", "[", 
   SubscriptBox["C", "3"], "]"}]], "Input",
- CellChangeTimes->{{3.52187542783949*^9, 3.521875432307357*^9}}],
+ CellChangeTimes->{{3.52187542783949*^9, 3.521875432307357*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -559,15 +607,21 @@ Cell[BoxData[
     RowBox[{"3", ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", "0", ",", "0"}], "}"}]}], "]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.521875432904954*^9, 3.521875752207973*^9}]
+ CellChangeTimes->{3.522985878401528*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
 To specify root system of semisimple Lie algebra we can use following natural \
 notation\
 \>", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
-  3.5218777592829733`*^9, 3.521877781823497*^9}}],
+  3.5218777592829733`*^9, 3.521877781823497*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -575,7 +629,9 @@ Cell[BoxData[
  RowBox[{
   SubscriptBox["C", "3"], "\[CirclePlus]", 
   SubscriptBox["B", "2"]}]], "Input",
- CellChangeTimes->{{3.52187778601694*^9, 3.521877815911873*^9}}],
+ CellChangeTimes->{{3.52187778601694*^9, 3.521877815911873*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteRootSystem", "[", 
@@ -608,7 +664,8 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "1"}], "}"}]}], 
       "]"}]}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.521877817749613*^9}]
+ CellChangeTimes->{3.522985878504225*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -618,33 +675,38 @@ Cell[BoxData[
   RowBox[{
    SubscriptBox["A", "1"], "\[CirclePlus]", 
    SubscriptBox["B", "2"]}], "]"}]], "Input",
- CellChangeTimes->{{3.521952546497574*^9, 3.5219525700953627`*^9}}],
+ CellChangeTimes->{{3.521952546497574*^9, 3.5219525700953627`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"finiteWeight", "[", 
-    RowBox[{"3", ",", 
+    RowBox[{"4", ",", 
      RowBox[{"{", 
-      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
    RowBox[{"finiteWeight", "[", 
-    RowBox[{"3", ",", 
+    RowBox[{"4", ",", 
      RowBox[{"{", 
-      RowBox[{"0", ",", "1", ",", 
+      RowBox[{"0", ",", "0", ",", "1", ",", 
        RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", 
    RowBox[{"finiteWeight", "[", 
-    RowBox[{"3", ",", 
+    RowBox[{"4", ",", 
      RowBox[{"{", 
-      RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
    RowBox[{"finiteWeight", "[", 
-    RowBox[{"3", ",", 
+    RowBox[{"4", ",", 
      RowBox[{"{", 
-      RowBox[{"0", ",", "1", ",", "1"}], "}"}]}], "]"}], ",", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}]}], "]"}], ",", 
    RowBox[{"finiteWeight", "[", 
-    RowBox[{"3", ",", 
+    RowBox[{"4", ",", 
      RowBox[{"{", 
-      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.521952574489419*^9}]
+      RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}]}], "]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.522985879106608*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -654,9 +716,14 @@ finite-dimensional root system. \nFunction ",
   FontVariations->{"Underline"->True}],
  StyleBox[" calculate Cartan matrix corresponding to root system.", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
   3.5218777592829733`*^9, 3.521877781823497*^9}, {3.522205153589662*^9, 
-  3.522205215611411*^9}}],
+  3.522205215611411*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -670,7 +737,9 @@ Cell[BoxData[
       SubscriptBox["B", "2"]}], ")"}], "^"], "]"}], "//", 
   "MatrixForm"}]], "Input",
  CellChangeTimes->{{3.5222050617596416`*^9, 3.522205062748065*^9}, {
-  3.52220509348536*^9, 3.5222051242250757`*^9}}],
+  3.52220509348536*^9, 3.5222051242250757`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  TagBox[
@@ -702,8 +771,8 @@ Cell[BoxData[
         Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
   Function[BoxForm`e$, 
    MatrixForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{{3.522205047096191*^9, 3.522205064763611*^9}, {
-  3.522205097589772*^9, 3.522205125822558*^9}}]
+ CellChangeTimes->{3.5229858797117577`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -713,7 +782,9 @@ Cell[BoxData[
   RowBox[{"cartanMatrix", "[", 
    SubscriptBox["A", "2"], "]"}], "//", "MatrixForm"}]], "Input",
  CellChangeTimes->{{3.522205083738069*^9, 3.52220508970418*^9}, {
-  3.522205131070181*^9, 3.5222051362877293`*^9}}],
+  3.522205131070181*^9, 3.5222051362877293`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  TagBox[
@@ -735,14 +806,20 @@ Cell[BoxData[
         Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
   Function[BoxForm`e$, 
    MatrixForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{3.522205090117511*^9, 3.522205137091481*^9}]
+ CellChangeTimes->{3.5229858804138536`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
 If we specify root system we can use Dynkin labels to construct weight:\
 \>", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
-  3.521878076807229*^9, 3.521878097048913*^9}}],
+  3.521878076807229*^9, 3.521878097048913*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -751,7 +828,9 @@ Cell[BoxData[
   RowBox[{"weight", "[", 
    SubscriptBox["B", "2"], "]"}], "[", 
   RowBox[{"1", ",", "1"}], "]"}]], "Input",
- CellChangeTimes->{{3.5218780991276693`*^9, 3.521878104134664*^9}}],
+ CellChangeTimes->{{3.5218780991276693`*^9, 3.521878104134664*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteWeight", "[", 
@@ -760,22 +839,25 @@ Cell[BoxData[
     RowBox[{
      FractionBox["3", "2"], ",", 
      FractionBox["1", "2"]}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.521878104605914*^9}]
+ CellChangeTimes->{3.522985880513266*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
-Cell[TextData[StyleBox["Weyl group", "Subtitle"]], "Input",
+Cell[TextData[{
+ StyleBox["Weyl group", "Subtitle"],
+ "\n",
+ "Weyl group is generated by reflections corresponding to simple roots. So we \
+can specify Weyl group element\nby the sequence of simple reflection."
+}], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952489218959*^9, 3.521952492891446*^9}}],
-
-Cell["\<\
-Weyl group is generated by reflections corresponding to simple roots. So we \
-can specify Weyl group element
-by the sequence of simple reflection.\
-\>", "Input",
- CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
-  3.521877852782257*^9, 3.521877961905867*^9}}],
+   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
+   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
+   3.521952489218959*^9, 3.521952492891446*^9}, 3.52298544353277*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[
  RowBox[{
@@ -784,11 +866,18 @@ Cell[BoxData[
     RowBox[{"weylGroupElement", "[", 
      SubscriptBox["B", "2"], "]"}], "[", 
     RowBox[{"1", ",", "2", ",", "1"}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.5218779645228243`*^9, 3.521878001554697*^9}}],
+ CellChangeTimes->{{3.5218779645228243`*^9, 3.521878001554697*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell["Then we can act by Weyl group element on some weight", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
-  3.521878012949891*^9, 3.521878033498893*^9}}],
+  3.521878012949891*^9, 3.521878033498893*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -798,7 +887,9 @@ Cell[BoxData[
    RowBox[{"weight", "[", 
     SubscriptBox["B", "2"], "]"}], "[", 
    RowBox[{"1", ",", "1"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.521878042025902*^9, 3.521878054735639*^9}}],
+ CellChangeTimes->{{3.521878042025902*^9, 3.521878054735639*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteWeight", "[", 
@@ -808,7 +899,8 @@ Cell[BoxData[
      RowBox[{"-", 
       FractionBox["3", "2"]}], ",", 
      FractionBox["1", "2"]}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.521878055548871*^9}]
+ CellChangeTimes->{3.5229858806438513`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
@@ -818,9 +910,14 @@ with the parity of Weyl group elements are of crucial importance in our \
 approach to calculation of weight 
 multiplicities in Lie algebra modules and branching coefficients.\
 \>", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
   3.521878012949891*^9, 3.521878033498893*^9}, {3.5218910732264357`*^9, 
-  3.521891209294622*^9}}],
+  3.521891209294622*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -832,7 +929,9 @@ Cell[BoxData[
    RowBox[{"weight", "[", 
     SubscriptBox["B", "2"], "]"}], "[", 
    RowBox[{"1", ",", "2"}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.5218912114774427`*^9, 3.521891233007352*^9}}],
+ CellChangeTimes->{{3.5218912114774427`*^9, 3.521891233007352*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -885,7 +984,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"-", "2"}], ",", 
         RowBox[{"-", "1"}]}], "}"}]}], "]"}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.5218912386250143`*^9}]
+ CellChangeTimes->{3.522985880754974*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell["\<\
@@ -893,9 +993,14 @@ Some times it is more convenient to look not at the coordinates in orthogonal \
 basis, 
 but at Dynkin labels of weights. So we can present previous result this way:\
 \>", "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521874733571144*^9, 3.521874754188884*^9}, {
   3.521878012949891*^9, 3.521878033498893*^9}, {3.521891251722952*^9, 
-  3.521891328344763*^9}}],
+  3.521891328344763*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -912,7 +1017,9 @@ Cell[BoxData[
       SubscriptBox["B", "2"], "]"}], "[", 
      RowBox[{"1", ",", "2"}], "]"}], "]"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.5218913376051207`*^9, 3.521891348519423*^9}, {
-  3.521891596885304*^9, 3.5218916047996492`*^9}}],
+  3.521891596885304*^9, 3.5218916047996492`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -941,9 +1048,8 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"-", "1"}], ",", 
      RowBox[{"-", "2"}]}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{
-  3.52189134954359*^9, {3.521891549108007*^9, 3.521891551239807*^9}, 
-   3.5218916062290907`*^9}]
+ CellChangeTimes->{3.5229858811937637`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -963,11 +1069,16 @@ one is ", "Text"],
   FontVariations->{"Underline"->True}],
  StyleBox[":", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
   3.5219525209445267`*^9, 3.5219525250626173`*^9}, {3.521953202921598*^9, 
-  3.521953381115137*^9}}],
+  3.521953381115137*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -979,44 +1090,56 @@ Cell[BoxData[
      RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", 
     RowBox[{"{", 
      RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.5219533846851597`*^9, 3.5219533972426147`*^9}}],
+ CellChangeTimes->{{3.5219533846851597`*^9, 3.5219533972426147`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
-Cell[BoxData["Affine`Private`table$777"], "Output",
- CellChangeTimes->{3.521953398387126*^9}]
+Cell[BoxData["Affine`Private`table$5358"], "Output",
+ CellChangeTimes->{3.5229858812415943`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"h", "[", "a", "]"}]], "Input",
- CellChangeTimes->{{3.52195340220933*^9, 3.5219534046894817`*^9}}],
+ CellChangeTimes->{{3.52195340220933*^9, 3.5219534046894817`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData["1"], "Output",
- CellChangeTimes->{3.521953405245373*^9}]
+ CellChangeTimes->{3.522985881313383*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"keys", "[", "h", "]"}]], "Input",
- CellChangeTimes->{{3.521953408353367*^9, 3.521953410623335*^9}}],
+ CellChangeTimes->{{3.521953408353367*^9, 3.521953410623335*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"a", ",", "b", ",", "c"}], "}"}]], "Output",
- CellChangeTimes->{3.521953411123086*^9}]
+ CellChangeTimes->{3.5229858814091463`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"values", "[", "h", "]"}]], "Input",
- CellChangeTimes->{{3.5219534127707787`*^9, 3.52195341543773*^9}}],
+ CellChangeTimes->{{3.5219534127707787`*^9, 3.52195341543773*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
- CellChangeTimes->{3.5219534171834087`*^9}]
+ CellChangeTimes->{3.5229858814378643`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -1038,11 +1161,16 @@ for formal elements.\nThere are special accessors ", "Text"],
   FontVariations->{"Underline"->True}],
  StyleBox[".", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
   3.5219525209445267`*^9, 3.5219525250626173`*^9}, {3.521953424605048*^9, 
-  3.52195361075413*^9}, {3.5219536452592154`*^9, 3.521953708810137*^9}}],
+  3.52195361075413*^9}, {3.5219536452592154`*^9, 3.521953708810137*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -1063,11 +1191,14 @@ Cell[BoxData[
     RowBox[{"{", 
      RowBox[{"1", ",", "2"}], "}"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.521953560043442*^9, 3.521953575524802*^9}, {
-  3.521953621865872*^9, 3.52195363501858*^9}}],
+  3.521953621865872*^9, 3.52195363501858*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
- RowBox[{"formalElement", "[", "Affine`Private`table$783", "]"}]], "Output",
- CellChangeTimes->{3.521953636228253*^9}]
+ RowBox[{"formalElement", "[", "Affine`Private`table$5360", "]"}]], "Output",
+ CellChangeTimes->{3.5229858815356293`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1077,7 +1208,9 @@ Cell[BoxData[
   RowBox[{"(", 
    RowBox[{"fe", "*", "2"}], ")"}], "[", "weights", "]"}]], "Input",
  CellChangeTimes->{{3.52195363769746*^9, 3.5219536391748877`*^9}, {
-  3.5219536938266907`*^9, 3.521953719494111*^9}}],
+  3.5219536938266907`*^9, 3.521953719494111*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1092,7 +1225,8 @@ Cell[BoxData[
       RowBox[{
        FractionBox["1", "2"], ",", 
        FractionBox["1", "2"]}], "}"}]}], "]"}]}], "}"}]], "Output",
- CellChangeTimes->{{3.521953698906674*^9, 3.521953719994274*^9}}]
+ CellChangeTimes->{3.52298588158104*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1101,12 +1235,15 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"(", 
    RowBox[{"fe", "*", "2"}], ")"}], "[", "multiplicities", "]"}]], "Input",
- CellChangeTimes->{{3.521953722910267*^9, 3.5219537294899893`*^9}}],
+ CellChangeTimes->{{3.521953722910267*^9, 3.5219537294899893`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"2", ",", "4"}], "}"}]], "Output",
- CellChangeTimes->{3.5219537304488983`*^9}]
+ CellChangeTimes->{3.522985881611161*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1121,7 +1258,9 @@ Cell[BoxData[
        SubscriptBox["B", "2"], "]"}], "[", 
       RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ")"}], "[", "weights", 
   "]"}]], "Input",
- CellChangeTimes->{{3.521953735361981*^9, 3.521953754493465*^9}}],
+ CellChangeTimes->{{3.521953735361981*^9, 3.521953754493465*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1136,16 +1275,13 @@ Cell[BoxData[
     RowBox[{"2", ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", "1"}], "}"}]}], "]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.5219537557666883`*^9}]
+ CellChangeTimes->{3.522985881712195*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
-Cell[TextData[StyleBox["Modules", "Subtitle"]], "Input",
- CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.5219525209445267`*^9, 3.5219525250626173`*^9}}],
-
 Cell[TextData[{
+ StyleBox["Modules", "Subtitle"],
+ "\n",
  StyleBox["Lie algebra module is represented by the datastructure ", "Text"],
  StyleBox["module", "Code",
   FontVariations->{"Underline"->True}],
@@ -1157,13 +1293,15 @@ with respect to subgroup of Lie algebra\nWeyl group. Verma modules are \
 infinite-dimensional and we need to set some \nlimit of computations. So \
 generic constructor has several parameters: ", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952593115614*^9, 3.521952608518387*^9}, {3.5219526928991117`*^9, 
-  3.521952755961626*^9}, {3.521952904003066*^9, 3.521952923234408*^9}, {
-  3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
-  3.5219531747567797`*^9}}],
+   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
+   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
+   3.5219525209445267`*^9, 3.5219525250626173`*^9}, 3.522985511184639*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -1184,7 +1322,9 @@ Cell[BoxData[
     RowBox[{"emptyRootSystem", "[", "]"}], ",", "5"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.521953090582919*^9, 3.5219531089761543`*^9}, {
   3.521953179537765*^9, 3.5219531798748713`*^9}, {3.5219537627523623`*^9, 
-  3.5219538188560247`*^9}}],
+  3.5219538188560247`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"module", "[", 
@@ -1202,21 +1342,27 @@ Cell[BoxData[
         RowBox[{"2", ",", 
          RowBox[{"{", 
           RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "}"}]}], "]"}], ",", 
-   RowBox[{"formalElement", "[", "Affine`Private`table$799", "]"}], ",", 
+   RowBox[{"formalElement", "[", "Affine`Private`table$5369", "]"}], ",", 
    RowBox[{"emptyRootSystem", "[", "]"}], ",", "5"}], "]"}]], "Output",
- CellChangeTimes->{3.521953819682041*^9}]
+ CellChangeTimes->{3.522985881748303*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[StyleBox["We have just constructed Verma module of Lie algebra \
 B2. There are special constructors for irreducible, \nVerma and parabolic \
 Verma modules:", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
   3.521952593115614*^9, 3.521952608518387*^9}, {3.5219526928991117`*^9, 
   3.521952755961626*^9}, {3.521952904003066*^9, 3.521952923234408*^9}, {
   3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
-  3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}}],
+  3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1253,16 +1399,13 @@ Cell[BoxData[{
   3.519625141980587*^9}, {3.519625254150527*^9, 3.519625255887246*^9}, {
   3.519625329597365*^9, 3.5196253452184963`*^9}, {3.5196253982420893`*^9, 
   3.519625403499021*^9}, {3.5219540222331142`*^9, 3.521954026470047*^9}, {
-  3.521954151073328*^9, 3.5219541571058617`*^9}}],
-
-Cell[TextData[StyleBox["Characters", "Subtitle"]], "Input",
- CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.5219525209445267`*^9, 3.5219525250626173`*^9}, {3.521954073273682*^9, 
-  3.521954078578287*^9}}],
+  3.521954151073328*^9, 3.5219541571058617`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[TextData[{
+ StyleBox["Characters", "Subtitle"],
+ "\n",
  StyleBox["Now we can demonstrate calculation of weight multiplicities in \
 module characters. Function to calculate \nmultiplicities is called ", "Text"],
  StyleBox["character", "Code",
@@ -1273,14 +1416,16 @@ module characters. Function to calculate \nmultiplicities is called ", "Text"],
  StyleBox[" datastructure. We then can use \nsome additional code to plot \
 nice figures. ", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952593115614*^9, 3.521952608518387*^9}, {3.5219526928991117`*^9, 
-  3.521952755961626*^9}, {3.521952904003066*^9, 3.521952923234408*^9}, {
-  3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
-  3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
-  3.521954092544243*^9, 3.5219542436762543`*^9}}],
+   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
+   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
+   3.5219525209445267`*^9, 3.5219525250626173`*^9}, {3.521954073273682*^9, 
+   3.521954078578287*^9}, 3.522985551426455*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[
  RowBox[{
@@ -1303,7 +1448,9 @@ Cell[BoxData[
             RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}], ",", " ", 
        RowBox[{"PlotRangeClipping", "\[Rule]", "True"}]}], "}"}]}], "]"}]}], 
   ";"}]], "Input",
- CellChangeTimes->{{3.522204259118845*^9, 3.522204284810504*^9}}],
+ CellChangeTimes->{{3.522204259118845*^9, 3.522204284810504*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[CellGroupData[{
 
@@ -1315,68 +1462,71 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"im", ",", "vm", ",", "pm"}], "}"}]}], ")"}]}], "]"}]], "Input",\
 
- CellChangeTimes->{{3.522204297727742*^9, 3.522204306638591*^9}}],
+ CellChangeTimes->{{3.522204297727742*^9, 3.522204306638591*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  GraphicsBox[{{}, {InsetBox[
      GraphicsBox[{
-       InsetBox["1", NCache[{Rational[1, 2], Rational[5, 2]}, {0.5, 2.5}]], 
-       InsetBox["3", 
-        NCache[{Rational[-1, 2], Rational[-1, 2]}, {-0.5, -0.5}]], 
-       InsetBox["2", NCache[{Rational[-3, 2], Rational[1, 2]}, {-1.5, 0.5}]], 
-       InsetBox["1", 
-        NCache[{Rational[-1, 2], Rational[-5, 2]}, {-0.5, -2.5}]], 
-       InsetBox["1", NCache[{Rational[3, 2], Rational[-3, 2]}, {1.5, -1.5}]], 
-       InsetBox["2", 
-        NCache[{Rational[-3, 2], Rational[-1, 2]}, {-1.5, -0.5}]], 
-       InsetBox["2", NCache[{Rational[-1, 2], Rational[3, 2]}, {-0.5, 1.5}]], 
-       InsetBox["1", NCache[{Rational[3, 2], Rational[3, 2]}, {1.5, 1.5}]], 
-       InsetBox["2", NCache[{Rational[1, 2], Rational[3, 2]}, {0.5, 1.5}]], 
-       InsetBox["1", 
-        NCache[{Rational[-3, 2], Rational[-3, 2]}, {-1.5, -1.5}]], 
        InsetBox["1", NCache[{Rational[-3, 2], Rational[3, 2]}, {-1.5, 1.5}]], 
-       InsetBox["2", NCache[{Rational[3, 2], Rational[1, 2]}, {1.5, 0.5}]], 
-       InsetBox["2", NCache[{Rational[3, 2], Rational[-1, 2]}, {1.5, -0.5}]], 
-       InsetBox["1", NCache[{Rational[-1, 2], Rational[5, 2]}, {-0.5, 2.5}]], 
+       InsetBox["3", NCache[{Rational[1, 2], Rational[1, 2]}, {0.5, 0.5}]], 
+       InsetBox["2", 
+        NCache[{Rational[-1, 2], Rational[-3, 2]}, {-0.5, -1.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[-1, 2]}, {2.5, -0.5}]], 
        InsetBox["1", 
         NCache[{Rational[-5, 2], Rational[-1, 2]}, {-2.5, -0.5}]], 
        InsetBox["1", NCache[{Rational[-5, 2], Rational[1, 2]}, {-2.5, 0.5}]], 
-       InsetBox["2", 
-        NCache[{Rational[-1, 2], Rational[-3, 2]}, {-0.5, -1.5}]], 
-       InsetBox["1", NCache[{Rational[1, 2], Rational[-5, 2]}, {0.5, -2.5}]], 
-       InsetBox["3", NCache[{Rational[1, 2], Rational[-1, 2]}, {0.5, -0.5}]], 
+       InsetBox["1", NCache[{Rational[3, 2], Rational[3, 2]}, {1.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[1, 2], Rational[5, 2]}, {0.5, 2.5}]], 
        InsetBox["2", NCache[{Rational[1, 2], Rational[-3, 2]}, {0.5, -1.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[1, 2]}, {2.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[-1, 2]}, {2.5, -0.5}]], 
+       InsetBox["2", NCache[{Rational[3, 2], Rational[1, 2]}, {1.5, 0.5}]], 
+       InsetBox["2", 
+        NCache[{Rational[-3, 2], Rational[-1, 2]}, {-1.5, -0.5}]], 
+       InsetBox["2", NCache[{Rational[3, 2], Rational[-1, 2]}, {1.5, -0.5}]], 
+       InsetBox["1", NCache[{Rational[-1, 2], Rational[5, 2]}, {-0.5, 2.5}]], 
        InsetBox["3", NCache[{Rational[-1, 2], Rational[1, 2]}, {-0.5, 0.5}]], 
-       InsetBox["3", NCache[{Rational[1, 2], Rational[1, 2]}, {0.5, 0.5}]]},
+       InsetBox["2", NCache[{Rational[1, 2], Rational[3, 2]}, {0.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[1, 2]}, {2.5, 0.5}]], 
+       InsetBox["1", 
+        NCache[{Rational[-1, 2], Rational[-5, 2]}, {-0.5, -2.5}]], 
+       InsetBox["1", 
+        NCache[{Rational[-3, 2], Rational[-3, 2]}, {-1.5, -1.5}]], 
+       InsetBox["3", NCache[{Rational[1, 2], Rational[-1, 2]}, {0.5, -0.5}]], 
+       InsetBox["2", NCache[{Rational[-3, 2], Rational[1, 2]}, {-1.5, 0.5}]], 
+       InsetBox["3", 
+        NCache[{Rational[-1, 2], Rational[-1, 2]}, {-0.5, -0.5}]], 
+       InsetBox["1", NCache[{Rational[1, 2], Rational[-5, 2]}, {0.5, -2.5}]], 
+       InsetBox["2", NCache[{Rational[-1, 2], Rational[3, 2]}, {-0.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[3, 2], Rational[-3, 2]}, {1.5, -1.5}]]},
+      
       Frame->True,
       GridLines->Automatic,
       PlotRange->{{-3, 3}, {-3, 3}},
       PlotRangeClipping->True], {193.5, -189.}, 
      ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
      GraphicsBox[{
-       InsetBox["2", NCache[{Rational[7, 2], Rational[-3, 2]}, {3.5, -1.5}]], 
-       InsetBox["1", NCache[{Rational[9, 2], Rational[-3, 2]}, {4.5, -1.5}]], 
-       InsetBox["1", NCache[{Rational[-9, 2], Rational[5, 2]}, {-4.5, 2.5}]], 
-       InsetBox["5", NCache[{Rational[-1, 2], Rational[1, 2]}, {-0.5, 0.5}]], 
-       InsetBox["4", NCache[{Rational[3, 2], Rational[-1, 2]}, {1.5, -0.5}]], 
-       InsetBox["2", NCache[{Rational[3, 2], Rational[1, 2]}, {1.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[-7, 2], Rational[5, 2]}, {-3.5, 2.5}]], 
        InsetBox["1", NCache[{Rational[1, 2], Rational[5, 2]}, {0.5, 2.5}]], 
-       InsetBox["1", NCache[{Rational[-1, 2], Rational[5, 2]}, {-0.5, 2.5}]], 
-       InsetBox["3", NCache[{Rational[-3, 2], Rational[3, 2]}, {-1.5, 1.5}]], 
-       InsetBox["1", NCache[{Rational[-5, 2], Rational[5, 2]}, {-2.5, 2.5}]], 
-       InsetBox["2", NCache[{Rational[1, 2], Rational[3, 2]}, {0.5, 1.5}]], 
        InsetBox["1", NCache[{Rational[11, 2], Rational[-5, 2]}, {5.5, -2.5}]],
         InsetBox["4", NCache[{Rational[1, 2], Rational[1, 2]}, {0.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[7, 2], Rational[-1, 2]}, {3.5, -0.5}]], 
+       InsetBox["2", NCache[{Rational[7, 2], Rational[-3, 2]}, {3.5, -1.5}]], 
+       InsetBox["3", NCache[{Rational[-3, 2], Rational[3, 2]}, {-1.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[-7, 2], Rational[5, 2]}, {-3.5, 2.5}]], 
+       InsetBox["2", NCache[{Rational[5, 2], Rational[-1, 2]}, {2.5, -0.5}]], 
        InsetBox["1", NCache[{Rational[-3, 2], Rational[5, 2]}, {-1.5, 2.5}]], 
-       InsetBox["3", NCache[{Rational[-5, 2], Rational[3, 2]}, {-2.5, 1.5}]], 
+       InsetBox["5", NCache[{Rational[-1, 2], Rational[1, 2]}, {-0.5, 0.5}]], 
+       InsetBox["1", NCache[{Rational[9, 2], Rational[-3, 2]}, {4.5, -1.5}]], 
        InsetBox["1", NCache[{Rational[5, 2], Rational[1, 2]}, {2.5, 0.5}]], 
-       InsetBox["3", NCache[{Rational[-1, 2], Rational[3, 2]}, {-0.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[-9, 2], Rational[5, 2]}, {-4.5, 2.5}]], 
        InsetBox["1", NCache[{Rational[3, 2], Rational[3, 2]}, {1.5, 1.5}]], 
-       InsetBox["2", NCache[{Rational[5, 2], Rational[-1, 2]}, {2.5, -0.5}]]},
+       InsetBox["4", NCache[{Rational[3, 2], Rational[-1, 2]}, {1.5, -0.5}]], 
+       InsetBox["3", NCache[{Rational[-5, 2], Rational[3, 2]}, {-2.5, 1.5}]], 
+       InsetBox["2", NCache[{Rational[3, 2], Rational[1, 2]}, {1.5, 0.5}]], 
+       InsetBox["3", NCache[{Rational[-1, 2], Rational[3, 2]}, {-0.5, 1.5}]], 
+       InsetBox["2", NCache[{Rational[1, 2], Rational[3, 2]}, {0.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[-5, 2], Rational[5, 2]}, {-2.5, 2.5}]], 
+       InsetBox["1", NCache[{Rational[-1, 2], Rational[5, 2]}, {-0.5, 2.5}]], 
+       InsetBox["1", NCache[{Rational[7, 2], Rational[-1, 2]}, {3.5, -0.5}]]},
       
       Frame->True,
       GridLines->Automatic,
@@ -1384,42 +1534,42 @@ Cell[BoxData[
       PlotRangeClipping->True], {580.5, -189.}, 
      ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
      GraphicsBox[{
-       InsetBox["1", NCache[{Rational[-5, 2], Rational[5, 2]}, {-2.5, 2.5}]], 
-       InsetBox["3", NCache[{Rational[3, 2], Rational[-1, 2]}, {1.5, -0.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[-9, 2]}, {2.5, -4.5}]], 
        InsetBox["1", NCache[{Rational[5, 2], Rational[-7, 2]}, {2.5, -3.5}]], 
-       InsetBox["3", NCache[{Rational[-7, 2], Rational[3, 2]}, {-3.5, 1.5}]], 
-       InsetBox["3", NCache[{Rational[-5, 2], Rational[3, 2]}, {-2.5, 1.5}]], 
-       InsetBox["2", NCache[{Rational[3, 2], Rational[1, 2]}, {1.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[1, 2], Rational[5, 2]}, {0.5, 2.5}]], 
-       InsetBox["3", NCache[{Rational[3, 2], Rational[-7, 2]}, {1.5, -3.5}]], 
-       InsetBox["1", NCache[{Rational[-7, 2], Rational[5, 2]}, {-3.5, 2.5}]], 
-       InsetBox["4", NCache[{Rational[1, 2], Rational[1, 2]}, {0.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[-9, 2], Rational[5, 2]}, {-4.5, 2.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[1, 2]}, {2.5, 0.5}]], 
-       InsetBox["7", 
-        NCache[{Rational[-1, 2], Rational[-1, 2]}, {-0.5, -0.5}]], 
-       InsetBox["1", NCache[{Rational[3, 2], Rational[3, 2]}, {1.5, 1.5}]], 
-       InsetBox["3", NCache[{Rational[3, 2], Rational[-3, 2]}, {1.5, -1.5}]], 
-       InsetBox["1", NCache[{Rational[-1, 2], Rational[5, 2]}, {-0.5, 2.5}]], 
-       InsetBox["1", NCache[{Rational[-3, 2], Rational[5, 2]}, {-1.5, 2.5}]], 
-       InsetBox["6", NCache[{Rational[-3, 2], Rational[1, 2]}, {-1.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[-1, 2]}, {2.5, -0.5}]], 
-       InsetBox["2", NCache[{Rational[1, 2], Rational[3, 2]}, {0.5, 1.5}]], 
-       InsetBox["8", 
-        NCache[{Rational[-1, 2], Rational[-3, 2]}, {-0.5, -1.5}]], 
-       InsetBox["3", NCache[{Rational[-3, 2], Rational[3, 2]}, {-1.5, 1.5}]], 
        InsetBox["3", NCache[{Rational[-1, 2], Rational[3, 2]}, {-0.5, 1.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[-5, 2]}, {2.5, -2.5}]], 
-       InsetBox["6", NCache[{Rational[1, 2], Rational[-5, 2]}, {0.5, -2.5}]], 
-       InsetBox["6", NCache[{Rational[1, 2], Rational[-3, 2]}, {0.5, -1.5}]], 
-       InsetBox["3", NCache[{Rational[3, 2], Rational[-5, 2]}, {1.5, -2.5}]], 
        InsetBox["5", NCache[{Rational[1, 2], Rational[-1, 2]}, {0.5, -0.5}]], 
+       InsetBox["3", NCache[{Rational[-5, 2], Rational[3, 2]}, {-2.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[-1, 2], Rational[5, 2]}, {-0.5, 2.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[1, 2]}, {2.5, 0.5}]], 
+       InsetBox["6", NCache[{Rational[1, 2], Rational[-3, 2]}, {0.5, -1.5}]], 
+       InsetBox["1", NCache[{Rational[1, 2], Rational[5, 2]}, {0.5, 2.5}]], 
+       InsetBox["3", NCache[{Rational[3, 2], Rational[-5, 2]}, {1.5, -2.5}]], 
+       InsetBox["1", NCache[{Rational[3, 2], Rational[3, 2]}, {1.5, 1.5}]], 
+       InsetBox["3", NCache[{Rational[-7, 2], Rational[3, 2]}, {-3.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[-7, 2], Rational[5, 2]}, {-3.5, 2.5}]], 
+       InsetBox["2", NCache[{Rational[1, 2], Rational[3, 2]}, {0.5, 1.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[-5, 2]}, {2.5, -2.5}]], 
        InsetBox["8", 
         NCache[{Rational[-3, 2], Rational[-1, 2]}, {-1.5, -0.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[-3, 2]}, {2.5, -1.5}]], 
+       InsetBox["1", NCache[{Rational[-3, 2], Rational[5, 2]}, {-1.5, 2.5}]], 
+       InsetBox["4", NCache[{Rational[1, 2], Rational[1, 2]}, {0.5, 0.5}]], 
+       InsetBox["6", NCache[{Rational[-3, 2], Rational[1, 2]}, {-1.5, 0.5}]], 
+       InsetBox["6", NCache[{Rational[1, 2], Rational[-5, 2]}, {0.5, -2.5}]], 
        InsetBox["6", NCache[{Rational[-5, 2], Rational[1, 2]}, {-2.5, 0.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[-3, 2]}, {2.5, -1.5}]], 
+       InsetBox["3", NCache[{Rational[3, 2], Rational[-1, 2]}, {1.5, -0.5}]], 
+       InsetBox["3", NCache[{Rational[3, 2], Rational[-7, 2]}, {1.5, -3.5}]], 
+       InsetBox["8", 
+        NCache[{Rational[-1, 2], Rational[-3, 2]}, {-0.5, -1.5}]], 
+       InsetBox["7", 
+        NCache[{Rational[-1, 2], Rational[-1, 2]}, {-0.5, -0.5}]], 
+       InsetBox["3", NCache[{Rational[-3, 2], Rational[3, 2]}, {-1.5, 1.5}]], 
        InsetBox["5", NCache[{Rational[-1, 2], Rational[1, 2]}, {-0.5, 0.5}]], 
-       InsetBox["1", NCache[{Rational[5, 2], Rational[-9, 2]}, {2.5, -4.5}]]},
+       InsetBox["3", NCache[{Rational[3, 2], Rational[-3, 2]}, {1.5, -1.5}]], 
+       InsetBox["1", NCache[{Rational[-9, 2], Rational[5, 2]}, {-4.5, 2.5}]], 
+       InsetBox["1", NCache[{Rational[5, 2], Rational[-1, 2]}, {2.5, -0.5}]], 
+       InsetBox["2", NCache[{Rational[3, 2], Rational[1, 2]}, {1.5, 0.5}]], 
+       InsetBox["1", NCache[{Rational[-5, 2], Rational[5, 2]}, {-2.5, 2.5}]]},
       
       Frame->True,
       GridLines->Automatic,
@@ -1428,12 +1578,8 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 360.}]}, {}},
   ContentSelectable->True,
   PlotRangePadding->{6, 5}]], "Output",
- CellChangeTimes->{
-  3.51962482045822*^9, {3.5196248513464527`*^9, 3.5196248721455917`*^9}, 
-   3.519625039946701*^9, {3.519625129787677*^9, 3.519625148918818*^9}, 
-   3.519625263532815*^9, 3.519625351315185*^9, 3.519625409788973*^9, {
-   3.5219540093247223`*^9, 3.521954031575881*^9}, {3.5222043085973053`*^9, 
-   3.52220433231982*^9}},
+ CellChangeTimes->{3.522985884568919*^9},
+ CellTags->"Code",
  ImageCache->GraphicsData["CompressedBitmap", "\<\
 eJztXQt0FcUZ3tybB+EmBCUBCuRxBIxQIUCrFUgADyo97cGCpyhSkhgDkvCs
 POSlFTQ8xIImvAIUFM5RQI8inOLx1VNK5FFQmoSivCwgQksCJIQ8Ifdu7947
@@ -1531,6 +1677,9 @@ ug0UV3Ue02XQhkcy2eJ+l4L+D02/+5o=\
 Cell[TextData[StyleBox["Our code is generic, it works for finite-dimensional \
 and affine Lie algebras. But we need additional routine \nto plot weight \
 multiplicities in affine case.", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -1539,7 +1688,9 @@ multiplicities in affine case.", "Text"]], "Input",
   3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
   3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
   3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
-  3.522040180453158*^9}}],
+  3.522040180453158*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[BoxData[
  RowBox[{
@@ -1567,10 +1718,15 @@ Cell[BoxData[
   3.522040297469646*^9, 3.522040419916359*^9}, {3.5220405431903954`*^9, 
   3.5220405760013866`*^9}, {3.522040627910157*^9, 3.52204063169974*^9}, {
   3.522143524585524*^9, 3.52214353164401*^9}, {3.522204340498188*^9, 
-  3.522204363533033*^9}}],
+  3.522204363533033*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[TextData[StyleBox["Now we can plot the character of affine Lie algebra \
 A1.", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -1579,7 +1735,9 @@ A1.", "Text"]], "Input",
   3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
   3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
   3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
-  3.522040180453158*^9}, {3.522144477334271*^9, 3.522144494973666*^9}}],
+  3.522040180453158*^9}, {3.522144477334271*^9, 3.522144494973666*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -1597,50 +1755,48 @@ Cell[BoxData[
  CellChangeTimes->{{3.5220404283337917`*^9, 3.522040478106638*^9}, {
   3.5220406526722717`*^9, 3.522040675801445*^9}, {3.522041356613391*^9, 
   3.5220414285556173`*^9}, {3.522144506985178*^9, 3.522144539698722*^9}, {
-  3.522204371094652*^9, 3.5222043789782877`*^9}}],
+  3.522204371094652*^9, 3.5222043789782877`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
- GraphicsBox[{InsetBox["64", {-6, 1}], InsetBox["339", {-9, 0}], 
-   InsetBox["5", {-2, -1}], InsetBox["64", {-7, -2}], InsetBox["2", {-9, 5}], 
-   InsetBox["2", {-1, 1}], InsetBox["108", {-8, -2}], InsetBox["1", {-3, -3}],
-    InsetBox["3", {-1, 0}], InsetBox["24", {-7, 3}], InsetBox["13", {-3, 0}], 
-   InsetBox["10", {-3, -1}], InsetBox["10", {-8, -4}], InsetBox["5", {-3, 2}],
-    InsetBox["20", {-9, -4}], InsetBox["64", {-6, -1}], 
-   InsetBox["1", {-1, 2}], InsetBox["20", {-5, -2}], InsetBox["76", {-9, 3}], 
-   InsetBox["24", {-7, -3}], InsetBox["2", {-9, -5}], InsetBox["76", {-6, 0}],
-    InsetBox["36", {-6, -2}], InsetBox["1", {0, 1}], 
-   InsetBox["129", {-10, 3}], InsetBox["180", {-8, 1}], 
-   InsetBox["44", {-8, 3}], InsetBox["6", {-5, -3}], InsetBox["20", {-4, -1}],
-    InsetBox["36", {-6, 2}], InsetBox["10", {-4, 2}], 
-   InsetBox["36", {-10, 4}], InsetBox["10", {-3, 1}], 
-   InsetBox["129", {-7, 0}], InsetBox["13", {-6, -3}], InsetBox["6", {-2, 0}],
-    InsetBox["5", {-7, 4}], InsetBox["5", {-10, 5}], InsetBox["1", {0, -1}], 
-   InsetBox["10", {-4, -2}], InsetBox["210", {-8, 0}], 
-   InsetBox["20", {-9, 4}], InsetBox["108", {-7, -1}], 
-   InsetBox["5", {-10, -5}], InsetBox["44", {-5, 0}], 
-   InsetBox["36", {-5, -1}], InsetBox["6", {-5, 3}], InsetBox["5", {-7, -4}], 
-   InsetBox["64", {-7, 2}], InsetBox["36", {-10, -4}], 
-   InsetBox["5", {-3, -2}], InsetBox["289", {-10, -2}], 
-   InsetBox["129", {-10, -3}], InsetBox["1", {-3, 3}], InsetBox["1", {-5, 4}],
-    InsetBox["1", {-5, -4}], InsetBox["10", {-8, 4}], 
-   InsetBox["289", {-10, 2}], InsetBox["2", {-2, 2}], InsetBox["1", {-8, -5}],
-    InsetBox["3", {-4, 3}], InsetBox["2", {-6, -4}], InsetBox["44", {-8, -3}],
-    InsetBox["180", {-9, -2}], InsetBox["459", {-10, -1}], 
-   InsetBox["24", {-4, 0}], InsetBox["108", {-7, 1}], InsetBox["1", {0, 0}], 
-   InsetBox["13", {-6, 3}], InsetBox["108", {-8, 2}], 
-   InsetBox["76", {-9, -3}], InsetBox["2", {-1, -1}], 
-   InsetBox["531", {-10, 0}], InsetBox["2", {-2, -2}], 
-   InsetBox["289", {-9, 1}], InsetBox["36", {-5, 1}], InsetBox["1", {-8, 5}], 
-   InsetBox["289", {-9, -1}], InsetBox["2", {-6, 4}], InsetBox["1", {-1, -2}],
-    InsetBox["20", {-5, 2}], InsetBox["459", {-10, 1}], 
-   InsetBox["20", {-4, 1}], InsetBox["180", {-8, -1}], InsetBox["5", {-2, 1}],
-    InsetBox["3", {-4, -3}], InsetBox["180", {-9, 2}]},
+ GraphicsBox[{InsetBox["10", {-4, -2}], InsetBox["129", {-10, 3}], 
+   InsetBox["1", {-1, 2}], InsetBox["44", {-5, 0}], InsetBox["210", {-8, 0}], 
+   InsetBox["5", {-3, 2}], InsetBox["129", {-7, 0}], InsetBox["1", {-8, 5}], 
+   InsetBox["64", {-7, 2}], InsetBox["44", {-8, 3}], InsetBox["24", {-7, -3}],
+    InsetBox["13", {-6, 3}], InsetBox["20", {-5, -2}], 
+   InsetBox["24", {-7, 3}], InsetBox["64", {-6, 1}], InsetBox["6", {-2, 0}], 
+   InsetBox["36", {-10, -4}], InsetBox["108", {-8, -2}], 
+   InsetBox["6", {-5, 3}], InsetBox["10", {-4, 2}], InsetBox["5", {-10, 5}], 
+   InsetBox["1", {0, 1}], InsetBox["129", {-10, -3}], InsetBox["1", {-3, -3}],
+    InsetBox["1", {-3, 3}], InsetBox["3", {-4, -3}], InsetBox["1", {-5, -4}], 
+   InsetBox["108", {-7, -1}], InsetBox["20", {-9, -4}], 
+   InsetBox["10", {-8, 4}], InsetBox["2", {-9, -5}], InsetBox["1", {0, -1}], 
+   InsetBox["180", {-9, -2}], InsetBox["289", {-9, 1}], 
+   InsetBox["180", {-8, 1}], InsetBox["13", {-3, 0}], InsetBox["2", {-1, 1}], 
+   InsetBox["24", {-4, 0}], InsetBox["36", {-5, -1}], 
+   InsetBox["289", {-9, -1}], InsetBox["2", {-1, -1}], 
+   InsetBox["20", {-9, 4}], InsetBox["1", {-8, -5}], InsetBox["1", {0, 0}], 
+   InsetBox["6", {-5, -3}], InsetBox["289", {-10, -2}], 
+   InsetBox["36", {-10, 4}], InsetBox["531", {-10, 0}], 
+   InsetBox["3", {-1, 0}], InsetBox["36", {-6, 2}], InsetBox["5", {-2, 1}], 
+   InsetBox["5", {-2, -1}], InsetBox["76", {-9, 3}], InsetBox["2", {-2, 2}], 
+   InsetBox["2", {-9, 5}], InsetBox["20", {-5, 2}], InsetBox["108", {-7, 1}], 
+   InsetBox["459", {-10, 1}], InsetBox["64", {-6, -1}], 
+   InsetBox["10", {-8, -4}], InsetBox["64", {-7, -2}], 
+   InsetBox["108", {-8, 2}], InsetBox["5", {-3, -2}], InsetBox["76", {-6, 0}],
+    InsetBox["2", {-6, 4}], InsetBox["2", {-6, -4}], InsetBox["1", {-1, -2}], 
+   InsetBox["339", {-9, 0}], InsetBox["459", {-10, -1}], 
+   InsetBox["10", {-3, 1}], InsetBox["10", {-3, -1}], InsetBox["2", {-2, -2}],
+    InsetBox["1", {-5, 4}], InsetBox["3", {-4, 3}], InsetBox["180", {-8, -1}],
+    InsetBox["180", {-9, 2}], InsetBox["13", {-6, -3}], 
+   InsetBox["36", {-5, 1}], InsetBox["289", {-10, 2}], InsetBox["5", {-7, 4}],
+    InsetBox["76", {-9, -3}], InsetBox["20", {-4, -1}], 
+   InsetBox["44", {-8, -3}], InsetBox["5", {-7, -4}], InsetBox["20", {-4, 1}],
+    InsetBox["36", {-6, -2}], InsetBox["5", {-10, -5}]},
   Axes->True]], "Output",
- CellChangeTimes->{
-  3.522040479447114*^9, {3.522040530656786*^9, 3.522040580206848*^9}, {
-   3.522040636996709*^9, 3.522040677725849*^9}, {3.522041359080399*^9, 
-   3.5220414314961777`*^9}, 3.522143547555995*^9, {3.522144514708843*^9, 
-   3.522144542319821*^9}, 3.522204381268941*^9},
+ CellChangeTimes->{3.522985888786304*^9},
+ CellTags->"Code",
  ImageCache->GraphicsData["CompressedBitmap", "\<\
 eJztXQl0FEUa7tzXhBxAIAEhyyGCQgDXA0g4RMW3+2TBt7qIkhgDkiCBFRAU
 dF00csoVrgDL+R7g8RThLTyvXVnujYpJlMi5BIHsJoEkJCEEMjO93f1Xz0z3
@@ -1752,6 +1908,9 @@ Affine.m has special function \n", "Text"],
  StyleBox[" which calculates all string functions of module. So for A1 we can \
 use it.", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -1760,7 +1919,9 @@ use it.", "Text"]
   3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
   3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
   3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
-  3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}}],
+  3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -1771,35 +1932,13 @@ Cell[BoxData[
     SubscriptBox["A", "1"], "^"], ",", 
    RowBox[{"{", 
     RowBox[{"1", ",", "2"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.522144751678562*^9, 3.5221447960209637`*^9}}],
+ CellChangeTimes->{{3.522144751678562*^9, 3.5221447960209637`*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"1", ",", "2"}], "}"}], ",", 
-     RowBox[{"1", "+", 
-      RowBox[{"2", " ", "q"}], "+", 
-      RowBox[{"5", " ", 
-       SuperscriptBox["q", "2"]}], "+", 
-      RowBox[{"10", " ", 
-       SuperscriptBox["q", "3"]}], "+", 
-      RowBox[{"20", " ", 
-       SuperscriptBox["q", "4"]}], "+", 
-      RowBox[{"36", " ", 
-       SuperscriptBox["q", "5"]}], "+", 
-      RowBox[{"64", " ", 
-       SuperscriptBox["q", "6"]}], "+", 
-      RowBox[{"108", " ", 
-       SuperscriptBox["q", "7"]}], "+", 
-      RowBox[{"180", " ", 
-       SuperscriptBox["q", "8"]}], "+", 
-      RowBox[{"289", " ", 
-       SuperscriptBox["q", "9"]}], "+", 
-      RowBox[{"459", " ", 
-       SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
@@ -1823,12 +1962,40 @@ Cell[BoxData[
       RowBox[{"339", " ", 
        SuperscriptBox["q", "9"]}], "+", 
       RowBox[{"531", " ", 
+       SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"1", "+", 
+      RowBox[{"2", " ", "q"}], "+", 
+      RowBox[{"5", " ", 
+       SuperscriptBox["q", "2"]}], "+", 
+      RowBox[{"10", " ", 
+       SuperscriptBox["q", "3"]}], "+", 
+      RowBox[{"20", " ", 
+       SuperscriptBox["q", "4"]}], "+", 
+      RowBox[{"36", " ", 
+       SuperscriptBox["q", "5"]}], "+", 
+      RowBox[{"64", " ", 
+       SuperscriptBox["q", "6"]}], "+", 
+      RowBox[{"108", " ", 
+       SuperscriptBox["q", "7"]}], "+", 
+      RowBox[{"180", " ", 
+       SuperscriptBox["q", "8"]}], "+", 
+      RowBox[{"289", " ", 
+       SuperscriptBox["q", "9"]}], "+", 
+      RowBox[{"459", " ", 
        SuperscriptBox["q", "10"]}]}]}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.522144762854825*^9, 3.522144798054134*^9}]
+ CellChangeTimes->{3.522985891574747*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[StyleBox["We can get less trivial results too:", "Text"]], \
 "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -1838,7 +2005,9 @@ Cell[TextData[StyleBox["We can get less trivial results too:", "Text"]], \
   3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
   3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
   3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}, {
-  3.522144824138832*^9, 3.522144834593553*^9}}],
+  3.522144824138832*^9, 3.522144834593553*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -1849,7 +2018,9 @@ Cell[BoxData[
     SubscriptBox["B", "3"], "^"], ",", 
    RowBox[{"{", 
     RowBox[{"1", ",", "1", ",", "0", ",", "0"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.5221448490835333`*^9, 3.522144892392564*^9}}],
+ CellChangeTimes->{{3.5221448490835333`*^9, 3.522144892392564*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1857,49 +2028,26 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"0", ",", "2", ",", "0", ",", "0"}], "}"}], ",", 
-     RowBox[{"q", "+", 
-      RowBox[{"9", " ", 
-       SuperscriptBox["q", "2"]}], "+", 
-      RowBox[{"51", " ", 
-       SuperscriptBox["q", "3"]}], "+", 
-      RowBox[{"218", " ", 
-       SuperscriptBox["q", "4"]}], "+", 
-      RowBox[{"789", " ", 
-       SuperscriptBox["q", "5"]}], "+", 
-      RowBox[{"2541", " ", 
-       SuperscriptBox["q", "6"]}], "+", 
-      RowBox[{"7493", " ", 
-       SuperscriptBox["q", "7"]}], "+", 
-      RowBox[{"20601", " ", 
-       SuperscriptBox["q", "8"]}], "+", 
-      RowBox[{"53499", " ", 
-       SuperscriptBox["q", "9"]}], "+", 
-      RowBox[{"132427", " ", 
-       SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "2"}], "}"}], ",", 
      RowBox[{
       RowBox[{"3", " ", "q"}], "+", 
-      RowBox[{"22", " ", 
+      RowBox[{"18", " ", 
        SuperscriptBox["q", "2"]}], "+", 
-      RowBox[{"107", " ", 
+      RowBox[{"88", " ", 
        SuperscriptBox["q", "3"]}], "+", 
-      RowBox[{"420", " ", 
+      RowBox[{"336", " ", 
        SuperscriptBox["q", "4"]}], "+", 
-      RowBox[{"1431", " ", 
+      RowBox[{"1149", " ", 
        SuperscriptBox["q", "5"]}], "+", 
-      RowBox[{"4401", " ", 
+      RowBox[{"3530", " ", 
        SuperscriptBox["q", "6"]}], "+", 
-      RowBox[{"12514", " ", 
+      RowBox[{"10092", " ", 
        SuperscriptBox["q", "7"]}], "+", 
-      RowBox[{"33403", " ", 
+      RowBox[{"27048", " ", 
        SuperscriptBox["q", "8"]}], "+", 
-      RowBox[{"84617", " ", 
+      RowBox[{"68919", " ", 
        SuperscriptBox["q", "9"]}], "+", 
-      RowBox[{"205068", " ", 
+      RowBox[{"167880", " ", 
        SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
@@ -1928,30 +2076,6 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"0", ",", "0", ",", "0", ",", "2"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"3", " ", "q"}], "+", 
-      RowBox[{"18", " ", 
-       SuperscriptBox["q", "2"]}], "+", 
-      RowBox[{"88", " ", 
-       SuperscriptBox["q", "3"]}], "+", 
-      RowBox[{"336", " ", 
-       SuperscriptBox["q", "4"]}], "+", 
-      RowBox[{"1149", " ", 
-       SuperscriptBox["q", "5"]}], "+", 
-      RowBox[{"3530", " ", 
-       SuperscriptBox["q", "6"]}], "+", 
-      RowBox[{"10092", " ", 
-       SuperscriptBox["q", "7"]}], "+", 
-      RowBox[{"27048", " ", 
-       SuperscriptBox["q", "8"]}], "+", 
-      RowBox[{"68919", " ", 
-       SuperscriptBox["q", "9"]}], "+", 
-      RowBox[{"167880", " ", 
-       SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
       RowBox[{"2", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"1", "+", 
       RowBox[{"9", " ", "q"}], "+", 
@@ -1972,38 +2096,82 @@ Cell[BoxData[
       RowBox[{"132427", " ", 
        SuperscriptBox["q", "9"]}], "+", 
       RowBox[{"314634", " ", 
+       SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"3", " ", "q"}], "+", 
+      RowBox[{"22", " ", 
+       SuperscriptBox["q", "2"]}], "+", 
+      RowBox[{"107", " ", 
+       SuperscriptBox["q", "3"]}], "+", 
+      RowBox[{"420", " ", 
+       SuperscriptBox["q", "4"]}], "+", 
+      RowBox[{"1431", " ", 
+       SuperscriptBox["q", "5"]}], "+", 
+      RowBox[{"4401", " ", 
+       SuperscriptBox["q", "6"]}], "+", 
+      RowBox[{"12514", " ", 
+       SuperscriptBox["q", "7"]}], "+", 
+      RowBox[{"33403", " ", 
+       SuperscriptBox["q", "8"]}], "+", 
+      RowBox[{"84617", " ", 
+       SuperscriptBox["q", "9"]}], "+", 
+      RowBox[{"205068", " ", 
+       SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"q", "+", 
+      RowBox[{"9", " ", 
+       SuperscriptBox["q", "2"]}], "+", 
+      RowBox[{"51", " ", 
+       SuperscriptBox["q", "3"]}], "+", 
+      RowBox[{"218", " ", 
+       SuperscriptBox["q", "4"]}], "+", 
+      RowBox[{"789", " ", 
+       SuperscriptBox["q", "5"]}], "+", 
+      RowBox[{"2541", " ", 
+       SuperscriptBox["q", "6"]}], "+", 
+      RowBox[{"7493", " ", 
+       SuperscriptBox["q", "7"]}], "+", 
+      RowBox[{"20601", " ", 
+       SuperscriptBox["q", "8"]}], "+", 
+      RowBox[{"53499", " ", 
+       SuperscriptBox["q", "9"]}], "+", 
+      RowBox[{"132427", " ", 
        SuperscriptBox["q", "10"]}]}]}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.522144873573805*^9, 3.522150359051978*^9}]
+ CellChangeTimes->{3.522988367511602*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
-Cell[TextData[StyleBox["Branching", "Title"]], "Input",
+Cell[TextData[{
+ StyleBox["Branching", "Title"],
+ "\n",
+ StyleBox["Now we can consider the problem of decomposition of irreducible \
+modules of Lie algebra into the sum\nof irreducible modules of subalgebra.\n\
+One way to specify the subalgebra is to list its simple roots in the root \
+space of algebra. E.g.", "Text"]
+}], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952593115614*^9, 3.521952608518387*^9}, {3.5219526928991117`*^9, 
-  3.521952755961626*^9}, {3.521952904003066*^9, 3.521952923234408*^9}, {
-  3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
-  3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
-  3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
-  3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}, {
-  3.522144824138832*^9, 3.522144834593553*^9}, {3.522150832004524*^9, 
-  3.522150842588929*^9}}],
-
-Cell[TextData[StyleBox["Now we can consider the problem of decomposition of \
-irreducible modules of Lie algebra into the sum\nof irreducible modules of \
-subalgebra.\nOne way to specify the subalgebra is to list its simple roots in \
-the root space of algebra. E.g.", "Text"]], "Input",
- CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
-  3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
-  3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
-  3.521952593115614*^9, 3.521952608518387*^9}, {3.5219526928991117`*^9, 
-  3.521952755961626*^9}, {3.521952904003066*^9, 3.521952923234408*^9}, {
-  3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
-  3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
-  3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
-  3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}, {
-  3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
-  3.522150954412807*^9}}],
+   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
+   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
+   3.521952593115614*^9, 3.521952608518387*^9}, {3.5219526928991117`*^9, 
+   3.521952755961626*^9}, {3.521952904003066*^9, 3.521952923234408*^9}, {
+   3.521952990881136*^9, 3.521953086864806*^9}, {3.521953139066078*^9, 
+   3.5219531747567797`*^9}, {3.5219538618052797`*^9, 3.521953920248773*^9}, {
+   3.521954092544243*^9, 3.5219542436762543`*^9}, {3.5220401355026617`*^9, 
+   3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}, {
+   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150832004524*^9, 
+   3.522150842588929*^9}, 3.5229856197727327`*^9},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -2016,7 +2184,9 @@ Cell[BoxData[
       SubscriptBox["B", "2"], "[", "simpleRoots", "]"}]}], "}"}], 
    "]"}]}]], "Input",
  CellChangeTimes->{{3.5221509607668962`*^9, 3.522151011422659*^9}, {
-  3.522203599321496*^9, 3.522203607862665*^9}}],
+  3.522203599321496*^9, 3.522203607862665*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  RowBox[{"finiteRootSystem", "[", 
@@ -2026,7 +2196,8 @@ Cell[BoxData[
      RowBox[{"2", ",", 
       RowBox[{"{", 
        RowBox[{"1", ",", "0"}], "}"}]}], "]"}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.5221510121436443`*^9, 3.522203609097629*^9}]
+ CellChangeTimes->{3.5229883677082376`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -2035,6 +2206,9 @@ modules of subalgebra use function ", "Text"],
  StyleBox["branching", "Code",
   FontVariations->{"Underline"->True}]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -2046,7 +2220,9 @@ modules of subalgebra use function ", "Text"],
   3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}, {
   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
   3.522150954412807*^9}, {3.522203307967121*^9, 3.5222033477904673`*^9}, {
-  3.522204032570232*^9, 3.522204038036234*^9}}],
+  3.522204032570232*^9, 3.522204038036234*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -2060,18 +2236,22 @@ Cell[BoxData[
      RowBox[{"1", ",", "1"}], "]"}], ",", "sub"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.5222032582888813`*^9, 3.5222032747810926`*^9}, {
   3.522203354657351*^9, 3.522203395718841*^9}, {3.522203614500144*^9, 
-  3.522203614937779*^9}}],
+  3.522203614937779*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
- RowBox[{"formalElement", "[", "Affine`Private`table$6283", "]"}]], "Output",
- CellChangeTimes->{
-  3.5222032764521112`*^9, {3.522203372653047*^9, 3.522203400432424*^9}, 
-   3.5222036159420757`*^9}]
+ RowBox[{"formalElement", "[", "Affine`Private`table$5742", "]"}]], "Output",
+ CellChangeTimes->{3.522988368042172*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[StyleBox["In this simple case of embedding A1->B2 we can \
 compare the results by hand. First look at the weight diagram \nthe module:", \
 "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -2083,7 +2263,9 @@ compare the results by hand. First look at the weight diagram \nthe module:", \
   3.522040180453158*^9}, {3.522144553781418*^9, 3.522144759579866*^9}, {
   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
   3.522150954412807*^9}, {3.522203425915024*^9, 3.522203469683432*^9}, {
-  3.52220362163011*^9, 3.522203622030675*^9}}],
+  3.52220362163011*^9, 3.522203622030675*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -2097,7 +2279,9 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"Axes", "\[Rule]", "True"}], "}"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.522203486081004*^9, 3.522203523470376*^9}, {
-  3.522203628310478*^9, 3.522203640042638*^9}}],
+  3.522203628310478*^9, 3.522203640042638*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -2114,8 +2298,41 @@ Cell[BoxData[
    InsetBox["2", NCache[{Rational[-1, 2], Rational[1, 2]}, {-0.5, 0.5}]], 
    InsetBox["2", NCache[{Rational[-1, 2], Rational[-1, 2]}, {-0.5, -0.5}]]},
   Axes->True]], "Output",
- CellChangeTimes->{{3.522203509641309*^9, 3.522203524207603*^9}, {
-  3.522203630177527*^9, 3.522203640833922*^9}}]
+ CellChangeTimes->{3.522988368373242*^9},
+ CellTags->"Code",
+ ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwZgBxkgIDiP2fgQFG
+bGP4//8/AzMDmANkgfB6MMlAdalqMMXK/+fDhYxN03PfqQiqpOfO2MR/4cMf
+BhWwHD9WOaAMz//Pp48lWqZxn/nyT+Pr9embkn1TM5unzZjQkZ9s33bgLcMf
+sKWYVhvjsbMc4qwaiDb+/x8O3HdQcOA/8OE/gxoWMSawGCfT/7+frG4cvcn0
++e8fl9e7m2xaDr9j+Pv/v9zvhzPPWRpWc1z7jt0pJljMrMDtBBmE2HsHAUh0
+MYFJ5vcMAhA1IBVMWPRyQMRE/73adNtWJYDv2EeqOAlbqLCCxdgE/r0/Fde/
+8BjPs89v8s9McF6rEbSW+cWf/2BbWUF2GlHLLlah/28P52ROXp+6alZ/3KSF
+ezjvf/vHwEKW9wT+v9+PbiWKGMRKZt7/n0435ddeYPgC8ixuq1D0ViAnexZg
+Ejxbvawl7oaBugf/oQ//VbELQ8OT6//X81eztdQu6OjrX9DXN2p1rbrM8PX/
+f9xpHMOkChplY7pLgWUGobsGv9RoyI0Gz2jwMCwBU3xENC7+y/58tHJhcVxJ
+VvfU3oVlcYXyyx78wFa1QE1eCpHC105g+fz79fqtAQbW8Uc+MPz7/9/i0/GU
+TYa+G5le/cVeKUONno0wmuT6H+Jidu7/X85cTdCykVj1/C9IROzvy/XXbTWi
+eU59xms1Nl9BjQSKHbrjruwgsPc9WAuQf/Cus5IzWA15RsJduRLhymu2mjEI
+V4LbD2tRDEKpaKEGAUP89dptQQY28YdhIZ280dBvE6GQhiQPHDUxq8zPx6sX
+lMaDU8SCsvhiuRUPf2JtbQyuND9aJIwGzxCSGg25kRE8XGAKe388ByzHBiy2
+414piKpe0AV3ffRP6pjF85769F8ZLM2PrYYGyVA4RIDT2mw8Lob0BBm4Iaai
+VG65EFNZ//96PHF5XpXIrtfgtgb73x9vmH78/a8ElhYAVVm4GgfEDDTg8Q8u
+m3OwOJYdtz/yIGI8/z5fqp/X0CO18+lPPEMTXMhNE3zND2gfmtgRChTr80jz
+QT5YjIXz37ebC2fHRZl2nfoICkZIDBDToCFicMMYux0khnUBREz1x632C0b6
+kJEkqDMJN5JIGBcxw2IPYaeiNLmgyVv475vdk0tyVrM8+/1f+N+brTfs1cN4
+T3yCBS4xLTKCQyvG+K3KweI6duTCBqNhh8iazzo2lEdWZbROa5lUHVkU23uR
+8fM/aDmDr91HxugMTtuysbuRfVCV2qM112jIDTapER48nGCKsgkTLbAZZI+L
+QLRT1iDTxeJDPSqYSx2vURS6jJCIglRC5E8laRPWj3eISQOsluKWpi48z+lS
+x0BK/aVFYbhCo4eKM2yKCHU0GbFTwGk+Rc1ubFlQlwjnYDMLW6QS4zVskYkt
+iPHkKQITkXhchrcLoEGEGgLdBDwBTImx5PoIW1gTCDyCwY6976FDRGrA1p/R
+IEINvj6PHhEpmlQzyfUL7tDGbg8TSlATnIvWw6KOmOFwDSLUYOugGeAOWpLN
+ItftWkSGDQtyS4nUiXYtfLqwdw618MgR6DjibgaRZRzZjic1lBgJtlMHiRTY
+H+C6MhlEQN3Ng0UDBxYxTiLVUVvvYHLLqD8oM49tNMmN+mPQJDkzLGKmdFA3
+eJ00SCqq0WGv0eAZDbnBJzVsgmd0Bn4YzMBDtkuQPj43OsUOERudYseWYEen
+2AdliT1iqqbRkBtcUqPBMzKCZ0jujyBmR8Hovgd8bhvd9zDysvpo8AwuqdGQ
+GxnBM3r2AYaZJG7+Hz3TgEjvjZ5pQFUpBkYAFUPsHA==\
+\>"]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2139,7 +2356,9 @@ Cell[BoxData[
   "]"}]], "Input",
  CellChangeTimes->{{3.5222035393620358`*^9, 3.522203579917947*^9}, {
   3.5222036541450253`*^9, 3.522203659054282*^9}, {3.5222036995067997`*^9, 
-  3.522203790933279*^9}}],
+  3.522203790933279*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
  GraphicsBox[{InsetBox["2", NCache[{Rational[3, 2], 0}, {1.5, 0}]], 
@@ -2147,7 +2366,8 @@ Cell[BoxData[
   Frame->True,
   PlotRange->{{-0.5, 2}, {-0.5, 0.5}},
   PlotRangeClipping->True]], "Output",
- CellChangeTimes->{{3.522203779477716*^9, 3.522203791412239*^9}},
+ CellChangeTimes->{3.522988368586481*^9},
+ CellTags->"Code",
  ImageCache->GraphicsData["CompressedBitmap", "\<\
 eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwZjAwMExUYACx/wOZ
 UOI/EP3PBBEgEQRbEkzxy/58tHJhcVxJVvfU3oVlcYXyyx78AMnw/P98+lii
@@ -2187,6 +2407,9 @@ vOyVgREAYtcGBQ==\
 
 Cell[TextData[StyleBox["The same function can be used for affine Lie \
 algebras:", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -2199,7 +2422,9 @@ algebras:", "Text"]], "Input",
   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
   3.522150954412807*^9}, {3.522203425915024*^9, 3.522203469683432*^9}, {
   3.52220362163011*^9, 3.522203622030675*^9}, {3.522203868416325*^9, 
-  3.52220388382092*^9}}],
+  3.52220388382092*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -2218,16 +2443,22 @@ Cell[BoxData[{
      RowBox[{"1", ",", "1", ",", "1"}], "]"}], ",", "suba"}], 
    "]"}]}]}], "Input",
  CellChangeTimes->{{3.5222038877449703`*^9, 3.522203925427321*^9}, {
-  3.522204060405725*^9, 3.522204085000699*^9}}],
+  3.522204060405725*^9, 3.522204085000699*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
- RowBox[{"formalElement", "[", "Affine`Private`table$12229", "]"}]], "Output",\
+ RowBox[{"formalElement", "[", "Affine`Private`table$11496", "]"}]], "Output",\
 
- CellChangeTimes->{3.522204234960897*^9}]
+ CellChangeTimes->{3.5229885377876043`*^9},
+ CellTags->"Code"]
 }, Open  ]],
 
 Cell[TextData[StyleBox["Now we can see branching coefficients in main Weyl \
 chamber:", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -2240,7 +2471,9 @@ chamber:", "Text"]], "Input",
   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
   3.522150954412807*^9}, {3.522203425915024*^9, 3.522203469683432*^9}, {
   3.52220362163011*^9, 3.522203622030675*^9}, {3.522204481781803*^9, 
-  3.522204498797613*^9}}],
+  3.522204498797613*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -2249,153 +2482,160 @@ Cell[BoxData[
   RowBox[{"brc", ",", 
    RowBox[{"{", 
     RowBox[{"Frame", "\[Rule]", "True"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.522204400289916*^9, 3.522204428605804*^9}}],
+ CellChangeTimes->{{3.522204400289916*^9, 3.522204428605804*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellTags->"Code"],
 
 Cell[BoxData[
- GraphicsBox[{InsetBox["596", NCache[{-5, Rational[1, 2]}, {-5, 0.5}]], 
-   InsetBox["48", NCache[{-3, Rational[5, 2]}, {-3, 2.5}]], 
-   InsetBox["4", NCache[{0, Rational[1, 2]}, {0, 0.5}]], 
-   InsetBox["2080", NCache[{-9, Rational[5, 2]}, {-9, 2.5}]], 
-   InsetBox["10368", NCache[{-10, Rational[3, 2]}, {-10, 1.5}]], 
-   InsetBox["132", NCache[{-3, Rational[1, 2]}, {-3, 0.5}]], 
-   InsetBox["3540", NCache[{-8, Rational[1, 2]}, {-8, 0.5}]], 
-   InsetBox["3272", NCache[{-10, Rational[5, 2]}, {-10, 2.5}]], 
-   InsetBox["420", NCache[{-6, Rational[5, 2]}, {-6, 2.5}]], 
-   InsetBox["848", NCache[{-7, Rational[5, 2]}, {-7, 2.5}]], 
-   InsetBox["21496", NCache[{-11, Rational[1, 2]}, {-11, 0.5}]], 
-   InsetBox["52", NCache[{-2, Rational[1, 2]}, {-2, 0.5}]], 
-   InsetBox["14", NCache[{-1, Rational[3, 2]}, {-1, 1.5}]], 
-   InsetBox["2", NCache[{0, Rational[3, 2]}, {0, 1.5}]], 
-   InsetBox["4", NCache[{-1, Rational[5, 2]}, {-1, 2.5}]], 
+ GraphicsBox[{InsetBox["3540", NCache[{-8, Rational[1, 2]}, {-8, 0.5}]], 
    InsetBox["112", NCache[{-4, Rational[5, 2]}, {-4, 2.5}]], 
-   InsetBox["8024", NCache[{-11, Rational[5, 2]}, {-11, 2.5}]], 
-   InsetBox["132", NCache[{-3, Rational[3, 2]}, {-3, 1.5}]], 
    InsetBox["5620", NCache[{-9, Rational[3, 2]}, {-9, 1.5}]], 
-   InsetBox["292", NCache[{-4, Rational[3, 2]}, {-4, 1.5}]], 
-   InsetBox["1492", NCache[{-8, Rational[5, 2]}, {-8, 2.5}]], 
-   InsetBox["1182", NCache[{-6, Rational[3, 2]}, {-6, 1.5}]], 
-   InsetBox["16", NCache[{-1, Rational[1, 2]}, {-1, 0.5}]], 
-   InsetBox["1224", NCache[{-6, Rational[1, 2]}, {-6, 0.5}]], 
+   InsetBox["132", NCache[{-3, Rational[3, 2]}, {-3, 1.5}]], 
+   InsetBox["8024", NCache[{-11, Rational[5, 2]}, {-11, 2.5}]], 
+   InsetBox["4", NCache[{-1, Rational[5, 2]}, {-1, 2.5}]], 
+   InsetBox["132", NCache[{-3, Rational[1, 2]}, {-3, 0.5}]], 
    InsetBox["2236", NCache[{-7, Rational[1, 2]}, {-7, 0.5}]], 
+   InsetBox["4", NCache[{0, Rational[1, 2]}, {0, 0.5}]], 
+   InsetBox["420", NCache[{-6, Rational[5, 2]}, {-6, 2.5}]], 
+   InsetBox["52", NCache[{-2, Rational[1, 2]}, {-2, 0.5}]], 
+   InsetBox["292", NCache[{-4, Rational[3, 2]}, {-4, 1.5}]], 
    InsetBox["586", NCache[{-5, Rational[3, 2]}, {-5, 1.5}]], 
+   InsetBox["2312", NCache[{-7, Rational[3, 2]}, {-7, 1.5}]], 
    InsetBox["216", NCache[{-5, Rational[5, 2]}, {-5, 2.5}]], 
-   InsetBox["50", NCache[{-2, Rational[3, 2]}, {-2, 1.5}]], 
-   InsetBox["12176", NCache[{-10, Rational[1, 2]}, {-10, 0.5}]], 
-   InsetBox["3834", NCache[{-8, Rational[3, 2]}, {-8, 1.5}]], 
-   InsetBox["284", NCache[{-4, Rational[1, 2]}, {-4, 0.5}]], 
    InsetBox["5944", NCache[{-9, Rational[1, 2]}, {-9, 0.5}]], 
    InsetBox["22736", NCache[{-11, Rational[3, 2]}, {-11, 1.5}]], 
-   InsetBox["2312", NCache[{-7, Rational[3, 2]}, {-7, 1.5}]], 
-   InsetBox["16", NCache[{-2, Rational[5, 2]}, {-2, 2.5}]]},
-  Frame->True,
-  ImageSize->{494., Automatic}]], "Output",
- CellChangeTimes->{{3.52220440515283*^9, 3.522204429274539*^9}},
+   InsetBox["3272", NCache[{-10, Rational[5, 2]}, {-10, 2.5}]], 
+   InsetBox["1492", NCache[{-8, Rational[5, 2]}, {-8, 2.5}]], 
+   InsetBox["284", NCache[{-4, Rational[1, 2]}, {-4, 0.5}]], 
+   InsetBox["2", NCache[{0, Rational[3, 2]}, {0, 1.5}]], 
+   InsetBox["16", NCache[{-1, Rational[1, 2]}, {-1, 0.5}]], 
+   InsetBox["21496", NCache[{-11, Rational[1, 2]}, {-11, 0.5}]], 
+   InsetBox["16", NCache[{-2, Rational[5, 2]}, {-2, 2.5}]], 
+   InsetBox["596", NCache[{-5, Rational[1, 2]}, {-5, 0.5}]], 
+   InsetBox["14", NCache[{-1, Rational[3, 2]}, {-1, 1.5}]], 
+   InsetBox["2080", NCache[{-9, Rational[5, 2]}, {-9, 2.5}]], 
+   InsetBox["1182", NCache[{-6, Rational[3, 2]}, {-6, 1.5}]], 
+   InsetBox["12176", NCache[{-10, Rational[1, 2]}, {-10, 0.5}]], 
+   InsetBox["3834", NCache[{-8, Rational[3, 2]}, {-8, 1.5}]], 
+   InsetBox["48", NCache[{-3, Rational[5, 2]}, {-3, 2.5}]], 
+   InsetBox["1224", NCache[{-6, Rational[1, 2]}, {-6, 0.5}]], 
+   InsetBox["50", NCache[{-2, Rational[3, 2]}, {-2, 1.5}]], 
+   InsetBox["848", NCache[{-7, Rational[5, 2]}, {-7, 2.5}]], 
+   InsetBox["10368", NCache[{-10, Rational[3, 2]}, {-10, 1.5}]]},
+  Frame->True]], "Output",
+ CellChangeTimes->{3.522988538721266*^9},
+ CellTags->"Code",
  ImageCache->GraphicsData["CompressedBitmap", "\<\
-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
-/Rdc7wz9\
+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
+z0X8G/fIJO4=\
 \>"]]
 }, Open  ]],
 
@@ -2408,6 +2648,9 @@ function ", "Text"],
 system of subalgebra and Dynkin labels of highest weight \nof algebra module. \
 For example to get the above result use this code:", "Text"]
 }], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -2420,7 +2663,9 @@ For example to get the above result use this code:", "Text"]
   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
   3.522150954412807*^9}, {3.522203425915024*^9, 3.522203469683432*^9}, {
   3.52220362163011*^9, 3.522203622030675*^9}, {3.5222045202382708`*^9, 
-  3.5222046720800037`*^9}}],
+  3.5222046720800037`*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"],
 
 Cell[CellGroupData[{
 
@@ -2439,26 +2684,26 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"1", ",", "5"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"4", " ", "q"}], "+", 
-      RowBox[{"16", " ", 
+      RowBox[{"5", ",", "1"}], "}"}], ",", 
+     RowBox[{"4", "+", 
+      RowBox[{"16", " ", "q"}], "+", 
+      RowBox[{"52", " ", 
        SuperscriptBox["q", "2"]}], "+", 
-      RowBox[{"48", " ", 
+      RowBox[{"132", " ", 
        SuperscriptBox["q", "3"]}], "+", 
-      RowBox[{"112", " ", 
+      RowBox[{"284", " ", 
        SuperscriptBox["q", "4"]}], "+", 
-      RowBox[{"216", " ", 
+      RowBox[{"596", " ", 
        SuperscriptBox["q", "5"]}], "+", 
-      RowBox[{"420", " ", 
+      RowBox[{"1224", " ", 
        SuperscriptBox["q", "6"]}], "+", 
-      RowBox[{"848", " ", 
+      RowBox[{"2236", " ", 
        SuperscriptBox["q", "7"]}], "+", 
-      RowBox[{"1492", " ", 
+      RowBox[{"3540", " ", 
        SuperscriptBox["q", "8"]}], "+", 
-      RowBox[{"2080", " ", 
+      RowBox[{"5944", " ", 
        SuperscriptBox["q", "9"]}], "+", 
-      RowBox[{"3272", " ", 
+      RowBox[{"12176", " ", 
        SuperscriptBox["q", "10"]}]}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
@@ -2487,33 +2732,36 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"5", ",", "1"}], "}"}], ",", 
-     RowBox[{"4", "+", 
-      RowBox[{"16", " ", "q"}], "+", 
-      RowBox[{"52", " ", 
+      RowBox[{"1", ",", "5"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"4", " ", "q"}], "+", 
+      RowBox[{"16", " ", 
        SuperscriptBox["q", "2"]}], "+", 
-      RowBox[{"132", " ", 
+      RowBox[{"48", " ", 
        SuperscriptBox["q", "3"]}], "+", 
-      RowBox[{"284", " ", 
+      RowBox[{"112", " ", 
        SuperscriptBox["q", "4"]}], "+", 
-      RowBox[{"596", " ", 
+      RowBox[{"216", " ", 
        SuperscriptBox["q", "5"]}], "+", 
-      RowBox[{"1224", " ", 
+      RowBox[{"420", " ", 
        SuperscriptBox["q", "6"]}], "+", 
-      RowBox[{"2236", " ", 
+      RowBox[{"848", " ", 
        SuperscriptBox["q", "7"]}], "+", 
-      RowBox[{"3540", " ", 
+      RowBox[{"1492", " ", 
        SuperscriptBox["q", "8"]}], "+", 
-      RowBox[{"5944", " ", 
+      RowBox[{"2080", " ", 
        SuperscriptBox["q", "9"]}], "+", 
-      RowBox[{"12176", " ", 
+      RowBox[{"3272", " ", 
        SuperscriptBox["q", "10"]}]}]}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.522204835134797*^9}]
+ CellChangeTimes->{3.5229887268063183`*^9}]
 }, Open  ]],
 
 Cell[TextData[StyleBox["We can see that level of modules of subalgebra are \
 not equal to the level of module of Lie algebra since \nwe have built the \
 root system of A1-subalgebra on the short root of B2.", "Text"]], "Input",
+ Editable->False,
+ PageWidth->WindowWidth,
+ Evaluatable->False,
  CellChangeTimes->{{3.521873602978365*^9, 3.521873636671371*^9}, {
   3.521873668544697*^9, 3.5218736720921373`*^9}, {3.521874081215743*^9, 
   3.5218741184887323`*^9}, {3.52187421590868*^9, 3.52187423431264*^9}, {
@@ -2526,250 +2774,682 @@ root system of A1-subalgebra on the short root of B2.", "Text"]], "Input",
   3.522144824138832*^9, 3.522144834593553*^9}, {3.522150856656583*^9, 
   3.522150954412807*^9}, {3.522203425915024*^9, 3.522203469683432*^9}, {
   3.52220362163011*^9, 3.522203622030675*^9}, {3.522204868119225*^9, 
-  3.522204959674514*^9}}]
+  3.522204959674514*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellTags->"Text"]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 ShowSelection->True,
+ShowCellTags->True,
 FrontEndVersion->"8.0 for Linux x86 (64-bit) (November 7, 2010)",
-StyleDefinitions->"Default.nb"
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
 ]
 (* End of Notebook Content *)
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Text"->{
+  Cell[557, 20, 637, 16, 105, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[1801, 55, 344, 8, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[2703, 85, 875, 21, 127, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[4066, 125, 674, 15, 77, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[5427, 166, 275, 8, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[6333, 202, 301, 7, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[7260, 235, 754, 19, 105, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[9008, 291, 258, 7, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[10295, 336, 353, 10, 75, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[12288, 402, 297, 9, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[13535, 446, 224, 6, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[14659, 486, 284, 8, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[18464, 613, 351, 10, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[21417, 711, 575, 14, 77, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[24488, 812, 332, 9, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[25368, 845, 629, 14, 105, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[26329, 872, 305, 7, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[27230, 905, 600, 14, 91, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[29774, 990, 474, 12, 75, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[31575, 1054, 1040, 26, 109, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[34177, 1144, 1307, 28, 131, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[38332, 1281, 1043, 22, 163, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[40810, 1350, 817, 14, 77, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[43188, 1405, 975, 22, 127, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[57971, 1676, 934, 16, 77, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[60021, 1724, 877, 15, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[69939, 1899, 1323, 24, 131, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[73276, 1993, 907, 16, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[78653, 2150, 1239, 23, 141, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[80653, 2202, 1188, 22, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[82507, 2248, 1138, 19, 77, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[90210, 2407, 1116, 19, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[92114, 2456, 1122, 19, 59, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[102570, 2641, 1445, 26, 95, "Input",
+   Evaluatable->False,
+   CellTags->"Text"],
+  Cell[106772, 2758, 1243, 20, 77, "Input",
+   Evaluatable->False,
+   CellTags->"Text"]},
+ "Code"->{
+  Cell[1197, 38, 601, 15, 81, "Input",
+   InitializationCell->True,
+   CellTags->"Code"],
+  Cell[2170, 67, 401, 11, 81, "Input",
+   CellTags->"Code"],
+  Cell[2574, 80, 114, 2, 36, "Print",
+   CellTags->"Code"],
+  Cell[3581, 108, 268, 7, 58, "Text",
+   Evaluatable->True,
+   CellTags->"Code"],
+  Cell[3852, 117, 211, 6, 43, "Output",
+   CellTags->"Code"],
+  Cell[4743, 142, 388, 11, 58, "Text",
+   Evaluatable->True,
+   CellTags->"Code"],
+  Cell[5134, 155, 290, 9, 43, "Output",
+   CellTags->"Code"],
+  Cell[5727, 178, 184, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[5914, 184, 89, 2, 43, "Output",
+   CellTags->"Code"],
+  Cell[6040, 191, 186, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[6229, 197, 89, 2, 43, "Output",
+   CellTags->"Code"],
+  Cell[6659, 213, 384, 11, 59, "Input",
+   CellTags->"Code"],
+  Cell[7046, 226, 199, 6, 43, "Output",
+   CellTags->"Code"],
+  Cell[8039, 258, 461, 13, 59, "Input",
+   CellTags->"Code"],
+  Cell[8503, 273, 490, 15, 43, "Output",
+   CellTags->"Code"],
+  Cell[9291, 302, 496, 14, 59, "Input",
+   CellTags->"Code"],
+  Cell[9790, 318, 490, 15, 43, "Output",
+   CellTags->"Code"],
+  Cell[10673, 350, 196, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[10872, 356, 1401, 43, 82, "Output",
+   CellTags->"Code"],
+  Cell[12610, 415, 221, 5, 59, "Input",
+   CellTags->"Code"],
+  Cell[12834, 422, 686, 21, 43, "Output",
+   CellTags->"Code"],
+  Cell[13784, 456, 171, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[13958, 462, 686, 21, 43, "Output",
+   CellTags->"Code"],
+  Cell[14968, 498, 204, 5, 59, "Input",
+   CellTags->"Code"],
+  Cell[15175, 505, 89, 2, 43, "Output",
+   CellTags->"Code"],
+  Cell[15301, 512, 202, 5, 59, "Input",
+   CellTags->"Code"],
+  Cell[15506, 519, 2943, 91, 120, "Output",
+   CellTags->"Code"],
+  Cell[18840, 627, 227, 6, 59, "Input",
+   CellTags->"Code"],
+  Cell[19070, 635, 1117, 32, 63, "Output",
+   CellTags->"Code"],
+  Cell[20224, 672, 272, 7, 59, "Input",
+   CellTags->"Code"],
+  Cell[20499, 681, 903, 27, 63, "Output",
+   CellTags->"Code"],
+  Cell[22017, 729, 415, 12, 59, "Input",
+   CellTags->"Code"],
+  Cell[22435, 743, 1012, 31, 127, "Output",
+   CellTags->"Code"],
+  Cell[23484, 779, 294, 7, 59, "Input",
+   CellTags->"Code"],
+  Cell[23781, 788, 692, 21, 67, "Output",
+   CellTags->"Code"],
+  Cell[24845, 825, 258, 7, 59, "Input",
+   CellTags->"Code"],
+  Cell[25106, 834, 247, 8, 60, "Output",
+   CellTags->"Code"],
+  Cell[26000, 861, 326, 9, 59, "Input",
+   CellTags->"Code"],
+  Cell[26659, 883, 282, 8, 59, "Input",
+   CellTags->"Code"],
+  Cell[26944, 893, 271, 9, 60, "Output",
+   CellTags->"Code"],
+  Cell[27855, 923, 344, 10, 59, "Input",
+   CellTags->"Code"],
+  Cell[28202, 935, 1557, 52, 82, "Output",
+   CellTags->"Code"],
+  Cell[30273, 1006, 528, 15, 59, "Input",
+   CellTags->"Code"],
+  Cell[30804, 1023, 756, 28, 43, "Output",
+   CellTags->"Code"],
+  Cell[32640, 1084, 362, 10, 59, "Input",
+   CellTags->"Code"],
+  Cell[33005, 1096, 115, 2, 43, "Output",
+   CellTags->"Code"],
+  Cell[33157, 1103, 178, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[33338, 1109, 89, 2, 43, "Output",
+   CellTags->"Code"],
+  Cell[33464, 1116, 180, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[33647, 1122, 146, 4, 43, "Output",
+   CellTags->"Code"],
+  Cell[33830, 1131, 183, 4, 59, "Input",
+   CellTags->"Code"],
+  Cell[34016, 1137, 146, 4, 43, "Output",
+   CellTags->"Code"],
+  Cell[35509, 1176, 643, 19, 59, "Input",
+   CellTags->"Code"],
+  Cell[36155, 1197, 154, 3, 46, "Output",
+   CellTags->"Code"],
+  Cell[36346, 1205, 283, 7, 59, "Input",
+   CellTags->"Code"],
+  Cell[36632, 1214, 421, 14, 60, "Output",
+   CellTags->"Code"],
+  Cell[37090, 1233, 240, 6, 59, "Input",
+   CellTags->"Code"],
+  Cell[37333, 1241, 134, 4, 43, "Output",
+   CellTags->"Code"],
+  Cell[37504, 1250, 388, 12, 59, "Input",
+   CellTags->"Code"],
+  Cell[37895, 1264, 422, 14, 60, "Output",
+   CellTags->"Code"],
+  Cell[39400, 1307, 698, 19, 59, "Input",
+   CellTags->"Code"],
+  Cell[40101, 1328, 694, 19, 68, "Output",
+   CellTags->"Code"],
+  Cell[41630, 1366, 1555, 37, 117, "Input",
+   CellTags->"Code"],
+  Cell[44166, 1429, 864, 23, 79, "Input",
+   CellTags->"Code"],
+  Cell[45055, 1456, 344, 10, 59, "Input",
+   CellTags->"Code"],
+  Cell[45402, 1468, 12554, 205, 152, 6973, 111, "CachedBoxData", 
+  "BoxData", "Output",
+   CellTags->"Code"],
+  Cell[58908, 1694, 1110, 28, 79, "Input",
+   CellTags->"Code"],
+  Cell[60923, 1743, 669, 16, 62, "Input",
+   CellTags->"Code"],
+  Cell[61595, 1761, 8329, 135, 384, 2394, 35, "CachedBoxData", 
+  "BoxData", "Output",
+   CellTags->"Code"],
+  Cell[71287, 1927, 313, 9, 62, "Input",
+   CellTags->"Code"],
+  Cell[71603, 1938, 1658, 52, 68, "Output",
+   CellTags->"Code"],
+  Cell[74208, 2013, 333, 9, 62, "Input",
+   CellTags->"Code"],
+  Cell[74544, 2024, 4094, 123, 134, "Output",
+   CellTags->"Code"],
+  Cell[79917, 2177, 406, 11, 59, "Input",
+   CellTags->"Code"],
+  Cell[80326, 2190, 312, 9, 43, "Output",
+   CellTags->"Code"],
+  Cell[81866, 2228, 471, 12, 59, "Input",
+   CellTags->"Code"],
+  Cell[82340, 2242, 152, 3, 46, "Output",
+   CellTags->"Code"],
+  Cell[83670, 2271, 446, 12, 59, "Input",
+   CellTags->"Code"],
+  Cell[84119, 2285, 2948, 49, 382, 954, 14, "CachedBoxData", 
+  "BoxData", "Output",
+   CellTags->"Code"],
+  Cell[87104, 2339, 767, 21, 59, "Input",
+   CellTags->"Code"],
+  Cell[87874, 2362, 2321, 42, 173, 233, 5, "CachedBoxData", 
+  "BoxData", "Output",
+   CellTags->"Code"],
+  Cell[91351, 2430, 588, 17, 81, "Input",
+   CellTags->"Code"],
+  Cell[91942, 2449, 157, 4, 46, "Output",
+   CellTags->"Code"],
+  Cell[93261, 2479, 273, 7, 59, "Input",
+   CellTags->"Code"],
+  Cell[93537, 2488, 9018, 150, 116, 2237, 36, "CachedBoxData", 
+  "BoxData", "Output",
+   CellTags->"Code"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Text", 108408, 2793},
+ {"Code", 111448, 2899}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 362, 8, 58, "Input"],
-Cell[922, 30, 161, 2, 30, "Input"],
-Cell[1086, 34, 544, 13, 52, "Input",
- InitializationCell->True],
-Cell[1633, 49, 223, 3, 30, "Input"],
+Cell[557, 20, 637, 16, 105, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[1197, 38, 601, 15, 81, "Input",
+ InitializationCell->True,
+ CellTags->"Code"],
+Cell[1801, 55, 344, 8, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[1881, 56, 344, 9, 52, "Input"],
-Cell[2228, 67, 95, 1, 23, "Print"]
+Cell[2170, 67, 401, 11, 81, "Input",
+ CellTags->"Code"],
+Cell[2574, 80, 114, 2, 36, "Print",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[2703, 85, 875, 21, 127, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[3581, 108, 268, 7, 58, "Text",
+ Evaluatable->True,
+ CellTags->"Code"],
+Cell[3852, 117, 211, 6, 43, "Output",
+ CellTags->"Code"],
+Cell[4066, 125, 674, 15, 77, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[4743, 142, 388, 11, 58, "Text",
+ Evaluatable->True,
+ CellTags->"Code"],
+Cell[5134, 155, 290, 9, 43, "Output",
+ CellTags->"Code"],
+Cell[5427, 166, 275, 8, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[5727, 178, 184, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[5914, 184, 89, 2, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2360, 73, 261, 7, 30, "Input"],
-Cell[2624, 82, 295, 9, 30, "Output"]
+Cell[6040, 191, 186, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[6229, 197, 89, 2, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[6333, 202, 301, 7, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[6659, 213, 384, 11, 59, "Input",
+ CellTags->"Code"],
+Cell[7046, 226, 199, 6, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[7260, 235, 754, 19, 105, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[8039, 258, 461, 13, 59, "Input",
+ CellTags->"Code"],
+Cell[8503, 273, 490, 15, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[9008, 291, 258, 7, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[9291, 302, 496, 14, 59, "Input",
+ CellTags->"Code"],
+Cell[9790, 318, 490, 15, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[10295, 336, 353, 10, 75, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[10673, 350, 196, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[10872, 356, 1401, 43, 82, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[12288, 402, 297, 9, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[12610, 415, 221, 5, 59, "Input",
+ CellTags->"Code"],
+Cell[12834, 422, 686, 21, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[13535, 446, 224, 6, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[13784, 456, 171, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[13958, 462, 686, 21, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[14659, 486, 284, 8, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[14968, 498, 204, 5, 59, "Input",
+ CellTags->"Code"],
+Cell[15175, 505, 89, 2, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2956, 96, 238, 6, 30, "Input"],
-Cell[3197, 104, 295, 9, 30, "Output"]
+Cell[15301, 512, 202, 5, 59, "Input",
+ CellTags->"Code"],
+Cell[15506, 519, 2943, 91, 120, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[3507, 116, 319, 4, 44, "Input"],
-Cell[3829, 122, 667, 14, 66, "Input"],
-Cell[4499, 138, 211, 5, 29, "Text",
- Evaluatable->True],
-Cell[4713, 145, 190, 5, 30, "Output"],
-Cell[4906, 152, 553, 10, 48, "Input"],
-Cell[5462, 164, 331, 9, 29, "Text",
- Evaluatable->True],
-Cell[5796, 175, 296, 8, 30, "Output"],
-Cell[6095, 185, 154, 3, 30, "Input"],
+Cell[18464, 613, 351, 10, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[6274, 192, 127, 2, 30, "Input"],
-Cell[6404, 196, 70, 1, 30, "Output"]
+Cell[18840, 627, 227, 6, 59, "Input",
+ CellTags->"Code"],
+Cell[19070, 635, 1117, 32, 63, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6511, 202, 129, 2, 30, "Input"],
-Cell[6643, 206, 70, 1, 30, "Output"]
+Cell[20224, 672, 272, 7, 59, "Input",
+ CellTags->"Code"],
+Cell[20499, 681, 903, 27, 63, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[6728, 210, 180, 2, 30, "Input"],
+Cell[21417, 711, 575, 14, 77, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[6933, 216, 327, 9, 30, "Input"],
-Cell[7263, 227, 182, 5, 30, "Output"]
-}, Open  ]],
-Cell[7460, 235, 324, 4, 44, "Input"],
-Cell[7787, 241, 417, 10, 30, "Input"],
-Cell[CellGroupData[{
-Cell[8229, 255, 404, 11, 30, "Input"],
-Cell[8636, 268, 494, 14, 30, "Output"]
-}, Open  ]],
-Cell[9145, 285, 137, 2, 30, "Input"],
-Cell[CellGroupData[{
-Cell[9307, 291, 439, 12, 30, "Input"],
-Cell[9749, 305, 495, 14, 30, "Output"]
-}, Open  ]],
-Cell[10259, 322, 232, 5, 46, "Input"],
-Cell[CellGroupData[{
-Cell[10516, 331, 139, 2, 30, "Input"],
-Cell[10658, 335, 1382, 42, 69, "Output"]
-}, Open  ]],
-Cell[12055, 380, 176, 4, 30, "Input"],
-Cell[CellGroupData[{
-Cell[12256, 388, 164, 3, 30, "Input"],
-Cell[12423, 393, 664, 20, 30, "Output"]
-}, Open  ]],
-Cell[13102, 416, 103, 1, 30, "Input"],
-Cell[CellGroupData[{
-Cell[13230, 421, 114, 2, 30, "Input"],
-Cell[13347, 425, 665, 20, 30, "Output"]
-}, Open  ]],
-Cell[14027, 448, 163, 3, 30, "Input"],
-Cell[CellGroupData[{
-Cell[14215, 455, 147, 3, 30, "Input"],
-Cell[14365, 460, 70, 1, 30, "Output"]
+Cell[22017, 729, 415, 12, 59, "Input",
+ CellTags->"Code"],
+Cell[22435, 743, 1012, 31, 127, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14472, 466, 145, 3, 30, "Input"],
-Cell[14620, 471, 2946, 90, 107, "Output"]
+Cell[23484, 779, 294, 7, 59, "Input",
+ CellTags->"Code"],
+Cell[23781, 788, 692, 21, 67, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[17581, 564, 230, 5, 30, "Input"],
+Cell[24488, 812, 332, 9, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[17836, 573, 170, 4, 30, "Input"],
-Cell[18009, 579, 1098, 31, 50, "Output"]
+Cell[24845, 825, 258, 7, 59, "Input",
+ CellTags->"Code"],
+Cell[25106, 834, 247, 8, 60, "Output",
+ CellTags->"Code"]
 }, Open  ]],
+Cell[25368, 845, 629, 14, 105, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[26000, 861, 326, 9, 59, "Input",
+ CellTags->"Code"],
+Cell[26329, 872, 305, 7, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[19144, 615, 215, 5, 30, "Input"],
-Cell[19362, 622, 808, 24, 50, "Output"]
+Cell[26659, 883, 282, 8, 59, "Input",
+ CellTags->"Code"],
+Cell[26944, 893, 271, 9, 60, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[20185, 649, 454, 9, 48, "Input"],
+Cell[27230, 905, 600, 14, 91, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[20664, 662, 358, 10, 30, "Input"],
-Cell[21025, 674, 1064, 31, 115, "Output"]
+Cell[27855, 923, 344, 10, 59, "Input",
+ CellTags->"Code"],
+Cell[28202, 935, 1557, 52, 82, "Output",
+ CellTags->"Code"]
 }, Open  ]],
+Cell[29774, 990, 474, 12, 75, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[22126, 710, 237, 5, 30, "Input"],
-Cell[22366, 717, 693, 20, 55, "Output"]
+Cell[30273, 1006, 528, 15, 59, "Input",
+ CellTags->"Code"],
+Cell[30804, 1023, 756, 28, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[23074, 740, 211, 4, 30, "Input"],
+Cell[31575, 1054, 1040, 26, 109, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[23310, 748, 201, 5, 30, "Input"],
-Cell[23514, 755, 228, 7, 47, "Output"]
-}, Open  ]],
-Cell[23757, 765, 320, 4, 44, "Input"],
-Cell[24080, 771, 286, 6, 46, "Input"],
-Cell[24369, 779, 269, 7, 30, "Input"],
-Cell[24641, 788, 184, 2, 30, "Input"],
-Cell[CellGroupData[{
-Cell[24850, 794, 225, 6, 30, "Input"],
-Cell[25078, 802, 250, 8, 47, "Output"]
-}, Open  ]],
-Cell[25343, 813, 479, 9, 62, "Input"],
-Cell[CellGroupData[{
-Cell[25847, 826, 287, 8, 30, "Input"],
-Cell[26137, 836, 1540, 51, 69, "Output"]
-}, Open  ]],
-Cell[27692, 890, 353, 7, 46, "Input"],
-Cell[CellGroupData[{
-Cell[28070, 901, 471, 13, 30, "Input"],
-Cell[28544, 916, 811, 29, 30, "Output"]
-}, Open  ]],
-Cell[29370, 948, 919, 21, 80, "Input"],
-Cell[CellGroupData[{
-Cell[30314, 973, 305, 8, 30, "Input"],
-Cell[30622, 983, 93, 1, 30, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[30752, 989, 121, 2, 30, "Input"],
-Cell[30876, 993, 70, 1, 30, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[30983, 999, 123, 2, 30, "Input"],
-Cell[31109, 1003, 125, 3, 30, "Output"]
+Cell[32640, 1084, 362, 10, 59, "Input",
+ CellTags->"Code"],
+Cell[33005, 1096, 115, 2, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31271, 1011, 126, 2, 30, "Input"],
-Cell[31400, 1015, 127, 3, 30, "Output"]
-}, Open  ]],
-Cell[31542, 1021, 1186, 23, 102, "Input"],
-Cell[CellGroupData[{
-Cell[32753, 1048, 586, 17, 30, "Input"],
-Cell[33342, 1067, 132, 2, 33, "Output"]
+Cell[33157, 1103, 178, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[33338, 1109, 89, 2, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33511, 1074, 226, 5, 30, "Input"],
-Cell[33740, 1081, 427, 13, 47, "Output"]
+Cell[33464, 1116, 180, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[33647, 1122, 146, 4, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34204, 1099, 183, 4, 30, "Input"],
-Cell[34390, 1105, 117, 3, 30, "Output"]
+Cell[33830, 1131, 183, 4, 59, "Input",
+ CellTags->"Code"],
+Cell[34016, 1137, 146, 4, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[34177, 1144, 1307, 28, 131, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[35509, 1176, 643, 19, 59, "Input",
+ CellTags->"Code"],
+Cell[36155, 1197, 154, 3, 46, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34544, 1113, 331, 10, 30, "Input"],
-Cell[34878, 1125, 405, 13, 47, "Output"]
-}, Open  ]],
-Cell[35298, 1141, 321, 4, 44, "Input"],
-Cell[35622, 1147, 1049, 18, 102, "Input"],
-Cell[CellGroupData[{
-Cell[36696, 1169, 641, 17, 30, "Input"],
-Cell[37340, 1188, 674, 18, 55, "Output"]
-}, Open  ]],
-Cell[38029, 1209, 696, 9, 48, "Input"],
-Cell[38728, 1220, 1498, 35, 88, "Input"],
-Cell[40229, 1257, 373, 5, 44, "Input"],
-Cell[40605, 1264, 1027, 18, 66, "Input"],
-Cell[41635, 1284, 807, 21, 50, "Input"],
-Cell[CellGroupData[{
-Cell[42467, 1309, 287, 8, 30, "Input"],
-Cell[42757, 1319, 12825, 208, 139, 6966, 110, "CachedBoxData", "BoxData", \
-"Output"]
-}, Open  ]],
-Cell[55597, 1530, 813, 11, 48, "Input"],
-Cell[56413, 1543, 1053, 26, 50, "Input"],
-Cell[57469, 1571, 756, 10, 30, "Input"],
-Cell[CellGroupData[{
-Cell[58250, 1585, 612, 14, 33, "Input"],
-Cell[58865, 1601, 8559, 139, 371, 2398, 36, "CachedBoxData", "BoxData", \
-"Output"]
-}, Open  ]],
-Cell[67439, 1743, 1202, 19, 102, "Input"],
-Cell[CellGroupData[{
-Cell[68666, 1766, 256, 7, 33, "Input"],
-Cell[68925, 1775, 1661, 51, 55, "Output"]
-}, Open  ]],
-Cell[70601, 1829, 786, 11, 30, "Input"],
-Cell[CellGroupData[{
-Cell[71412, 1844, 276, 7, 33, "Input"],
-Cell[71691, 1853, 4097, 122, 121, "Output"]
-}, Open  ]],
-Cell[75803, 1978, 807, 11, 58, "Input"],
-Cell[76613, 1991, 1039, 14, 66, "Input"],
-Cell[CellGroupData[{
-Cell[77677, 2009, 349, 9, 30, "Input"],
-Cell[78029, 2020, 315, 8, 30, "Output"]
-}, Open  ]],
-Cell[78359, 2031, 1067, 17, 30, "Input"],
-Cell[CellGroupData[{
-Cell[79451, 2052, 414, 10, 30, "Input"],
-Cell[79868, 2064, 212, 4, 33, "Output"]
-}, Open  ]],
-Cell[80095, 2071, 1017, 14, 48, "Input"],
-Cell[CellGroupData[{
-Cell[81137, 2089, 389, 10, 30, "Input"],
-Cell[81529, 2101, 1069, 16, 369, "Output"]
+Cell[36346, 1205, 283, 7, 59, "Input",
+ CellTags->"Code"],
+Cell[36632, 1214, 421, 14, 60, "Output",
+ CellTags->"Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[82635, 2122, 710, 19, 30, "Input"],
-Cell[83348, 2143, 2326, 41, 160, 233, 5, "CachedBoxData", "BoxData", \
-"Output"]
+Cell[37090, 1233, 240, 6, 59, "Input",
+ CellTags->"Code"],
+Cell[37333, 1241, 134, 4, 43, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[85689, 2187, 995, 14, 30, "Input"],
 Cell[CellGroupData[{
-Cell[86709, 2205, 531, 15, 52, "Input"],
-Cell[87243, 2222, 136, 3, 33, "Output"]
+Cell[37504, 1250, 388, 12, 59, "Input",
+ CellTags->"Code"],
+Cell[37895, 1264, 422, 14, 60, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[87394, 2228, 1001, 14, 30, "Input"],
+Cell[38332, 1281, 1043, 22, 163, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
 Cell[CellGroupData[{
-Cell[88420, 2246, 216, 5, 30, "Input"],
-Cell[88639, 2253, 8745, 145, 143, 2269, 37, "CachedBoxData", "BoxData", \
-"Output"]
+Cell[39400, 1307, 698, 19, 59, "Input",
+ CellTags->"Code"],
+Cell[40101, 1328, 694, 19, 68, "Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[97399, 2401, 1324, 21, 66, "Input"],
+Cell[40810, 1350, 817, 14, 77, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[41630, 1366, 1555, 37, 117, "Input",
+ CellTags->"Code"],
+Cell[43188, 1405, 975, 22, 127, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[44166, 1429, 864, 23, 79, "Input",
+ CellTags->"Code"],
 Cell[CellGroupData[{
-Cell[98748, 2426, 280, 7, 33, "Input"],
-Cell[99031, 2435, 2432, 75, 77, "Output"]
+Cell[45055, 1456, 344, 10, 59, "Input",
+ CellTags->"Code"],
+Cell[45402, 1468, 12554, 205, 152, 6973, 111, "CachedBoxData", "BoxData", \
+"Output",
+ CellTags->"Code"]
 }, Open  ]],
-Cell[101478, 2513, 1122, 15, 48, "Input"]
+Cell[57971, 1676, 934, 16, 77, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[58908, 1694, 1110, 28, 79, "Input",
+ CellTags->"Code"],
+Cell[60021, 1724, 877, 15, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[60923, 1743, 669, 16, 62, "Input",
+ CellTags->"Code"],
+Cell[61595, 1761, 8329, 135, 384, 2394, 35, "CachedBoxData", "BoxData", \
+"Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[69939, 1899, 1323, 24, 131, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[71287, 1927, 313, 9, 62, "Input",
+ CellTags->"Code"],
+Cell[71603, 1938, 1658, 52, 68, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[73276, 1993, 907, 16, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[74208, 2013, 333, 9, 62, "Input",
+ CellTags->"Code"],
+Cell[74544, 2024, 4094, 123, 134, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[78653, 2150, 1239, 23, 141, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[79917, 2177, 406, 11, 59, "Input",
+ CellTags->"Code"],
+Cell[80326, 2190, 312, 9, 43, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[80653, 2202, 1188, 22, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[81866, 2228, 471, 12, 59, "Input",
+ CellTags->"Code"],
+Cell[82340, 2242, 152, 3, 46, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[82507, 2248, 1138, 19, 77, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[83670, 2271, 446, 12, 59, "Input",
+ CellTags->"Code"],
+Cell[84119, 2285, 2948, 49, 382, 954, 14, "CachedBoxData", "BoxData", "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87104, 2339, 767, 21, 59, "Input",
+ CellTags->"Code"],
+Cell[87874, 2362, 2321, 42, 173, 233, 5, "CachedBoxData", "BoxData", "Output",
+ 
+ CellTags->"Code"]
+}, Open  ]],
+Cell[90210, 2407, 1116, 19, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[91351, 2430, 588, 17, 81, "Input",
+ CellTags->"Code"],
+Cell[91942, 2449, 157, 4, 46, "Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[92114, 2456, 1122, 19, 59, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[93261, 2479, 273, 7, 59, "Input",
+ CellTags->"Code"],
+Cell[93537, 2488, 9018, 150, 116, 2237, 36, "CachedBoxData", "BoxData", \
+"Output",
+ CellTags->"Code"]
+}, Open  ]],
+Cell[102570, 2641, 1445, 26, 95, "Input",
+ Evaluatable->False,
+ CellTags->"Text"],
+Cell[CellGroupData[{
+Cell[104040, 2671, 280, 7, 33, "Input"],
+Cell[104323, 2680, 2434, 75, 77, "Output"]
+}, Open  ]],
+Cell[106772, 2758, 1243, 20, 77, "Input",
+ Evaluatable->False,
+ CellTags->"Text"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
