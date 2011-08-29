@@ -1,0 +1,25 @@
+keywords = {s[3, 1], s[2, 1, 2], s[3, 2, 3], s[3, 2, 1, 3]}
+ 
+s[i_][a_List] := (reduce[s[i]**#1] & ) /@ a
+ 
+s/: s::usage := "s[1,2] is the product of reflections 1 and 2."
+ 
+reduce[s[a___, c_, c_, b___]] := reduce[s[a, b]]
+ 
+reduce[s[a___, 3, 1, b___]] := reduce[s[a, 1, 3, b]]
+ 
+reduce[s[a___, 2, 1, 2, b___]] := reduce[s[a, 1, 2, 1, b]]
+ 
+reduce[s[a___, 3, 2, 3, b___]] := reduce[s[a, 2, 3, 2, b]]
+ 
+reduce[s[a___, 3, 2, 1, 3, b___]] := reduce[s[a, 2, 3, 2, 1, b]]
+ 
+reduce[other_] := other
+ 
+reduce/: reduce::usage := "reduce[s[...]] gives normal form of s[...]."
+ 
+Attributes[NonCommutativeMultiply] = {Flat, OneIdentity}
+ 
+s[i___]**s[j___] := s[i, j]
+ 
+replacements = {s[1, 3], s[1, 2, 1], s[2, 3, 2], s[2, 3, 2, 1]}

@@ -767,6 +767,7 @@ Semisimple Lie algebras can be created as sums of simple:
 \begin{lstlisting}[mathescape=true]
   $A_1\oplus A_1$ == finiteRootSystem[2, 2, {finiteWeight[2, {1, 0}], finiteWeight[2, {0, 1}]}]
 \end{lstlisting}
+%% The problem is here
 
 Predicate \lstinline{rootSystemQ} checks if the object is root systems of finite or affine type.
 
@@ -781,7 +782,7 @@ Positive roots can be constructed with \lstinline{positiveRoots[rs_?rootSystemQ]
 
 It is possible to specify a weight of a Lie algebra by its Dynkin labels
 \begin{lstlisting}
-  weight[b2][1,2,3] == makeFiniteWeight[{2, 1}]
+  weight[b2][1,2] == makeFiniteWeight[{2, 1}]
 \end{lstlisting}
 The function \lstinline{dynkinLabels[rs_?rootSystemQ][wg_?weightQ]} returns Dynkin labels of weight \lstinline{wg} in the root system \lstinline{rs}.
 
@@ -829,7 +830,7 @@ vm=makeVermaModule[$B_{2}$][{2,1}];
 pm=makeParabolicVermaModule[$B_{2}$][weight[$B_{2}$][2,1],{1}];
 im=makeIrreducibleModule[$B_{2}$][2,1];
 GraphicsRow[textPlot/@{im,vm,pm}]
-$\includegraphics[width=130mm]{irrep-verma-pverma.pdf}$
+$\includegraphics[width=130mm]{figures/irrep-verma-pverma.pdf}$
 \end{lstlisting}
 
 As we already stated properties of a module are encoded by its singular element. Function \lstinline{singularElement[m_module]} returns singular element of a module as \lstinline{formalElement} datastructure. Character (up to \lstinline{limit} for (parabolic) Verma modules) is returned by the function \lstinline{character[m_module]}. Direct sum of modules is a module and we use natural notation
@@ -837,13 +838,13 @@ As we already stated properties of a module are encoded by its singular element.
 im1=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][2,1]];
 im2=makeIrreducibleModule[$B_{2}$][weight[$B_{2}$][1,2]];
 textPlot[im1$\oplus$ im2]
-$\includegraphics[width=60mm]{irrep-sum.pdf}$
+$\includegraphics[width=60mm]{figures/irrep-sum.pdf}$
 \end{lstlisting}
 
 The tensor product is also implemented but only for finite-dimensional Lie algebras, since tensor product of affine Lie algebra modules leads to rich new structures \cite{kazhdan1994tensor3,kazhdan1993tensor1,kazhdan1993tensor2} which are out of the scope of the present paper.
 \begin{lstlisting}[mathescape=true]
 textPlot[makeIrreducibleModule[$A_{1}$][5]$\otimes$ makeIrreducibleModule[$A_{1}$][3]];
-$\includegraphics[width=60mm]{tensor-product.pdf}$
+$\includegraphics[width=60mm]{figures/tensor-product.pdf}$
 \end{lstlisting}
 \section{Computational algorithms}
 \label{sec:comp-algor}
@@ -861,7 +862,7 @@ We have made some experiments with our implementations of the Freudenthal formul
 
 \begin{figure}[h]
   \noindent\centering{
-    \includegraphics[width=80mm]{timing.pdf}
+    \includegraphics[width=80mm]{figures/timing.pdf}
   }
   \caption{Running time of algorithms based on the Freudenthal formula \eqref{eq:15} (dashed) and recurrent relation \eqref{eq:14} (solid) with the number of weights in $\bar C$ for calculation of multiplicities in representations of $B_{2}$.}
 \label{fig:freudenthal-racah-times}
@@ -922,7 +923,7 @@ To further illustrate this performance issue we include Figure \ref{fig:branchin
 
 \begin{figure}[h]
   \noindent\centering{
-   \includegraphics[width=100mm]{branching-timing.pdf}
+   \includegraphics[width=100mm]{figures/branching-timing.pdf}
   }
   \caption{Running time of algorithms based on the Freudenthal formula \eqref{eq:15} (dashed) and recurrent relation \eqref{recurrent-rel} (solid) with the number of weights in $\bar C$ for calculation of branching coefficients for $B_{3}\subset B_{4}$.}
   \label{fig:branching}
@@ -973,14 +974,14 @@ The character of $L^{[1,1]}$ is presented in Figure \ref{branching-bgg}, charact
 
 \begin{figure}[h]
   \noindent\centering{
-    \includegraphics[width=80mm]{G2-irrep.pdf}
+    \includegraphics[width=80mm]{figures/G2-irrep.pdf}
   }
   \caption{Character of the irreducible $G_{2}$-module $L^{[1,1]}$}
   \label{branching-bgg}
 \end{figure}
 \begin{figure}[h]
   \noindent\centering{
-    \includegraphics[width=150mm]{G2-pverma.pdf}
+    \includegraphics[width=150mm]{figures/G2-pverma.pdf}
   }
   \caption{Characters of $G_{2}$ generalized Verma modules appearing in the decomposition of $L^{[1,1]}$. Parabolic Verma modules in the upper row appear in the decomposition with a positive sign, in the lower row -- with a negative.}
   \label{g2-pverma}
