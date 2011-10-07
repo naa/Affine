@@ -46,36 +46,52 @@
       <span class="small">by <a href="http://github.com/naa">naa</a></span></h1>
 
     <div class="description">
-      Mathematica program for computations in representation theory of affine and finite-dimensional Lie algebras
+<p><a href="http://www.wolfram.com/mathematica/">Mathematica</a> program for computations in representation theory
+of affine and finite-dimensional Lie algebras.</p>
     </div>
 
-    <p>[Mathematica](http://www.wolfram.com/mathematica/) program for computations in representation theory
-of affine and finite-dimensional Lie algebras.
+    <p>
 
-Overview
-----------
+      <h2>Overview</h2>
 
-This program is based on the properties of weight system and uses Weyl symmetry. Central problems
+<p>This program is based on the properties of weight system and uses Weyl symmetry. Central problems
 are weight multiplicity calculation, branching of representation to representation of subalgebras
-and tensor product decomposition. For more detail see `doc/paper.pdf`.
+and tensor product decomposition. For more detail see <code>doc/paper.pdf</code>.</p>
 
-System requirements
-----------
+<h2>System requirements</h2>
 
-Mathematica. Tested with versions 7 and 8 on Linux and Windows.
-More details in `doc/paper.pdf`
-</p><h2>Install</h2>
-<p>`git clone git://github.com/naa/Affine.git`
-Add path to the beginning of your notebook
+<p>Mathematica. Tested with versions 7 and 8 on Linux and Windows.
+More details in <code>doc/paper.pdf</code></p>
 
-`AppendTo[$Path,"src/"];`
-`<<affine.m;`
-</p>
-<h2>License</h2>
-<p>GPL</p>
+<h2>Installation</h2>
+
+<p><code>git clone git://github.com/naa/Affine.git</code></p>
+
+<h2>Usage</h2>
+
+<p>Add path to the beginning of your notebook</p>
+
+<p><code>AppendTo[$Path,"src/"];</code>
+<code>&lt;&lt;affine.m;</code></p>
+
+<h2>Demo</h2>
+
+<p>The demonstration notebook <code>demo.nb</code> is in the folder <code>demo</code>. Notebook <code>paper.nb</code> in the same folder
+contains the code which was used to produce examples in the paper.</p>
+
+<p>All public functions of the package has online help, which can be invoked this way:</p>
+
+<p><code>?functionName</code></p>
+
+<p>For more details see files <code>demo/demo.nb</code>,<code>demo/paper.nb</code> and <code>doc/paper.pdf</code>. </p>
+
+<h2>Tests</h2>
+
+<p>Unit tests are in file <code>tests/tests.m</code>. To run all the tests just read the contents of this file
+into your notebook after adding the folder to <code>$Path</code> with</p>
+
+<p><code>&lt;&lt;tests.m</code></p>
 <h2>Authors</h2>
-<p>Anton Nazarov (anton@laptop.blun.ch)<br/><br/>      </p>
-<h2>Contact</h2>
 <p>Anton Nazarov (anton_nazarov@mail.ru)<br/>      </p>
 
 
