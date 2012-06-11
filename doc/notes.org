@@ -1,0 +1,164 @@
+* DONE Add here reviews
+  CLOSED: [2012-06-10 Sun 16:34]
+Dear Mr. Anton Nazarov,
+
+I have now received the reviewers' reports on your paper. I am pleased to inform you that your paper will be accepted for publication subject to satisfactory minor revision. The reports are constructive and are copied below for your information. The comments should be dealt with in revising your manuscript. 
+
+When submitting your revised manuscript, please ensure that you upload the source files (e.g. LaTeX). Uploading a PDF file at this stage will create delays should your manuscript be finally accepted for publication. If your revised submission does not include the source files, we will contact you to request them. In addition, please provide 3-5 highlight points for use on the web summary. See
+http://www.elsevier.com/wps/find/authorsview.authors/highlights
+for more details.
+
+To submit your revision, please do the following:
+
+1. Go to: http://ees.elsevier.com/cpc/
+
+2. Enter your login details 
+
+3. Click [Author Login]
+This takes you to the Author Main Menu.
+
+4. Click [Submissions Needing Revision]
+
+I look forward to receiving your revised manuscript.
+
+Yours sincerely,
+
+James W Eastwood
+Principal Editor
+Computer Physics Communications
+
+Reviewers' comments:
+
+Reviewer #1: The program can be useful for theoretical physicist working in representation theory of affine algebras etc.
+The introduction from representation theory is standardly and clear written. For this reason the paper  certainly
+deserves publication in the journal Computer Physics Communication.
+
+
+
+Reviewer #2: In this article, the author presents a Mathematica package for Lie
+algebra representation theory that can perform a number of important
+calculations such as tensor product decomposition and branching of
+representations for affine Lie algebras. (Finite-dimensional Lie
+algebras are naturally supported as well).
+
+While the corresponding algorithms are mostly standard knowledge, this
+package certainly is useful for researchers who would like to do such
+calculations directly within Mathematica. (For some of the more common
+problems, such as decomposing tensor products for small
+finite-dimensional Lie algebra representations, there are a number of
+other specialized packages, a number of which are not based on
+Mathematica.)
+
+The underlying code is reasonably well written and documented. The
+basic data structures have been chosen quite appropriately and
+efficient algorithms have been employed. All this makes using this
+package quite practical, and the degree of novelty and achievement to
+me seems appropriate for publication in CPC.
+
+There are numerous very minor grammatical issues with the write-up; On
+page 5, "finite" was mis-spelled as "inite", and in many places an
+article "the" is missing (e.g.: p.3, line 27 "is the most
+computation-intensitive one", line 37: "constitute an important and
+tractable class", p. 4, line 13: "The next section", line 26: "A Lie
+algebra g is... which is called a/the Lie bracket..."; similarly for
+"(A) Cartan subalgebra", "(The) Killing form", "(A) special choice of
+basis", "The loop algebra ... corresponding to the semisimple Lie
+algebra" etc.) These are too numerous to list them all in this
+report. While the article still is quite readable without these
+cosmetic corrections, it would benefit from being proofread by a
+native speaker.
+
+I have stronger concerns about the style in which some references are
+given, such as [2],[5],[6],[12],[16],[31]. This clearly is
+inappropriate. At the very least, the author should reference preprint
+references (e.g. for arXiv preprints), and possibly web pages.
+
+
+So, my recommendation is to accept this article for publication once:
+
+  - the references have been corrected, and
+
+  - the author addressed the issue of missing "the/a/an" articles to an
+    extent he is happy to see in print with his name on it.
+
+
+
+
+
+******************************************
+Please note that the editorial process varies considerably from journal to journal. To view a sample editorial process, please click here:
+http://ees.elsevier.com/eeshelp/sample_editorial_process.pdf
+
+For further assistance, please visit our customer support site at http://support.elsevier.com. Here you can search for solutions on a range of topics, find answers to frequently asked questions and learn more about EES via interactive tutorials. You will also find our 24/7 support contact details should you need any further assistance from one of our customer support representatives.
+
+* TODO Fix bibliography
+* TODO Fix mentioned articles
+* TODO Look for similar errors
+* TODO Read grammar rules
+* TODO Fix remaining errors
+* TODO Write highlights
+Highlights	
+
+	
+	
+
+Highlights are a short collection of bullet points that convey the core findings and provide readers with a quick textual overview of the article. These three to five bullet points describe the essence of the research (e.g. results or conclusions) and highlight what is distinctive about it.
+
+Highlights will be displayed in online search result lists, the contents list and in the online article, but will not (yet) appear in the article PDF file or print.
+
+Author instructions:
+Highlights should be submitted as a separate file in EES by selecting "Highlights" from the drop-down list when uploading files. Please adhere to the specifications below.
+	
+	
+
+Specifications:
+
+    Include 3 to 5 highlights.
+    There should be a maximum of 85 characters, including spaces, per highlight.
+    Only the core results of the paper should be covered.
+
+	
+	
+
+Examples
+
+External link  Journal of Health Economics, Volume 29, Issue 4, July 2010, 524-535
+
+Highlights
+
+    We model two hospitals which have regulated prices and compete on quality.
+    We examine changes in the level of information about hospital quality.
+    Increasing information will increase quality if hospital costs are similar.
+    Increasing information will decrease quality if hospital costs are very different.
+    Welfare effects depend on ex-ante or ex-post assumptions about quality information.
+
+External link  Applied Catalysis A, General, Volumes 411-412, 16 January 2012, 7-14
+
+Highlights
+
+    Highly c-axis oriented ZnO nanowires were grown on glass using aqueous solutions.
+    The growth temperature does not exceed 95 °C in any step of the synthesis.
+    The photocatalytic and wetting properties were studied upon UV irradiation.
+    ZnO nanowires show superior photocatalytic activity.
+    We report a reversible photo-induced transition from hydrophobic to super-hydrophilic.
+
+External link  Biochimica et Biophysica Acta (BBA), Bioenergetics, Volume 1807, Issue 10, October 2011, 1364-1369
+
+Highlights
+
+    A conformational two-state mechanism for proton pumping complex I is proposed.
+    The mechanism relies on stabilization changes of anionic ubiquinone intermediates.
+    Electron-transfer and protonation should be strictly controlled during turnover.
+    The mechanism explains the full reversibility of complex I.
+
+External link  Learning and Instruction, Volume 21, Issue 6, December 2011, 746-756
+
+Highlights
+
+    Fading of a script alone does not foster domain-general strategy knowledge.
+    Performance of the strategy declines during the fading of a script.
+    Monitoring by a peer keeps performance of the strategy up during script fading.
+    Performance of a strategy after fading fosters domain-general strategy knowledge.
+    Fading and monitoring by a peer combined foster domain-general strategy knowledge.
+
+ 

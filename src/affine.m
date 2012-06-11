@@ -939,10 +939,19 @@ directSum[ms__module]:=makeModule[rootSystem[{ms}[[1]]]][Plus @@ (singularElemen
 CirclePlus[ms__module]=directSum[ms];
 
 simpleBranching[m_module,subs_?rootSystemQ]:=
-    Module[{mults,pmults,rh=rho[subs],res,wgs},
+    Module[{mults,pmults,rh=rho[subs],res,wgs,rs=rootSystem[m]},
 	   mults=character[m];
 	   Scan[(mults[hashtable][#]=mults[toFundamentalChamber[rs][#]])&,Flatten[orbit[rs][mults[weights]]]];
 	   pmults=projection[subs][mults];
+	   res=makeFormalElement[makeHashtable[{},{}]];
+	   wgs=Select[Sort[pmults[weights],#1.rh>#2.rh&],mainChamberQ[subs]];
+	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*freudenthalMultiplicities[subs][#])&, wgs];
+	   res];
+
+
+simpleBranching[fe_formalElement,subs_?rootSystemQ]:=
+    Module[{pmults,rh=rho[subs],res,wgs},
+	   pmults=projection[subs][fe];
 	   res=makeFormalElement[makeHashtable[{},{}]];
 	   wgs=Select[Sort[pmults[weights],#1.rh>#2.rh&],mainChamberQ[subs]];
 	   Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*freudenthalMultiplicities[subs][#])&, wgs];
