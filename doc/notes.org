@@ -91,12 +91,18 @@ http://ees.elsevier.com/eeshelp/sample_editorial_process.pdf
 
 For further assistance, please visit our customer support site at http://support.elsevier.com. Here you can search for solutions on a range of topics, find answers to frequently asked questions and learn more about EES via interactive tutorials. You will also find our 24/7 support contact details should you need any further assistance from one of our customer support representatives.
 
-* TODO Fix bibliography
-* TODO Fix mentioned articles
+* DONE Fix bibliography
+* DONE Fix mentioned articles
 * TODO Look for similar errors
 * TODO Read grammar rules
 * TODO Fix remaining errors
-* TODO Write highlights
+* DONE Write highlights
+We present Affine.m - Mathematica package for representation theory of Lie algebras
+It is possible to study finite-dimensional and affine Lie algebras
+Package can be used to work with irreducible and Verma modules
+Compute tensor product decompositions, weight multiplicities, branching coefficients
+Natural notation is available in Mathematica notebook interface
+
 Highlights	
 
 	
