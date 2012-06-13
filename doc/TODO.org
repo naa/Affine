@@ -40,7 +40,7 @@
     CLOSED: [2011-06-04 Sat 15:53]
 *** DONE Fix software package appendix
     CLOSED: [2011-06-02 Thu 19:07]
-*** TODO Bibliography style
+*** DONE Bibliography style
 *** DONE Improve text with the notes from paper
     CLOSED: [2011-07-14 Thu 19:46]
 *** DONE Add more examples
