@@ -364,7 +364,7 @@ finiteWeight/:x_finiteWeight[standardBase]:=x[[2]];
 finiteWeight/:x_finiteWeight[finitePart]:=x;
 
 finitePart[wg_?weightQ]=wg[finitePart];
-dimension[wg_?weightQ]=wg[dimension];
+imension[wg_?weightQ]=wg[dimension];
 standardBase[wg_?weightQ]=wg[finitePart][standardBase];
 
 (*makeFiniteWeight[{coordinates__?NumericQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}*)
@@ -454,7 +454,7 @@ finiteRootSystem/:CirclePlus[x_finiteRootSystem,y_finiteRootSystem]:=makeFiniteR
 
 affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineExtension[CirclePlus[x[finiteRootSystem],y[finiteRootSystem]]];
 
-makeSimpleRootSystem[A,1]:=makeFiniteRootSystem[{{1}}];
+makeSimpleRootSystem[A,1]:=makeFiniteRootSystem[{{Sqrt[2]}}];
 makeSimpleRootSystem[A,r_Integer]:=makeFiniteRootSystem[makeFiniteWeight /@ Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,r},{j,1,r+1}]];
 makeSimpleRootSystem[B,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],1]]];
 makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],2]]];
@@ -595,7 +595,7 @@ freudenthalMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
 	   weights=SortBy[ Rest[Flatten[weightSystem[rs][highestWeight]]], -#.rh&];
 	   c:=(#+rh).(#+rh)&;
 	   mults[highestWeight]=1;
-	   insideQ:=And[checkGrade[rs][#],IntegerQ[mults[toFC[#]]]]&;
+	   insideQ:=And[checkGrade[rs][#],NumericQ[mults[toFC[#]]]]&;
 	   Scan[Function[v,
 			 mults[v]=
 			 2/(c[highestWeight]-c[v])*
