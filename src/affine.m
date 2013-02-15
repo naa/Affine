@@ -1115,7 +1115,6 @@ branching2[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	       #1.subrh>#2.subrh&];
 
 	   fn=fan[rs,subs];
-
 	   gamma0=Sort[fn[weights],#1.subrh<#2.subrh&][[1]];
 	   sgamma0=fn[gamma0];
 
