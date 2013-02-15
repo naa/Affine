@@ -1194,6 +1194,24 @@ makeAffineRootSystem[roots__List]:=makeAffineExtension[makeFiniteRootSystem[{roo
 
 makeAffineRootSystem[roots__finiteWeight]:=makeAffineExtension[makeFiniteRootSystem[{roots}]];
 
+(* Here comes the code for branching of direct sums of affine Lie algebra modules, like this:
+
+
+a1a = makeAffineExtension[makeSimpleRootSystem[A,1]];
+a1a[gradeLimit]=10;
+mod1 = makeIrreducibleModule[a1a][1,0];
+mod2 = makeIrreducibleModule[a1a][2,0];
+ch1=character[mod1];
+ch2=character[mod2];
+pmults=makeFormalElement[makeHashtable @@ Transpose[Select[Flatten[Outer[{#1+#2,ch1[#1]*ch2[#2]}&, ch1[weights],ch2[weights]],1],-grade[#[[1]]]<=a1a[gradeLimit]&]]];
+subs=a1a;
+res=makeFormalElement[makeHashtable[{},{}]];
+rh=rho[subs];
+wgs=Select[Sort[pmults[weights],#1.rh>#2.rh&],mainChamberQ[subs]];
+Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*racahMultiplicities[subs][#])&, wgs];
+
+*)
+
 End[]
 
 EndPackage[]
