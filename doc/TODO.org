@@ -1,52 +1,64 @@
-* Affine.m 
-*** DONE String functions
-    CLOSED: [2011-06-02 Thu 18:30]
-*** DONE Branching functions
-    CLOSED: [2011-06-02 Thu 18:30]
-*** DONE Multiplicities functions should return formalElements
-    CLOSED: [2011-06-02 Thu 19:22]
-*** DONE Affine grade limit through options 
-    CLOSED: [2011-07-14 Thu 19:45]
-*** DONE Extract unit tests to separate files
-    CLOSED: [2011-06-01 Wed 17:26]
-*** DONE Define Mathematica package
-    CLOSED: [2011-06-01 Wed 17:26]
-*** DONE Tensor product decomposition
-    CLOSED: [2011-07-14 Thu 19:45]
-*** DONE Make sum of Lie algebras non-commutative
-    CLOSED: [2011-05-31 Tue 14:06]
-*** DONE Constructors for exceptional simple Lie algebras
-    CLOSED: [2011-06-08 Wed 16:56]
-*** TODO Tests for exceptional simple Lie algebras, compare with Bourbaki.
-*** TODO Constructors for twisted affine Lie algebras
-*** DONE Optimize branching (take a look at the formal elements operations)
-    CLOSED: [2011-07-14 Thu 19:45]
-*** DONE Fix ourBranching for affine Lie algebras
-    CLOSED: [2011-07-14 Thu 19:45]
-*** DONE Datastructure for modules 
-    CLOSED: [2011-06-08 Wed 19:13]
-*** DONE Reimplement functions for module
-    CLOSED: [2011-06-30 Thu 11:35]
-*** DONE Make CirclePlus applicable to list of more than 2 elements
-    CLOSED: [2011-06-30 Thu 11:35]
-* Paper
-*** DONE List of examples to the paper
-    CLOSED: [2011-05-31 Tue 14:04]
-*** DONE Reread paper
-    CLOSED: [2011-06-02 Thu 18:27]
-*** DONE Add more Rhedin's papers to bibliography
-    CLOSED: [2011-06-01 Wed 18:58]
-*** DONE Add the description of branching algorithms in section 4
-    CLOSED: [2011-06-04 Sat 15:53]
-*** DONE Fix software package appendix
-    CLOSED: [2011-06-02 Thu 19:07]
-*** DONE Bibliography style
-*** DONE Improve text with the notes from paper
-    CLOSED: [2011-07-14 Thu 19:46]
-*** DONE Add more examples
-    CLOSED: [2011-07-14 Thu 19:46]
-* Manual
-*** DONE Copy inline help
-    CLOSED: [2011-06-02 Thu 13:51]
-*** DONE Write the section on download/installation/usage
-    CLOSED: [2011-08-13 Sat 12:48]
+Affine.m TODO list
+* Version 1.0
+*** Affine.m 
+***** DONE String functions
+      CLOSED: [2011-06-02 Thu 18:30]
+***** DONE Branching functions
+      CLOSED: [2011-06-02 Thu 18:30]
+***** DONE Multiplicities functions should return formalElements
+      CLOSED: [2011-06-02 Thu 19:22]
+***** DONE Affine grade limit through options 
+      CLOSED: [2011-07-14 Thu 19:45]
+***** DONE Extract unit tests to separate files
+      CLOSED: [2011-06-01 Wed 17:26]
+***** DONE Define Mathematica package
+      CLOSED: [2011-06-01 Wed 17:26]
+***** DONE Tensor product decomposition
+      CLOSED: [2011-07-14 Thu 19:45]
+***** DONE Make sum of Lie algebras non-commutative
+      CLOSED: [2011-05-31 Tue 14:06]
+***** DONE Constructors for exceptional simple Lie algebras
+      CLOSED: [2011-06-08 Wed 16:56]
+***** DONE Optimize branching (take a look at the formal elements operations)
+      CLOSED: [2011-07-14 Thu 19:45]
+***** DONE Fix ourBranching for affine Lie algebras
+      CLOSED: [2011-07-14 Thu 19:45]
+***** DONE Datastructure for modules 
+      CLOSED: [2011-06-08 Wed 19:13]
+***** DONE Reimplement functions for module
+      CLOSED: [2011-06-30 Thu 11:35]
+***** DONE Make CirclePlus applicable to list of more than 2 elements
+      CLOSED: [2011-06-30 Thu 11:35]
+*** Paper
+***** DONE List of examples to the paper
+      CLOSED: [2011-05-31 Tue 14:04]
+***** DONE Reread paper
+      CLOSED: [2011-06-02 Thu 18:27]
+***** DONE Add more Rhedin's papers to bibliography
+      CLOSED: [2011-06-01 Wed 18:58]
+***** DONE Add the description of branching algorithms in section 4
+      CLOSED: [2011-06-04 Sat 15:53]
+***** DONE Fix software package appendix
+      CLOSED: [2011-06-02 Thu 19:07]
+***** DONE Bibliography style
+***** DONE Improve text with the notes from paper
+      CLOSED: [2011-07-14 Thu 19:46]
+***** DONE Add more examples
+      CLOSED: [2011-07-14 Thu 19:46]
+*** Manual
+***** DONE Copy inline help
+      CLOSED: [2011-06-02 Thu 13:51]
+***** DONE Write the section on download/installation/usage
+      CLOSED: [2011-08-13 Sat 12:48]
+* Version 2.0
+*** Affine.m
+***** TODO Fix bugs
+***** TODO Tests for exceptional simple Lie algebras, compare with Bourbaki.
+***** TODO Constructors for twisted affine Lie algebras
+***** TODO Support for affine extensions of semisimple Lie algebras and for direct sums of affine Lie algebra modules
+***** TODO Some functions for calculations in conformal field theory (conformal weights, Virasoro characters etc)
+***** TODO Create insallable package
+*** Paper
+***** TODO Write new version announce
+*** Manual
+***** TODO Prepare PDF manual

@@ -991,8 +991,6 @@ FUNCTION {inproceedings}
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
-      format.bvolume output
-      format.number.series output
       publisher empty$
         { format.organization.address output }
         { organization "organization" bibinfo.check output
@@ -1000,6 +998,9 @@ FUNCTION {inproceedings}
           format.date output
         }
       if$
+      format.date "year" output.check
+      format.bvolume output
+      format.number.series output
     }
     { format.incoll.inproc.crossref output.nonnull
     }
