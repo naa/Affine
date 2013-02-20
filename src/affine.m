@@ -1023,9 +1023,12 @@ affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineE
 
 CircleTimes[m1_module,m2_module]=tensorProduct[m1,m2];
 
-decomposition[m__module]:=ourBranching[Fold[tensorProduct,First[{m}],Rest[{m}]],
+
+decompositionOld[m__module]:=ourBranching[Fold[tensorProduct,First[{m}],Rest[{m}]],
 						    makeFiniteRootSystem[1/Length[{m}]*Fold[Plus,0,simpleRoots[rootSystem[#]]&/@{m}]]]
-					     
+
+
+decomposition[m__module]:=ourBranching[{m},rootSystem[First[{m}]],Plus]
 					     
 
 embeddingIndex[rs_?rootSystemQ,subs_?rootSystemQ]:=
