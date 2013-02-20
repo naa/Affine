@@ -378,7 +378,7 @@ finiteWeight/:x_finiteWeight[standardBase]:=x[[2]];
 finiteWeight/:x_finiteWeight[finitePart]:=x;
 
 finitePart[wg_?weightQ]=wg[finitePart];
-imension[wg_?weightQ]=wg[dimension];
+dimension[wg_?weightQ]=wg[dimension];
 standardBase[wg_?weightQ]=wg[finitePart][standardBase];
 
 (*makeFiniteWeight[{coordinates__?NumericQ}]:=finiteWeight @@ {Length[{coordinates}],{coordinates}}*)
