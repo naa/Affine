@@ -797,10 +797,10 @@ simpleBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 singularElement[rs_?rootSystemQ][hweight_?weightQ]:=
     makeFormalElement @@ Transpose[{#[[1]]-rho[rs],#[[2]]}& /@ orbitWithEps[rs][hweight+rho[rs]]]
 
-fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
-    Module[{pr,r,roots,ei},
-	   ei=embeddingIndex[rs,subs];
-	   roots=Select[projection[subs][positiveRoots[rs],ei],#=!= zeroWeight[subs]&];
+
+fan[{posroots__?weightQ},subs_?rootSystemQ]:=
+    Module[{pr,r,roots},
+	   roots=Select[{posroots},#=!= zeroWeight[subs]&];
 	   pr=makeFormalElement[roots] - makeFormalElement[positiveRoots[subs]];
 	   r=makeFormalElement[{zeroWeight[subs]}];
 	   Scan[Function[w,
@@ -809,6 +809,9 @@ fan[rs_?rootSystemQ,subs_?rootSystemQ]:=
 			],
 		pr[weights]];
 	   r];
+
+fan[rs_?rootSystemQ,subs_?rootSystemQ]:=fan[projection[subs][positiveRoots[rs]],subs];
+
 (*	   r=Fold[Expand[#1*(1-Exp[#2])^(pr[#2])]&,makeFormalElement[{zeroWeight[subs]}],pr[weights]];
 	   subElement[r,Select[r[weights],checkGrade[rs]]]];*)
 (* !!!!!!!!!!!!!!!!!!!!!                      ^^^^^^^^ This can be negative *)
@@ -1074,6 +1077,43 @@ ourBranching[m_module,subs_?rootSystemQ]:=
 	   makeFormalElement[keys[res],values[res]]
 	  ]
 
+ourBranching[{ms__module},subs_?rootSystemQ,proj_]:=
+    Module[{singW,selW,selWM,fn,reprw,res,toFC,rh,subrh,gamma0,sgamma0,hw,posroots,zeroes,singElts,smults},
+	   zeroes=zeroWeight[rootSystem[#]]&/@{ms};
+	   posroots=Flatten[MapIndexed[ (Map[ Function[x, proj@@ReplacePart[zeroes,#2->x]], 
+					      positiveRoots[rootSystem[#1]]])&,
+					{ms}],1];
+(*	   orth=orthogonalSubsystem[rs,subs]; No orthogonal subsystem here *)
+
+	   singElts = singularElement /@ {ms};
+	   smults = makeFormalElement @@ Transpose[
+	       Select[
+		   Flatten[
+		       Outer[{proj[##], Inner[(#1@#2) &, singElts, {##}, Times]} &,
+			     Sequence @@ ((#[weights]) & /@ singElts), 1], Length[singElts]-1],
+		   grade[#[[1]]] + subs[gradeLimit] >= 0 &]];
+
+	   subrh=rho[subs];
+
+	   fn=fan[posroots,subs];
+	   gamma0=Sort[Select[fn[weights],grade[#]==0&],#1.subrh<#2.subrh&][[1]];
+	   sgamma0=fn[gamma0];
+	   fn=fn*Exp[-gamma0];
+	   reprw=Select[getOrderedWeightsProjectedToWeylChamber[posroots,subs,(smults*Exp[-gamma0])[weights],1],mainChamberQ[subs]];
+
+	   toFC=Function[z,Module[{tmp=toFundamentalChamberWithParity[subs][z+subrh]},{tmp[[1]]-subrh,tmp[[2]]}]];
+	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
+	   insideQ:=NumericQ[res[toFC[#][[1]]]]&;
+	   Scan[Function[v,
+(*			 Print[v];*)
+			 res[v]=-1/sgamma0*(
+			     -smults[v-gamma0]+
+			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
+			],
+		reprw];
+	   makeFormalElement[keys[res],values[res]]
+	  ]
+
 branching::"usage"=
     "branching[m_module,subs_?rootSystemQ] returns branching coefficients of decomposition of module m to \n
     the irreducible modules of subalgebra defined by root system subs";
@@ -1236,21 +1276,21 @@ Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*racahMultiplicities[
 *)
 
 genericBranching[subs_?rootSystemQ, pr_, {ms__module}] :=
-  Module[{characters, wgs, res, pmults, rh},
-  characters = character /@ {ms};
-  pmults = makeFormalElement @@ Transpose[
-     Select[
-      Flatten[
-       Outer[{pr[##], Inner[(#1@#2) &, characters, {##}, Times]} &,
-        Sequence @@ ((#[weights]) & /@ characters), 1], 1],
-      grade[#[[1]]] + subs[gradeLimit] >= 0 &]];
-  res = makeFormalElement[makeHashtable[{}, {}]];
-  rh = rho[subs];
-  wgs = Select[Sort[pmults[weights], #1.rh > #2.rh &], 
-    mainChamberQ[subs]];
-  Scan[(res[hashtable][#] = pmults[#]; 
-     pmults = pmults - pmults[#]*racahMultiplicities[subs][#]) &, wgs];
-  res]
+					     Module[{characters, wgs, res, pmults, rh},
+						    characters = character /@ {ms};
+						    pmults = makeFormalElement @@ Transpose[
+							Select[
+							    Flatten[
+								Outer[{pr[##], Inner[(#1@#2) &, characters, {##}, Times]} &,
+								      Sequence @@ ((#[weights]) & /@ characters), 1], Length[characters]-1],
+							    grade[#[[1]]] + subs[gradeLimit] >= 0 &]];
+						    res = makeFormalElement[makeHashtable[{}, {}]];
+						    rh = rho[subs];
+						    wgs = Select[Sort[pmults[weights], #1.rh > #2.rh &], 
+								 mainChamberQ[subs]];
+						    Scan[(res[hashtable][#] = pmults[#]; 
+							  pmults = pmults - pmults[#]*racahMultiplicities[subs][#]) &, wgs];
+						    res]
 
 conformalWeight[rs_affineRootSystem][wg_?weightQ] := wg.(wg + 2*rho[rs])/(2*(level[wg] + coxeterNumber[rs]));
 
