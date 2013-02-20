@@ -199,6 +199,10 @@ marks::"usage"="marks[rs_affineRootSystem] returns marks of affine Lie algebra";
 
 comarks::"usage"="comarks[rs_affineRootSystem] returns comarks of affine Lie algebra";
 
+coxeterNumber::"usage"="returns Coxeter number for root system of Lie algebra";
+
+dualCoxeterNumber::"usage"="returns dual Coxeter number for root system of Lie algebra";
+
 weight::"usage"=
     "weight[rs_?rootSystemQ][labels__Integer] constructs weight defined by Dynkin labels";
 
@@ -345,6 +349,16 @@ branchingFunctions::"usage"="branchingFunctions[rs_affineRootSystem,subs_affineR
 
 textPlot::"usage"=
     "textPlot[m_module] plots module multiplicities";
+
+genericBranching::"usage"=
+    "genericBranching[subs_?rootSystemQ, pr_, {ms__module}] calculates branching coefficients of projection pr_ of direct product of modules ms__\n to irreducible modules of algebra with root system subs_";
+
+
+conformalWeight::"usage"=
+    "conformalWeight[rs_affineRootSystem][ls__?NumericQ] calculates conformal weight of primary field of WZNW model labeled by Dynkin labels";
+
+minimalCharacters::"usage"=
+    "minimalCharacters[{ls1__},{ls2__}] computes characters in su(2) x su(2)/su(2) minimal model for modules specified by Dynkin labels ls1__ and ls2__";
 
 Begin["`Private`"]
 
@@ -613,6 +627,7 @@ freudenthalMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
 orbitWithEps[rs_?rootSystemQ][weight_?weightQ]:=Flatten[MapIndexed[Function[{x,i},Map[{#,(-1)^(i[[1]]+1)}&,x]],orbit[rs][weight]],1];
 
 racahMultiplicities[rs_?rootSystemQ][highestWeight_?weightQ]:=
+    racahMultiplicities[rs][highestWeight]=
     Module[{rh=rho[rs],weights,mults,c,insideQ,
 	    fan,
 	    toFC=toFundamentalChamber[rs]},
@@ -654,6 +669,7 @@ affineRootSystem/:rs_affineRootSystem[simpleRoots]:=Prepend[rs[[4]],rs[[3]]]
 affineRootSystem/:rs_affineRootSystem[simpleRoot][0]:=rs[[3]];
 affineRootSystem/:rs_affineRootSystem[simpleRoot][n_?NumericQ]/;n<=rs[rank]:=rs[simpleRoots][[n+1]];
 
+
 zeroWeight[rs_finiteRootSystem]:=makeFiniteWeight[Table[0,{rs[dimension]}]];
 zeroWeight[rs_affineRootSystem]:=makeAffineWeight[zeroWeight[rs[finiteRootSystem]],0,0];
 
@@ -671,7 +687,15 @@ toFundamentalChamber[rs_affineRootSystem][vec_affineWeight]:=
 
 marks[rs_affineRootSystem]:=Prepend[Inverse[cartanMatrix[rs[finiteRootSystem]]].(-2*#.rs[simpleRoot][0]/(#.#)&)/@rs[realRoots],1]
 
+coxeterNumber[rs_affineRootSystem]:=Plus@@marks[rs];
+coxeterNumber[rs_finiteRootSystem]:=coxeterNumber[makeAffineExtension[rs]];
+
 comarks[rs_affineRootSystem]:=Module[{cm},cm=marks[rs]*Map[#.#/2&,rs[simpleRoots]]; cm/(GCD @@ cm)*(GCD @@ marks[rs])];
+
+dualCoxeterNumber[rs_affineRootSystem]:=Plus@@comarks[rs];
+dualCoxeterNumber[rs_finiteRootSystem]:=dualCoxeterNumber[makeAffineExtension[rs]];
+
+
 
 fundamentalWeights[rs_affineRootSystem]:=Map[makeAffineWeight[#[[1]],#[[2]],0]&,
 					     Transpose[{Prepend[fundamentalWeights[rs[finiteRootSystem]],
@@ -1211,6 +1235,41 @@ wgs=Select[Sort[pmults[weights],#1.rh>#2.rh&],mainChamberQ[subs]];
 Scan[(res[hashtable][#]=pmults[#];pmults=pmults - pmults[#]*racahMultiplicities[subs][#])&, wgs];
 *)
 
+genericBranching[subs_?rootSystemQ, pr_, {ms__module}] :=
+  Module[{characters, wgs, res, pmults, rh},
+  characters = character /@ {ms};
+  pmults = makeFormalElement @@ Transpose[
+     Select[
+      Flatten[
+       Outer[{pr[##], Inner[(#1@#2) &, characters, {##}, Times]} &,
+        Sequence @@ ((#[weights]) & /@ characters), 1], 1],
+      grade[#[[1]]] + subs[gradeLimit] >= 0 &]];
+  res = makeFormalElement[makeHashtable[{}, {}]];
+  rh = rho[subs];
+  wgs = Select[Sort[pmults[weights], #1.rh > #2.rh &], 
+    mainChamberQ[subs]];
+  Scan[(res[hashtable][#] = pmults[#]; 
+     pmults = pmults - pmults[#]*racahMultiplicities[subs][#]) &, wgs];
+  res]
+
+conformalWeight[rs_affineRootSystem][wg_?weightQ] := wg.(wg + 2*rho[rs])/(2*(level[wg] + coxeterNumber[rs]));
+
+conformalWeight[rs_affineRootSystem][ls__?NumericQ] := conformalWeight[rs][weight[rs][ls]];
+
+conformalWeight[rs_finiteRootSystem][ls__?NumericQ] := conformalWeight[makeAffineExtension[rs]][0,ls];
+
+minimalCharacters[{ls1__Integer}, ls2_: {0, 1},grLim_:5] := 
+    Module[{
+	a1a = makeAffineExtension[makeSimpleRootSystem[A, 1]], ch1, ch2, 
+	wgs, res, pmults, subs, rh},
+	   a1a[gradeLimit] = grLim;
+	   res = genericBranching[a1a, 
+				  Plus, {makeIrreducibleModule[a1a][ls1], 
+					 makeIrreducibleModule[a1a] @@ ls2}];
+	   {conformalWeight[a1a][weight[a1a][ls1]] + 
+	    conformalWeight[a1a][weight[a1a] @@ ls2] - conformalWeight[a1a][#], 
+	    stringSelector[res, #, grLim]} & /@ 
+	   Select[res[weights], grade[#] == 0 &]]
 
 End[]
 
