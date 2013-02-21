@@ -357,6 +357,9 @@ genericBranching::"usage"=
 conformalWeight::"usage"=
     "conformalWeight[rs_affineRootSystem][ls__?NumericQ] calculates conformal weight of primary field of WZNW model labeled by Dynkin labels";
 
+centralCharge::"usage"=
+    "centralCharge[rs_affineRootSystem][level_?NumericQ] calculates central charge of WZNW model of given level";
+
 minimalCharacters::"usage"=
     "minimalCharacters[{ls1__},{ls2__}] computes characters in su(2) x su(2)/su(2) minimal model for modules specified by Dynkin labels ls1__ and ls2__";
 
@@ -1071,7 +1074,6 @@ ourBranching[m_module,subs_?rootSystemQ]:=
 	   res=makeHashtable[reprw,Table[0,{Length[reprw]}]];
 	   insideQ:=NumericQ[res[toFC[#][[1]]]]&;
 	   Scan[Function[v,
-(*			 Print[v];*)
 			 res[v]=-1/sgamma0*(
 			     -selWM[v-gamma0]+
 			     Plus@@(fn[weights] /. x_?weightQ :> If[insideQ[v+x],fn[x]*res[toFC[v+x][[1]]]*toFC[v+x][[2]],0]));
@@ -1081,14 +1083,16 @@ ourBranching[m_module,subs_?rootSystemQ]:=
 	  ]
 
 ourBranching[{ms__module},subs_?rootSystemQ,proj_]:=
-    Module[{singW,selW,selWM,fn,reprw,res,toFC,rh,subrh,gamma0,sgamma0,hw,posroots,zeroes,singElts,smults},
+    Module[{singW,selW,selWM,fn,reprw,res,toFC,rh,subrh,gamma0,sgamma0,hw,posroots,zeroes,singElts,smults,orth},
 	   zeroes=zeroWeight[rootSystem[#]]&/@{ms};
 	   posroots=Flatten[MapIndexed[ (Map[ Function[x, proj@@ReplacePart[zeroes,#2->x]], 
 					      positiveRoots[rootSystem[#1]]])&,
 					{ms}],1];
 (*	   orth=orthogonalSubsystem[rs,subs]; No orthogonal subsystem here *)
 
-	   singElts = singularElement /@ {ms};
+	   singElts = MapIndexed[extendSingularElement[singularElement[#1],
+						       Select[positiveRoots[rootSystem[#1]],Function[x, proj@@ReplacePart[zeroes,#2->x]==zeroWeight[subs]]],
+						       rootSystem[#1]]&,{ms}];
 	   smults = makeFormalElement @@ Transpose[
 	       Select[
 		   Flatten[
@@ -1125,13 +1129,27 @@ branching::"usage"=
 
 branching[m_module,subs_?rootSystemQ]=ourBranching[m,subs];
 
+branching[{ms__module},subs_?rootSystemQ,proj_]=ourBranching[{ms},subs,proj];
+
 getOrderedWeightsProjectedToWeylChamber[{algroots__?weightQ},subs_?rootSystemQ,hweight_?weightQ]:=
     Module[{rh=rho[subs]},
 	   Sort[
 	       Union[Flatten[weightSystem[Select[projection[subs][{algroots}],(#.rh>=0)&]][projection[subs][{hweight}][[1]]]]],
 	       #1.rh>#2.rh&]];
 
+extendSingularElement[singW_formalElement,{orth___?weightQ},rs_?rootSystemQ]:=
+    Module[{selW,selWM,rh=rho[rs],ortrh=rho[{orth}]},
+	   selW=Select[singW[weights],Function[x,mainChamberQ[{orth}][x+rh]]];
+	   selWM=makeFormalElement[selW,(singW[#]*dimension[{orth}][#+rh-ortrh])&/@selW];
+	   selWM];
 
+extendedSingElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
+    Module[{singW,selW,selWM,rh=rho[rs],orth,ortrh},
+	   singW=singularElement[rs][highestWeight];
+	   orth=orthogonalSubsystem[rs,subs];
+	   selWM=projection[subs][extendSingularElement[singW,orth,rs]];
+	   selWM];
+(*
 extendedSingElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{singW,selW,selWM,rh=rho[rs],orth,ortrh},
 	   orth=orthogonalSubsystem[rs,subs];
@@ -1140,6 +1158,7 @@ extendedSingElement[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
 	   selW=Select[singW[weights],Function[x,mainChamberQ[orth][x+rh-projection[subs][x+rh]]]];
 	   selWM=makeFormalElement[projection[subs][selW],(singW[#]*dimension[orth][#+rh-ortrh])&/@selW];
 	   selWM];
+*)
 
 ourBranching[rs_?rootSystemQ,subs_?rootSystemQ][highestWeight_?weightQ]:=
     Module[{singW,selW,selWM,fn,reprw,orth,res,toFC,rh,subrh,gamma0,sgamma0,hw},
@@ -1295,11 +1314,15 @@ genericBranching[subs_?rootSystemQ, pr_, {ms__module}] :=
 							  pmults = pmults - pmults[#]*racahMultiplicities[subs][#]) &, wgs];
 						    res]
 
-conformalWeight[rs_affineRootSystem][wg_?weightQ] := wg.(wg + 2*rho[rs])/(2*(level[wg] + coxeterNumber[rs]));
+conformalWeight[rs_affineRootSystem][wg_?weightQ] := wg.(wg + 2*rho[rs])/(2*(level[wg] + dualCoxeterNumber[rs]));
 
 conformalWeight[rs_affineRootSystem][ls__?NumericQ] := conformalWeight[rs][weight[rs][ls]];
 
 conformalWeight[rs_finiteRootSystem][ls__?NumericQ] := conformalWeight[makeAffineExtension[rs]][0,ls];
+
+centralCharge[rs_finiteRootSystem][level_?NumericQ] := level*dimension[rs][highestRoot[rs]]/(level+ dualCoxeterNumber[rs]);
+
+centralCharge[rs_affineRootSystem][level_?NumericQ] := centralCharge[rs[finiteRootSystem]][level];
 
 minimalCharacters[{ls1__Integer}, ls2_: {0, 1},grLim_:5] := 
     Module[{
