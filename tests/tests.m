@@ -85,9 +85,21 @@ Module[{b2=makeSimpleRootSystem[B,2],a3=makeSimpleRootSystem[A,3]},
 														       {0,0,1,-1,0,0},
 														       {0,0,0,1,-1,0},
 														       {0,0,0,0,1,-1}}]]]]
+
 Expect["B2:",True,makeSimpleRootSystem[B,2][simpleRoots][[1]]===makeFiniteWeight[{1,-1}]]
 
 Expect["B2: rank",2,makeSimpleRootSystem[B,2][rank]]
+
+Expect["E6, number of roots", 72, Length[roots[makeSimpleRootSystem[E,6]]]]
+
+Expect["E7, number of roots", 126, Length[roots[makeSimpleRootSystem[E,7]]]]
+
+Expect["E8, number of roots", 240, Length[roots[makeSimpleRootSystem[E,8]]]]
+
+Expect["F4, number of roots", 48, Length[roots[makeSimpleRootSystem[F,4]]]]
+
+Expect["G2, number of roots", 12, Length[roots[makeSimpleRootSystem[G,2]]]]
+
 
 Expect["checkGrade finite dimensional Lie algebra", True, Affine`Private`checkGrade[makeSimpleRootSystem[B,2]][makeFiniteWeight[{2,1}]]]
 
@@ -122,7 +134,8 @@ Expect["Weyl reflection s1 s2 s1 in algebra B2",True,
 
 Expect["Fundamental weights for B2", True, {makeFiniteWeight[{1,0}],makeFiniteWeight[{1/2,1/2}]}===fundamentalWeights[makeSimpleRootSystem[B,2]]]
 
-Expect["Fundamental weights for A1", True, {makeFiniteWeight[{1/2,-1/2}]}===fundamentalWeights[makeSimpleRootSystem[A,1]]]
+Expect["Fundamental weights for A1", True, {makeFiniteWeight[{1/Sqrt[2]}]}===fundamentalWeights[makeSimpleRootSystem[A,1]]]
+
 
 Expect["Fundamental weights for A2", True, {makeFiniteWeight[{2/3,-1/3,-1/3}],makeFiniteWeight[{1/3,1/3,-2/3}]}===fundamentalWeights[makeSimpleRootSystem[A,2]]]
 
@@ -157,7 +170,7 @@ Expect["Positive roots of B2",True,
 
 Expect["Dimension",5, dimension[{makeFiniteWeight[{1,1}]}][makeFiniteWeight[{2,2}]]]
 
-Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2,-2}]]]
+Expect["Dimension",5, dimension[makeSimpleRootSystem[A,1]][makeFiniteWeight[{2*Sqrt[2]}]]]
 
 Module[{b2=makeSimpleRootSystem[B,2]},
        Expect["Weights of [2,1] module of B2",True, Union[weightSystem[b2][makeFiniteWeight[{2,1}]]]===
@@ -180,7 +193,7 @@ Module[{b2=makeSimpleRootSystem[B,2],fm,rm},
 
 Expect["Highest root for B2",makeFiniteWeight[{1, 1}],highestRoot[makeSimpleRootSystem[B,2]]]
 
-Expect["simpleRoots of affine Lie algebra A1",True, OverHat[Subscript[A,1]][simpleRoot][1]===makeAffineWeight[{1,-1},0,0]]
+Expect["simpleRoots of affine Lie algebra A1",True, OverHat[Subscript[A,1]][simpleRoot][1]===makeAffineWeight[{Sqrt[2]},0,0]]
 
 Module[{b2a=makeAffineExtension[makeSimpleRootSystem[B,2]]},
        b2a[gradeLimit]=0;
