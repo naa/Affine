@@ -478,9 +478,9 @@ makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,
 makeSimpleRootSystem[D,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Append[Table[0,{rank-2}],1],1]]];
 makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8) :=makeFiniteRootSystem[Join[{1/2*{1,-1,-1,-1,-1,-1,-1,1},
 								   {1,1,0,0,0,0,0,0}},
-								  Table[If [ j==i-2, 1, If [j==i-1, -1, 0]],{i,3,rank},{j,1,8}]]];
+								  Table[If [ j==i-2, -1, If [j==i-1, 1, 0]],{i,3,rank},{j,1,8}]]];
 
-makeSimpleRootSystem[F,4]:=makeFiniteRootSystem[{{1,-1,0,0},{0,1,-1,0},{0,0,1,0},1/2*{1,-1,-1,-1}}];
+makeSimpleRootSystem[F,4]:=makeFiniteRootSystem[{{0,1,-1,0},{0,0,1,-1},{0,0,0,1},1/2*{1,-1,-1,-1}}];
 makeSimpleRootSystem[G,2]:=makeFiniteRootSystem[{1/Sqrt[3]*{1,-1,0},1/Sqrt[3]*{-2,1,1}}];
 							   
 (*
