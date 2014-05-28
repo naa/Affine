@@ -355,6 +355,12 @@ branchingFunctions::"usage"="branchingFunctions[rs_affineRootSystem,subs_affineR
 textPlot::"usage"=
     "textPlot[m_module] plots module multiplicities";
 
+drawRoots::"usage"="drawRoots[axe1_?weightQ, axe2_?weightQ, {wgs__?weightQ}, color_: Black] converts projection of set of weights on plane (axe1,axe2) to graphics object (Arrows_";
+
+plotFormaElement::"usage"="similar to textPlot, but returns not plot, but object, arguments are the same as in drawRoots";
+
+
+
 genericBranching::"usage"=
     "genericBranching[subs_?rootSystemQ, pr_, {ms__module}] calculates branching coefficients of projection pr_ of direct product of modules ms__\n to irreducible modules of algebra with root system subs_";
 
@@ -1219,6 +1225,17 @@ draw3dProjection[axe1_,axe2_,axe3_,f_formalElement,opts___?OptionQ]:=
 
 textPlot[m_module,opts___?OptionQ]:=drawPlaneProjection[1,2,character[m],opts];
 					     
+drawRoots[axe1_, axe2_, {wgs__?weightQ}, 
+   color_: Black] := {color, 
+		      Arrow[{{0, 0}, {#.axe1, #.axe2}}]} & /@ {wgs};
+
+plotFormaElement[axe1_, axe2_, f_formalElement, color_: Blue, up_: - 0.25, 
+		 left_: 0] :=
+    {({color, PointSize[Medium], 
+       Point[{#.axe1, #.axe2}]} &) /@ 
+     f[weights], ({color, 
+		   Text[f[#], {#.axe1 + up, #.axe2 + left}]} &) /@ f[weights]};
+
 
 tensorProduct::"usage"=
     "calculate tensor product decomposition coefficients"
@@ -1364,7 +1381,9 @@ listMaxArg[f_, L_List] := L ~Extract~ Ordering[f /@ L, -1]
 									      
 findSpecialEmbedding[subs_finiteRootSystem,rs_finiteRootSystem]:=
     Module[{subcm, cm, indets, wg, rts,nrts,r,sr},
-	   wg=listMaxArg[-dimension[rs][#]&,fundamentalWeights[rs]];
+	   wg=Select[Sort[fundamentalWeights[rs],dimension[rs][#1]<dimension[rs][#2]&], Length[dynkinLabelsFromDimension[subs][dimension[rs][#]]]>0&,1][[1]];
+	   Print[wg,dimension[rs][wg]];
+	   (*wg=listMaxArg[-dimension[rs][#]&,fundamentalWeights[rs]];*)
 	   subcm=matricesForCartanSubalgebra[subs][dimension[rs][wg]];
 	   cm=matricesForCartanSubalgebra[rs][dimension[rs][wg]];
 	   indets=Table[a[i],{i,1,rank[rs]}];
