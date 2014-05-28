@@ -53,12 +53,32 @@ Affine.m TODO list
 * Version 2.0
 *** Affine.m
 ***** TODO Fix bugs
-***** TODO Tests for exceptional simple Lie algebras, compare with Bourbaki.
+***** TODO Add test for functions weightSystem 
+***** DONE Tests for exceptional simple Lie algebras, compare with Bourbaki.
+      CLOSED: [2014-05-17 Sat 12:48]
+******* TODO Add tests for exceptional algebras
 ***** TODO Constructors for twisted affine Lie algebras
-***** TODO Support for affine extensions of semisimple Lie algebras and for direct sums of affine Lie algebra modules
-***** TODO Some functions for calculations in conformal field theory (conformal weights, Virasoro characters etc)
+***** DONE Support for affine extensions of semisimple Lie algebras and for direct sums of affine Lie algebra modules
+      CLOSED: [2014-05-17 Sat 12:48]
+***** DONE Some functions for calculations in conformal field theory (conformal weights, Virasoro characters etc)
+      CLOSED: [2014-05-17 Sat 12:48]
 ***** TODO Create insallable package
+***** TODO Support for special embeddings of simple Lie algebras
+******* DONE Search for representation of given dimension
+	 CLOSED: [2014-05-28 Wed 11:08]
+******* DONE Calculation of coefficients for Cartan subalgebra generators embedding
+	 CLOSED: [2014-05-28 Wed 11:08]
+******* DONE Calculation of matrix form of generators
+	 CLOSED: [2014-05-28 Wed 11:08]
+******* DONE Explicit root system embedding
+	 CLOSED: [2014-05-28 Wed 11:08]
+***** TODO Explicit construction of matrix representations for simple Lie algebras (same as in special embeddings)
+***** TODO New graphic extensions:
+******* TODO Dynkin diagrams,
+******* TODO Young tableux
+******* TODO Diagrams for affine Lie algebra modules (Di Francesco, Moody-Patera)
 *** Paper
 ***** TODO Write new version announce
+******* Document CFT applications
 *** Manual
 ***** TODO Prepare PDF manual
