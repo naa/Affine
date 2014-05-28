@@ -174,6 +174,8 @@ roots::"usage"=
 
 highestRoot::"usage"="returns highest root of root system";
 
+lowestRoot::"usage"="returns lowest root of root system";
+
 makeAffineExtension::"usage"=
     "makeAffineExtension[fs_finiteRootSystem] creates root system of affine Lie algebra which 
     is extension of given finite-dimensional root system";
@@ -204,7 +206,7 @@ coxeterNumber::"usage"="returns Coxeter number for root system of Lie algebra";
 dualCoxeterNumber::"usage"="returns dual Coxeter number for root system of Lie algebra";
 
 weight::"usage"=
-    "weight[rs_?rootSystemQ][labels__Integer] constructs weight defined by Dynkin labels";
+    "weight[rs_?rootSystemQ][labels__?NumericQ] constructs weight defined by Dynkin labels";
 
 dynkinLabels::"usage"=
     "dynkinLabels[rs_?rootSystemQ][wg_?weightQ] returns Dynkin labels of weight (coefficients of its decomposition to the sum of fundamental weights) ";
@@ -266,6 +268,9 @@ makeIrreducibleModule::"usage"=
     
 dimension::"usage"=
     "dimension[rs_?rootSystemQ][hweight_?weightQ] returns dimension of Lie algebra highest weight module with the highest weight hweight";
+
+findModuleByDimension::"usage"=
+    "findModuleByDimension[rs_?rootSystemQ][dim_Integer] returns irreducible highest weight module of given dimension";
 
 weightSystem::"usage"=
     "weightSystem[rs_?rootSystemQ][highestWeight_?weightQ] returns the set of dominant weights in the highest weight module. \n
@@ -362,6 +367,13 @@ centralCharge::"usage"=
 
 minimalCharacters::"usage"=
     "minimalCharacters[{ls1__},{ls2__}] computes characters in su(2) x su(2)/su(2) minimal model for modules specified by Dynkin labels ls1__ and ls2__";
+
+
+
+matricesForCartanSubalgebra::"usage"="Temp function";
+
+findSpecialEmbedding::"usage"=
+    "findSpecialEmbedding[subs_finiteRootSystem,rs_finiteRootSystem] finds special (non-regular) embedding of Lie algebra with root system\n subs to Lie algebra with root system rs. \n Embedded root system is returned, it can be used for branching. \n Only fundamental representations are used for embeddings";
 
 Begin["`Private`"]
 
@@ -705,7 +717,7 @@ fundamentalWeights[rs_affineRootSystem]:=Map[makeAffineWeight[#[[1]],#[[2]],0]&,
 								zeroWeight[rs[finiteRootSystem]]],
 							comarks[rs]}]]
 
-weight[rs_?rootSystemQ][labels__Integer]:=fundamentalWeights[rs].{labels}
+weight[rs_?rootSystemQ][labels__?NumericQ]:=fundamentalWeights[rs].{labels}
 
 dynkinLabels[rs_?rootSystemQ][wg_?weightQ]:=2*(#.wg)/(#.#)& /@ rs[simpleRoots];
 
@@ -1002,27 +1014,6 @@ tensorProduct[m1_module,m2_module]/; Head[rootSystem[m1]]==finiteRootSystem && H
 	   aw=makeFormalElement @@ Transpose @@ Outer[{makeFiniteWeight[Join[#1[standardBase],#2[standardBase]]],sw1[#1]*sw2[#2]}&,sw1[weights],sw2[weights]];
 	   makeModule[rs][aw,subs,limit[m1]*limit[m2]]];
 
-
-(*tensorProduct[m1_module,m2_module]:=Module[{rs,subs=emptyRootSystem[],subroots={},aw},
-					   rs=CirclePlus[rootSystem[m1],rootSystem[m2]];
-					   If [subSystem[m1]=!=emptyRootSystem[] && subSystem[m2]=!=emptyRootSystem[], subs=CirclePlus[subSystem[m1],subSystem[m2]],
-					       If [subSystem[m1]=!=emptyRootSystem[],
-						   If [Head[subSystem[m1]]===finiteRootSystem,
-						       subs=makeFiniteRootSystem[Map[appendZeros[rootSystem[m2][finiteRootSystem][dimension],#]&,subSystem[m1][finiteRootSystem][simpleRoots]]],
-						       subs=makeAffineExtension[makeFiniteRootSystem[Map[appendZeros[rootSystem[m2][finiteRootSystem][dimension],#]&,subSystem[m1][finiteRootSystem][simpleRoots]]]]],
-						   If [Head[subSystem[m2]]===finiteRootSystem,
-						       subs=makeFiniteRootSystem[Map[prependZeros[rootSystem[m1][finiteRootSystem][dimension],#]&,subSystem[m2][finiteRootSystem][simpleRoots]]],
-						       subs=makeAffineExtension[makeFiniteRootSystem[Map[prependZeros[rootSystem[m1][finiteRootSystem][dimension],#]&,subSystem[m2][finiteRootSystem][simpleRoots]]]]]]];
-					   aw=Outer[Join[#1],cSingularWeights[m1],cSingularWeights[m2]
-						       
-							    
-
-
-finiteRootSystem/:CirclePlus[x_finiteRootSystem,y_finiteRootSystem]:=makeFiniteRootSystem[Join[Map[appendZeros[y[dimension],#]&,x[simpleRoots]],
-											       Map[prependZeros[x[dimension],#]&,y[simpleRoots]]]];
-
-affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineExtension[CirclePlus[x[finiteRootSystem],y[finiteRootSystem]]];
-*)
 
 CircleTimes[m1_module,m2_module]=tensorProduct[m1,m2];
 
@@ -1337,6 +1328,50 @@ minimalCharacters[{ls1__Integer}, ls2_: {0, 1},grLim_:5] :=
 	    stringSelector[res, #, grLim]} & /@ 
 	   Select[res[weights], grade[#] == 0 &]]
 
+
+
+lowestRoot[rs_finiteRootSystem]:=toFundamentalChamber[rs][rs[simpleRoot][Ordering[(-#.#&)/@rs[simpleRoots],-1][[1]]]]
+
+dynkinLabelsFromDimension[rs_?rootSystemQ][dim_Integer]:=Select[(#-1&/@Flatten[Table[Permutations /@ IntegerPartitions[i, {rank[rs]}],{i,0,dim+2}],2]),
+				     dimension[rs][weight[rs]@@#]==dim&,1]
+
+(*
+findModuleByDimension[rs_?rootSystemQ][dim_Integer]:=
+   makeIrreducibleModule[rs][weight[rs]@@
+			      Select[(#-1&/@Flatten[Table[Permutations /@ IntegerPartitions[i, {rank[rs]}],{i,0,dim+2}],2]),
+				     dimension[rs][weight[rs]@@#]==dim&,1][[1]]]
+   *)
+
+findModuleByDimension[rs_?rootSystemQ][dim_Integer]:=makeIrreducibleModule[rs][weight[rs]@@dynkinLabelsFromDimension[rs][dim][[1]]]
+
+matricesForCartanSubalgebra[rs_finiteRootSystem,{wgs__?weightQ}]:=
+    Module[{rts, rh=rho[rs], swgs},
+	   swgs=Sort[{wgs}, #1.rh > #2.rh &];
+	   rts=Sort[simpleRoots[rs],#1.rh>#2.rh&];
+	   Function[r,2*(#.r)/(r.r)&/@swgs]/@rts]
+    
+matricesForCartanSubalgebra[rs_finiteRootSystem][dim_Integer]:=
+    Module[{rh=rho[rs],wgs,
+	    rts,ch},
+	   rts=Sort[simpleRoots[rs],#1.rh>#2.rh&];
+	   ch=character[findModuleByDimension[rs][dim]];
+	   wgs=Sort[ch[weights], #1.rh > #2.rh &];
+	   Function[r,Flatten[Table[2*(#.r)/(r.r),{ch[#]}]&/@wgs]]/@rts]
+
+raisingOps[{cm__List}]:=Function[mt,DiagonalMatrix[FoldList[Sqrt[#2+#1*#1]&,0,mt][[2;;-2]],1]]/@{cm}
+    
+listMaxArg[f_, L_List] := L ~Extract~ Ordering[f /@ L, -1]
+									      
+findSpecialEmbedding[subs_finiteRootSystem,rs_finiteRootSystem]:=
+    Module[{subcm, cm, indets, wg, rts,nrts,r,sr},
+	   wg=listMaxArg[-dimension[rs][#]&,fundamentalWeights[rs]];
+	   subcm=matricesForCartanSubalgebra[subs][dimension[rs][wg]];
+	   cm=matricesForCartanSubalgebra[rs][dimension[rs][wg]];
+	   indets=Table[a[i],{i,1,rank[rs]}];
+	   rts=Sort[simpleRoots[rs],#1.rho[rs]>#2.rho[rs]&];
+	   nrts=Function[mt, Module[{r=((coroot/@rts).indets)/.Flatten[Solve[indets.cm==mt,indets]]}, r]]/@subcm;
+	   makeFiniteRootSystem[coroot/@nrts]]
+					     
 End[]
 
 EndPackage[]
