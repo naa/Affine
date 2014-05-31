@@ -72,6 +72,9 @@ Affine.m TODO list
 	 CLOSED: [2014-05-28 Wed 11:08]
 ******* DONE Explicit root system embedding
 	 CLOSED: [2014-05-28 Wed 11:08]
+******* TODO Add tests
+***** TODO Affine extensions of special embeddings
+***** TODO Twisted affine Lie algebras
 ***** TODO Explicit construction of matrix representations for simple Lie algebras (same as in special embeddings)
 ***** TODO New graphic extensions:
 ******* TODO Dynkin diagrams,
