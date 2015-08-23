@@ -491,8 +491,14 @@ affineRootSystem/:CirclePlus[x_affineRootSystem,y_affineRootSystem]:=makeAffineE
 
 makeSimpleRootSystem[A,1]:=makeFiniteRootSystem[{{Sqrt[2]}}];
 makeSimpleRootSystem[A,r_Integer]:=makeFiniteRootSystem[makeFiniteWeight /@ Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,r},{j,1,r+1}]];
+makeSimpleRootSystem[B,1]:=makeSimpleRootSystem[A,1];
 makeSimpleRootSystem[B,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],1]]];
-makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],2]]];
+makeSimpleRootSystem[C,1]:=makeSimpleRootSystem[A,1];
+makeSimpleRootSystem[C,2]:=makeSimpleRootSystem[B,2];
+makeSimpleRootSystem[C,rank_Integer]:=makeFiniteRootSystem[1/Sqrt[2]*Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Table[0,{rank-1}],2]]];
+makeSimpleRootSystem[D,1]:=makeSimpleRootSystem[A,1];
+makeSimpleRootSystem[D,2]:=makeSimpleRootSystem[A,2];
+(*makeSimpleRootSystem[D,3]:=makeSimpleRootSystem[A,3];*)
 makeSimpleRootSystem[D,rank_Integer]:=makeFiniteRootSystem[Append[Table[If[i==j,1,If[i==j-1,-1,0]],{i,1,rank-1},{j,1,rank}],Append[Append[Table[0,{rank-2}],1],1]]];
 makeSimpleRootSystem[E,rank_Integer]/; (rank>=3) && (rank<=8) :=makeFiniteRootSystem[Join[{1/2*{1,-1,-1,-1,-1,-1,-1,1},
 								   {1,1,0,0,0,0,0,0}},
