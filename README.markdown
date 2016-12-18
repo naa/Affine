@@ -50,3 +50,27 @@ Unit tests are in file `tests/tests.m`. To run all the tests just read the conte
 into your notebook after adding the folder to `$Path` with
 
 `<<tests.m`
+
+kirillov-reshetikhin.m
+=========
+This separate module implements Kirillov-Reshetikhin formula for the graded and usual tensor product decomposition of simple Lie algebra modules. This module can be used independently from the affine.m. The only needed input is the Cartan matrix of Lie algebra.
+
+Usage
+----------
+
+Add path to the beginning of your notebook
+
+`AppendTo[$Path,"src/"];`
+`<<affine.m; (* Optional *)`
+`<<kirillov-reshetikhin.m;`
+
+And use as follows:
+
+`gradedTensorProductMultiplicity[{0,3},{{0,0},{3,0}},{{2,-1},{-1,2}}]`
+
+or
+
+
+`a2=makeSimpleRootSystem[A,2];`
+`Expand[Simplify[{#,gradedTensorProductMultiplicity[#,{{8,0}},cartanMatrix[a2]]}&/@dynkinLabels[a2]/@Flatten[weightSystem[a2][weight[a2][8,0]]]]]`
+
