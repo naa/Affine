@@ -1276,6 +1276,17 @@ stringFunctions[rs_affineRootSystem,{ls__?NumericQ}]:=
 							 ch[weights]];
 						    {dynkinLabels[rs][#],res[#]}&/@keys[res]];
 					     
+stringFunctionsFreudenthal[rs_affineRootSystem,{ls__?NumericQ}]:=
+    Module[{ch,res,zerograde},
+	   ch=freudenthalMultiplicities[rs][weight[rs][ls]];
+	   res=makeHashtable[{},{}];
+	   zerograde=makeAffineWeight[#[finitePart],level[#],0]&;
+	   Scan[Function[x,If[checkGrade[rs][x],
+			      If[MemberQ[keys[res],zerograde[x]],
+				 res[zerograde[x]]=res[zerograde[x]]+ch[x]*q^(-grade[x]),
+				 res[zerograde[x]]=ch[x]*q^(-grade[x])]]],
+		ch[weights]];
+	   {dynkinLabels[rs][#],res[#]}&/@keys[res]];
 
 branchingFunctions[rs_affineRootSystem,subs_affineRootSystem,{ls__?NumericQ}]:=
 					     Module[{ch,res,zerograde},
