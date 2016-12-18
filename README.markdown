@@ -61,7 +61,9 @@ Usage
 Add path to the beginning of your notebook
 
 `AppendTo[$Path,"src/"];`
+
 `<<affine.m; (* Optional *)`
+
 `<<kirillov-reshetikhin.m;`
 
 And use as follows:
@@ -72,5 +74,6 @@ or
 
 
 `a2=makeSimpleRootSystem[A,2];`
+
 `Expand[Simplify[{#,gradedTensorProductMultiplicity[#,{{8,0}},cartanMatrix[a2]]}&/@dynkinLabels[a2]/@Flatten[weightSystem[a2][weight[a2][8,0]]]]]`
 
