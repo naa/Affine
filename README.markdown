@@ -77,3 +77,4 @@ or
 
 `Expand[Simplify[{#,gradedTensorProductMultiplicity[#,{{8,0}},cartanMatrix[a2]]}&/@dynkinLabels[a2]/@Flatten[weightSystem[a2][weight[a2][8,0]]]]]`
 
+[Online demo](http://hep.phys.spbu.ru/staff/nazarov/kr.html)
